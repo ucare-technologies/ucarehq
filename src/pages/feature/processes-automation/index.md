@@ -1,0 +1,38 @@
+---
+title: Processes & Automation
+author: hellohudson
+type: feature
+date: 2016-08-07T06:46:19.000Z
+url: /processes-automation/
+categories: 
+---
+
+## Automate your follow-up processes
+
+Your church has many people connecting in many ways, with so much for your team to do they can quickly get forgotten and fall through the cracks. Processes help track follow-up of people and can also be used to automate parts of the process.
+
+## Work smarter not harder
+
+Whether you need to follow-up with new people, prayer requests, responses from the web, volunteer applications, order fulfillment or someone else, processes have you covered.
+
+Your team can view process boards to see where each person is at, what the next steps are, when it’s due and who’s responsible. We will even daily notify assigned people when follow-up is due so the people don’t get forgotten. Team members can leave notes, reassign a person or move that person to the next step simply by dragging their card. Add actions to each process step that happen when a person is added to that step. Actions like sending personalized SMS or email, assign a task to another team member, and adding or removing the person from a process, group, etc.
+
+When you meet a visitor at church, it’s not rocket science to add their details using your phone. But imagine if that also added them to a process that queued an SMS to be sent that evening, a welcome email to be sent the following day, and assigned someone to help them get connected into a small group, a volunteer team or connect their children into youth. 
+
+![](process.png)
+
+## Still more process options
+
+<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> processes.</li><li><strong>Unlimited</strong> people, only pay for regular attendees.</li><li><strong>Touch ID or pin-code security</strong> so sensitive info isn’t easily accessed by others on your phone.</li><li><strong>Organize processes by type</strong>, for example by ministry type or location.</li><li><strong>Multi-site</strong>.</li><li><strong>Focus on the people</strong> your responsible for or on everyone.</li><li>Use the column success indicator to <strong>measure your team and improve the process.</strong></li><li>Each process is its own report that you can easily print.</li><li>View all process history.</li><li><strong>Customize the steps</strong> in each process.</li><li>Automate sending <strong>personalized email &amp; SMS.</strong></li><li>Automate <strong>adding or removing from a group, meeting or another process.</strong></li><li>Automate <strong>updating the person’s profile.</strong></li><li>Automate assigning <strong>additional tasks to others.</strong></li><li>Automate adding people who <strong>order resource.</strong></li><li>Automate adding people the <strong>register for an event.</strong></li><li>Automate adding people who <strong>submit <a href="/features/forms-and-surveys/">form</a> responses.</strong></li><li>Link forms for prayer requests, web concierge requests, volunteer applications, getting married, etc.</li><li>Assigned people <strong>receive daily summary of due follow-up.</strong></li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.</li><li>The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.</li>
+
+### Get started quickly
+
+Create processes and automation actions and start adding people. The set up options will grow as you need and we’re there to guide you with every step.
+
+### People that care
+
+We know it is frustrating when thing don’t work as expected, that's why we invest in a great support team to help with questions you have. We also have plenty of articles, videos and training available.
+
+### Continual improvement
+
+We’re always refining and improving based on our customer’s usage and needs. We want to work together to make UCare even better, when you have an idea or feedback feel free to share.
