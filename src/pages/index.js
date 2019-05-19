@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from 'gatsby-image';
 
 import Layout from "../components/layout"
 
@@ -9,10 +10,14 @@ import Layout from "../components/layout"
  * @see https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91 
  */
 const IndexPage = (props) => {
-  const postList = props.data.allMarkdownRemark;
+  const homepage = props.data.allMarkdownRemark;
+  const { file } = props.data;
+  const { html } = homepage.edges[0].node;
+  const { title } = homepage.edges[0].node.frontmatter;
+  document.title = `UCare | ${title}`;
   return (
     <Layout>
-      { postList.edges.map(({ node }, i) => (
+      {/* { postList.edges.map(({ node }, i) => (
         <Link to={ node.fields.slug } className="link" key={ i }>
           <div className="post-list">
             <h1>{ node.frontmatter.title }</h1>
@@ -20,7 +25,8 @@ const IndexPage = (props) => {
             <p>{ node.excerpt }</p>
           </div>
         </Link>
-      ))}
+      ))} */}
+      <div dangerouslySetInnerHTML={{ __html:html }}></div>
     </Layout>
   )
 }
@@ -29,12 +35,13 @@ export default IndexPage
 
 export const listQuery = graphql`
   query ListQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [ frontmatter___date]}) {
+    allMarkdownRemark( filter: { frontmatter: { url: { eq: "/home/"}}}) {
       edges {
         node {
           fields {
             slug
           }
+          html
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM Do YYYY")
@@ -43,6 +50,19 @@ export const listQuery = graphql`
           }
         }
       }
+    }
+    file(relativePath: { eq: "page/home/iDevices2.png"}) {
+      childImageSharp {
+          # Specify the image processing specifications right in the query.
+          fluid {
+            originalImg
+            originalName
+            aspectRatio
+            src
+            srcSet
+            sizes
+          }
+        }
     }
   }
 `
