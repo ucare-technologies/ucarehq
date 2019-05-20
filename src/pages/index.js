@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from 'gatsby-image';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Layout from "../components/layout"
 
@@ -11,7 +11,6 @@ import Layout from "../components/layout"
  */
 const IndexPage = (props) => {
   const homepage = props.data.allMarkdownRemark;
-  const { file } = props.data;
   const { html } = homepage.edges[0].node;
   const { title } = homepage.edges[0].node.frontmatter;
   document.title = `UCare | ${title}`;
@@ -26,7 +25,7 @@ const IndexPage = (props) => {
           </div>
         </Link>
       ))} */}
-      <div dangerouslySetInnerHTML={{ __html:html }}></div>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </Layout>
   )
 }
@@ -50,19 +49,6 @@ export const listQuery = graphql`
           }
         }
       }
-    }
-    file(relativePath: { eq: "page/home/iDevices2.png"}) {
-      childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fluid {
-            originalImg
-            originalName
-            aspectRatio
-            src
-            srcSet
-            sizes
-          }
-        }
     }
   }
 `

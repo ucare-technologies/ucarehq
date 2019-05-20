@@ -19,13 +19,18 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            menuLinks {
+              name
+              link
+            }
           }
         }
       }
     `}
     render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+      <React.Fragment>
+        {/* <Header siteTitle={data.site.siteMetadata.title} /> */ }
+        <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
@@ -36,7 +41,7 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
         </div>
-      </>
+      </React.Fragment>
     )}
   />
 )

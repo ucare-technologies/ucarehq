@@ -3,6 +3,28 @@ module.exports = {
     title: `Blogs from WordPress`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    menuLinks: [
+      {
+        name: 'features',
+        link: '/page/features/'
+      },
+      {
+        name: 'pricing',
+        link: '/'
+      },
+      {
+        name: 'support',
+        link: 'https://ucare.zendesk.com/hc/en-us'
+      },
+      {
+        name: 'blog',
+        link: '/page/blog'
+      },
+      {
+        name: 'Signin',
+        link: 'https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004',
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
