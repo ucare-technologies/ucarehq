@@ -1,5 +1,5 @@
 ---
-title: RESOLVED: Email delays
+title: Email delays
 author: des
 type: post
 date: 2017-02-10T04:59:33.000Z

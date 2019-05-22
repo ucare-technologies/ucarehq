@@ -1,5 +1,5 @@
 ---
-title: TIP: How to insert emoji in bulk SMS 🥴
+title: How to insert emoji in bulk SMS 🥴
 author: des
 type: post
 date: 2019-05-03T07:09:19.000Z
