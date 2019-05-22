@@ -1,6 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from 'gatsby-image';
+import { graphql } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.scss';
@@ -21,7 +20,6 @@ import Layout from "../components/layout"
  */
 const IndexPage = (props) => {
   const homepage = props.data.allMarkdownRemark;
-  const { html } = homepage.edges[0].node;
   const { title } = homepage.edges[0].node.frontmatter;
   document.title = `UCare | ${title}`;
   return (

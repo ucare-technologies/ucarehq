@@ -31,7 +31,7 @@ const Pricing = ({className}) => (
                 <h5>Prices start at $10/month & no long-term contracts.</h5>
                 <p>
                   The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.
-                  <a href="">FAQ</a>
+                  <a href="/sign-up/">FAQ</a>
                 </p>
                 <p>If you have <span>920</span> people in your church</p>
                 <small>

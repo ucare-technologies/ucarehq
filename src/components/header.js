@@ -1,10 +1,11 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import Logo from '../images/favicon.png';
 
 const Header = ({ siteTitle, menuLinks }) => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="/" className="navbar-brand">😃😍🤣🤷‍♂️👍</a>
+    <a href="/" className="navbar-brand"><img src={Logo} alt="Logo" style={{ width: '70px', height: '70px'}} /></a>
     <button
       className="navbar-toggler"
       type="button"
