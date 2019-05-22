@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2017-12-31T03:22:52.000Z
 url: /thanks-2017-its-been-great/
+featured_image: Winter_forest_at_Blomberg_Germany_1600.jpg
 categories: Features,News,Updates
 ---
 

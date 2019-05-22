@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2017-02-10T04:59:33.000Z
 url: /resolved-email-delays/
+featured_image: error-success.jpeg
 categories: Issues
 ---
 

@@ -1,0 +1,24 @@
+.latestblog {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  h1{
+    margin-bottom: 50px;
+  }
+  .blogs {
+    .read-more {
+      text-decoration: none;
+      color: hsla(0,0%,100%,.85);
+      background: #475364;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      float: left;
+      padding: 10px 25px;
+      letter-spacing: 1px;
+      border-radius: 30px;
+    }
+    .blog-except {
+      width: 80%;
+    }
+  }
+}

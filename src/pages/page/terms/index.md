@@ -4,7 +4,6 @@ author: hellohudson
 type: page
 date: 2016-07-28T11:43:17.000Z
 url: /terms/
-categories: 
 ---
 
 By using the ucareapp.com web site (“Service”), you are agreeing to be bound by the following terms and conditions (“Terms of Service”). UCare reserves the right to update and change the Terms of Service from time to time without notice. Any new features that augment or enhance the current Service, including the release of new tools and resources, shall be subject to the Terms of Service. Continued use of the Service after any such changes shall constitute your consent to such changes. You can review the most current version of the Terms of Service at any time. Violation of any of the terms below will result in the termination of your account. While UCare prohibits such conduct and content on the Service, you understand and agree that UCare cannot be responsible for the content posted on the Service and you nonetheless may be exposed to such materials. You agree to use the Service at your own risk.

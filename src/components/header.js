@@ -4,7 +4,7 @@ import React from "react"
 
 const Header = ({ siteTitle, menuLinks }) => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="/" className="navbar-brand">Navbar</a>
+    <a href="/" className="navbar-brand">😃😍🤣🤷‍♂️👍</a>
     <button
       className="navbar-toggler"
       type="button"

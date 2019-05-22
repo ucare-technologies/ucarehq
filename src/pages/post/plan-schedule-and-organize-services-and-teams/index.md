@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2019-03-25T07:43:27.000Z
 url: /plan-schedule-and-organize-services-and-teams/
+featured_image: services.jpg
 categories: Features
 ---
 

@@ -4,7 +4,23 @@ author: hellohudson
 type: feature
 date: 2016-08-20T05:01:40.000Z
 url: /scheduling-reservations/
-categories: 
+featured_image: scheduling.jpg
+feature_colour: #cddc39
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g id="Layer_2">
+	<g id="New_icons">
+		<polyline class="st0" points="18,11.5 10.5,19.5 7,16 		"/>
+		<polyline class="st0" points="4.5,2.5 0.5,2.5 0.5,23.5 23.5,23.5 23.5,2.5 19.5,2.5 		"/>
+		<rect x="4.5" y="0.5" class="st0" width="3" height="4"/>
+		<rect x="16.5" y="0.5" class="st0" width="3" height="4"/>
+		<line class="st0" x1="7.5" y1="2.5" x2="16.5" y2="2.5"/>
+		<line class="st0" x1="0.5" y1="7.5" x2="23.5" y2="7.5"/>
+	</g>
+</g>
+</svg>
+show_on_home_page: true
+header_alignment: center
 ---
 
 ## Plan, organize and schedule

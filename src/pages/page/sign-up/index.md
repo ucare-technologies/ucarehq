@@ -4,10 +4,17 @@ author: des
 type: page
 date: 2016-09-30T14:22:16.000Z
 url: /sign-up/
-categories: 
+featured_image: pricing.jpg
+tagline: "No obligations and no credit card required."
 ---
 
-//<!\[CDATA\[ (function(){UCareEmbed("ucare-embed-502429", "https://crm.ucareapp.com", "/signup", "https://ucarehq.com/wp-content/uploads/2016/10/signup-styles.css");})(); //\]\]>
+<div id="ucare-embed-502429"></div>
+<script src="https://crm.ucareapp.com/Scripts/ucare.embed.js"></script>
+<script>
+(function(){
+UCareEmbed("ucare-embed-502429", "https://crm.ucareapp.com", "/signup", "https://ucarehq.com/sign-up/styles.css");
+})();
+</script>
 
 #### Your trial includes everything
 

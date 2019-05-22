@@ -4,7 +4,30 @@ author: hellohudson
 type: feature
 date: 2016-08-07T06:24:40.000Z
 url: /attendance-tracking/
-categories: 
+featured_image: planning.jpg
+feature_colour: #4caf50
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g id="Layer_2">
+	<g id="Outline_Icons">
+		<polyline class="st0" points="23.5,23.5 0.5,23.5 0.5,0.5 		"/>
+		<circle class="st0" cx="7.5" cy="16.5" r="1.5"/>
+		<line class="st0" x1="16.9" y1="8.3" x2="21" y2="3.1"/>
+		<line class="st0" x1="9.9" y1="7.5" x2="14.6" y2="9.1"/>
+		<line class="st0" x1="0.5" y1="11.8" x2="7.2" y2="7.8"/>
+		<line class="st0" x1="16.3" y1="15.8" x2="20.7" y2="13.3"/>
+		<line class="st0" x1="9" y1="16.5" x2="13.5" y2="16.5"/>
+		<line class="st0" x1="0.5" y1="21" x2="6.2" y2="17.3"/>
+		<circle class="st0" cx="8.5" cy="7" r="1.5"/>
+		<circle class="st0" cx="16" cy="9.5" r="1.5"/>
+		<circle class="st0" cx="22" cy="2" r="1.5"/>
+		<circle class="st0" cx="22" cy="12.5" r="1.5"/>
+		<circle class="st0" cx="15" cy="16.5" r="1.5"/>
+	</g>
+</g>
+</svg>
+show_on_home_page: true
+header_alignment: center
 ---
 
 ## Stop people falling through the cracks

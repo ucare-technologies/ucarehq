@@ -620,3 +620,11 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #323a46;
+  color: hsla(0,0%,100%,.75);
+  font-size: 80%;
+}

@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2016-03-03T22:48:03.000Z
 url: /new-video-merging-duplicates/
+featured_image: 40.jpg
 categories: Help
 ---
 

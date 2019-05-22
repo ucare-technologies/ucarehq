@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2018-01-16T07:39:03.000Z
 url: /school-grade-promotions/
+featured_image: graduation_1600.jpg
 categories: Features
 ---
 

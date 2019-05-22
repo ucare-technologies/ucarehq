@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2019-03-04T23:00:32.000Z
 url: /re-sync-planning-center/
+featured_image: Synchronized-swimming.jpg
 categories: Updates
 ---
 

@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2017-04-29T10:33:51.000Z
 url: /new-chrome-dymo-printing-issue/
+featured_image: error-success.jpeg
 categories: Issues
 ---
 

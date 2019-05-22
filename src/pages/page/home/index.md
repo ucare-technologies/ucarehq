@@ -4,9 +4,9 @@ author: hellohudson
 type: page
 date: 2016-07-27T12:51:59.000Z
 url: /home/
-categories: 
+featured_image: hero.jpg
 ---
-
+![](hero.jpg) 
 # _church management._ **simplified.**
 
 # Easy to use church management software isn't optional, it's essential.
@@ -17,9 +17,9 @@ categories:
 
 \[features\] [Explore More Features](/features)
 
-## What you need,  
-when you need it,  
-on all your devices.
+### What you need,  
+### when you need it,
+### on all your devices.
 
 No matter what your role in church, having access to the people and information that’s most important to you can help immensely. Being able to contact the right people, ensure people are followed up and tasks are actioned right away can help big churches feel less impersonal and small churches feel better resourced.
 

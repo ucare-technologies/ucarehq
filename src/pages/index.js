@@ -1,7 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from 'gatsby-image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './index.scss';
+import ChurchManagement from '../components/home/church';
+import Management from '../components/home/management';
+import Features from '../components/home/features';
+import Devices from '../components/home/devices';
+import Testimonials from '../components/home/testimonials';
+import Ministry from '../components/home/ministry';
+import Pricing from '../components/home/Pricing';
+import LatestBlog from '../components/blogs/latestblog';
 import Layout from "../components/layout"
 
 /**
@@ -16,16 +26,18 @@ const IndexPage = (props) => {
   document.title = `UCare | ${title}`;
   return (
     <Layout>
-      {/* { postList.edges.map(({ node }, i) => (
-        <Link to={ node.fields.slug } className="link" key={ i }>
-          <div className="post-list">
-            <h1>{ node.frontmatter.title }</h1>
-            <span>{ node.frontmatter.date }</span>
-            <p>{ node.excerpt }</p>
-          </div>
-        </Link>
-      ))} */}
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <ChurchManagement/>
+      <Management />
+      <Features />
+      <Devices
+        fluid={ props.data.deviceImage.childImageSharp.fluid }
+        // applefluid={ props.data.appleImage.childImageSharp.fluid }
+        googlefluid={ props.data.googleImage.childImageSharp.fluid }
+      />
+      <Testimonials />
+      <Ministry />
+      <Pricing fluid={ props.data.pricingImage.childImageSharp.fluid } />
+      <LatestBlog />
     </Layout>
   )
 }
@@ -47,6 +59,70 @@ export const listQuery = graphql`
             title
             url
           }
+        }
+      }
+    }
+    deviceImage: file(relativePath: { eq: "page/home/iDevices2.png"}) {
+      childImageSharp {
+        fluid {
+          base64
+          tracedSVG
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
+        }
+      }
+    }
+    appleImage: file(relativePath: { eq: "page/home/badge_appstore-lrg.svg"}) {
+      childImageSharp {
+        fluid {
+          base64
+          tracedSVG
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
+        }
+      }
+    }
+    googleImage: file(relativePath: { eq: "page/home/en_badge_web_generic-300x89.png"}) {
+      childImageSharp {
+        fluid {
+          base64
+          tracedSVG
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
+        }
+      }
+    }
+    pricingImage: file(relativePath: { eq:  "page/home/pricing.jpg" }) {
+      childImageSharp {
+        fluid {
+          base64
+          tracedSVG
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
         }
       }
     }

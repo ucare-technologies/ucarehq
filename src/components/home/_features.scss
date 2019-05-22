@@ -1,0 +1,24 @@
+.features {
+  background: rgba(white, 0.75);
+  margin-top: 70px;
+  .explore-more {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    .explore-more-btn {
+      background: #475364;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 25px;
+      font-size: 14px;
+      border-radius: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: all .4s ease;
+      line-height: 22px;
+    }
+    .explore-more-btn:hover {
+      background: #323a46;
+      text-decoration: none;
+    }
+  }
+}

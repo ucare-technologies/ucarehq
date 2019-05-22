@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2018-02-19T16:37:34.000Z
 url: /crisp-new-design/
+featured_image: friends04.jpg
 categories: Updates
 ---
 

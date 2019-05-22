@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2016-04-10T19:02:15.000Z
 url: /new-videos-kiosk-attendance-forms-processes-tasks-more/
+featured_image: 40.jpg
 categories: Help
 ---
 

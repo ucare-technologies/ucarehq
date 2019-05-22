@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2019-05-03T07:09:19.000Z
 url: /tip-how-to-insert-emoji-in-bulk-sms-%f0%9f%a5%b4/
+featured_image: emoji.jpg
 categories: Help,Tip
 ---
 

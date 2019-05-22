@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2018-03-22T07:37:02.000Z
 url: /recording-deaths-archiving-import-giving-gender-options/
+featured_image: deceased.jpg
 categories: Features,Updates
 ---
 

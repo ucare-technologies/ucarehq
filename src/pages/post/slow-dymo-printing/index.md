@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2018-04-26T06:07:07.000Z
 url: /slow-dymo-printing/
+featured_image: error-success.jpeg
 categories: Issues
 ---
 

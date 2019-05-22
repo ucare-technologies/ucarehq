@@ -4,6 +4,7 @@ author: des
 type: post
 date: 2019-04-29T23:00:13.000Z
 url: /good-bie-old-friend/
+featured_image: old-friend.jpg
 categories: Updates
 ---
 

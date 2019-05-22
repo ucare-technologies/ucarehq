@@ -6,7 +6,7 @@ module.exports = {
     menuLinks: [
       {
         name: 'features',
-        link: '/page/features/'
+        link: '/features/'
       },
       {
         name: 'pricing',
@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         name: 'blog',
-        link: '/page/blog'
+        link: '/blog'
       },
       {
         name: 'Signin',
@@ -28,11 +28,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,

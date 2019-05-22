@@ -4,7 +4,6 @@ author: hellohudson
 type: page
 date: 2016-07-28T11:44:08.000Z
 url: /sla/
-categories: 
 ---
 
 Standard terms applicable to all Service Levels outlined herein:
