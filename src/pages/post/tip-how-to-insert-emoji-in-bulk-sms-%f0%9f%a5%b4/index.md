@@ -1,5 +1,5 @@
 ---
-title: How to insert emoji in bulk SMS 🥴
+title: TIP&#58; How to insert emoji in bulk SMS 🥴
 author: des
 type: post
 date: 2019-05-03T07:09:19.000Z
@@ -16,7 +16,7 @@ For those churches that are using the bulk SMS features in UCare we wanted to sh
 2.  Use the keyboard shortcut **WIN + .** (the period / full-stop punctuation mark) to open the character viewer.
 3.  Click on the emoji that you want, keep clicking until you have inserted all the emoji you want. You can even type a word to find the right emoji.
 
-<style>img { box-shadow: 0 0 10px 0 rgba(0,0,0,0.5); margin: 1em 0; max-width: 100%; height: auto; } </style> ![](emoji-windows.png)
+ ![](emoji-windows.png)
 
 ### How to insert emoji on macOS
 

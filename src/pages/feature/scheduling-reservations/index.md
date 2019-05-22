@@ -6,19 +6,7 @@ date: 2016-08-20T05:01:40.000Z
 url: /scheduling-reservations/
 featured_image: scheduling.jpg
 feature_colour: #cddc39
-# svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-# 	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-# <g id="Layer_2">
-# 	<g id="New_icons">
-# 		<polyline class="st0" points="18,11.5 10.5,19.5 7,16 		"/>
-# 		<polyline class="st0" points="4.5,2.5 0.5,2.5 0.5,23.5 23.5,23.5 23.5,2.5 19.5,2.5 		"/>
-# 		<rect x="4.5" y="0.5" class="st0" width="3" height="4"/>
-# 		<rect x="16.5" y="0.5" class="st0" width="3" height="4"/>
-# 		<line class="st0" x1="7.5" y1="2.5" x2="16.5" y2="2.5"/>
-# 		<line class="st0" x1="0.5" y1="7.5" x2="23.5" y2="7.5"/>
-# 	</g>
-# </g>
-# </svg>
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g id="Layer_2"><g id="New_icons"> <polyline class="st0" points="18,11.5 10.5,19.5 7,16 "/> <polyline class="st0" points="4.5,2.5 0.5,2.5 0.5,23.5 23.5,23.5 23.5,2.5 19.5,2.5 "/> <rect x="4.5" y="0.5" class="st0" width="3" height="4"/> <rect x="16.5" y="0.5" class="st0" width="3" height="4"/> <line class="st0" x1="7.5" y1="2.5" x2="16.5" y2="2.5"/> <line class="st0" x1="0.5" y1="7.5" x2="23.5" y2="7.5"/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---
@@ -35,7 +23,15 @@ Keeping all your service plans on UCare will make it much easier to make those l
 
 ## Still more scheduling options
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> services, teams &amp; times.</li><li><strong>Unlimited</strong> people &amp; households, only pay for regular attendees.</li><li><strong>Multi-site</strong></li><li><strong>Send bulk SMS or email</strong> directly from UCare.</li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge.</li><li>The mobile app is supported on iOS 10+, Android 5+.</li>
+*   **Unlimited** services, teams & times.
+*   **Unlimited** people & households, only pay for regular attendees.
+*   **Multi-site**
+*   **Send bulk SMS or email** directly from UCare.
+*   All UCare activity is **fully audited for data privacy** reporting needs.
+*   **Optimized for low bandwidth** internet, no offline mode.
+*   **Encrypted internet connection** to protect all data.
+*   Supported on Google Chrome, Safari, Firefox, Edge.
+*   The mobile app is supported on iOS 10+, Android 5+.
 
 ### Get started quickly
 

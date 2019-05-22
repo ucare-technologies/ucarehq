@@ -19,10 +19,12 @@ We’re excited to publish the first of a series of new training videos that our
 
 With regards to our export options we’ve added the following new export options:
 
-<li><span class="Apple-tab-span" style="white-space: pre;"></span><a href="https://ucare.zendesk.com/hc/en-us/articles/204977300-Export-meeting-stats" target="_blank">Export meeting stats</a></li>
+*   [Export meeting stats](https://ucare.zendesk.com/hc/en-us/articles/204977300-Export-meeting-stats)
 
 We’ve also updated the following to include photo and page size options
 
-<li><span class="Apple-tab-span" style="white-space: pre;"></span><a href="https://ucare.zendesk.com/hc/en-us/articles/202204090-Export-group-members" target="_blank">Export group members</a></li><li><span class="Apple-tab-span" style="white-space: pre;"></span><a href="https://ucare.zendesk.com/hc/en-us/articles/204886370-Printing-church-directories-Exporting-addresses" target="_blank">Printing church directories / Exporting addresses</a></li><li><span class="Apple-tab-span" style="white-space: pre;"></span><a href="https://ucare.zendesk.com/hc/en-us/articles/202204250" target="_blank">Export attendees</a></li>
+*   [Export group members](https://ucare.zendesk.com/hc/en-us/articles/202204090-Export-group-members)
+*   [Printing church directories / Exporting addresses](https://ucare.zendesk.com/hc/en-us/articles/204886370-Printing-church-directories-Exporting-addresses)
+*   [Export attendees](https://ucare.zendesk.com/hc/en-us/articles/202204250)
 
 With these and other updates we’re working hard to make UCare smarter and easier to use, if you have any feedback we’d love to hear from you, simply email support@ucarehq.com.

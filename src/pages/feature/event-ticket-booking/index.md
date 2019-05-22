@@ -6,24 +6,7 @@ date: 2016-08-07T06:44:29.000Z
 url: /event-ticket-booking/
 featured_image: worship01.jpg
 feature_colour: #ff5722
-# svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-# 	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-# <g id="Layer_2">
-# 	<g id="Outline_Icons">
-# 		<polyline class="st0" points="4.5,2.5 0.5,2.5 0.5,23.5 23.5,23.5 23.5,2.5 19.5,2.5 		"/>
-# 		<rect x="4.5" y="0.5" class="st0" width="3" height="4"/>
-# 		<rect x="16.5" y="0.5" class="st0" width="3" height="4"/>
-# 		<line class="st0" x1="7.5" y1="2.5" x2="16.5" y2="2.5"/>
-# 		<line class="st0" x1="0.5" y1="7.5" x2="23.5" y2="7.5"/>
-# 		<line class="st0" x1="6.5" y1="9.5" x2="6.5" y2="21.5"/>
-# 		<line class="st0" x1="11.5" y1="9.5" x2="11.5" y2="21.5"/>
-# 		<line class="st0" x1="16.5" y1="9.5" x2="16.5" y2="21.5"/>
-# 		<line class="st0" x1="2.5" y1="11.5" x2="21.5" y2="11.5"/>
-# 		<line class="st0" x1="2.5" y1="15.5" x2="21.5" y2="15.5"/>
-# 		<line class="st0" x1="2.5" y1="19.5" x2="21.5" y2="19.5"/>
-# 	</g>
-# </g>
-# </svg>
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g id="Layer_2"><g id="Outline_Icons"> <polyline class="st0" points="4.5,2.5 0.5,2.5 0.5,23.5 23.5,23.5 23.5,2.5 19.5,2.5 "/> <rect x="4.5" y="0.5" class="st0" width="3" height="4"/> <rect x="16.5" y="0.5" class="st0" width="3" height="4"/> <line class="st0" x1="7.5" y1="2.5" x2="16.5" y2="2.5"/> <line class="st0" x1="0.5" y1="7.5" x2="23.5" y2="7.5"/> <line class="st0" x1="6.5" y1="9.5" x2="6.5" y2="21.5"/> <line class="st0" x1="11.5" y1="9.5" x2="11.5" y2="21.5"/> <line class="st0" x1="16.5" y1="9.5" x2="16.5" y2="21.5"/> <line class="st0" x1="2.5" y1="11.5" x2="21.5" y2="11.5"/> <line class="st0" x1="2.5" y1="15.5" x2="21.5" y2="15.5"/> <line class="st0" x1="2.5" y1="19.5" x2="21.5" y2="19.5"/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---
@@ -40,7 +23,48 @@ Easily handle different pricing levels, optional extras and collect extra attend
 
 ## Still more event options
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> events &amp; ticket types.</li><li><strong>Unlimited</strong> attendees, only pay for regular attendees.</li><li>Run <strong>classes, camps, outreach</strong> events and more.</li><li><strong>Touch ID or pin-code security</strong> so sensitive info isn’t easily accessed by others on your phone.</li><li>RFID wristbands speed up lines with <strong>2 second check-in</strong>.</li><li>Reports for <strong>sales, refunds, attendees</strong> and more.</li><li><strong>Custom searches and reports.</strong></li><li><strong>Download reports</strong> in CSV or PDF format.</li><li><strong>Flexible data import &amp; export</strong>; including unlimited custom fields.</li><li><strong>Send bulk SMS and email directly from UCare</strong> to attendees.</li><li>Publish <strong>event pages on our website</strong>.</li><li>Or easily embed <strong>event pages on your website</strong>.</li><li><strong>Publish an event calendar</strong> to our website or yours.</li><li>Quickly<strong> validate tickets at the door</strong> with the mobile app.</li><li>Express check-in <strong>group bookings</strong>.</li><li><strong>Group discount</strong> options – promo codes coming soon.</li><li>Multiple <strong>early bird ticket pricing</strong> levels.</li><li>Set <strong>capacities for each ticket type</strong>.</li><li>Optionally <strong>print attendee nametags</strong> at check-in.</li><li>Scan tickets to <strong>record attendance</strong>.</li><li>Run single or <strong>multi-day events</strong>.</li><li>Staff can<strong> manually register attendees</strong>.</li><li>Change event page design with <strong>custom CSS</strong>.</li><li><strong>Customize design</strong> of each ticket type.</li><li><strong>Provide directions</strong> with event location &amp; maps.</li><li>Customize attendee <strong>terms &amp; conditions</strong>.</li><li><strong>Responsive</strong> event pages.</li><li>Inbuilt<strong> email promotion</strong> or sync to MailChimp.</li><li>Add <strong>analytics tracking</strong>.</li><li><strong>Run free events or paid.</strong></li><li><strong>No per ticket fees</strong> from UCare.</li><li><strong>Issue refunds,</strong> both cash &amp; Card.</li><li>Payments in person or online via <strong>PayPal and Card</strong>.</li><li><strong>Avoid capacity problems</strong> from no-shows by charging refundable deposits.</li><li><strong>Over 100 currencies</strong> accepted by our payment processors.</li><li><strong>Flat monthly card processing</strong> fees with PushPay.</li><li>Or card transaction <strong>rates start at 1.75% + 30c per transaction</strong> with Stripe.</li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.</li><li>The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.</li>
+*   **Unlimited** events & ticket types.
+*   **Unlimited** attendees, only pay for regular attendees.
+*   Run **classes, camps, outreach** events and more.
+*   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.
+*   RFID wristbands speed up lines with **2 second check-in**.
+*   Reports for **sales, refunds, attendees** and more.
+*   **Custom searches and reports.**
+*   **Download reports** in CSV or PDF format.
+*   **Flexible data import & export**; including unlimited custom fields.
+*   **Send bulk SMS and email directly from UCare** to attendees.
+*   Publish **event pages on our website**.
+*   Or easily embed **event pages on your website**.
+*   **Publish an event calendar** to our website or yours.
+*   Quickly **validate tickets at the door** with the mobile app.
+*   Express check-in **group bookings**.
+*   **Group discount** options – promo codes coming soon.
+*   Multiple **early bird ticket pricing** levels.
+*   Set **capacities for each ticket type**.
+*   Optionally **print attendee nametags** at check-in.
+*   Scan tickets to **record attendance**.
+*   Run single or **multi-day events**.
+*   Staff can **manually register attendees**.
+*   Change event page design with **custom CSS**.
+*   **Customize design** of each ticket type.
+*   **Provide directions** with event location & maps.
+*   Customize attendee **terms & conditions**.
+*   **Responsive** event pages.
+*   Inbuilt **email promotion** or sync to MailChimp.
+*   Add **analytics tracking**.
+*   **Run free events or paid.**
+*   **No per ticket fees** from UCare.
+*   **Issue refunds,** both cash & Card.
+*   Payments in person or online via **PayPal and Card**.
+*   **Avoid capacity problems** from no-shows by charging refundable deposits.
+*   **Over 100 currencies** accepted by our payment processors.
+*   **Flat monthly card processing** fees with PushPay.
+*   Or card transaction **rates start at 1.75% + 30c per transaction** with Stripe.
+*   All UCare activity is **fully audited for data privacy** reporting needs.
+*   **Optimized for low bandwidth** internet, no offline mode.
+*   **Encrypted internet connection** to protect all data.
+*   Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.
+*   The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
 
 ### Get started quickly
 

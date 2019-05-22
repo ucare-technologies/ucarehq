@@ -18,13 +18,22 @@ UCareEmbed("ucare-embed-502429", "https://crm.ucareapp.com", "/signup", "https:/
 
 #### Your trial includes everything
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><ul class="checklist"><li>Unlimited users</li><li>People &amp; households</li><li>Child safety &amp; Check-in</li><li>Giving &amp; stores</li><li>Event registrations</li><li>Group management</li><li>Dashboards &amp; reports</li><li>Custom forms</li><li>Processes &amp; tasks</li><li>Bulk email &amp; SMS</li><li>Integrations &amp; API</li><li>Email support &amp; help center</li></ul>
+*   Unlimited users
+*   People & households
+*   Child safety & Check-in
+*   Giving & stores
+*   Event registrations
+*   Group management
+*   Dashboards & reports
+*   Custom forms
+*   Processes & tasks
+*   Bulk email & SMS
+*   Integrations & API
+*   Email support & help center
 
 ## Frequently Asked Questions
 
 We're here to help. If you run into any problems at all, feel free to use the help button to contact us.
-
-<style>.col-md-4{ padding-top:15px; padding-bottom:15px; }</style>
 
 #### Q: What happens after my trial?
 

@@ -6,14 +6,7 @@ date: 2016-08-07T06:49:21.000Z
 url: /giving-finances/
 featured_image: giving.jpg
 feature_colour: #009688
-# svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-# 	 viewBox="0 0 22 22.9" style="enable-background:new 0 0 22 22.9;" xml:space="preserve">
-# <g id="Layer_2">
-# 	<g id="Outline_Icons">
-# 		<path class="st0" d="M11,22.4c0,0,10.5-8.1,10.5-15.8S12.2-1.7,11,6C9.8-1.7,0.5-1.1,0.5,7.2S11,22.4,11,22.4z"/>
-# 	</g>
-# </g>
-# </svg>
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22.9" style="enable-background:new 0 0 22 22.9;" xml:space="preserve"><g id="Layer_2"><g id="Outline_Icons"> <path class="st0" d="M11,22.4c0,0,10.5-8.1,10.5-15.8S12.2-1.7,11,6C9.8-1.7,0.5-1.1,0.5,7.2S11,22.4,11,22.4z"/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---
@@ -30,7 +23,35 @@ The payment options include online, SMS, mobile or in-person. One-off or recurri
 
 ## Still more giving & finance options
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> payments.</li><li><strong>Unlimited</strong> people, only pay for regular attendees.</li><li><strong>Touch ID or pin-code security</strong> so sensitive info isn’t easily accessed by others on your phone.</li><li><strong>Multi-site</strong>.</li><li>Record pledges, donations and other payments.</li><li><strong>Flexible payment data import &amp; export</strong>.</li><li><strong>Use tags to categorize payment</strong>.</li><li><strong>Send tax statements</strong> to the entire church with just three clicks.</li><li>Export payments to your favorite accounting software, <strong>i.e. Quickbooks, Xero, etc</strong>.</li><li><strong>Receipts emailed with every payment</strong> unless you choose not to.</li><li>Easily <strong>resend receipts</strong> to donors &amp; customers.</li><li><strong>Issue refund,</strong> both cash &amp; Card.</li><li>Payments via <strong>card, cash, ACH, check or PayPal</strong>.</li><li><strong>PCI DSS compliant</strong> gives peace of mind that all payment info is secure.</li><li><strong>Over 100 currencies</strong> accepted by our payment processors.</li><li><strong>Flat monthly card processing</strong> fees &amp; <strong>10 second giving</strong> with <a href="https://ucarehq.com/blog/grow-your-church-donations-with-pushpay/">PushPay</a>.</li><li>Or card transaction <strong>rates start at 1.75% + 30c per transaction</strong> with Stripe.</li><li><strong>No per transaction fees</strong> from UCare.</li><li><strong>Send personalized bulk SMS and email directly from UCare</strong> to donors and customers.</li><li>Effortlessly <strong>embed payment forms on your website or in an app</strong>.</li><li>Publish a payment form to the UCare portal.</li><li>Customize embedded payment forms to <strong>match your website or app style</strong>.</li><li>Use on any tablet for <strong>kiosk giving</strong>.</li><li>Staff and volunteers can even <strong>process payments over the phone</strong>.</li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.</li><li>The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.</li>
+*   **Unlimited** payments.
+*   **Unlimited** people, only pay for regular attendees.
+*   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.
+*   **Multi-site**.
+*   Record pledges, donations and other payments.
+*   **Flexible payment data import & export**.
+*   **Use tags to categorize payment**.
+*   **Send tax statements** to the entire church with just three clicks.
+*   Export payments to your favorite accounting software, **i.e. Quickbooks, Xero, etc**.
+*   **Receipts emailed with every payment** unless you choose not to.
+*   Easily **resend receipts** to donors & customers.
+*   **Issue refund,** both cash & Card.
+*   Payments via **card, cash, ACH, check or PayPal**.
+*   **PCI DSS compliant** gives peace of mind that all payment info is secure.
+*   **Over 100 currencies** accepted by our payment processors.
+*   **Flat monthly card processing** fees & **10 second giving** with [PushPay](https://ucarehq.com/blog/grow-your-church-donations-with-pushpay/).
+*   Or card transaction **rates start at 1.75% + 30c per transaction** with Stripe.
+*   **No per transaction fees** from UCare.
+*   **Send personalized bulk SMS and email directly from UCare** to donors and customers.
+*   Effortlessly **embed payment forms on your website or in an app**.
+*   Publish a payment form to the UCare portal.
+*   Customize embedded payment forms to **match your website or app style**.
+*   Use on any tablet for **kiosk giving**.
+*   Staff and volunteers can even **process payments over the phone**.
+*   All UCare activity is **fully audited for data privacy** reporting needs.
+*   **Optimized for low bandwidth** internet, no offline mode.
+*   **Encrypted internet connection** to protect all data.
+*   Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.
+*   The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
 
 ### Get started quickly
 

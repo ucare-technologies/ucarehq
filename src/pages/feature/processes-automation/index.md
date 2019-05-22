@@ -6,17 +6,7 @@ date: 2016-08-07T06:46:19.000Z
 url: /processes-automation/
 featured_image: processes.jpg
 feature_colour: #3f51b5
-# svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-# 	 viewBox="0 0 24 18" style="enable-background:new 0 0 24 18;" xml:space="preserve">
-# <g id="Layer_2">
-# 	<g id="New_icons">
-# 		<path class="st0" d="M15.5,17.5h-9c-1.7,0-3-1.3-3-3l0,0v-8"/>
-# 		<path class="st0" d="M8.5,0.5h9c1.7,0,3,1.3,3,3v8"/>
-# 		<polyline class="st0" points="0.5,8.5 3.5,6.5 6.5,8.5 		"/>
-# 		<polyline class="st0" points="17.5,9.5 20.5,11.5 23.5,9.5 		"/>
-# 	</g>
-# </g>
-# </svg>
+svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 18" style="enable-background:new 0 0 24 18;" xml:space="preserve"><g id="Layer_2"><g id="New_icons"> <path class="st0" d="M15.5,17.5h-9c-1.7,0-3-1.3-3-3l0,0v-8"/> <path class="st0" d="M8.5,0.5h9c1.7,0,3,1.3,3,3v8"/> <polyline class="st0" points="0.5,8.5 3.5,6.5 6.5,8.5 "/> <polyline class="st0" points="17.5,9.5 20.5,11.5 23.5,9.5 "/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---
@@ -37,7 +27,30 @@ When you meet a visitor at church, it’s not rocket science to add their detail
 
 ## Still more process options
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> processes.</li><li><strong>Unlimited</strong> people, only pay for regular attendees.</li><li><strong>Touch ID or pin-code security</strong> so sensitive info isn’t easily accessed by others on your phone.</li><li><strong>Organize processes by type</strong>, for example by ministry type or location.</li><li><strong>Multi-site</strong>.</li><li><strong>Focus on the people</strong> your responsible for or on everyone.</li><li>Use the column success indicator to <strong>measure your team and improve the process.</strong></li><li>Each process is its own report that you can easily print.</li><li>View all process history.</li><li><strong>Customize the steps</strong> in each process.</li><li>Automate sending <strong>personalized email &amp; SMS.</strong></li><li>Automate <strong>adding or removing from a group, meeting or another process.</strong></li><li>Automate <strong>updating the person’s profile.</strong></li><li>Automate assigning <strong>additional tasks to others.</strong></li><li>Automate adding people who <strong>order resource.</strong></li><li>Automate adding people the <strong>register for an event.</strong></li><li>Automate adding people who <strong>submit <a href="/features/forms-and-surveys/">form</a> responses.</strong></li><li>Link forms for prayer requests, web concierge requests, volunteer applications, getting married, etc.</li><li>Assigned people <strong>receive daily summary of due follow-up.</strong></li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.</li><li>The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.</li>
+*   **Unlimited** processes.
+*   **Unlimited** people, only pay for regular attendees.
+*   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.
+*   **Organize processes by type**, for example by ministry type or location.
+*   **Multi-site**.
+*   **Focus on the people** your responsible for or on everyone.
+*   Use the column success indicator to **measure your team and improve the process.**
+*   Each process is its own report that you can easily print.
+*   View all process history.
+*   **Customize the steps** in each process.
+*   Automate sending **personalized email & SMS.**
+*   Automate **adding or removing from a group, meeting or another process.**
+*   Automate **updating the person’s profile.**
+*   Automate assigning **additional tasks to others.**
+*   Automate adding people who **order resource.**
+*   Automate adding people the **register for an event.**
+*   Automate adding people who **submit [form](/features/forms-and-surveys/) responses.**
+*   Link forms for prayer requests, web concierge requests, volunteer applications, getting married, etc.
+*   Assigned people **receive daily summary of due follow-up.**
+*   All UCare activity is **fully audited for data privacy** reporting needs.
+*   **Optimized for low bandwidth** internet, no offline mode.
+*   **Encrypted internet connection** to protect all data.
+*   Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.
+*   The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
 
 ### Get started quickly
 

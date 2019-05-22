@@ -13,7 +13,16 @@ As you hover over each person on these pages a check box appears to the left of 
 
 ![](bulk-people.png) 
 
-<li><strong>Add selected people to...</strong>: Add the selected people to another group, meeting or process.</li><li><strong>Remove selected members</strong>: Remove the selected members from the group (only available under members on the group page).</li><li><strong>Add selected people as members</strong>: Add the selected visitors to the group (only available under visitors on the group page).</li><li><strong>Delete selected people</strong>: Delete all the selected people.</li><li><strong>Remove from all groups</strong>: Remove the selected people from all groups.</li><li><strong>Add a note...</strong>: Add a note to all the selected people.</li><li><strong>Add or remove date....</strong>: Add or remove a date to the selected people.</li><li><strong>Add or remove more detail...</strong>: Add or remove a more detail field to the selected people.</li><li><strong>Update email...</strong>: Reset a failed email address, or subscribe/unsubscribe the selected people from email.</li><li><strong>Update gender...</strong>: Update the gender of the selected people.</li>
+*   **Add selected people to...**: Add the selected people to another group, meeting or process.
+*   **Remove selected members**: Remove the selected members from the group (only available under members on the group page).
+*   **Add selected people as members**: Add the selected visitors to the group (only available under visitors on the group page).
+*   **Delete selected people**: Delete all the selected people.
+*   **Remove from all groups**: Remove the selected people from all groups.
+*   **Add a note...**: Add a note to all the selected people.
+*   **Add or remove date....**: Add or remove a date to the selected people.
+*   **Add or remove more detail...**: Add or remove a more detail field to the selected people.
+*   **Update email...**: Reset a failed email address, or subscribe/unsubscribe the selected people from email.
+*   **Update gender...**: Update the gender of the selected people.
 
   
 We’ve also added a bulk change type action to the group list, form list and process list pages. As with people select each item that you want to perform the action on and then click the action menu. Finally enter the new type and click change type.

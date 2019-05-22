@@ -1,5 +1,5 @@
 ---
-title: Slow DYMO printing
+title: RESOLVED&#58; Slow DYMO printing
 author: des
 type: post
 date: 2018-04-26T06:07:07.000Z

@@ -21,7 +21,7 @@ import Layout from "../components/layout"
 const IndexPage = (props) => {
   const homepage = props.data.allMarkdownRemark;
   const { title } = homepage.edges[0].node.frontmatter;
-  document.title = `UCare | ${title}`;
+  // document.title = `UCare | ${title}`;
   return (
     <Layout>
       <ChurchManagement/>

@@ -32,7 +32,7 @@ So let’s look at how you use these new options.
 
 Start by tapping **New > Team** to create a team.
 
-<style>img { box-shadow: 0 0 10px 0 rgba(0,0,0,0.5); margin: 1em 0; max-width: 100%; height: auto; } </style> ![](teams.new_.png)
+ ![](teams.new_.png)
 
 Next assign team members. As you do you’ll be able to set leaders and assign each person on ore more skills related to that team. Skills will help later by allowing UCare to find the best person for each service position.
 

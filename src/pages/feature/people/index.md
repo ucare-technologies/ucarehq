@@ -23,7 +23,29 @@ Whether you have just a few people or thousands, you can see everything that’s
 
 ## More people options
 
-<style>ul.checklist{padding:0} ul.checklist li{padding:2px 0 6px 36px;background:url(/wp-content/uploads/2016/10/check2.svg) no-repeat 0 0;list-style:none}</style><li><strong>Unlimited</strong> people, only pay for regular attendees.</li><li>Unlimited notes, relationships, custom dates &amp; fields, contact info &amp; groups.</li><li><strong>Touch ID or pin-code security</strong> so sensitive info isn’t easily accessed by others on your phone.</li><li><strong>Multi-site</strong>.</li><li><strong>Limit access to sensitive info</strong>, including notes, contact info, custom dates &amp; fields.</li><li><strong>Give people access</strong> to exactly what you want.</li><li>Flag the <strong>preferred contact method</strong>.</li><li><strong>Unsubscribe from email or SMS</strong>.</li><li>View <strong>attendance, payment and event history</strong>.</li><li>Easily <strong>change photo’s using the camera</strong> on any tablet or phone.</li><li>Merge duplicate profiles or use the bulk <strong>duplicate finder</strong>.</li><li><strong>Split &amp; merge households</strong> with ease.</li><li>People can <strong>update their details</strong> from a link included in every UCare email.</li><li>Or send a bulk <strong>please update your details</strong> email to people.</li><li><strong>Send personalized email or SMS</strong> to one or multiple people.</li><li><strong>Print directories or export</strong> just the info you need using <a href="/features/groups/">Groups</a>.</li><li>Switch the people page to <strong>face view so you can better see every person</strong>.</li><li><strong>Assign tasks that anyone can complete</strong> from their email inbox, no password required.</li><li>All UCare activity is <strong>fully audited for data privacy</strong> reporting needs.</li><li><strong>Optimized for low bandwidth</strong> internet, no offline mode.</li><li><strong>Encrypted internet connection</strong> to protect all data.</li><li>Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.</li><li>The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.</li>
+*   **Unlimited** people, only pay for regular attendees.
+*   Unlimited notes, relationships, custom dates & fields, contact info & groups.
+*   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.
+*   **Multi-site**.
+*   **Limit access to sensitive info**, including notes, contact info, custom dates & fields.
+*   **Give people access** to exactly what you want.
+*   Flag the **preferred contact method**.
+*   **Unsubscribe from email or SMS**.
+*   View **attendance, payment and event history**.
+*   Easily **change photo’s using the camera** on any tablet or phone.
+*   Merge duplicate profiles or use the bulk **duplicate finder**.
+*   **Split & merge households** with ease.
+*   People can **update their details** from a link included in every UCare email.
+*   Or send a bulk **please update your details** email to people.
+*   **Send personalized email or SMS** to one or multiple people.
+*   **Print directories or export** just the info you need using [Groups](/features/groups/).
+*   Switch the people page to **face view so you can better see every person**.
+*   **Assign tasks that anyone can complete** from their email inbox, no password required.
+*   All UCare activity is **fully audited for data privacy** reporting needs.
+*   **Optimized for low bandwidth** internet, no offline mode.
+*   **Encrypted internet connection** to protect all data.
+*   Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.
+*   The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
 
 ### Get started quickly
 
