@@ -1,6 +1,23 @@
 .features {
-  background: rgba(white, 0.75);
+  background-color: rgba(50,58,70,.025);
   margin-top: 70px;
+  .features-title {
+    padding-top: 70px;
+  }
+  .circle {
+    background-color: #4caf50;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 60px;
+    h6 {
+      font-size: 80%;
+      color: #000;
+    }
+  }
   .explore-more {
     padding-top: 10%;
     padding-bottom: 10%;
