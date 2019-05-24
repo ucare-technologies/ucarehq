@@ -17,7 +17,7 @@ module.exports = {
         link: 'https://ucare.zendesk.com/hc/en-us'
       },
       {
-        name: 'blog',
+        name: 'features',
         link: '/blog'
       },
       {

@@ -1,0 +1,26 @@
+$trial-color: #72be1a;
+$trial_hover_color: #8ce229;
+.navbar {
+  .trials-free-btn {
+    background: $trial-color;
+    padding: 10px 25px;
+    line-height: 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    transition:all .4s ease;
+    color: hsla(0,0%,100%,.85);
+    text-decoration: none;
+    border: none;
+    text-transform: uppercase;
+  }
+  .trials-free-btn:hover {
+    background: $trial_hover_color;
+    color: #3c640e;
+  }
+  .item {
+    font-size: 18 px;
+    text-transform: uppercase;
+    color: hsla(0,0%,100%,.9);
+  }
+}

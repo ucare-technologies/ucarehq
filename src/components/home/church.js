@@ -6,7 +6,7 @@ const ChurchManagement = (props) => {
       <div className="container">
         <div className="row text-center">
           <h1 className="church-title">
-            church management.<strong>simplified</strong>
+            {/* church management.<strong>simplified</strong> */}
           </h1>
         </div>
       </div>
