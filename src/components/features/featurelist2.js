@@ -11,7 +11,7 @@ const FeatureList2 = () => (
   <div>
     <div className="row">
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle surveys">
           <a href="/forms-and-surveys/">
             <SurveysIcons />
           </a>
@@ -19,7 +19,7 @@ const FeatureList2 = () => (
         <h6>Forms & Surveys</h6>
       </div>
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle online-stores">
           <a href="/online-stores/">
             <OnlinestoresIcons />
           </a>
@@ -27,7 +27,7 @@ const FeatureList2 = () => (
         <h6>Online Stores & POS</h6>
       </div>
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle dashboards">
           <a href="/dashboards/">
             <DashboardsIcons />
           </a>
@@ -37,7 +37,7 @@ const FeatureList2 = () => (
     </div>
     <div className="row my-4">
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle scheduing">
           <a href="/scheduling-reservations/">
             <SchedulingIcons />
           </a>
@@ -45,7 +45,7 @@ const FeatureList2 = () => (
         <h6>Scheduling & Reservations</h6>
       </div>
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle people">
           <a href="/people/">
             <PeopleIcons />
           </a>
@@ -53,7 +53,7 @@ const FeatureList2 = () => (
         <h6>People</h6>
       </div>
       <div className="col-md-4">
-        <div className="circle">
+        <div className="circle security">
           <a href="/security/">
             <SecurityIcons />
           </a>

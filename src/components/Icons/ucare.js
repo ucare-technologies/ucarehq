@@ -1,26 +1,26 @@
 import React from 'react';
 
-const SVG = ({
-  name = '',
+const UcareIcon = ({
   style = {},
-  fill = '#fff',
-  width = '30%',
-  className = '',
-  height = '30%',
-  viewbox = '0 0 16 16',
+  height = '50px',
 }) => (
     <svg
-      width={ width }
-      style={ style }
-      height={ height }
-      viewBox={ viewbox }
-      className={ className }
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+    style={ style }
+    height={ height }
+    viewBox='0 0 24 24'
+    fill="#e10332"
+    stroke="#fff"
+    className=''
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <g id="Layer_2"><g id="Outline_Icons"> <polyline className="st0" points="23.5,23.5 0.5,23.5 0.5,0.5 "/> <circle className="st0" cx="7.5" cy="16.5" r="1.5"/> <line className="st0" x1="16.9" y1="8.3" x2="21" y2="3.1"/> <line className="st0" x1="9.9" y1="7.5" x2="14.6" y2="9.1"/> <line className="st0" x1="0.5" y1="11.8" x2="7.2" y2="7.8"/> <line className="st0" x1="16.3" y1="15.8" x2="20.7" y2="13.3"/> <line className="st0" x1="9" y1="16.5" x2="13.5" y2="16.5"/> <line className="st0" x1="0.5" y1="21" x2="6.2" y2="17.3"/> <circle className="st0" cx="8.5" cy="7" r="1.5"/> <circle className="st0" cx="16" cy="9.5" r="1.5"/> <circle className="st0" cx="22" cy="2" r="1.5"/> <circle className="st0" cx="22" cy="12.5" r="1.5"/> <circle className="st0" cx="15" cy="16.5" r="1.5"/> </g></g>
+      <path d="M49.9,5.2c-5.3,0-10.4,2.3-13.9,5.9c-0.5,0.5-1.2,0.5-1.7,0c-3.6-3.7-8.7-5.9-13.9-5.9c-10.1,0-18.1,8-18.1,18.1
+        c0,12.4,11.2,22.6,28.1,37.9l3.8,3.5c0.5,0.5,1.3,0.5,1.9,0l3.8-3.5C56.8,45.8,68,35.7,68,23.3C68,13.1,60.1,5.2,49.9,5.2z
+        M50.8,34.1c0,2.2-0.4,4.3-1.1,6.1c-0.7,1.9-1.8,3.5-3.1,4.8c-1.4,1.4-3,2.4-4.9,3.2c-1.9,0.7-4.1,1.1-6.5,1.1
+        c-2.4,0-4.6-0.4-6.5-1.1c-1.9-0.7-3.6-1.8-4.9-3.2c-1.4-1.4-2.4-3-3.1-4.8c-0.7-1.9-1.1-3.9-1.1-6.1V13.8c0-0.6,0.5-1.1,1.1-1.1
+        c0,0,1.2,0,2.4,0.3c2,0.5,5.7,2.2,5.7,5.3v15.8c0,1.2,0.2,2.3,0.4,3.2c0.3,0.9,0.7,1.7,1.3,2.3c0.5,0.6,1.2,1.1,2,1.4
+        c0.8,0.3,1.7,0.5,2.7,0.5c1,0,1.9-0.2,2.7-0.5c0.8-0.3,1.5-0.8,2-1.4c0.5-0.6,1-1.4,1.3-2.3c0.3-0.9,0.4-2,0.4-3.2V18.2
+        c0-3.1,3.5-4.8,5.4-5.3c1.2-0.3,2.7-0.3,2.7-0.3c0.6,0,1.1,0.5,1.1,1.1V34.1z"></path>
     </svg>
-)
-  
-
-export default SVG;
+  )
+export default UcareIcon;
