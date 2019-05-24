@@ -34,7 +34,7 @@ const FeatureList = () => (
         <h6>Event Bookings</h6>
       </div>
     </div>
-    <div className="row">
+    <div className="row my-4">
       <div className="col-md-4">
         <div className="circle">
           <a href="/groups/">

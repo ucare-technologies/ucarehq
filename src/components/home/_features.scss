@@ -4,20 +4,6 @@
   .features-title {
     padding-top: 70px;
   }
-  .circle {
-    background-color: #4caf50;
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 60px;
-    h6 {
-      font-size: 80%;
-      color: #000;
-    }
-  }
   .explore-more {
     padding-top: 10%;
     padding-bottom: 10%;
@@ -37,5 +23,21 @@
       background: #323a46;
       text-decoration: none;
     }
+  }
+}
+
+
+.circle {
+  background-color: #4caf50;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 60px;
+  h6 {
+    font-size: 80%;
+    color: #000;
   }
 }

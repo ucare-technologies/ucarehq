@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import FeatureList from '../components/features/featurelists';
+import FeatureList2 from '../components/features/featurelist2';
 import LatestBlog from '../components/blogs/latestblog';
 
 const Features = () => (
@@ -44,7 +45,8 @@ const Features = () => (
               UCare provides effective and easy to use all-in-one church management solution that doesn’t cost the world so you can focus on ministry and loving people. Explore each powerful feature to find out how UCare handles the simplest to the most complex needs.
             </div>
             <div>
-              <FeatureList />
+                <FeatureList />
+                <FeatureList2 />
             </div>
             <div>
               <LatestBlog />
