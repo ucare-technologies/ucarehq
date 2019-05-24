@@ -36,7 +36,7 @@ class Header extends Component {
       <Navbar
         collapseOnSelect 
         expand="lg"
-        bg={this.state.isTop ? 'drak': 'light'}
+        bg={ this.state.isTop ? 'transparent': 'light' }
         variant="transparent" 
         fixed="top"
         className="navbar"
@@ -47,7 +47,7 @@ class Header extends Component {
           <Nav className="mx-auto">
             <Nav.Link href="/features" className="item nav-features">features</Nav.Link>
             <Nav.Link href="/" className="item pricing">pricing</Nav.Link>
-            <Nav.Link href="/https://ucare.zendesk.com/hc/en-us" className="item support">support</Nav.Link>
+            <Nav.Link href="https://ucare.zendesk.com/hc/en-us" className="item support">support</Nav.Link>
             <Nav.Link href="/blog" className="item blog">blog</Nav.Link>
             <Nav.Link 
               href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"

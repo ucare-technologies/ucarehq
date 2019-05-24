@@ -19,8 +19,10 @@ $trial_hover_color: #8ce229;
     color: #3c640e;
   }
   .item {
-    font-size: 18 px;
+    font-size: 16px;
     text-transform: uppercase;
     color: hsla(0,0%,100%,.9);
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 }
