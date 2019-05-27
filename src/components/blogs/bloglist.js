@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./bloglist.scss";
 
 class bloglist extends Component {
   constructor(props) {
@@ -27,9 +26,18 @@ class bloglist extends Component {
                   <p>{ excerpt }</p>
                 </div>
               </article>
+              <div>
+                <a 
+                  href={url}
+                  className="readmore">
+                    Readmore
+                </a>
+              </div>
             </div>
           </div>
-          <div className="col-md-3"></div>
+          <div className="col-md-3">
+            
+          </div>
         </div>
       </div>
      );

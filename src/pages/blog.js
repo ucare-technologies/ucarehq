@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/layout';
 import BlogList from '../components/blogs/bloglist';
@@ -10,7 +11,15 @@ class Blog extends Component {
     this.state = { 
       initImage: "",
       page : 0,
-     }
+    }
+    this.handleNext = this.handleNext.bind(this);
+    this.handlePrevious = this.handlePrevious.bind(this);
+  }
+  handlePrevious() {
+    this.setState({ page: this.state.page + 1 });
+  }
+  handleNext() {
+    this.setState({ page: this.state.page - 1 });
   }
   render() { 
     return ( 
@@ -54,10 +63,17 @@ class Blog extends Component {
                 }
               }
             }
+            blog: file(relativePath: { eq: "page/blog/friends04.jpg" }) {
+              childImageSharp {
+                fluid(quality: 90, maxWidth: 4160) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         `}
         render={ data => {
-          const { allMarkdownRemark, allFile } = data;
+          const { allMarkdownRemark, allFile, blog } = data;
           const { page } = this.state;
           let imageArray = [];
           let pageLimit = 0;
@@ -84,25 +100,61 @@ class Blog extends Component {
                 excerpt
               })
             ))
+            console.log(imageArray);
           }
           return (
             <Layout>
+              <div className="container-fluid p-0 header">
+                <BackgroundImage
+                  Tag="section"
+                  className="blog-init"
+                  fluid={ blog.childImageSharp.fluid }
+                  backgroundColor={ `rgba(50, 58, 70, .5)` }
+                  style={ {
+                    height: '400px',
+                    background: 'rgba(50,58,70,.5)',
+                  }}
+                >
+                  <h1>BackgroundImage</h1>
+                </BackgroundImage>
+              </div>
               <div className="container">
-                <div className="row">
-
-                </div>
                 {
                   imageArray.map((item, key) => (
                     <BlogList
-                    title={ item.title }
-                    date={ item.date }
-                    url={ item.url }
-                    excerpt={ item.excerpt }
-                    imageURL={ item.imageUrl }
-                    key={key}
+                      title={ item.title }
+                      date={ item.date }
+                      url={ item.url }
+                      excerpt={ item.excerpt }
+                      imageURL={ item.imageUrl }
+                      key={key}
                   />
                   ))
                 }
+                <hr />
+                <div>
+                  { page !== 8 &&  (
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={this.handlePrevious}
+                    >
+                      Previous
+                    </button>
+                    
+                  ) } 
+                  {
+                    page !== 0 && (
+                      <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={this.handleNext}
+                    >
+                      Next
+                    </button> 
+                    )
+                  }
+                </div>
               </div>
             </Layout>
           )
