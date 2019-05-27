@@ -19,8 +19,8 @@ import Layout from "../components/layout"
  * @see https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91 
  */
 const IndexPage = (props) => {
-  const homepage = props.data.allMarkdownRemark;
-  const { title } = homepage.edges[0].node.frontmatter;
+  // const homepage = props.data.allMarkdownRemark;
+  // const { title } = homepage.edges[0].node.frontmatter;
   // document.title = `UCare | ${title}`;
   return (
     <Layout>

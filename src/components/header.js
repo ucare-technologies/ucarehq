@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Navbar, Nav } from 'react-bootstrap';
 
 import UcareIcons from './Icons/ucare';
+import UcareExpandIcon from './Icons/ucareexpand';
 
 class Header extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ class Header extends Component {
         fixed="top"
         className="navbar"
       >
-        <Navbar.Brand href="/"><UcareIcons /></Navbar.Brand>
+        <Navbar.Brand href="/">
+          { this.state.isTop ? <UcareExpandIcon /> : <UcareIcons />}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
