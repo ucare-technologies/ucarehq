@@ -100,7 +100,6 @@ class Blog extends Component {
                 excerpt
               })
             ))
-            console.log(imageArray);
           }
           return (
             <Layout>
