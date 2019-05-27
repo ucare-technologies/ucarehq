@@ -52,7 +52,9 @@ class Header extends Component {
             <Nav.Link 
               href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
               className="item sign-in"
-            >sign in</Nav.Link>
+            >
+              sign in
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Item>
