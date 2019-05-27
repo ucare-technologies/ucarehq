@@ -20,7 +20,7 @@ const FeatureList2 = () => (
       </div>
       <div className="col-md-4">
         <div className="circle online-stores">
-          <a href="/online-stores/">
+          <a href="/feature/online-stores/">
             <OnlinestoresIcons />
           </a>
         </div>
@@ -28,7 +28,7 @@ const FeatureList2 = () => (
       </div>
       <div className="col-md-4">
         <div className="circle dashboards">
-          <a href="/dashboards/">
+          <a href="/feature/dashboards/">
             <DashboardsIcons />
           </a>
         </div>
@@ -37,8 +37,8 @@ const FeatureList2 = () => (
     </div>
     <div className="row my-4">
       <div className="col-md-4">
-        <div className="circle scheduing">
-          <a href="/scheduling-reservations/">
+        <div className="circle scheduling">
+          <a href="/feature/scheduling-reservations/">
             <SchedulingIcons />
           </a>
         </div>
@@ -46,7 +46,7 @@ const FeatureList2 = () => (
       </div>
       <div className="col-md-4">
         <div className="circle people">
-          <a href="/people/">
+          <a href="/feature/people/">
             <PeopleIcons />
           </a>
         </div>
@@ -54,7 +54,7 @@ const FeatureList2 = () => (
       </div>
       <div className="col-md-4">
         <div className="circle security">
-          <a href="/security/">
+          <a href="/feature/security/">
             <SecurityIcons />
           </a>
         </div>

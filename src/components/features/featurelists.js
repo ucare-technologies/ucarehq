@@ -11,7 +11,7 @@ const FeatureList = () => (
     <div className="row">
       <div className="col-md-4">
         <div className="circle attendance">
-          <a href="/attendance-tracking/">
+          <a href="/feature/attendance-tracking/">
             <AttendanceIcon />
           </a>
         </div>
@@ -19,7 +19,7 @@ const FeatureList = () => (
       </div>
       <div className="col-md-4">
         <div className="circle child">
-          <a href="/check-in-child-safety/">
+          <a href="/feature/check-in-child-safety/">
             <ChildIcon />
           </a>
         </div>
@@ -27,7 +27,7 @@ const FeatureList = () => (
       </div>
       <div className="col-md-4">
         <div className="circle event-booking">
-          <a href="/event-ticket-booking/">
+          <a href="/feature/event-ticket-booking/">
             <EventBooking />
           </a>
         </div>
@@ -37,7 +37,7 @@ const FeatureList = () => (
     <div className="row my-4">
       <div className="col-md-4">
         <div className="circle groups">
-          <a href="/groups/">
+          <a href="/feature/groups/">
             <Group />
           </a>
         </div>
@@ -45,7 +45,7 @@ const FeatureList = () => (
       </div>
       <div className="col-md-4">
         <div className="circle process">
-          <a href="/processes-automation/">
+          <a href="/feature/processes-automation/">
             <Process />
           </a>
         </div>
@@ -53,7 +53,7 @@ const FeatureList = () => (
       </div>
       <div className="col-md-4">
         <div className="circle giving">
-          <a href="/giving-finances/">
+          <a href="/feature/giving-finances/">
             <Giving />
           </a>
         </div>
