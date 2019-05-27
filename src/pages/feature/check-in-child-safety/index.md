@@ -25,7 +25,7 @@ Whether your children’s ministry is large or small, UCare makes it quick yet s
 
 ## Still more check-in options
 
-✔️   **Unlimited** classes, rooms, age groups, times.
+   **Unlimited** classes, rooms, age groups, times.
 *   **Unlimited** people & households, only pay for regulars.
 *   **Unlimited** check-in stations, phone, tablet, laptop or desktop.
 *   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.
@@ -61,7 +61,7 @@ Whether your children’s ministry is large or small, UCare makes it quick yet s
 *   **Optimized for low bandwidth** internet, no offline mode.
 *   **Encrypted internet connection** to protect all data.
 *   Supported on Google Chrome, Safari, Firefox, Edge and Internet Explorer 11+.
-✔️   The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
+    The mobile app is supported on iOS 8+, Android 4.4+ or Windows Phone 8+.
 
 ### Get started quickly
 

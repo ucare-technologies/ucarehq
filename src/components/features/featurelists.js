@@ -23,7 +23,7 @@ const FeatureList = () => (
             <ChildIcon />
           </a>
         </div>
-        <h6>Child-in & Child Safety</h6>
+        <h6>Check-in & Child Safety</h6>
       </div>
       <div className="col-md-4">
         <div className="circle event-booking">
