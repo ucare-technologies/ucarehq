@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         name: 'features',
-        link: '/blog'
+        link: 'page/blog'
       },
       {
         name: 'Signin',

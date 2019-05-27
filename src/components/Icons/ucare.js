@@ -8,7 +8,7 @@ const UcareIcon = ({
     <svg
     style={ style }
     height= '50px'
-    viewBox='0 0 70 70'
+    viewBox='0 0 200 70'
     fill="#e10332"
     stroke="#e10332"
     className=''
