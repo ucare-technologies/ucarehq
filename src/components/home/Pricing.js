@@ -7,7 +7,7 @@ const Pricing = ({className}) => (
   <StaticQuery
     query={ graphql`
       query {
-        pricing: file(relativePath: { eq: "pricing.jpg"}) {
+        pricing: file(relativePath: { eq: "page/home/pricing.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 4160) {
               ...GatsbyImageSharpFluid_withWebp
@@ -17,7 +17,7 @@ const Pricing = ({className}) => (
       }
     `}
     render={ data => {
-      const imageData = data.pricing.childImageSharp.fluid
+      const imageData = data.pricing.childImageSharp.fluid;
       return (
         <BackgroundImage
           Tag="section"

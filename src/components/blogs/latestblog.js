@@ -6,12 +6,8 @@ const LatestBlog = () => (
   <StaticQuery
     query={ graphql`
       query {
-        allFile(filter: { relativePath: { eq: "post/good-bie-old-friend/old-friend.jpg"}}) {
-        edges {
-          node {
-            publicURL
-          }
-        }
+        file(relativePath: { eq: "post/good-bie-old-friend/old-friend.jpg"}) {
+          publicURL
       }
       allMarkdownRemark(filter: { frontmatter: { url: {eq: "/good-bie-old-friend/"}}}) {
         edges {
@@ -27,7 +23,7 @@ const LatestBlog = () => (
     }
     `}
     render={ data => {
-      const { publicURL } = data.allFile.edges[0].node;
+      const { publicURL } = data.file;
       const { frontmatter: { date, title }, excerpt } = data.allMarkdownRemark.edges[0].node;
       return (
         <div className="container-fluid text-center latestblog">

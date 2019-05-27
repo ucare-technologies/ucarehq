@@ -51,7 +51,7 @@ class Header extends Component {
             <Nav.Link href="/features" className="item nav-features">features</Nav.Link>
             <Nav.Link href="/" className="item pricing">pricing</Nav.Link>
             <Nav.Link href="https://ucare.zendesk.com/hc/en-us" className="item support">support</Nav.Link>
-            <Nav.Link href="/page/blog" className="item blog">blog</Nav.Link>
+            <Nav.Link href="/blog" className="item blog">blog</Nav.Link>
             <Nav.Link 
               href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
               className="item sign-in"
