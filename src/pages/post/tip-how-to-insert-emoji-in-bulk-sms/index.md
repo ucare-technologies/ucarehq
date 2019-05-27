@@ -3,7 +3,7 @@ title: TIP&#58; How to insert emoji in bulk SMS 🥴
 author: des
 type: post
 date: 2019-05-03T07:09:19.000Z
-url: /tip-how-to-insert-emoji-in-bulk-sms-%f0%9f%a5%b4/
+url: /tip-how-to-insert-emoji-in-bulk-sms/
 featured_image: emoji.jpg
 categories: Help,Tip
 ---

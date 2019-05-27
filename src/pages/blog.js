@@ -112,9 +112,10 @@ class Blog extends Component {
                   style={ {
                     height: '400px',
                     background: 'rgba(50,58,70,.5)',
-                  }}
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover'
+                  } }
                 >
-                  <h1>BackgroundImage</h1>
                 </BackgroundImage>
               </div>
               <div className="container">
