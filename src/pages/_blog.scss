@@ -1,0 +1,17 @@
+.blog-list-main {
+  margin-top: 100px;
+  .arrow {
+    .arrow-btn {
+      padding: 8px 20px 10px;
+      border-radius: 0;
+      background: #e10332;
+      .arrow-icon {
+        color: #fff;
+        font-size: 70%;
+      }
+    }
+    .arrow-btn:hover {
+      background: #af0227;
+    }
+  }
+}  

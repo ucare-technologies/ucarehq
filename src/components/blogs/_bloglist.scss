@@ -1,0 +1,38 @@
+$transition_attr: all .4s ease;
+.bloglist {
+  .entry-content {
+    span {
+      color: rgba(50,58,70,.5);
+      font-size: 90%;
+      line-height: 1.5;
+    }
+    h2 {
+      // font-size: 240%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .blog-title {
+        color: #323a46;
+        font-size: 80%;
+        transition: $transition_attr;
+        text-decoration: none;
+      }
+      .blog-title:hover {
+        text-decoration: none;
+        color: #e10332;
+      }
+    }
+    .readmore {
+      text-decoration: none;
+      background-color: #af0227;
+      color: hsla(0,0%,100%,.85);
+      font-size: 80%;
+      transition: $transition_attr;
+      padding: 10px 25px;
+      line-height: 22px;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      border: none;
+      font-weight: 400px;
+    }
+  }
+}

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-
+import moment from 'moment';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+/**
+ * @see https://scotch.io/tutorials/using-font-awesome-5-with-react
+ * Using fontawesome
+ */
 class bloglist extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +14,7 @@ class bloglist extends Component {
   render() { 
     const { title, date, url, excerpt, imageURL } = this.props;
     return ( 
-      <div className="container">
+      <div className="container bloglist">
         <div className="row">
           <div className="col-md-9">
             <div className="entry-image">
@@ -19,24 +25,23 @@ class bloglist extends Component {
             <div className="entry-content">
               <article>
                 <h2>
-                  <a href={ url }>{ title }</a>
+                  <a href={ url } className="blog-title">{ title }</a>
                 </h2>
-                <span>{ date }</span>
+                <span>
+                  <FontAwesomeIcon icon={ faCalendarAlt } />&nbsp;&nbsp;
+                  { moment().format("D MMMM YYYY") }
+                </span>
                 <div className="entry-summary">
                   <p>{ excerpt }</p>
                 </div>
               </article>
               <div>
-                <a 
-                  href={url}
-                  className="readmore">
-                    Readmore
+                <a href={url} className="readmore">
+                    Readmore&nbsp;&nbsp;<FontAwesomeIcon icon={ faChevronRight } />
                 </a>
+                <hr />
               </div>
             </div>
-          </div>
-          <div className="col-md-3">
-            
           </div>
         </div>
       </div>

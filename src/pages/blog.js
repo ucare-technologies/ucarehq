@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 import BlogList from '../components/blogs/bloglist';
@@ -88,7 +90,7 @@ class Blog extends Component {
             if (allMarkdownRemark.edges[i].node.frontmatter.featured_image) {
               relativePath = allMarkdownRemark.edges[i].node.frontmatter.featured_image.relativePath
             } else {
-              
+
             }
             const { excerpt } = allMarkdownRemark.edges[i].node;
             allFile.edges.map((item, key) => (
@@ -119,7 +121,7 @@ class Blog extends Component {
                 >
                 </BackgroundImage>
               </div>
-              <div className="container">
+              <div className="container blog-list-main">
                 {
                   imageArray.map((item, key) => (
                     <BlogList
@@ -132,15 +134,14 @@ class Blog extends Component {
                   />
                   ))
                 }
-                <hr />
-                <div>
+                <div className="arrow">
                   { page !== 8 &&  (
                     <button
                       type="button"
-                      className="btn btn-danger"
+                      className="btn btn-default arrow-btn"
                       onClick={this.handlePrevious}
                     >
-                      Previous
+                      <FontAwesomeIcon icon={faChevronLeft} className="arrow-icon" />
                     </button>
                     
                   ) } 
@@ -148,10 +149,10 @@ class Blog extends Component {
                     page !== 0 && (
                       <button
                       type="button"
-                      className="btn btn-danger"
+                      className="btn btn-default arrow-btn"
                       onClick={this.handleNext}
                     >
-                      Next
+                      <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
                     </button> 
                     )
                   }
