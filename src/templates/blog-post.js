@@ -10,7 +10,7 @@ import './_blogpost.scss';
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
   const { title, date } = post.frontmatter;
-  const { publicURL } = post.frontmatter.featured_image;
+  const { featured_image: { publicURL } } = post.frontmatter;
   return (
     <Layout>
       <div
