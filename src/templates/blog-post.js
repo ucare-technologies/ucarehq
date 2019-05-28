@@ -11,10 +11,11 @@ const BlogPost = (props) => {
   const post = props.data.markdownRemark;
   const { title, date } = post.frontmatter;
   const { featured_image } = post.frontmatter;
-  console.log(featured_image);
+  const publicURL = null;
+  featured_image && (publicURL = featured_image.publicURL);
   return (
     <Layout>
-      {/* <div
+      <div
         className="container-fluid text-center p-0 blog-post"
         style={ {
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${publicURL})`,
@@ -29,7 +30,7 @@ const BlogPost = (props) => {
             { moment(date).format("D MMMM YYYY") }
           </span>
         </div>
-      </div> */}
+      </div>
       <div className="container" >
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </div>
