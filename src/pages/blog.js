@@ -114,8 +114,7 @@ class Blog extends Component {
               >
                 <div className="centered">
                   <h1>Blog</h1>
-                  <h6>Latest News & Updates from the UCare Team
-</h6>
+                  <h6>Latest News & Updates from the UCare Team</h6>
                 </div>           
               </div>
               <div className="container blog-list-main">

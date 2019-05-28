@@ -6,7 +6,7 @@ const LatestBlog = () => (
   <StaticQuery
     query={ graphql`
       query {
-        file(relativePath: { eq: "post/good-bie-old-friend/old-friend.jpg"}) {
+        file(relativePath: { eq: "blog/good-bie-old-friend/old-friend.jpg"}) {
           publicURL
       }
       allMarkdownRemark(filter: { frontmatter: { url: {eq: "/good-bie-old-friend/"}}}) {
