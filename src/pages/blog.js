@@ -86,27 +86,35 @@ class Blog extends Component {
             let relativePath = null;
             if (allMarkdownRemark.edges[i].node.frontmatter.featured_image) {
               relativePath = allMarkdownRemark.edges[i].node.frontmatter.featured_image.relativePath
+              const { excerpt } = allMarkdownRemark.edges[i].node;
+              allFile.edges.map((item, key) => (
+                item.node.relativePath === relativePath && 
+                imageArray.push({
+                  imageUrl: item.node.publicURL,
+                  url: slug,
+                  date,
+                  title,
+                  excerpt
+                })
+              ))
             } else {
-
-            }
-            const { excerpt } = allMarkdownRemark.edges[i].node;
-            allFile.edges.map((item, key) => (
-              item.node.relativePath === relativePath && 
+              const { excerpt } = allMarkdownRemark.edges[i].node;
               imageArray.push({
-                imageUrl: item.node.publicURL,
+                imageUrl: null,
                 url: slug,
                 date,
                 title,
                 excerpt
               })
-            ))
+            }
+            
           }
           return (
             <Layout>
               <div
                 className="container-fluid p-0 blog-header text-center"
                 style={ {
-                  backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${blog.publicURL})`,
+                  background: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${blog.publicURL})`,
                   backgroundColor: '#323a46',
                   backgroundPosition: '50%',
                   backgroundSize: 'cover'
@@ -131,7 +139,7 @@ class Blog extends Component {
                   ))
                 }
                 <div className="arrow">
-                  { page !== 8 &&  (
+                  { page !== 7 &&  (
                     <button
                       type="button"
                       className="btn btn-default arrow-btn"

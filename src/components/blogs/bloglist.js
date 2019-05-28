@@ -18,9 +18,11 @@ class bloglist extends Component {
         <div className="row">
           <div className="col-md-9">
             <div className="entry-image">
-              <a href={ url } >
-                <img src={imageURL} />
-              </a>
+              { imageURL && 
+                <a href={ url } >
+                  <img src={imageURL} />
+                </a>
+              }
             </div>
             <div className="entry-content">
               <article>

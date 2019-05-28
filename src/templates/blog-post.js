@@ -23,7 +23,6 @@ const BlogPost = (props) => {
           backgroundPosition: '50%',
           backgroundSize: 'cover',
           boxShadow: '0 0 10px 0 rgba(0,0,0,0.5)',
-          // margin: '1em 0',
           maxWidth: '100%',
         } }>
         <div className="centered">
