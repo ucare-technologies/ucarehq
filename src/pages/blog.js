@@ -6,6 +6,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 import Layout from '../components/layout';
 import BlogList from '../components/blogs/bloglist';
+import LatestBlog from '../components/blogs/latestblog';
 
 class Blog extends Component {
   constructor(props) {
@@ -157,6 +158,9 @@ class Blog extends Component {
                     )
                   }
                 </div>
+              </div>
+              <div>
+                <LatestBlog />
               </div>
             </Layout>
           )

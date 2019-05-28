@@ -1,3 +1,4 @@
+$bloglist-border: 1px solid rgba(50,58,70,.12);
 .latestblog {
   padding-top: 50px;
   padding-bottom: 80px;
@@ -6,6 +7,7 @@
     margin-bottom: 50px;
   }
   .blogs {
+    border: $bloglist-border;
     .read-more {
       text-decoration: none;
       color: hsla(0,0%,100%,.85);
@@ -18,8 +20,11 @@
       letter-spacing: 1px;
       border-radius: 30px;
     }
-    .blog-except {
-      width: 80%;
+    .blog-excerpt {
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: left;
+      font-size: 90%;
     }
   }
 }
