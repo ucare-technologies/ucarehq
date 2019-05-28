@@ -10,7 +10,7 @@ class BlogHeader extends Component {
     const { imageFluid } = this.props;
     return ( 
       <div className="container-fluid">
-        {/* <BackgroundImage /> */}
+        
       </div>
      );
   }

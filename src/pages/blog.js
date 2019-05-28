@@ -112,12 +112,8 @@ class Blog extends Component {
                   Tag="section"
                   className="blog-init"
                   fluid={ blog.childImageSharp.fluid }
-                  backgroundColor={ `rgba(50, 58, 70, .5)` }
                   style={ {
                     height: '400px',
-                    background: 'rgba(50,58,70,.5)',
-                    backgroundRepeat: '',
-                    backgroundSize: ''
                   } }
                 >
                 </BackgroundImage>
