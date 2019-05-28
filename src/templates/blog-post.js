@@ -11,7 +11,7 @@ const BlogPost = (props) => {
   const post = props.data.markdownRemark;
   const { title, date } = post.frontmatter;
   const { featured_image } = post.frontmatter;
-  const publicURL = null;
+  let publicURL = null;
   featured_image && (publicURL = featured_image.publicURL);
   return (
     <Layout>
