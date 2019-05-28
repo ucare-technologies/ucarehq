@@ -38,10 +38,10 @@ class bloglist extends Component {
               <div>
                 <a href={url} className="readmore">
                     Readmore&nbsp;&nbsp;<FontAwesomeIcon icon={ faChevronRight } />
-                </a>
-                <hr />
+                </a>                
               </div>
             </div>
+            <hr />
           </div>
         </div>
       </div>

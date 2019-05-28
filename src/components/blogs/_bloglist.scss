@@ -1,6 +1,10 @@
 $transition_attr: all .4s ease;
 .bloglist {
   .entry-content {
+    padding-bottom: 5%;
+    article {
+      padding-bottom: 5%;
+    }
     span {
       color: rgba(50,58,70,.5);
       font-size: 90%;
