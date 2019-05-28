@@ -7,9 +7,9 @@ const BlogPost = (props) => {
   const { title } = post.frontmatter;
   return (
     <Layout>
-      <div>
-        <h1>{ title }</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} ></div>
+      <div className="container" >
+        <h1 className="text-center">{ title }</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </div>
     </Layout>
   )

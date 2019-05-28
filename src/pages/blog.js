@@ -85,10 +85,11 @@ class Blog extends Component {
             const { date, title } = allMarkdownRemark.edges[i].node.frontmatter;
             const { slug } = allMarkdownRemark.edges[i].node.fields;
             let relativePath = null;
-            allMarkdownRemark.edges[i].node.frontmatter.featured_image
-            && (
+            if (allMarkdownRemark.edges[i].node.frontmatter.featured_image) {
               relativePath = allMarkdownRemark.edges[i].node.frontmatter.featured_image.relativePath
-              );
+            } else {
+              
+            }
             const { excerpt } = allMarkdownRemark.edges[i].node;
             allFile.edges.map((item, key) => (
               item.node.relativePath === relativePath && 
@@ -112,8 +113,8 @@ class Blog extends Component {
                   style={ {
                     height: '400px',
                     background: 'rgba(50,58,70,.5)',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover'
+                    backgroundRepeat: '',
+                    backgroundSize: ''
                   } }
                 >
                 </BackgroundImage>
