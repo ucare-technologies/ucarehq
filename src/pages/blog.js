@@ -67,11 +67,7 @@ class Blog extends Component {
               }
             }
             blog: file(relativePath: { eq: "page/blog/friends04.jpg" }) {
-              childImageSharp {
-                fluid(quality: 90, maxWidth: 4160) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
             }
           }
         `}
@@ -107,16 +103,20 @@ class Blog extends Component {
           }
           return (
             <Layout>
-              <div className="container-fluid p-0 header">
-                <BackgroundImage
-                  Tag="section"
-                  className="blog-init"
-                  fluid={ blog.childImageSharp.fluid }
-                  style={ {
-                    height: '400px',
-                  } }
-                >
-                </BackgroundImage>
+              <div
+                className="container-fluid p-0 blog-header text-center"
+                style={ {
+                  backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${blog.publicURL})`,
+                  backgroundColor: '#323a46',
+                  backgroundPosition: '50%',
+                  backgroundSize: 'cover'
+                } }
+              >
+                <div className="centered">
+                  <h1>Blog</h1>
+                  <h6>Latest News & Updates from the UCare Team
+</h6>
+                </div>           
               </div>
               <div className="container blog-list-main">
                 {

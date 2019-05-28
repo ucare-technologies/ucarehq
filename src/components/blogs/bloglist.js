@@ -29,7 +29,7 @@ class bloglist extends Component {
                 </h2>
                 <span>
                   <FontAwesomeIcon icon={ faCalendarAlt } />&nbsp;&nbsp;
-                  { moment().format("D MMMM YYYY") }
+                  { moment(date).format("D MMMM YYYY") }
                 </span>
                 <div className="entry-summary">
                   <p>{ excerpt }</p>
