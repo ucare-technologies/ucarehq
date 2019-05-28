@@ -30,8 +30,6 @@ const BlogPost = (props) => {
         </div>
       </div>
       <div className="container" >
-          {/* <h1 className="text-center">{ title }</h1> */}
-        
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </div>
     </Layout>
