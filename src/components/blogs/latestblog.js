@@ -64,13 +64,13 @@ const LatestBlog = () => (
                             <h6 className="text-left">{ date }</h6>
                             { excerpt }
                           </div>
+                          <div className="readmore-link">
+                            <span className="read-more ml-4">
+                              Read More&nbsp;&nbsp;
+                              <FontAwesomeIcon icon={faChevronRight} />
+                            </span>
+                          </div>
                         </a>
-                        <div className="readmore-link">
-                          <span className="read-more ml-4">
-                            Read More&nbsp;&nbsp;
-                            <FontAwesomeIcon icon={faChevronRight} />
-                          </span>
-                        </div>
                       </div>
                     </div>
                   )
