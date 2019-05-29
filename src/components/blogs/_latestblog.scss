@@ -20,8 +20,23 @@ $blog-radius: 5px;
       padding-bottom: 20px;
       .latest-blog {
         text-decoration: none;
-        h4 {
+        h3 {
           color: #323a46;
+        }
+        .thumb {
+          position: relative;
+          .cat {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            border-radius: 20px;
+            border: 2px solid hsla(0,0%,100%,.8);
+            background: rgba(50,58,70,.25);
+            padding: 5px 15px;
+            font-size: 90%;
+            text-transform: uppercase;
+          }
         }
       }
       .readmore-link {

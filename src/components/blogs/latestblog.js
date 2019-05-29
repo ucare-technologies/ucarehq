@@ -18,10 +18,10 @@ const LatestBlog = () => (
                 url
                 title
                 date(formatString: "D MMMM YYYY"),
+                categories,
                 featured_image {
                   publicURL
                 }
-    
               }
                 excerpt(pruneLength: 240)
                 fields {
@@ -46,6 +46,7 @@ const LatestBlog = () => (
                     frontmatter: {
                       title,
                       date,
+                      categories,
                     },
                     excerpt,
                   } = item.node;
@@ -53,13 +54,18 @@ const LatestBlog = () => (
                     <div className="col-md-4 p-2 align-top blog-out" key={ key }>
                       <div className="p-0 blogs text-left">
                         <a href={ slug } className="latest-blog">
-                          <img
-                            src={ publicURL } alt={ title }
-                            style={ {
-                              width: '100%', height: 'auto'
-                            }}
-                          />
-                          <h4 className="ml-4">{ title }</h4>
+                          <div className="thumb">
+                            <img
+                              src={ publicURL } alt={ title }
+                              style={ {
+                                width: '100%', height: 'auto'
+                              }}
+                            />
+                            <span className="cat">
+                              { categories.split(",")[0] }
+                            </span>
+                          </div>
+                          <h3 className="ml-4">{ title }</h3>
                           <div className="blog-excerpt">
                             <h6 className="text-left">{ date }</h6>
                             { excerpt }
