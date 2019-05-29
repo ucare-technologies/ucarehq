@@ -12,10 +12,8 @@ class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      initImage: "",
-      page : sessionStorage.getItem("page") || 0,
+      page : 0,
     }
-    this.upScrollRef = React.createRef();
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
   }
@@ -30,13 +28,10 @@ class Blog extends Component {
     }
   }
   handlePrevious() {
-    sessionStorage.setItem("page", this.state.page + 1);
     this.setState({ page: this.state.page + 1 });
   }
   handleNext() {
-    sessionStorage.setItem("page", this.state.page - 1);
     this.setState({ page: this.state.page - 1 });
-    this.upScrollRef.current.scrollTo(0, 0);
   }
   render() { 
     return ( 
@@ -124,7 +119,6 @@ class Blog extends Component {
           }
           return (
             <Layout>
-              <div ref={this.upScrollRef}></div>
               <div
                 className="container-fluid p-0 blog-header text-center"
                 style={ {
@@ -169,9 +163,9 @@ class Blog extends Component {
                       type="button"
                       className="btn btn-default arrow-btn"
                       onClick={this.handleNext}
-                    >
-                      <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
-                    </button> 
+                      >
+                        <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
+                      </button> 
                     )
                   }
                 </div>

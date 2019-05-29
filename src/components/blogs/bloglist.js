@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
 /**
  * @see https://scotch.io/tutorials/using-font-awesome-5-with-react
  * Using fontawesome
@@ -19,15 +20,15 @@ class bloglist extends Component {
           <div className="col-md-9">
             <div className="entry-image">
               { imageURL && 
-                <a href={ url } >
+                <Link to={ url } >
                   <img src={imageURL} />
-                </a>
+                </Link>
               }
             </div>
             <div className="entry-content">
               <article>
                 <h2>
-                  <a href={ url } className="blog-title">{ title }</a>
+                  <Link to={ url } className="blog-title">{ title }</Link>
                 </h2>
                 <span>
                   <FontAwesomeIcon icon={ faCalendarAlt } />&nbsp;&nbsp;
