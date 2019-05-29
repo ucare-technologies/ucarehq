@@ -30,6 +30,9 @@ div {
       margin-bottom: calc(1.45rem / 4);
       padding: 2px 0 6px 36px;
       display: list-item;
+      h3 {
+        background-image: none;
+      }
     }
   }
 }

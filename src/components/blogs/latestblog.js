@@ -5,31 +5,72 @@ const LatestBlog = () => (
   <StaticQuery
     query={ graphql`
       query {
-        file(relativePath: { eq: "blog/good-bie-old-friend/old-friend.jpg"}) {
-          publicURL
-      }
-      allMarkdownRemark(filter: { frontmatter: { url: {eq: "/good-bie-old-friend/"}}}) {
-        edges {
-          node {
-            frontmatter {
-              title
-              date(formatString: "YYYY Do MMMM")
-            }
-            excerpt(pruneLength: 500)
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date]}
+          limit: 3
+          filter: { frontmatter: { type: {eq: "post"}}}
+        ) {
+            edges {
+              node {
+                frontmatter {
+                url
+                title
+                date(formatString: "D MMMM YYYY"),
+                featured_image {
+                  publicURL
+                }
+    
+              }
+                excerpt(pruneLength: 240)
+                fields {
+                  slug
+                }
+              }
+            } 
           }
-        }
       }
-    }
     `}
     render={ data => {
-      const { publicURL } = data.file;
-      const { frontmatter: { date, title }, excerpt } = data.allMarkdownRemark.edges[0].node;
+      const { edges } = data.allMarkdownRemark;
       return (
         <div className="container-fluid text-center latestblog">
           <div className="container">
-          <h1>Latest From the Blog</h1>
-            <div className="row">
-              <div className="col-md-4 blogs">
+            <h1>Latest From the Blog</h1>
+            <div className="row latest-blog-wrapper">
+              {
+                edges.map((item, key) => {
+                  const { slug } = item.node.fields;
+                  const { publicURL } = item.node.frontmatter.featured_image;
+                  const {
+                    frontmatter: {
+                      title,
+                      date,
+                    },
+                    excerpt,
+                  } = item.node;
+                  return (
+                    <div className="col-md-3 blogs p-0 mr-3" key={ key }>
+                      <a href={ slug } className="latest-blog">
+                        <img
+                          src={ publicURL } alt={ title }
+                          style={ {
+                            width: '100%', height: 'auto'
+                          }}
+                        />
+                        <h4>{ title }</h4>
+                        <div className="blog-excerpt">
+                          <p className="text-left">{ date }</p>
+                          { excerpt }
+                        </div>
+                        <a href={ slug } className="read-more ml-4">Read More ></a>
+                        </a>
+                      </div>
+                    
+                    
+                  )
+                })
+              }
+              {/* <div className="col-md-4 blogs">
                 <img src={ publicURL } alt="publicURL" style={ { width: '350px', height: '200px' } } />
                 <h2>{title}</h2>
                 <p>{ date }</p>
@@ -42,14 +83,7 @@ const LatestBlog = () => (
                 <p>{ date }</p>
                 <div className="blog-excerpt">{ excerpt }</div>
                 <a href="/features" className="read-more">Read More ></a>
-              </div>
-              <div className="col-md-4 blogs">
-                <img src={ publicURL } alt="publicURL" style={ { width: '350px', height: '200px' } } />
-                <h2>{title}</h2>
-                <p>{ date }</p>
-                <div className="blog-excerpt">{ excerpt }</div>
-                <a href="/features" className="read-more">Read More ></a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
