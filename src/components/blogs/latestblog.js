@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const LatestBlog = () => (
   <StaticQuery
@@ -62,7 +64,10 @@ const LatestBlog = () => (
                           <p className="text-left">{ date }</p>
                           { excerpt }
                         </div>
-                        <a href={ slug } className="read-more ml-4">Read More ></a>
+                        <h6 className="read-more ml-4">
+                          Read More&nbsp;&nbsp;
+                          <FontAwesomeIcon icon={faChevronRight} className="readmore-arrow" />
+                        </h6>
                         </a>
                       </div>
                     
