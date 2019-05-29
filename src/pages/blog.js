@@ -13,16 +13,30 @@ class Blog extends Component {
     super(props);
     this.state = { 
       initImage: "",
-      page : 0,
+      page : sessionStorage.getItem("page") || 0,
     }
+    this.upScrollRef = React.createRef();
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      this.state.page !== nextState.page
+    )
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.page !== prevState.page) {
+      window.scrollTo(0, 0);
+    }
+  }
   handlePrevious() {
+    sessionStorage.setItem("page", this.state.page + 1);
     this.setState({ page: this.state.page + 1 });
   }
   handleNext() {
+    sessionStorage.setItem("page", this.state.page - 1);
     this.setState({ page: this.state.page - 1 });
+    this.upScrollRef.current.scrollTo(0, 0);
   }
   render() { 
     return ( 
@@ -107,10 +121,10 @@ class Blog extends Component {
                 excerpt
               })
             }
-            
           }
           return (
             <Layout>
+              <div ref={this.upScrollRef}></div>
               <div
                 className="container-fluid p-0 blog-header text-center"
                 style={ {
