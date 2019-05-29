@@ -70,20 +70,6 @@ const LatestBlog = () => (
                   )
                 })
               }
-              {/* <div className="col-md-4 blogs">
-                <img src={ publicURL } alt="publicURL" style={ { width: '350px', height: '200px' } } />
-                <h2>{title}</h2>
-                <p>{ date }</p>
-                <div className="blog-excerpt">{ excerpt }</div>
-                <a href="/features" className="read-more">Read More ></a>
-              </div>
-              <div className="col-md-4 blogs">
-                <img src={ publicURL } alt="publicURL" style={ { width: '350px', height: '200px' } } />
-                <h2>{title}</h2>
-                <p>{ date }</p>
-                <div className="blog-excerpt">{ excerpt }</div>
-                <a href="/features" className="read-more">Read More ></a>
-              </div> */}
             </div>
           </div>
         </div>
