@@ -1,0 +1,34 @@
+$form_border: 2px solid #e5e5e5;
+.signup {
+  .signup-form {
+    margin-top: 10%;
+    .user-input-form {
+      .form-control {
+        border: 2px solid #e5e5e5;
+        border-radius: 1em;
+        padding: .25em .75em;
+        outline: 0;
+        height: 35px;
+      }
+      .church-appenx {
+        @extend .form-control;
+      }
+      .trial {
+        border-radius: 30px;
+        background: #72be1a;
+        border-color: #72be1a;
+        color: #fff;
+        padding: .5em 1.5em;
+      }
+      .trial:hover {
+        background: #8ce229;
+        border-color: #8ce229;
+        color: #3c640e;
+      }
+    }
+  }
+  .faq {
+    margin-top: 10%;
+    padding-bottom: 10%;
+  }
+}

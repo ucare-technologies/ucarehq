@@ -1,7 +1,12 @@
+$church-manage-background-height: 960px;
 .church-manage {
-  // background-image: url("https://ucarehq.com/wp-content/uploads/2016/07/hero.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 960px;
-  width: 100%;
+  height: $church-manage-background-height;
+  position: relative;
+  .church-manage-title {
+    margin-top: $church-manage-background-height / 2;
+    color: rgba(255, 255, 255, 0.9);
+    h1 {
+      font-weight: 400;
+    }
+  }
 }

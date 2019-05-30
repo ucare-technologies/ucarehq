@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
  * @see https://scotch.io/tutorials/using-font-awesome-5-with-react
  * Using fontawesome
  */
-class bloglist extends Component {
+class BlogList extends Component {
   constructor(props) {
     super(props);
     this.state = {  }
@@ -52,4 +52,4 @@ class bloglist extends Component {
   }
 }
  
-export default bloglist;
+export default BlogList;

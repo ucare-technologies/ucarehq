@@ -1,5 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 import FeatureList from '../features/featurelists';
 
 const Features = () => (
@@ -9,7 +12,8 @@ const Features = () => (
       <FeatureList />
       <div className="explore-more">
         <a href="/features" className="explore-more-btn">
-          Explore more features
+          Explore more features&nbsp;&nbsp;
+          <FontAwesomeIcon icon={faChevronRight} />
         </a>
       </div>
     </div>

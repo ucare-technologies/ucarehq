@@ -4,7 +4,7 @@ const SamllGroup = ({
   style = {
     maxHeight: '50px',
   },
-  height = 'auto',
+  height = '50px',
 }) => (
     <svg
       style={ style }

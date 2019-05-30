@@ -9,6 +9,10 @@ import BlogListTemp from '../components/blogs/bloglist';
 import LatestBlog from '../components/blogs/latestblog';
 import './_bloglist.scss';
 
+/**
+ * @see https://desktopofsamuel.com/building-gatsby-with-multiple-post-type
+ * Gatsby pagination
+ */
 class BlogList extends Component {
   constructor(props) {
     super(props);

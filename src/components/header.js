@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Navbar, Nav } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
 
 import UcareIcons from './Icons/ucare';
 import UcareExpandIcon from './Icons/ucareexpand';
@@ -61,9 +64,10 @@ class Header extends Component {
           </Nav>
           <Nav>
             <Nav.Item>
-              <a className="trials-free-btn" href="/page/sign-up">
-                free 30-day trial
-              </a>
+              <Link className="trials-free-btn" to="/sign-up">
+                free 30-day trial&nbsp;&nbsp;
+                <FontAwesomeIcon icon={faChevronRight} />
+              </Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

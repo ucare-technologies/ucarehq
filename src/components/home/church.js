@@ -24,13 +24,11 @@ const ChurchManagement = ({className}) => (
           fluid={ imageData }
           backgroundColor={ `#ffffff` }
         >
-          <section className="church-manage">
-            <div className="container">
-              <div className="row text-center">
-                <h1 className="church-title">
-                
-                </h1>
-              </div>
+          <section className="church-manage justify-content-center">
+            <div className="text-center church-manage-title">
+              <h1>
+                Church Management software.<strong>simplified</strong>
+              </h1>
             </div>
           </section>
         </BackgroundImage>
