@@ -33,7 +33,7 @@ const BlogPost = (props) => {
           </span>
         </div>
       </div>
-      <div className="container" >
+      <div className="container posts" >
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </div>
     </Layout>

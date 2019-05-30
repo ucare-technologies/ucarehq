@@ -7,11 +7,14 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css";
-
+const style = {
+  color: '#fff',
+  textDecoration: 'none',
+}
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -42,7 +45,16 @@ const Layout = ({ children }) => (
         </div>
         <footer className="footer text-center">
           <p>
-            © Copyright UCare 2006-2019 | Privacy | Terms | SLA | Status
+            © Copyright UCare 2006-2019&nbsp;&nbsp;|&nbsp;&nbsp;
+            <Link to="/privacy" style={style}>Privacy</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <Link to="/terms" style={style}>Terms</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <Link to="/sla" style={style}>SLA</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a
+              href="http://status.ucarehq.com/?_ga=2.143113335.357659964.1558846064-1006824827.1558552278"
+              style={style}
+            >
+              Status
+            </a>
           </p>
         </footer>
       </React.Fragment>

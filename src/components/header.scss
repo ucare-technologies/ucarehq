@@ -1,6 +1,7 @@
 $trial-color: #72be1a;
 $trial_hover_color: #8ce229;
 .navbar {
+  transition: all .4s ease;
   .trials-free-btn {
     background: $trial-color;
     padding: 10px 25px;
