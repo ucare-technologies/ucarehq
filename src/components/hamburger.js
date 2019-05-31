@@ -5,7 +5,7 @@ class Hamburger extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
+      open: true,
     };
     this.handleMenuIconClick = this.handleMenuIconClick.bind(this);
   }
@@ -18,7 +18,7 @@ class Hamburger extends Component {
     return ( 
       <HamburgerMenu
         isOpen={ this.state.open }
-        menuClicked={this.handleClick.bind(this)}
+        menuClicked={this.handleMenuIconClick}
         width={18}
         height={15}
         strokeWidth={1}

@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
+import HamburgerMenu from './hamburger';
 import "./layout.css";
 const style = {
   color: '#fff',
@@ -32,7 +33,12 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <React.Fragment>
-        <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+        {
+          window.innerWidth > 990 ?
+            <Header menuLinks={ data.site.siteMetadata.menuLinks } siteTitle={ data.site.siteMetadata.title } />
+            :
+            <HamburgerMenu />
+        }
         <div
           style={{
             margin: `0`,
