@@ -3,6 +3,7 @@ import React from 'react';
 const UcareExpand = ({
   style = {
     maxHeight: '70px',
+    top: '5px',
   },
 }) => (
     <svg

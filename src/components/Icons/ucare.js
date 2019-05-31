@@ -3,12 +3,13 @@ import React from 'react';
 const UcareIcon = ({
   style = {
     maxHeight: '50px',
+    top: '5px',
   },
 }) => (
     <svg
     style={ style }
     height= '50px'
-    viewBox='0 0 200 70'
+    viewBox='0 0 140 70'
     fill="#e10332"
     stroke="#e10332"
     className=''
