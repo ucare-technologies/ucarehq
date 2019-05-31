@@ -33,12 +33,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <React.Fragment>
-        {
-          window.innerWidth > 990 ?
-            <Header menuLinks={ data.site.siteMetadata.menuLinks } siteTitle={ data.site.siteMetadata.title } />
-            :
-            <HamburgerMenu />
-        }
+        <Header menuLinks={ data.site.siteMetadata.menuLinks } siteTitle={ data.site.siteMetadata.title } />
         <div
           style={{
             margin: `0`,
