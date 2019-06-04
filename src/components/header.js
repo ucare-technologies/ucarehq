@@ -43,7 +43,7 @@ class Header extends Component {
         bg={ this.state.isTop ? 'transparent': 'light' }
         variant="transparent" 
         fixed="top"
-        className="navbar"
+        className="navbar nav-inverse"
         style={{
           paddingBottom: 0,
           paddingTop: 0,

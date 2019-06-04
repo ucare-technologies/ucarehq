@@ -1,4 +1,5 @@
 $form_border: 2px solid #e5e5e5;
+$error-border-color: #e10332;
 .signup {
   .signup-form {
     margin-top: 10%;
@@ -9,6 +10,13 @@ $form_border: 2px solid #e5e5e5;
         padding: .25em .75em;
         outline: 0;
         height: 35px;
+        box-shadow: none;
+      }
+      .form-control:focus {
+        border: 2px #72be1a solid;
+      }
+      .error {
+        border-color: $error-border-color;
       }
       .church-appenx {
         @extend .form-control;
@@ -24,6 +32,9 @@ $form_border: 2px solid #e5e5e5;
         background: #8ce229;
         border-color: #8ce229;
         color: #3c640e;
+      }
+      .error-message {
+        color: #e10332;
       }
     }
   }

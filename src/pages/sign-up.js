@@ -5,6 +5,9 @@ import { getNames } from 'country-list';
 import Layout from '../components/layout';
 import LatestBlog from '../components/blogs/latestblog';
 
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
 class Singup extends Component {
   constructor(props) {
     super(props);
@@ -34,10 +37,26 @@ class Singup extends Component {
         { "Q": " Do you have phone support?", "A": "We find that our free email support & help center is more than adequate for most churches. But phone support packages are available, use the help button to ask for a quote." },
       ],
       rows: null,
+      firstname: null,
+      lastname: null,
+      email: null,
+      countryname: "Australia",
+      mobile: null,
+      tenant: null,
+      formValidation: {
+        firstname: "",
+        lastname: "",
+        email: "",
+        mobile: "",
+        tenant: ""
+      }
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   componentWillMount() {
     const { countryNames, qa } = this.state;
+    countryNames.push("Australia");
     countryNames.push("Canada");
     countryNames.push("New Zealand");
     countryNames.push("South Africa");
@@ -62,8 +81,102 @@ class Singup extends Component {
       rows: qa.length % 3 === 0 ? qa.length / 3 : parseInt(qa.length / 3) + 1
     });
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    const { formValidation } = this.state;
+    
+    const { firstname, lastname, email, mobile, tenant } = this.state;
+    !firstname &&
+      this.setState(prevState => ({
+        formValidation: {
+          ...prevState.formValidation,
+          firstname: "error",
+        }
+      }))
+    !lastname &&
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        lastname: "error",
+      }
+    }))
+    !mobile &&
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        mobile: "error",
+      }
+    }))
+    !tenant &&
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        tenant: "error",
+      }
+    }))
+    !email && (
+      this.setState(prevState => ({
+        formValidation: {
+          ...prevState.formValidation,
+          email: "error",
+        }
+      }))
+    )
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+    if (event.target.name === "email") {
+      const { email } = this.state;
+      !emailRegex.test(email) ?(
+        this.setState(prevState => ({
+          formValidation: {
+          ...prevState.formValidation,
+            email: "type-error"
+          }
+        }))
+      ): (
+        this.setState(prevState => ({
+          formValidation: {
+            ...prevState.formValidation,
+            email: "",
+          }
+        }))
+      )
+    } 
+    if(event.target.name === "firstname") 
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        firstname: "",
+      }
+    }))
+    if(event.target.name === "lastname") 
+      this.setState(prevState => ({
+        formValidation: {
+          ...prevState.formValidation,
+          lastname: "",
+        }
+      }))
+    if(event.target.name === "tenant") 
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        tenant: "",
+      }
+    }))
+    if(event.target.name === "mobile") 
+    this.setState(prevState => ({
+      formValidation: {
+        ...prevState.formValidation,
+        mobile: "",
+      }
+    }))
+  }
   render() {
-    const { countryNames, qa } = this.state;
+    const { countryNames, qa, formValidation } = this.state;
+    const { firstname, lastname, email, mobile, tenant } = formValidation;
     return (
       <Layout>
         <div className="container-fluid p-0 blog-header text-center" style={ {
@@ -80,32 +193,54 @@ class Singup extends Component {
         <div className="container signup">
           <div className="row signup-form">
             <div className="col-md-8 user-input-form">
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div className="form-row">
                   <div className="form-group col-md-6">
                     <label>Your name*</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+                    <input
+                      type="text"
+                      className={`form-control ${firstname === "error" ? "error": ""}`}
+                      placeholder="First name" 
+                      name="firstname"
+                      onChange={this.handleChange}
+                    />
+                    { firstname === "error" && <small className="error-message">This is required</small> }
                   </div>
                   <div className="form-group col-md-6">
                     <label>&nbsp;</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <input
+                      type="text" 
+                      className={`form-control ${firstname === "error" ? "error": ""}`}
+                      placeholder="Last name"
+                      name="lastname"
+                      onChange={this.handleChange}
+                    />
+                    { lastname === "error" && <small className="error-message">This is required</small> }
                   </div>
                 </div>
                 <div className="form-group">
                   <label>Your email*</label>
                   <input
                     type="email"
-                    className="form-control"
+                    className={`form-control ${firstname === "error" ? "error": ""}`}
                     placeholder="This must be correct as we will email you with you sign in details"
+                    name="email"
+                    onChange={this.handleChange}
                   />
+                  { email === "error" && <small className="error-message">This is required</small> }
+                  { email === "type-error" && <small className="error-message">A valid email is required</small> }
                 </div>
                 <div className="form-group">
                   <p>
                     Your country*---
                     <small>so we know where to store your data & format phone numbers</small>
                   </p>
-                  <select className="form-control">
-                    <option defaultValue>Australia</option>
+                  <select
+                    className={`form-control`}
+                    onChange={ this.handleChange }
+                    name="countryname"
+                    value={this.state.countryname}
+                  >
                     {
                       countryNames.map((item, key) => (
                         <option key={key}>{ item }</option>
@@ -117,18 +252,21 @@ class Singup extends Component {
                   <label>Your mobile phone</label>
                   <input
                     type="tel"
-                    className="form-control"
+                    className={`form-control ${firstname === "error" ? "error": ""}`}
                     maxLength="255"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="Required for sms features"
+                    name="mobile"
+                    onChange={this.handleChange}
                   />
+                  { mobile === "error" && <small className="error-message">This is required</small> }
                 </div>
                 <div className="form-group">
                   <label>Reserve your UCare site address*</label>
                   <div>
                     <h6>https://
                     <input
-                      className="church-appenx"
+                      className={ `church-appenx ${tenant == "error" ? "error": "" }`}
                       id="tenant"
                       name="tenant"
                       title="address"
@@ -137,13 +275,16 @@ class Singup extends Component {
                       maxLength="255"
                       required=""
                       pattern="^[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]$"
-                      placeholder="e.g. yourchurch" />
+                      placeholder="e.g. yourchurch"
+                      onChange={this.handleChange}
+                    />
                     .ucareapp.com
                     </h6>
+                    { tenant === "error" && <small className="error-message">This is required</small> }
                   </div>
                 </div>
                 <button
-                  type="button"
+                  type="submit"
                   className="btn btn-success trial"
                 >
                   Start your free 30-day trial
@@ -181,7 +322,7 @@ class Singup extends Component {
               {
                 qa.map((item, key) => (
                   <div className="col-md-4" key={key}>
-                    <h5>{ item.Q }</h5>
+                    <h5>{`Q: ${item.Q}` }</h5>
                     <p dangerouslySetInnerHTML={{__html: item.A }}></p>
                   </div>
                 ))

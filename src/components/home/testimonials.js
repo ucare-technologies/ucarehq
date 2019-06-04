@@ -22,6 +22,12 @@ const Testimonials = () => (
         flc: file(relativePath: { eq: "flc.png" }) {
           publicURL
         }
+        metro: file(relativePath: { eq: "metro.png" }) {
+          publicURL
+        }
+        kings: file(relativePath: { eq: "kings.png" }) {
+          publicURL
+        }
       }
     `}
     render={ data => {
@@ -30,6 +36,8 @@ const Testimonials = () => (
         ourchurch,
         rcbc,
         flc,
+        metro,
+        kings,
       } = data;
       return (
         <section className="container-fluid p-0 testinomial" style={ {
@@ -81,9 +89,8 @@ const Testimonials = () => (
                   <img src={ ourchurch.publicURL } className="w-50" alt="ourchurch" />
                   <img src={ rcbc.publicURL } className="w-50" alt="ourchurch" />
                   <img src={ flc.publicURL } className="w-50" alt="ourchurch" />
-                  <img src={ ourchurch.publicURL } className="w-50" alt="ourchurch" />
-                  <img src={ rcbc.publicURL } className="w-50" alt="ourchurch" />
-                  <img src={ flc.publicURL } className="w-50" alt="ourchurch" />
+                  <img src={ metro.publicURL } className="w-50" alt="ourchurch" />
+                  <img src={ kings.publicURL } className="w-50" alt="ourchurch" />
               </Slider>
             </div>
           </div>
