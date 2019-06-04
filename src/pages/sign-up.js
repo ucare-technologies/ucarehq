@@ -84,8 +84,8 @@ class Singup extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { formValidation } = this.state;
-    
     const { firstname, lastname, email, mobile, tenant } = this.state;
+
     !firstname &&
       this.setState(prevState => ({
         formValidation: {
@@ -98,13 +98,6 @@ class Singup extends Component {
       formValidation: {
         ...prevState.formValidation,
         lastname: "error",
-      }
-    }))
-    !mobile &&
-    this.setState(prevState => ({
-      formValidation: {
-        ...prevState.formValidation,
-        mobile: "error",
       }
     }))
     !tenant &&
@@ -122,6 +115,15 @@ class Singup extends Component {
         }
       }))
     )
+    if ( firstname && lastname && tenant && email ) {
+      fetch("https://crm.ucareapp.com/signup", {
+        method: "put",
+        "Content-type": "application/json"
+      }).then(response => response.json())
+        .then(res => {
+          console.log(res);
+        })
+    }
   }
   handleChange(event) {
     this.setState({
@@ -164,13 +166,6 @@ class Singup extends Component {
       formValidation: {
         ...prevState.formValidation,
         tenant: "",
-      }
-    }))
-    if(event.target.name === "mobile") 
-    this.setState(prevState => ({
-      formValidation: {
-        ...prevState.formValidation,
-        mobile: "",
       }
     }))
   }
@@ -252,14 +247,13 @@ class Singup extends Component {
                   <label>Your mobile phone</label>
                   <input
                     type="tel"
-                    className={`form-control ${firstname === "error" ? "error": ""}`}
+                    className={`form-control`}
                     maxLength="255"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="Required for sms features"
                     name="mobile"
                     onChange={this.handleChange}
                   />
-                  { mobile === "error" && <small className="error-message">This is required</small> }
                 </div>
                 <div className="form-group">
                   <label>Reserve your UCare site address*</label>
