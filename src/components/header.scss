@@ -47,7 +47,7 @@ $menuOpen: false;
     a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
-      font-size: 23px;
+      font-size: 20px;
       color: #fff;
       display: block;
       transition: 0.3s;
@@ -58,14 +58,13 @@ $menuOpen: false;
     }
     .trials-free-btn-mobile {
       @extend .trials-free-btn;
-      width: 80%;
+      width: 70%;
       margin-left: 20px;
     }
   }
   .hamburger {
     position: absolute;
     font-size: 20px;
-    // margin-top: 10px;
     top: 10px;
     cursor: pointer;
     background-color: transparent;
