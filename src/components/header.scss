@@ -29,9 +29,14 @@ $menuOpen: false;
   }
   .sidebar-active {
     width: 250px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
   }
   .sidebar-inactive {
-    width: 0px;
+    // width: 0px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
+    visibility: hidden;
   }
   .sidebar {
     height: 100%;
@@ -42,15 +47,12 @@ $menuOpen: false;
     background-color: rgb(50, 58, 70);
     overflow-x: hidden;
     padding-top: 20px;
-    transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
+    display: block;
     a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 20px;
       color: #fff;
-      display: block;
-      transition: 0.3s;
       text-transform: uppercase;
     }
     a:hover {

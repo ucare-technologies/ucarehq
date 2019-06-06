@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Fade } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
@@ -164,18 +164,29 @@ class Header extends Component {
               </Nav>
             )
           }
-          <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active`: `sidebar-inactive`}` }>
-            <Link to="/features">Features</Link>
-            <Link to="/">pricing</Link>
-            <a to="https://ucare.zendesk.com/hc/en-us">support</a>
-            <Link to="/blog">blog</Link>
-            <a to="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004">
-              sign in
-            </a>
-            <Link className="trials-free-btn-mobile" to="/sign-up">
-              free 30-day trial&nbsp;&nbsp;
-              <FontAwesomeIcon icon={faChevronRight} />
-            </Link>
+        <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active` : `sidebar-inactive`}` }>
+          {
+            this.state.menuOpen && (
+              <Fade in={this.state.menuOpen}>
+                <div>
+                  <Link to={`/features`}>Features</Link>
+                  <Link to="/">pricing</Link>
+                  <a to="https://ucare.zendesk.com/hc/en-us">support</a>
+                  <Link to="/blog">blog</Link>
+                  <a 
+                    to="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
+                   
+                  >
+                    sign in
+                  </a>
+                  <Link className="trials-free-btn-mobile" to="/sign-up">
+                    free 30-day trial&nbsp;&nbsp;
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </Link>
+                </div>
+              </Fade>
+            )
+          }
           </div>
         </Navbar>
       );
