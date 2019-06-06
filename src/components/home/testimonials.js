@@ -79,7 +79,7 @@ const Testimonials = () => (
           width: '100%',
           height: '500px'
         } }>
-          <div className="container text-center">
+          <div className="container text-center text-white">
             <h3>Church we work with</h3>
           </div>
           <div className="row m-0">
