@@ -1,4 +1,4 @@
-$church-manage-background-height: 960px;
+$church-manage-background-height: 100vh;
 .church-manage {
   height: $church-manage-background-height;
   position: relative;
@@ -8,5 +8,73 @@ $church-manage-background-height: 960px;
     h1 {
       font-weight: 400;
     }
+  }
+}
+.sidebar-inactive {
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  width: 0px;
+}
+.sidebar-active {
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  width: 250px;
+}
+.sidebar {  
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: #f1f1f1;
+  }
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+  }
+  .openbtn {
+    position: absolute;
+    left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: all .5s ease;
+    border-left: 1px solid #ddd;
+  }
+  .openbtn:hover {
+    background-color: #fff;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

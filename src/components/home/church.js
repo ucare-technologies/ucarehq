@@ -7,11 +7,20 @@ class ChurchManagement extends Component {
     super(props);
     this.state = {
       mobile: false,
+      navOpen: false,
     }
+    this.handleCloseNav = this.handleCloseNav.bind(this);
+    this.handleSidebar = this.handleSidebar.bind(this);
+  }
+  handleCloseNav() {
+
+  }
+  handleSidebar() {
+    this.setState({ navOpen: !this.state.navOpen });
   }
   render() { 
     const { mobile } = this.state;
-    console.log(mobile);
+    console.log(this.state.navOpen);
     return ( 
       <StaticQuery
         query={ graphql`
@@ -34,17 +43,35 @@ class ChurchManagement extends Component {
               fluid={ imageData }
               backgroundColor={ `#ffffff` }
             >
-              {/* { mobile === false 
-              ? <HeaderTop />
-              : <Hamburger />
-              } */}
               <section className="church-manage justify-content-center">
                 <div className="text-center church-manage-title">
                   <h1>
-                    Church Management software.<strong>simplified</strong>
+                    Church Management software.&nbsp;<strong>simplified</strong>
                   </h1>
                 </div>
               </section>
+              
+              <div id="mySidebar" className={`sidebar ${this.state.navOpen ? 'sidebar-active': 'sidebar-inactive'}`}>
+                <div id="main">
+                  <button
+                    className={`openbtn`}
+                    id="openbtn"
+                    onClick={this.handleSidebar}
+                  >
+                    ☰
+                  </button>  
+                </div>
+                <div>
+                  <a href="javascript:void(0)" className="closebtn" onClick={this.handleCloseNav}>×</a>
+                  <a href="/">About</a>
+                  <a href="/">Services</a>
+                  <a href="/">Clients</a>
+                  <a href="/">Contact</a>
+                </div>
+
+              </div>
+
+              
             </BackgroundImage>
           )
         }}

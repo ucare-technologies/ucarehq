@@ -1,7 +1,8 @@
 $trial-color: #72be1a;
 $trial_hover_color: #8ce229;
+$menuOpen: false;
 .navbar {
-  transition: all .4s ease;
+  transition: all .6s ease;
   .trials-free-btn {
     background: $trial-color;
     padding: 10px 25px;
@@ -25,5 +26,68 @@ $trial_hover_color: #8ce229;
     color: hsla(0,0%,100%,.9);
     font-weight: 500;
     letter-spacing: 1px;
+  }
+  .sidebar-active {
+    width: 250px;
+  }
+  .sidebar-inactive {
+    width: 0px;
+  }
+  .sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(50, 58, 70);
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 23px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+    a:hover {
+      color: #f1f1f1;
+    }
+    .trials-free-btn-mobile {
+      @extend .trials-free-btn;
+      width: 80%;
+      margin-left: 20px;
+    }
+  }
+  .hamburger {
+    position: absolute;
+    font-size: 20px;
+    // margin-top: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-left: 1px solid #fff;
+    transition: all .5s ease;
+  }
+  .hamburger-active {
+    right: 250px;
+    $menuOpen: true;
+  }
+  .hamburger-inactive {
+    right: 0px;
+    $menuOpen: false;
+  }
+  .hamburger-below {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    top: 0px;
+    border-left: 1px solid rgba(0,0,0,.1)!important
   }
 }

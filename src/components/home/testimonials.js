@@ -1,10 +1,41 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Carousel } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "transparent" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    // <div
+    //   className={className}
+    //   style={{ ...style, display: "block", background: "green" }}
+    //   onClick={onClick}
+    // />
+    <div
+      className={className}
+      style={ { ...style, background: "transparent" } }
+      onClick={onClick}
+    >
+      Previous<FontAwesomeIcon icon={faChevronLeft} />
+    </div>
+  );
+}
 
 const Testimonials = () => (
   <StaticQuery
@@ -61,6 +92,9 @@ const Testimonials = () => (
                 slidesToScroll={ 1 }
                 autoplay={ true }
                 centerMode={ true }
+                style={ {
+                  color: '#fff',
+                } }
                 responsive={ [
                   { breakpoint: 1024,
                     settings: {

@@ -1,14 +1,9 @@
 import React from 'react';
 
-const UcareExpand = ({
-  style = {
-    maxHeight: '70px',
-    top: '5px',
-  },
-}) => (
+const UcareExpand = (props) => (
     <svg
-    style={ style }
-    height= '70px'
+    // style={ style }
+    height= {props.height}
     viewBox='0 0 200 70'
     fill="#fff"
     stroke="#fff"

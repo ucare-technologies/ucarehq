@@ -260,7 +260,7 @@ class Singup extends Component {
                   <div>
                     <h6>https://
                     <input
-                      className={ `church-appenx ${tenant == "error" ? "error": "" }`}
+                      className={ `church-appenx ${tenant === "error" ? "error": "" }`}
                       id="tenant"
                       name="tenant"
                       title="address"
