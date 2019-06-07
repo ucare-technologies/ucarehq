@@ -130,7 +130,7 @@ class Header extends Component {
                   </Link> */}
                     <button
                     className={
-                      `hamburger 
+                      `text-center text-white hamburger 
                       ${this.state.menuOpen ? `hamburger-active` : `hamburger-inactive`}
                       ${!this.state.isTop && `hamburger-below`}`
                     }
