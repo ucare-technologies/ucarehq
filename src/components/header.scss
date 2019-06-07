@@ -29,11 +29,12 @@ $menuOpen: false;
   }
   .sidebar-active {
     width: 250px;
+    overflow: hidden;
+    display: inline-block;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
   }
   .sidebar-inactive {
-    // width: 0px;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.2,0.5,0.3,1);
     visibility: hidden;
@@ -45,17 +46,18 @@ $menuOpen: false;
     top: 0;
     right: 0;
     background-color: rgb(50, 58, 70);
-    overflow-x: hidden;
+    overflow: hidden;
     padding-top: 20px;
-    display: block;
-    a {
+    white-space: nowrap;
+    .subitems {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 20px;
       color: #fff;
       text-transform: uppercase;
+      text-overflow: ellipsis;
     }
-    a:hover {
+    .subitems:hover {
       color: #f1f1f1;
     }
     .trials-free-btn-mobile {
@@ -89,6 +91,6 @@ $menuOpen: false;
     padding-top: 22px;
     padding-bottom: 22px;
     top: 0px;
-    border-left: 1px solid rgba(0,0,0,.1)!important
+    border-left: 1px solid rgba(0, 0, 0, .1)
   }
 }
