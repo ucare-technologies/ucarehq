@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ucarehq",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "",
   "version": "0.1.0",
   "author": "VitaliyKobytsia <enjoylifethemost123@gmail.com>",
   "dependencies": {
@@ -35,6 +35,7 @@
     "react-hamburger-menu": "^1.1.1",
     "react-helmet": "^5.2.1",
     "react-rangeslider": "^2.2.0",
+    "react-scroll": "^1.7.11",
     "react-slick": "^0.24.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.2.0"

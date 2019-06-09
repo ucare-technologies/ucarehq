@@ -26,6 +26,14 @@ $menuOpen: false;
     color: hsla(0,0%,100%,.9);
     font-weight: 500;
     letter-spacing: 1px;
+    text-decoration: none;
+    margin: 15px;
+    cursor: pointer;
+  }
+  .item:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid hsla(0,0%,100%,.9);
+    transition: all .3s ease-in;
   }
   .sidebar-active {
     width: 250px;

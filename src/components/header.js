@@ -4,6 +4,7 @@ import { Navbar, Nav, Fade } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
+import { Link as ScrollLink } from 'react-scroll';
 import HamburgerMenu from 'react-hamburger-menu';
 
 import UcareIcons from './Icons/ucare';
@@ -98,18 +99,38 @@ class Header extends Component {
         {
           this.state.sizeScreen > 990
             ? (
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="mx-auto">
-                <Nav.Link href="/features" className="item nav-features">features</Nav.Link>
-                <Nav.Link href="/" className="item nav-pricing">pricing</Nav.Link>
-                <Nav.Link href="https://ucare.zendesk.com/hc/en-us" className="item support">support</Nav.Link>
-                <Nav.Link href="/blog" className="item nav-blog">blog</Nav.Link>
-                <Nav.Link 
-                  href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
-                  className="item sign-in"
-                >
-                  sign in
-                </Nav.Link>
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mx-auto">
+                  <Nav.Item>
+                    <Link to="/features" className="item nav-features">features</Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <ScrollLink
+                      to="pricing"
+                      spy={ true }
+                      smooth={ true }
+                      hashSpy={ true }
+                      duration={500}
+                      className={`nav-pricing item`}
+                      activeClass="pricing-active-class"
+                    >
+                      pricing
+                    </ScrollLink>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <a href="https://ucare.zendesk.com/hc/en-us" className="item support">support</a>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link to="/blog" className="item nav-blog">blog</Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <a 
+                      href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
+                      className="item sign-in"
+                    >
+                      sign in
+                    </a>
+                  </Nav.Item>                
               </Nav>
               <Nav>
                 <Nav.Item>
@@ -164,8 +185,9 @@ class Header extends Component {
               </Nav>
             )
           }
-          <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active` : `sidebar-inactive`}` }>
-            <Link to={`/features`} className={`subitems`}>Features</Link>
+        <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active` : `sidebar-inactive`}` }>
+          <Link to={ `/features` } className={ `subitems` }>Features</Link>
+            {/*  */}
             <Link to="/" className={`subitems`}>pricing</Link>
             <a to="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
             <Link to="/blog" className={`subitems`}>blog</Link>
