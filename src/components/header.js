@@ -18,11 +18,18 @@ class Header extends Component {
       isTop: true,
       sizeScreen: null,
       menuOpen: false,
+      location: null,
     };
     this.handleResize = this.handleResize.bind(this);
     this.handleHamburgerClose = this.handleHamburgerClose.bind(this);
     this.handleHamburgerOpen = this.handleHamburgerOpen.bind(this);
     this.handleHamburgerClick = this.handleHamburgerClick.bind(this);
+  }
+  componentWillMount() {
+    if (typeof window !== `undefined`) {
+      this.setState({ location: window.location.pathname });
+      console.log(window.location.pathname);
+    } 
   }
   componentDidMount() {
     this.setState({
@@ -101,29 +108,39 @@ class Header extends Component {
             ? (
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mx-auto">
-                  <Nav.Item>
+                  <Nav.Item className="nav-item">
                     <Link to="/features" className="item nav-features">features</Link>
                   </Nav.Item>
-                  <Nav.Item>
-                    <ScrollLink
-                      to="pricing"
-                      spy={ true }
-                      smooth={ true }
-                      hashSpy={ true }
-                      duration={500}
-                      className={`nav-pricing item`}
-                      activeClass="pricing-active-class"
-                    >
-                      pricing
-                    </ScrollLink>
+                  <Nav.Item className="nav-item">
+                    {
+                      this.state.location === "/"
+                        ? (
+                          <ScrollLink
+                            to="pricing"
+                            spy={ true }
+                            smooth={ true }
+                            hashSpy={ true }
+                            duration={500}
+                            className={`item nav-pricing`}
+                            activeClass="pricing-active-class"
+                          >
+                            pricing
+                          </ScrollLink>
+                        )
+                        : (
+                          <Link to="/#pricing" className={ `item nav-pricing` }>
+                            pricing
+                          </Link>
+                        )
+                    }
                   </Nav.Item>
-                  <Nav.Item>
+                  <Nav.Item className="nav-item">
                     <a href="https://ucare.zendesk.com/hc/en-us" className="item support">support</a>
                   </Nav.Item>
-                  <Nav.Item>
+                  <Nav.Item className="nav-item">
                     <Link to="/blog" className="item nav-blog">blog</Link>
                   </Nav.Item>
-                  <Nav.Item>
+                  <Nav.Item className="nav-item">
                     <a 
                       href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
                       className="item sign-in"
@@ -133,7 +150,7 @@ class Header extends Component {
                   </Nav.Item>                
               </Nav>
               <Nav>
-                <Nav.Item>
+                <Nav.Item className="nav-item">
                   <Link className="trials-free-btn" to="/sign-up">
                     free 30-day trial&nbsp;&nbsp;
                     <FontAwesomeIcon icon={faChevronRight} />
@@ -187,7 +204,6 @@ class Header extends Component {
           }
         <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active` : `sidebar-inactive`}` }>
           <Link to={ `/features` } className={ `subitems` }>Features</Link>
-            {/*  */}
             <Link to="/" className={`subitems`}>pricing</Link>
             <a to="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
             <Link to="/blog" className={`subitems`}>blog</Link>

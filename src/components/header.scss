@@ -20,10 +20,13 @@ $menuOpen: false;
     background: $trial_hover_color;
     color: #3c640e;
   }
+  .nav-item {
+    color: hsla(0, 0%, 100%,.9);
+  }
   .item {
     font-size: 16px;
     text-transform: uppercase;
-    color: hsla(0,0%,100%,.9);
+    color: hsla(0, 0%, 100%,.9);
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
@@ -32,7 +35,7 @@ $menuOpen: false;
   }
   .item:hover {
     padding-bottom: 5px;
-    border-bottom: 2px solid hsla(0,0%,100%,.9);
+    border-bottom: 2px solid hsla(0, 0%,   100%, .9);
     transition: all .3s ease-in;
   }
   .sidebar-active {
