@@ -16,8 +16,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    span {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 23px;
+      padding-right: 23px;
+      border: 2px #fff solid;
+      border-radius: 45px;
+    }
+    .feature-circle {
+      padding-bottom: 5vh;
+    }
   }
 }
 .posts {
   margin-top: 10%;
+  padding-bottom: 10vh;
+}
+.blog-feature-part {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: rgba(50,58,70,.025);
 }

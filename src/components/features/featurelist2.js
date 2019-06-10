@@ -6,18 +6,11 @@ import DashboardsIcons from '../Icons/dashboards';
 import SchedulingIcons from '../Icons/scheduling';
 import PeopleIcons from '../Icons/people';
 import SecurityIcons from '../Icons/security';
+import Giving from '../Icons/giving';
 
-const FeatureList2 = () => (
+const FeatureList2 = (props) => (
   <div>
     <div className="row">
-      <div className="col-md-4">
-        <div className="circle surveys">
-          <a href="/forms-and-surveys/">
-            <SurveysIcons />
-          </a>
-        </div>
-        <h6>Forms & Surveys</h6>
-      </div>
       <div className="col-md-4">
         <div className="circle online-stores">
           <a href="/feature/online-stores/">
@@ -25,6 +18,14 @@ const FeatureList2 = () => (
           </a>
         </div>
         <h6>Online Stores & POS</h6>
+      </div>
+      <div className="col-md-4">
+        <div className="circle giving">
+          <a href="/feature/giving-finances/">
+            <Giving />
+          </a>
+        </div>
+        <h6>Giving & Finances</h6>
       </div>
       <div className="col-md-4">
         <div className="circle dashboards">

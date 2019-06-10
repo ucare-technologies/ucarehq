@@ -1,15 +1,19 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
-import moment from 'moment';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+// import moment from 'moment';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+
+import LatestBlog from '../components/blogs/latestblog';
+import FeatureList from '../components/features/featurelists';
+import FeatureList2 from '../components/features/featurelist2';
 
 import './_blogpost.scss';
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
-  const { title, date } = post.frontmatter;
+  const { title, url, svg_code } = post.frontmatter;
   const { featured_image } = post.frontmatter;
   let publicURL = null;
   featured_image && (publicURL = featured_image.publicURL);
@@ -26,15 +30,31 @@ const BlogPost = (props) => {
           maxWidth: '100%',
         } }>
         <div className="centered">
+          <div className="feature-circle">
+            <span dangerouslySetInnerHTML={{__html: `${svg_code}`}}></span>
+          </div>
           <h1>{ title }</h1>
-          <span>
+          {/* <span>
             <FontAwesomeIcon icon={faCalendarAlt} />&nbsp;&nbsp;
             { moment(date).format("D MMMM YYYY") }
-          </span>
+          </span> */}
         </div>
       </div>
       <div className="container posts" >
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+      </div>
+      {
+        url !== "/sla/" && url !== "/privacy/" && url !== "/terms/" &&
+        <div className="row blog-feature-part">
+          <div className="container text-center my-4">
+            <h3>More Features</h3>
+            <FeatureList location={ `feature` } />
+            <FeatureList2 location={ `feature` } />
+          </div>
+        </div>
+      }
+      <div>
+        <LatestBlog />
       </div>
     </Layout>
   )
@@ -51,6 +71,7 @@ export const query = graphql`
         type
         date
         url
+        svg_code
         featured_image {
           id
           name

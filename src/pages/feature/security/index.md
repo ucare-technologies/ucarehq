@@ -6,7 +6,7 @@ date: 2016-08-20T05:06:28.000Z
 url: /security/
 featured_image: settings.jpg
 feature_colour: #000000
-svg_code: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="12" cy="15" r=".5"/><path stroke-linecap="round" d="M12 15.5v3"/><path d="M3.5 9.5h17v14h-17zM6.5 6C6.5 2.962 8.962.5 12 .5s5.5 2.462 5.5 5.5v3.5h-11V6z"/></g></svg>
+svg_code: <svg height="40px" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="12" cy="15" r=".5"/><path stroke-linecap="round" d="M12 15.5v3"/><path d="M3.5 9.5h17v14h-17zM6.5 6C6.5 2.962 8.962.5 12 .5s5.5 2.462 5.5 5.5v3.5h-11V6z"/></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---

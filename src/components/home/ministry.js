@@ -11,7 +11,7 @@ const Ministry = () => (
   <section className="container ministry">
     <div className="row text-center">
       <div className="col-md-12">
-        <h1>Ministry. We've got you covered</h1>
+        <h1>Ministry. We've got you covered.</h1>
         <p>No matter what ministry you’re involved in; UCare is focused on people so you can be too.</p>
       </div>
     </div>

@@ -36,27 +36,34 @@ const Features = () => (
       const { publicURL } = data.allFile.edges[0].node;
       return (
         <Layout>
-          <div className="container-fluid p-0">
-          <div className="row text-center feature-page">
-
-          </div>
-          <div className="container text-center my-4">
-            <div className="row">
-              <p>
-                UCare provides effective and easy to use all-in-one church management solution that doesn’t cost the world so you can focus on ministry and loving people. Explore each powerful feature to find out how UCare handles the simplest to the most complex needs.
-              </p>
+          <div className="container-fluid p-0 m-0">
+            <div className="row text-center feature-page" style={ {
+              background: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${publicURL})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: `cover`,
+              backgroundPosition: `50%`,
+            } }> 
+              <div className="text-center feature-page-header">
+                <h1 className="text-white">UCare's Powerful Features</h1>
+                <h3 className="text-white">Church can be complex, but your software doesn't need to be.</h3>
+              </div>
+            </div>
+            <div className="container text-center my-4">
+              <div className="row">
+                <p>
+                  UCare provides effective and easy to use all-in-one church management solution that doesn’t cost the world so you can focus on ministry and loving people. Explore each powerful feature to find out how UCare handles the simplest to the most complex needs.
+                </p>
+              </div>
+              <div>
+                <FeatureList location={ `feature` }/>
+                <FeatureList2 location={ `feature` }/>
+              </div>
             </div>
             <div>
-              <FeatureList />
-              <FeatureList2 />
+              <LatestBlog />
             </div>
-          </div>
-          <div>
-            <LatestBlog />
-          </div>
-        </div> 
+          </div> 
         </Layout>
-        
       )
     }}
   />

@@ -21,6 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
               author
               url
               date
+              type
             }
           }
         }
@@ -30,7 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
       if (result.errors) {
         return Promise.reject(result.errors);
       }
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
           component: blogTemplate,
@@ -43,7 +44,7 @@ exports.createPages = ({ actions, graphql }) => {
       const postsPerPage = 5;
       const numPages = Math.ceil(posts.length / postsPerPage);
     
-      Array.from({ length: numPages }).forEach((_, i) => {
+    Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
           component: path.resolve("./src/templates/blog-list.js"),

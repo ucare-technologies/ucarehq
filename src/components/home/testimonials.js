@@ -80,7 +80,7 @@ const Testimonials = () => (
           height: '500px'
         } }>
           <div className="container text-center text-white">
-            <h3>Church we work with</h3>
+            <h3>Churches we work with</h3>
           </div>
           <div className="row m-0">
             <div className="container text-center my-5 slick-panel">

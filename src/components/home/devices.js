@@ -1,6 +1,8 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
+import AppleStoreIcon from '../Icons/applestore';
+
 const Devices = (props) => (
   <section className="container-fluid devices">
     <div className="row">
@@ -19,11 +21,16 @@ const Devices = (props) => (
       </div>
     </div>
     <div className="row apple-google-play">
-      <div className="col-md-1 offset-md-3">
-        {/* <Img fluid={props.applefluid} /> */}
+      <div className="col-sm-1 offset-sm-3">
+        <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8">
+          <AppleStoreIcon />
+        </a>
+        
       </div>
-      <div className="col-md-1 offset-md-3">
-        <Img fluid={props.googlefluid} className="google-play" />
+      <div className="col-sm-1 offset-sm-3">
+        <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app">
+          <Img fluid={props.googlefluid} className="google-play" />
+        </a>
       </div>
     </div>
   </section>

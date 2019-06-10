@@ -19,9 +19,9 @@ import Layout from "../components/layout"
  * @see https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91 
  */
 const IndexPage = (props) => {
-  // const homepage = props.data.allMarkdownRemark;
-  // const { title } = homepage.edges[0].node.frontmatter;
-  // document.title = `UCare | ${title}`;
+  const homepage = props.data.allMarkdownRemark;
+  const { title } = homepage.edges[0].node.frontmatter;
+  // if(typeof window !== `undefined`) document.title = `UCare | ${title}`;
   return (
     <Layout>
       <ChurchManagement/>
@@ -29,7 +29,6 @@ const IndexPage = (props) => {
       <Features />
       <Devices
         fluid={ props.data.deviceImage.childImageSharp.fluid }
-        // applefluid={ props.data.appleImage.childImageSharp.fluid }
         googlefluid={ props.data.googleImage.childImageSharp.fluid }
       />
       <Testimonials />

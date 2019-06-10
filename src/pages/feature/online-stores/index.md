@@ -6,7 +6,7 @@ date: 2016-08-07T06:48:10.000Z
 url: /online-stores/
 featured_image: downloads.jpg
 feature_colour: #00bcd4
-svg_code: <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 22" style="enable-background:new 0 0 24 22;" xml:space="preserve"><g id="Layer_2"><g id="Outline_Icons"> <polygon class="st0" points="20.5,21.5 3.5,21.5 1.5,10.5 22.5,10.5 "/> <rect x="0.5" y="8.5" class="st0" width="23" height="2"/> <line class="st0" x1="3.5" y1="6.5" x2="9.5" y2="0.5"/> <line class="st0" x1="20.5" y1="6.5" x2="14.5" y2="0.5"/> <line class="st0" x1="13.5" y1="12.5" x2="13.5" y2="18.5"/> <line class="st0" x1="17.5" y1="12.5" x2="17.5" y2="18.5"/> <line class="st0" x1="10.5" y1="12.5" x2="10.5" y2="18.5"/> <line class="st0" x1="6.5" y1="12.5" x2="6.5" y2="18.5"/> </g></g></svg>
+svg_code: <svg height="40px" fill="none" stroke="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 22" style="enable-background:new 0 0 24 22;" xml:space="preserve"><g id="Layer_2"><g id="Outline_Icons"> <polygon class="st0" points="20.5,21.5 3.5,21.5 1.5,10.5 22.5,10.5 "/> <rect x="0.5" y="8.5" class="st0" width="23" height="2"/> <line class="st0" x1="3.5" y1="6.5" x2="9.5" y2="0.5"/> <line class="st0" x1="20.5" y1="6.5" x2="14.5" y2="0.5"/> <line class="st0" x1="13.5" y1="12.5" x2="13.5" y2="18.5"/> <line class="st0" x1="17.5" y1="12.5" x2="17.5" y2="18.5"/> <line class="st0" x1="10.5" y1="12.5" x2="10.5" y2="18.5"/> <line class="st0" x1="6.5" y1="12.5" x2="6.5" y2="18.5"/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center
 ---

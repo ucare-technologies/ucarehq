@@ -47,7 +47,7 @@ class Pricing extends Component {
                         <h2 className="text-white">
                           only pay for 
                             <br></br>
-                          what you need
+                          what you need.
                         </h2>
                       </div>
                     </div>
