@@ -30,9 +30,12 @@ const BlogPost = (props) => {
           maxWidth: '100%',
         } }>
         <div className="centered">
-          <div className="feature-circle">
-            <span dangerouslySetInnerHTML={{__html: `${svg_code}`}}></span>
-          </div>
+          
+          { svg_code &&
+            <div className="feature-circle">
+              <span dangerouslySetInnerHTML={ { __html: `${svg_code}` } }></span>
+            </div>
+          }
           <h1>{ title }</h1>
           {/* <span>
             <FontAwesomeIcon icon={faCalendarAlt} />&nbsp;&nbsp;

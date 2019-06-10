@@ -49,12 +49,12 @@ const Features = () => (
               </div>
             </div>
             <div className="container text-center my-4">
-              <div className="row">
+              <div className="row feature-page-body">
                 <p>
                   UCare provides effective and easy to use all-in-one church management solution that doesn’t cost the world so you can focus on ministry and loving people. Explore each powerful feature to find out how UCare handles the simplest to the most complex needs.
                 </p>
               </div>
-              <div>
+              <div className="feature-body-list">
                 <FeatureList location={ `feature` }/>
                 <FeatureList2 location={ `feature` }/>
               </div>
