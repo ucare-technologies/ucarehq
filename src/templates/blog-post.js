@@ -14,7 +14,7 @@ import './_blogpost.scss';
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
-  const { title, url, svg_code, feature_colour } = post.frontmatter;
+  const { title, url, svg_code, feature_colour, type } = post.frontmatter;
   const { featured_image } = post.frontmatter;
   let publicURL = null;
   featured_image && (publicURL = featured_image.publicURL);
@@ -51,10 +51,10 @@ const BlogPost = (props) => {
         </div>
       </div>
       <div className="container posts" >
-        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} className="pages"></div>
       </div>
       {
-        url !== "/sla/" && url !== "/privacy/" && url !== "/terms/" &&
+        url !== "/sla/" && url !== "/privacy/" && url !== "/terms/" && type !== "post" &&
         <div className="row blog-feature-part">
           <div className="container text-center my-4">
             <h3>More Features</h3>
@@ -63,9 +63,12 @@ const BlogPost = (props) => {
           </div>
         </div>
       }
-      <div>
-        <LatestBlog />
-      </div>
+      {
+        type !== "post" &&
+          <div>
+            <LatestBlog />
+          </div>
+      }
     </Layout>
   )
 }

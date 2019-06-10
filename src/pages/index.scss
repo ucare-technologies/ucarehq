@@ -22,19 +22,21 @@
 
 @import './signup';
 
-div {
-  ul {
-    li {
-      list-style: none;
-      // background: url('https://ucarehq.com/wp-content/uploads/2016/10/check2.svg');
-      background-repeat: no-repeat;
-      padding-left: 0;
-      margin-bottom: calc(1.45rem / 4);
-      padding: 2px 0 6px 36px;
-      display: list-item;
-      h3 {
-        background-image: none;
+// .pages {
+  div {
+    ul {
+      li {
+        list-style: none;
+        background: url('https://ucarehq.com/wp-content/uploads/2016/10/check2.svg');
+        background-repeat: no-repeat;
+        padding-left: 0;
+        margin-bottom: calc(1.45rem / 4);
+        padding: 2px 0 6px 36px;
+        // display: list-item;
+        h3 {
+          background-image: none;
+        }
       }
     }
   }
-}
+// }
