@@ -28,7 +28,6 @@ class Header extends Component {
   componentWillMount() {
     if (typeof window !== `undefined`) {
       this.setState({ location: window.location.pathname });
-      console.log(window.location.pathname);
     } 
   }
   componentDidMount() {
@@ -120,8 +119,8 @@ class Header extends Component {
                             spy={ true }
                             smooth={ true }
                             hashSpy={ true }
-                            duration={500}
-                            className={`item nav-pricing`}
+                            duration={ 500 }
+                            className={ `item nav-pricing` }
                             activeClass="pricing-active-class"
                           >
                             pricing
@@ -162,64 +161,80 @@ class Header extends Component {
             : (
               <Nav className="mx-auto d-inline-block">
                 <Nav.Item>
-                  {/* <Link className="trials-free-btn" to="/sign-up">
-                    free 30-day trial&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </Link> */}
-                    <button
+                  <button
                     className={
                       `text-center text-white hamburger 
                       ${this.state.menuOpen ? `hamburger-active` : `hamburger-inactive`}
                       ${!this.state.isTop && `hamburger-below`}`
                     }
-                    >
-                    { this.state.menuOpen
-                      ? <HamburgerMenu
-                          isOpen={this.state.menuOpen}
-                          menuClicked={this.handleHamburgerClick.bind(this)}
-                          width={18}
-                          height={15}
-                          strokeWidth={2}
-                          rotate={0}
-                          borderRadius={0}
-                          animationDuration={ 0.5 }
-                          color={this.state.isTop ? `#fff`: `#000`}
-                        />
-                      : <HamburgerMenu
-                          isOpen={this.state.menuOpen}
-                          menuClicked={this.handleHamburgerClick.bind(this)}
-                          width={18}
-                          height={15}
-                          strokeWidth={2}
-                          rotate={0}
-                          borderRadius={0}
-                          animationDuration={ 0.5 }
-                          color={this.state.isTop ? `#fff`: `#000`}
-                        />
-                      }
-                    </button>
+                  >
+                  {
+                    this.state.menuOpen
+                    ? <HamburgerMenu
+                        isOpen={this.state.menuOpen}
+                        menuClicked={this.handleHamburgerClick.bind(this)}
+                        width={18}
+                        height={15}
+                        strokeWidth={2}
+                        rotate={0}
+                        borderRadius={0}
+                        animationDuration={ 0.5 }
+                        color={this.state.isTop ? `#fff`: `#000`}
+                      />
+                    : <HamburgerMenu
+                        isOpen={this.state.menuOpen}
+                        menuClicked={this.handleHamburgerClick.bind(this)}
+                        width={18}
+                        height={15}
+                        strokeWidth={2}
+                        rotate={0}
+                        borderRadius={0}
+                        animationDuration={ 0.5 }
+                        color={this.state.isTop ? `#fff`: `#000`}
+                      />
+                  }
+                  </button>
                 </Nav.Item>
               </Nav>
             )
           }
         <div className={ `sidebar ${this.state.menuOpen ? `sidebar-active` : `sidebar-inactive`}` }>
           <Link to={ `/features` } className={ `subitems` }>Features</Link>
-            <Link to="/" className={`subitems`}>pricing</Link>
-            <a to="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
-            <Link to="/blog" className={`subitems`}>blog</Link>
-            <a 
-              to="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
-              className={`subitems`}
-            >
-              sign in
-            </a>
-            <Link className="trials-free-btn-mobile subitems" to="/sign-up">
-              free 30-day trial&nbsp;&nbsp;
-              <FontAwesomeIcon icon={faChevronRight} />
-            </Link>
-          </div>
-        </Navbar>
-      );
+          {
+            this.state.location === "/"
+              ? (
+                <ScrollLink
+                  to="pricing"
+                  smooth={ true }
+                  hashSpy={ true }
+                  duration={ 500 }
+                  className={ `subitems` }
+                  activeClass="pricing-active-class"
+                >
+                  pricing
+                </ScrollLink>
+              )
+              : (
+                <Link to="/#pricing" className={ `subitems` }>
+                  pricing
+                </Link>
+              )
+          }
+          <a to="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
+          <Link to="/blog" className={`subitems`}>blog</Link>
+          <a 
+            to="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
+            className={`subitems`}
+          >
+            sign in
+          </a>
+          <Link className="trials-free-btn-mobile subitems" to="/sign-up">
+            free 30-day trial&nbsp;&nbsp;
+            <FontAwesomeIcon icon={faChevronRight} />
+          </Link>
+        </div>
+      </Navbar>
+    );
   }
 }
 
