@@ -23,7 +23,7 @@ const BlogPost = (props) => {
     ? featureColorRgba = hexToRgba(feature_colour, 0.7)
     : featureColorRgba = 'rgba(0, 0, 0, 0.45)'
   
-  typeof window !== `undefined` && (window.document.title = title);
+  typeof window !== `undefined` && (window.document.title = `${title} | UCare`);
   return (
     <Layout>
       <div
