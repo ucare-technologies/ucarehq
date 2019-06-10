@@ -3,6 +3,8 @@ $trial_hover_color: #8ce229;
 $menuOpen: false;
 .navbar {
   transition: all .6s ease;
+  height: 11vh;
+  
   .trials-free-btn {
     background: $trial-color;
     padding: 10px 25px;
@@ -15,6 +17,18 @@ $menuOpen: false;
     text-decoration: none;
     border: none;
     text-transform: uppercase;
+  }
+  .trials-free-btn-mobile {
+    @extend .trials-free-btn;
+    margin-left: 0px;
+  }
+  .smallest-trial {
+    @extend .trials-free-btn;
+    font-size: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 100;
+    z-index: 0;
   }
   .trials-free-btn:hover {
     background: $trial_hover_color;

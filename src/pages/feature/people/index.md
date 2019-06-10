@@ -5,7 +5,7 @@ type: feature
 date: 2016-08-20T05:06:05.000Z
 url: /people/
 featured_image: family.jpg
-feature_colour: #2196F3
+feature_colour: '#2196F3'
 svg_code: <svg height="40px" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linejoin="round" stroke-miterlimit="10" d="M12 23.5h11.5s0-2.057-1-4.057c-.746-1.492-4-2.5-8-4v-3s1.5-1 1.5-3c.5 0 1-2 0-2.5 0-.298 1.34-2.802 1-4.5-.5-2.5-7.5-2.5-8-.5-3 0-1 4.594-1 5-1 .5-.5 2.5 0 2.5 0 2 1.5 3 1.5 3v3c-4 1.5-7.255 2.508-8 4-1 2-1 4.057-1 4.057H12z"/><g></svg>
 show_on_home_page: true
 header_alignment: center

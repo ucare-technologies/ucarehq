@@ -5,7 +5,7 @@ type: feature
 date: 2016-08-07T06:49:21.000Z
 url: /giving-finances/
 featured_image: giving.jpg
-feature_colour: #009688
+feature_colour: '#009688'
 svg_code: <svg height="40px" fill="none" stroke="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22.9" style="enable-background:new 0 0 22 22.9;" xml:space="preserve"><g id="Layer_2"><g id="Outline_Icons"> <path class="st0" d="M11,22.4c0,0,10.5-8.1,10.5-15.8S12.2-1.7,11,6C9.8-1.7,0.5-1.1,0.5,7.2S11,22.4,11,22.4z"/> </g></g></svg>
 show_on_home_page: true
 header_alignment: center

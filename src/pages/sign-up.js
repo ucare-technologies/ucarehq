@@ -172,6 +172,7 @@ class Singup extends Component {
   render() {
     const { countryNames, qa, formValidation } = this.state;
     const { firstname, lastname, email, mobile, tenant } = formValidation;
+    typeof window !== `undefined` && (window.document.title = '30-day free trial | Ucare');
     return (
       <Layout>
         <div className="container-fluid p-0 blog-header text-center" style={ {

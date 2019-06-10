@@ -150,7 +150,7 @@ class Header extends Component {
               </Nav>
               <Nav>
                 <Nav.Item className="nav-item">
-                  <Link className="trials-free-btn" to="/sign-up">
+                  <Link className={`trials-free-btn`} to="/sign-up">
                     free 30-day trial&nbsp;&nbsp;
                     <FontAwesomeIcon icon={faChevronRight} />
                   </Link>
@@ -160,6 +160,16 @@ class Header extends Component {
             )
             : (
               <Nav className="mx-auto d-inline-block">
+                {
+                  !this.state.isTop && (
+                    <Nav.Item className={`nav-item`}>
+                      <Link className={`trials-free-btn-mobile ${this.state.sizeScreen < 350? `smallest-trial` : `` }`} to="/sign-up">
+                        free 30-day trial&nbsp;&nbsp;
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </Link>
+                    </Nav.Item>
+                  )
+                }
                 <Nav.Item>
                   <button
                     className={
