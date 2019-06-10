@@ -13,7 +13,7 @@ const FeatureList2 = (props) => (
     <div className="row">
       <div className="col-md-4">
         <div className="circle online-stores">
-          <a href="/feature/online-stores/">
+          <a href="/features/online-stores/">
             <OnlinestoresIcons />
           </a>
         </div>
@@ -21,7 +21,7 @@ const FeatureList2 = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle giving">
-          <a href="/feature/giving-finances/">
+          <a href="/features/giving-finances/">
             <Giving />
           </a>
         </div>
@@ -29,7 +29,7 @@ const FeatureList2 = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle dashboards">
-          <a href="/feature/dashboards/">
+          <a href="/features/dashboards/">
             <DashboardsIcons />
           </a>
         </div>
@@ -39,7 +39,7 @@ const FeatureList2 = (props) => (
     <div className="row my-4">
       <div className="col-md-4">
         <div className="circle scheduling">
-          <a href="/feature/scheduling-reservations/">
+          <a href="/features/scheduling-reservations/">
             <SchedulingIcons />
           </a>
         </div>
@@ -47,7 +47,7 @@ const FeatureList2 = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle people">
-          <a href="/feature/people/">
+          <a href="/features/people/">
             <PeopleIcons />
           </a>
         </div>
@@ -55,7 +55,7 @@ const FeatureList2 = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle security">
-          <a href="/feature/security/">
+          <a href="/features/security/">
             <SecurityIcons />
           </a>
         </div>

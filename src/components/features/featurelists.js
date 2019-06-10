@@ -12,7 +12,7 @@ const FeatureList = (props) => (
     <div className="row">
       <div className="col-md-4">
         <div className="circle attendance">
-          <a href="/feature/attendance-tracking/">
+          <a href="/features/attendance-tracking/">
             <AttendanceIcon />
           </a>
         </div>
@@ -20,7 +20,7 @@ const FeatureList = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle child">
-          <a href="/feature/check-in-child-safety/">
+          <a href="/features/check-in-child-safety/">
             <ChildIcon />
           </a>
         </div>
@@ -28,7 +28,7 @@ const FeatureList = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle event-booking">
-          <a href="/feature/event-ticket-booking/">
+          <a href="/features/event-ticket-booking/">
             <EventBooking />
           </a>
         </div>
@@ -38,7 +38,7 @@ const FeatureList = (props) => (
     <div className="row my-4">
       <div className="col-md-4">
         <div className="circle groups">
-          <a href="/feature/groups/">
+          <a href="/features/groups/">
             <Group />
           </a>
         </div>
@@ -46,7 +46,7 @@ const FeatureList = (props) => (
       </div>
       <div className="col-md-4">
         <div className="circle process">
-          <a href="/feature/processes-automation/">
+          <a href="/features/processes-automation/">
             <Process />
           </a>
         </div>
@@ -56,10 +56,10 @@ const FeatureList = (props) => (
         <div className={`circle ${props.location === 'root' ? 'giving': 'surveys'}`}>
           {
             props.location === `root`
-            ? <a href="/feature/giving-finances/">
+            ? <a href="/features/giving-finances/">
                 <Giving />
               </a>
-            : <a href="/feature/forms-and-surveys/">
+            : <a href="/features/forms-and-surveys/">
                 <SurveysIcons />
               </a>
           }
