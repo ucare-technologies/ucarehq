@@ -1,9 +1,7 @@
 $trial-color: #72be1a;
 $trial_hover_color: #8ce229;
 $menuOpen: false;
-.navbar-below {
-  border-bottom: 1px solid rgba(0,0,0,.1)!important;
-}
+
 .navbar {
   transition: all .6s ease;
   height: 10vh;
@@ -120,4 +118,8 @@ $menuOpen: false;
     top: 0px;
     border-left: 1px solid rgba(0, 0, 0, .1)
   }
+}
+.navbar-below {
+  height: 8vh;
+  border-bottom: 1px solid rgba(0,0,0,.1)!important;
 }
