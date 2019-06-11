@@ -1,6 +1,5 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
@@ -8,19 +7,8 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "transparent" }}
-      onClick={onClick}
-    />
-  );
-}
-
 const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className='slick-arrow-prev'
@@ -40,7 +28,7 @@ const PrevArrow = (props) => {
   );
 }
 const NextArrow = (props) => {
-  const { className, style, onClick } = props;
+  const {  onClick } = props;
   return (
     <div
       className='slick-arrow-next'

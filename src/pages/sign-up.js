@@ -83,8 +83,7 @@ class Singup extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    const { formValidation } = this.state;
-    const { firstname, lastname, email, mobile, tenant } = this.state;
+    const { firstname, lastname, email, tenant } = this.state;
 
     !firstname &&
       this.setState(prevState => ({
@@ -171,7 +170,7 @@ class Singup extends Component {
   }
   render() {
     const { countryNames, qa, formValidation } = this.state;
-    const { firstname, lastname, email, mobile, tenant } = formValidation;
+    const { firstname, lastname, email, tenant } = formValidation;
     typeof window !== `undefined` && (window.document.title = '30-day free trial | Ucare');
     return (
       <Layout>

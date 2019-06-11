@@ -32,8 +32,6 @@ const Features = () => (
       }
     `}
     render={ data => {
-      
-      const { frontmatter: { tagline, title } } = data.allMarkdownRemark.edges[0].node;
       const { publicURL } = data.allFile.edges[0].node;
       if (typeof window !== `undefined`) window.document.title = 'UCare’s Powerful Features | UCare';
       return (

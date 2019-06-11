@@ -1,6 +1,5 @@
 import React from 'react';
 
-import SurveysIcons from '../Icons/surveys';
 import OnlinestoresIcons from '../Icons/onlinestores';
 import DashboardsIcons from '../Icons/dashboards';
 import SchedulingIcons from '../Icons/scheduling';

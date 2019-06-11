@@ -180,7 +180,7 @@ class Pricing extends Component {
                           {
                             this.state.values[0] / 10 > 200 ?
                             <output
-                              dangerouslySetInnerHTML={ { __html: `Please contact <a href=\"support@ucarehq.com\" /> support@ucarehq.com</a> for information about our volume discounts.` } }
+                              dangerouslySetInnerHTML={ { __html: `Please contact <a href="support@ucarehq.com" /> support@ucarehq.com</a> for information about our volume discounts.` } }
                               className="pricing-total"
                             >
                             </output>
@@ -189,7 +189,7 @@ class Pricing extends Component {
                               <div className="container w-75 m-auto">
                                 <div className="row">
                                   <div className="col-xl-7 p-0">
-                                    <h6>Your cost would be</h6>
+                                    <h5>Your cost would be</h5>
                                   </div>
                                   <div className="col-xl-5 p-0">
                                     <span>{ `$${this.state.values[0] / 10} / month` }</span>

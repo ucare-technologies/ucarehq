@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
@@ -21,7 +20,7 @@ class BlogList extends Component {
             <div className="entry-image">
               { imageURL && 
                 <Link to={ url } >
-                  <img src={imageURL} />
+                  <img src={imageURL} alt="entry" />
                 </Link>
               }
             </div>

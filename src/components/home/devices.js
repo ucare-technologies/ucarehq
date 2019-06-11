@@ -1,8 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import AppleStoreIcon from '../Icons/applestore';
-
 const Devices = (props) => (
   <section className="container-fluid devices">
     <div className="row">

@@ -19,8 +19,6 @@ class ChurchManagement extends Component {
     this.setState({ navOpen: !this.state.navOpen });
   }
   render() { 
-    const { mobile } = this.state;
-    console.log(this.state.navOpen);
     return ( 
       <StaticQuery
         query={ graphql`
@@ -50,28 +48,6 @@ class ChurchManagement extends Component {
                   </h1>
                 </div>
               </section>
-              
-              <div id="mySidebar" className={`sidebar ${this.state.navOpen ? 'sidebar-active': 'sidebar-inactive'}`}>
-                <div id="main">
-                  <button
-                    className={`openbtn`}
-                    id="openbtn"
-                    onClick={this.handleSidebar}
-                  >
-                    ☰
-                  </button>  
-                </div>
-                <div>
-                  <a href="javascript:void(0)" className="closebtn" onClick={this.handleCloseNav}>×</a>
-                  <a href="/">About</a>
-                  <a href="/">Services</a>
-                  <a href="/">Clients</a>
-                  <a href="/">Contact</a>
-                </div>
-
-              </div>
-
-              
             </BackgroundImage>
           )
         }}

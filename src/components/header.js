@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Navbar, Nav, Fade } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
@@ -236,10 +236,10 @@ class Header extends Component {
                 </Link>
               )
           }
-          <a to="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
+          <a href="https://ucare.zendesk.com/hc/en-us" className={`subitems`}>support</a>
           <Link to="/blog" className={`subitems`}>blog</Link>
           <a 
-            to="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
+            href="https://connect.ucareapp.com/signin?_ga=2.13867701.365518745.1558216565-1288942489.1557477004"
             className={`subitems`}
           >
             sign in
