@@ -8,13 +8,16 @@ class Pricing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: [0],
+      values: [100],
       screenSize: null,
     };
     this.handleRangeChange = this.handleRangeChange.bind(this);
     this.handleGetScreenSize = this.handleGetScreenSize.bind(this);
   }
   componentDidMount() {
+    this.setState({
+      screenSize: window.innerWidth,
+    });
     window.addEventListener("resize", this.handleGetScreenSize);
   }
   componentWillUnmount() {
@@ -77,6 +80,9 @@ class Pricing extends Component {
                         </div>
                       </div>
                     </div>
+                    {
+                      console.log(this.state.screenSize)
+                    }
                     <div className={`col-xl-5 col-md-12 mt-5 price-calc ${this.state.screenSize < 410 && `price-calc-less`} `}>
                       <h5>Prices start at $10/month & no long-term contracts.</h5>
                       <p>
@@ -91,7 +97,7 @@ class Pricing extends Component {
                         <Range
                           values={this.state.values}
                           step={10}
-                          min={0}
+                          min={100}
                           max={2001}
                           onChange={values => this.setState({ values })}
                           renderTrack={({ props, children }) => (
@@ -113,7 +119,7 @@ class Pricing extends Component {
                                   background: getTrackBackground({
                                     values: this.state.values,
                                     colors: ["#e10332", "rgba(50,58,70,.08)"],
-                                    min: 0,
+                                    min: 100,
                                     max: 2001
                                   }),
                                 } }
