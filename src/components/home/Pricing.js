@@ -8,13 +8,22 @@ class Pricing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rangeMin: 100,
-      rangeMax: 2001,
-      monthlyCost: 10,
-      rangeSlider: 0,
       values: [0],
+      screenSize: null,
     };
     this.handleRangeChange = this.handleRangeChange.bind(this);
+    this.handleGetScreenSize = this.handleGetScreenSize.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.handleGetScreenSize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleGetScreenSize);
+  }
+  handleGetScreenSize() {
+    this.setState({
+      screenSize: window.innerWidth,
+    });
   }
   handleRangeChange(event) {
     this.setState({
@@ -22,7 +31,6 @@ class Pricing extends Component {
     });
   }
   render() { 
-    const { rangeMax, rangeMin, monthlyCost, rangeSlider } = this.state;
     return ( 
       <StaticQuery
         query={ graphql`
@@ -44,16 +52,32 @@ class Pricing extends Component {
                   transition: 'background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s'
                 } }>
                   <div className="row" id="pricing">
-                    <div className="col-md-5 offset-md-1">
-                      <div className="only-pay">
-                        <h2 className="text-white">
-                          only pay for 
-                            <br></br>
-                          what you need.
-                        </h2>
+                    <div className="col-xl-5 col-md-12 mt-5 offset-xl-1">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className={`only-pay ${this.state.screenSize < 1200 && `smaller-only-pay`}`}>
+                            {
+                              this.state.screenSize > 1200 
+                                ? (
+                                  <h2 className="text-white">
+                                    only pay for 
+                                      <br></br>
+                                    what you need.
+                                  </h2>
+                                )
+                                : (
+                                  <h3 className="text-white text-center">
+                                    only pay for 
+                                      <br></br>
+                                    what you need.
+                                  </h3>
+                                )
+                            }
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-md-5  col-sm-12 price-calc">
+                    <div className={`col-xl-5 col-md-12 mt-5 price-calc ${this.state.screenSize < 410 && `price-calc-less`} `}>
                       <h5>Prices start at $10/month & no long-term contracts.</h5>
                       <p>
                         The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.&nbsp;
@@ -145,25 +169,30 @@ class Pricing extends Component {
                        
                       </div>
                     </div>
-                      <h5>
-                          <output>
-                            {
-                              this.state.values[0] / 10 > 200 ?
-                              <output
-                                dangerouslySetInnerHTML={ { __html: `Please contact <a href=\"support@ucarehq.com\" /> support@ucarehq.com</a> for information about our volume discounts.` } }
-                                className="pricing-total"
-                              >
-                              </output>
-                              :
-                              <output>
-                                Your cost would be
-                                <span>{ `$${this.state.values[0] / 10} / month` }</span>
-                                
-                              </output>
-                            }
-                          </output>
-                      </h5>
-                      <h3>&nbsp;</h3>
+                      <h6>
+                        <div>
+                          {
+                            this.state.values[0] / 10 > 200 ?
+                            <output
+                              dangerouslySetInnerHTML={ { __html: `Please contact <a href=\"support@ucarehq.com\" /> support@ucarehq.com</a> for information about our volume discounts.` } }
+                              className="pricing-total"
+                            >
+                            </output>
+                            :
+
+                              <div className="container w-75 m-auto">
+                                <div className="row">
+                                  <div className="col-xl-7 p-0">
+                                    <h6>Your cost would be</h6>
+                                  </div>
+                                  <div className="col-xl-5 p-0">
+                                    <span>{ `$${this.state.values[0] / 10} / month` }</span>
+                                  </div>
+                                </div>
+                              </div>                            
+                          }
+                        </div>
+                      </h6>
                     </div>
                   </div>
                 </div>
@@ -173,7 +202,7 @@ class Pricing extends Component {
           }
         }
       />
-     );
+    );
   }
 }
  

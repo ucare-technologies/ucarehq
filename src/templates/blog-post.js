@@ -37,21 +37,18 @@ const BlogPost = (props) => {
           maxWidth: '100%',
         } }>
         <div className="centered">
-          
           { svg_code &&
             <div className="feature-circle">
               <span dangerouslySetInnerHTML={ { __html: `${svg_code}` } }></span>
             </div>
           }
           <h1>{ title }</h1>
-          {/* <span>
-            <FontAwesomeIcon icon={faCalendarAlt} />&nbsp;&nbsp;
-            { moment(date).format("D MMMM YYYY") }
-          </span> */}
         </div>
       </div>
       <div className="container posts" >
-        <div dangerouslySetInnerHTML={{ __html: post.html }} className="pages"></div>
+        <div
+          dangerouslySetInnerHTML={ { __html: post.html } }
+          className={ `${url === "/sla/" || url === "/privacy/" || url === "/terms/" ? `s-page`: `pages`} `}></div>
       </div>
       {
         url !== "/sla/" && url !== "/privacy/" && url !== "/terms/" && type !== "post" &&

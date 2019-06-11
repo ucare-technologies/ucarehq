@@ -21,15 +21,14 @@ const Devices = (props) => (
       </div>
     </div>
     <div className="row apple-google-play">
-      <div className="col-sm-1 offset-sm-3">
+      <div className="col-sm-1 offset-sm-3 text-center">
         <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8">
-          <AppleStoreIcon />
+          <img src="https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg" alt="Kiwi standing on oval"></img>
         </a>
-        
       </div>
-      <div className="col-sm-1 offset-sm-3">
+      <div className="col-sm-1 offset-sm-3 text-center">
         <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app">
-          <Img fluid={props.googlefluid} className="google-play" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" alt="google store" />
         </a>
       </div>
     </div>

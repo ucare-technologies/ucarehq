@@ -85,7 +85,7 @@ class Header extends Component {
         bg={ this.state.isTop ? 'transparent': 'light' }
         variant="transparent" 
         fixed="top"
-        className={ `navbar ${!this.state.isTop && `navbar-below`}`}
+        className={ `navbar ${!this.state.isTop && `navbar-below`}` }
         style={{
           paddingBottom: 0,
           paddingTop: 0,
@@ -95,10 +95,16 @@ class Header extends Component {
           {
             !this.state.menuOpen && (
               this.state.isTop
-                ? this.state.sizeScreen < 770 
-                  ? <UcareExpandIcon height='50px' />
+                ? this.state.sizeScreen < 990 
+                  ? this.state.sizeScreen < 770
+                    ? <UcareExpandIcon height='40px' />
+                    : <UcareExpandIcon height='50px' />
                   : <UcareExpandIcon height='70px' />
-                : <UcareIcons />
+                : this.state.sizeScreen < 990
+                  ? this.state.sizeScreen < 770
+                    ? <UcareIcons height='40px' />
+                    : <UcareIcons height='50px' />
+                  : <UcareIcons height='50px' />
             )
           }
         </Navbar.Brand>

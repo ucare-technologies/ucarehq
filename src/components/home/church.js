@@ -46,7 +46,7 @@ class ChurchManagement extends Component {
               <section className="church-manage justify-content-center">
                 <div className="text-center church-manage-title">
                   <h1>
-                    Church Management&nbsp;<strong>simplified</strong>
+                    church Management&nbsp;<strong>simplified</strong>
                   </h1>
                 </div>
               </section>

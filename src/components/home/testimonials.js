@@ -19,20 +19,44 @@ function SampleNextArrow(props) {
   );
 }
 
-function SamplePrevArrow(props) {
+const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
-    // <div
-    //   className={className}
-    //   style={{ ...style, display: "block", background: "green" }}
-    //   onClick={onClick}
-    // />
     <div
-      className={className}
-      style={ { ...style, background: "transparent" } }
-      onClick={onClick}
+      className='slick-arrow-prev'
+      onClick={ onClick }
+      style={ {
+        position: 'absolute',
+        display: 'block',
+        height: '20px',
+        width: '20px',
+        top: '45%',
+        color: '#fff',
+        zIndex: '1',
+      } }
     >
-      Previous<FontAwesomeIcon icon={faChevronLeft} />
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </div>
+  );
+}
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className='slick-arrow-next'
+      onClick={ onClick }
+      style={ {
+        position: 'absolute',
+        display: 'block',
+        height: '20px',
+        width: '20px',
+        top: '45%',
+        right: '0',
+        color: '#fff',
+        zIndex: '2',
+      } }
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
     </div>
   );
 }
@@ -80,7 +104,7 @@ const Testimonials = () => (
           height: '500px'
         } }>
           <div className="container text-center text-white">
-            <h3>Churches we work with</h3>
+            <h3>Churches We Work With</h3>
           </div>
           <div className="row m-0">
             <div className="container text-center my-5 slick-panel">
@@ -95,6 +119,8 @@ const Testimonials = () => (
                 style={ {
                   color: '#fff',
                 } }
+                prevArrow={ <PrevArrow /> }
+                nextArrow={ <NextArrow /> }
                 responsive={ [
                   { breakpoint: 1024,
                     settings: {

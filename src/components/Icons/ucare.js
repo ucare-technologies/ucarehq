@@ -1,14 +1,8 @@
 import React from 'react';
 
-const UcareIcon = ({
-  style = {
-    maxHeight: '50px',
-    top: '5px',
-  },
-}) => (
+const UcareIcon = (props) => (
     <svg
-    style={ style }
-    height= '50px'
+    height= {props.height}
     viewBox='0 0 140 70'
     fill="#e10332"
     stroke="#e10332"
