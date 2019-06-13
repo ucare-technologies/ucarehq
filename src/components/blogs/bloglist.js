@@ -7,10 +7,6 @@ import { Link } from 'gatsby';
  * Using fontawesome
  */
 class BlogList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
   render() { 
     const { title, date, url, excerpt, imageURL } = this.props;
     return ( 
@@ -39,11 +35,10 @@ class BlogList extends Component {
               </article>
               <div>
                 <a href={url} className="readmore">
-                    Readmore&nbsp;&nbsp;<FontAwesomeIcon icon={ faChevronRight } />
+                    Read More&nbsp;&nbsp;<FontAwesomeIcon icon={ faChevronRight } />
                 </a>                
               </div>
             </div>
-            <hr />
           </div>
         </div>
       </div>

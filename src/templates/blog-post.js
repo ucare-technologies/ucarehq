@@ -22,7 +22,6 @@ const BlogPost = (props) => {
   feature_colour
     ? featureColorRgba = hexToRgba(feature_colour, 0.7)
     : featureColorRgba = 'rgba(0, 0, 0, 0.45)'
-  
   typeof window !== `undefined` && (window.document.title = `${title} | UCare`);
   return (
     <Layout>
@@ -33,6 +32,7 @@ const BlogPost = (props) => {
           backgroundColor: `${feature_colour ? feature_colour: '#323a46'}`,
           backgroundPosition: '50%',
           backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
           boxShadow: '0 0 10px 0 rgba(0,0,0,0.5)',
           maxWidth: '100%',
         } }>
@@ -48,11 +48,13 @@ const BlogPost = (props) => {
       <div className="container posts" >
         <div
           dangerouslySetInnerHTML={ { __html: post.html } }
-          className={ `${url === "/sla/" || url === "/privacy/" || url === "/terms/" ? `s-page`: `pages`} `}></div>
+          className={ `${url === "/sla/" || url === "/privacy/" || url === "/terms/" ? `s-page` : `pages`} ` }
+        >
+        </div>
       </div>
       {
         url !== "/sla/" && url !== "/privacy/" && url !== "/terms/" && type !== "post" &&
-        <div className="row blog-feature-part">
+        <div className="row m-0 blog-feature-part">
           <div className="container text-center my-4">
             <h3>More Features</h3>
             <FeatureList location={ `feature` } />

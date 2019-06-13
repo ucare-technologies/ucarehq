@@ -67,8 +67,13 @@ const LatestBlog = () => (
                           </div>
                           <h3 className="ml-4">{ title }</h3>
                           <div className="blog-excerpt">
-                            <h6 className="text-left">{ date }</h6>
-                            { excerpt }
+                            <span className="text-left feature-date"> 
+                              { date }
+                            </span>
+                            <div>
+                              { excerpt }
+                            </div>
+                            
                           </div>
                           <div className="readmore-link">
                             <span className="read-more ml-4">

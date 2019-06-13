@@ -55,32 +55,16 @@ class Pricing extends Component {
                 } }>
                   <div className="row" id="pricing">
                     <div className="col-xl-5 col-md-12 mt-5 offset-xl-1">
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className={`only-pay ${this.state.screenSize < 1200 && `smaller-only-pay`}`}>
-                            {
-                              this.state.screenSize > 1200 
-                                ? (
-                                  <h2 className="text-white">
-                                    only pay for 
-                                      <br></br>
-                                    what you need.
-                                  </h2>
-                                )
-                                : (
-                                  <h3 className="text-white text-center">
-                                    only pay for 
-                                      <br></br>
-                                    what you need.
-                                  </h3>
-                                )
-                            }
-                          </div>
-                        </div>
+                      <div className={`only-pay`}>
+                        <h2 className="text-white">
+                          only pay for 
+                            <br></br>
+                          what you need.
+                        </h2>
                       </div>
                     </div>
-                    <div className={`col-xl-5 col-md-12 mt-5 price-calc ${this.state.screenSize < 410 && `price-calc-less`} `}>
-                      <h5>Prices start at $10/month & no long-term contracts.</h5>
+                    <div className={`col-xl-5 col-md-12 mt-5 price-calc`}>
+                      <h3>Prices start at $10/month & no long-term contracts.</h3>
                       <p>
                         The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.&nbsp;
                         <a href="/sign-up/" className="faq">(FAQ)</a>
@@ -109,7 +93,8 @@ class Pricing extends Component {
                                 ref={props.ref}
                                 style={{
                                   height: "20px",
-                                  width: "100%",
+                                  width: "90%",
+                                  margin: "auto",
                                   borderRadius: "10px",
                                   paddingBottom: "20px",
                                   background: getTrackBackground({
@@ -180,13 +165,10 @@ class Pricing extends Component {
                             >
                             </output>
                             :
-                            <div className="container w-75 m-auto">
+                            <div className="container m-auto">
                               <div className="row">
-                                <div className="col-xl-7 p-0">
-                                  <h5>Your cost would be</h5>
-                                </div>
-                                <div className="col-xl-5 p-0">
-                                  <span>{ `$${this.state.values[0] / 10} / month` }</span>
+                                <div className="col-sm-12 p-0">
+                                  <h5>Your cost would be <span>{ `$${this.state.values[0] / 10} / month` }</span></h5>
                                 </div>
                               </div>
                             </div>                            

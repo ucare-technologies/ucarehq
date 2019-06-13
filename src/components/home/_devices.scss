@@ -1,6 +1,29 @@
 .devices {
   .apple-google-play {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
+  }
+  h2, p {
+    font-feature-settings: "liga" 0;
+    font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 30px;
+    color: $grey_color;
+    margin: auto;
+  }
+  h2 {
+    margin-left: 10%;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    width: 80%;
+  }
+  p:nth-of-type(1) {
+    margin-top: 10px;
+  }
+  h2:nth-of-type(1) {
+    margin-top: 30%;
+    @media screen and (max-width: 990px){
+      margin-top: 3%;
+    }
   }
 }

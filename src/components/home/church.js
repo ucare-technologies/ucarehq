@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
 
 class ChurchManagement extends Component {
   constructor(props) {
@@ -9,11 +8,7 @@ class ChurchManagement extends Component {
       mobile: false,
       navOpen: false,
     }
-    this.handleCloseNav = this.handleCloseNav.bind(this);
     this.handleSidebar = this.handleSidebar.bind(this);
-  }
-  handleCloseNav() {
-
   }
   handleSidebar() {
     this.setState({ navOpen: !this.state.navOpen });
@@ -24,31 +19,24 @@ class ChurchManagement extends Component {
         query={ graphql`
             query {
               home: file(relativePath: { eq: "page/home/hero.jpg" }) {
-                childImageSharp {
-                  fluid(quality: 90, maxWidth: 4160) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
+                publicURL
               }
             }
         ` }
         render={ data => {
-          const imageData = data.home.childImageSharp.fluid;
           return (
-            <BackgroundImage
-              Tag="section"
-              className="churchmanagement"
-              fluid={ imageData }
-              backgroundColor={ `#ffffff` }
+            <section
+              className="church-manage justify-content-center"
+              style={ {
+                background: `url(${data.home.publicURL})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              } }
             >
-              <section className="church-manage justify-content-center">
-                <div className="text-center church-manage-title">
-                  <h1>
-                    church management&nbsp;<strong>simplified</strong>
-                  </h1>
-                </div>
-              </section>
-            </BackgroundImage>
+              <div className="church-manage-title text-white text-center">
+                <h1><em>church management.</em><strong>&nbsp;simplified.</strong></h1>
+              </div>
+            </section>
           )
         }}
       />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { getNames } from 'country-list';
 
 import Layout from '../components/layout';
@@ -175,7 +175,7 @@ class Singup extends Component {
     return (
       <Layout>
         <div className="container-fluid p-0 blog-header text-center" style={ {
-          background: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${this.props.data.file.publicURL})`,
+          background: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${this.props.data.signup.publicURL})`,
           backgroundColor: '#323a46',
           backgroundPosition: '50%',
           backgroundSize: 'cover'
@@ -226,10 +226,10 @@ class Singup extends Component {
                   { email === "type-error" && <small className="error-message">A valid email is required</small> }
                 </div>
                 <div className="form-group">
-                  <p>
-                    Your country*---
-                    <small>so we know where to store your data & format phone numbers</small>
-                  </p>
+                  <label>
+                    Your country*
+                    <small> — so we know where to store your data & format phone numbers</small>
+                  </label>
                   <select
                     className={`form-control`}
                     onChange={ this.handleChange }
@@ -269,7 +269,7 @@ class Singup extends Component {
                       maxLength="255"
                       required=""
                       pattern="^[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]$"
-                      placeholder="e.g. yourchurch"
+                      placeholder={`e.g. yourchurch`}
                       onChange={this.handleChange}
                     />
                     .ucareapp.com
@@ -285,24 +285,26 @@ class Singup extends Component {
                 </button>
                 <p>
                   <small>
-                    By clicking you agree to the Terms of Service and Privacy policy.
+                    By clicking you agree to the 
+                    <Link to="/terms"> Terms of Service</Link> and 
+                    <Link to="/privacy"> Privacy policy.</Link>
                   </small>
                 </p>
               </form>
             </div>
             <div className="col-md-4">
-              <h5>Your trial includes everything</h5>
               <ul className="list-group">
-                <li>Unlimited users</li>
-                <li>People & households</li>
-                <li>Child safety & Check-in</li>
-                <li>Giving & stores</li>
-                <li>Group management</li>
-                <li>Dashboards & reports</li>
-                <li>Custom forms</li>
-                <li>Bulk email & SMS</li>
-                <li>Integrations & API</li>
-                <li>Email support & help center</li>
+                <li><h5>Your trial includes everything</h5></li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Unlimited users</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; People & households</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Child safety & Check-in</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Giving & stores</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Group management</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Dashboards & reports</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Custom forms</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Bulk email & SMS</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Integrations & API</li>
+                <li><img src={ this.props.data.checkMark.publicURL} alt="check mark"/>&nbsp;&nbsp; Email support & help center</li>
               </ul>
             </div>
           </div>
@@ -315,8 +317,8 @@ class Singup extends Component {
               <div className="row text-left">
               {
                 qa.map((item, key) => (
-                  <div className="col-md-4" key={key}>
-                    <h5>{`Q: ${item.Q}` }</h5>
+                  <div className="col-md-4 qas" key={key}>
+                    <h4>{`Q: ${item.Q}` }</h4>
                     <p dangerouslySetInnerHTML={{__html: item.A }}></p>
                   </div>
                 ))
@@ -333,8 +335,11 @@ class Singup extends Component {
  
 export default Singup;
 export const signupQuery = graphql`
-  query SignupQuery {
-    file(relativePath: { eq: "page/sign-up/pricing.jpg" }) {
+  query {
+    signup: file(relativePath: { eq: "page/sign-up/pricing.jpg" }) {
+      publicURL
+    }
+    checkMark: file(relativePath: { eq: "check2.svg" }) {
       publicURL
     }
   }

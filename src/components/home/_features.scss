@@ -14,12 +14,19 @@ $security_color: #000000;
   background-color: rgba(50,58,70,.025);
   margin-top: 70px;
   .features-title {
+    font-feature-settings: "liga" 0;
+    font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-top: 70px;
+    padding-bottom: 10vh;
+    color: $grey_color;
+    animation: fadeInUp 2s;
   }
   .explore-more {
-    padding-top: 10%;
+    padding-top: 10vh;
     padding-bottom: 10%;
     .explore-more-btn {
+      font-feature-settings: "liga" 0;
+      font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: #475364;
       color: #fff;
       text-decoration: none;
@@ -36,6 +43,7 @@ $security_color: #000000;
       text-decoration: none;
     }
   }
+  
 }
 
 

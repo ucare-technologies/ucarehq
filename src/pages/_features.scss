@@ -23,8 +23,19 @@
     color: #fff;
     float: right;
   }
+  
+}
+.feature-body-list {
+  margin-bottom: 10vh;
+  width: 85%;
+  margin: auto;
 }
 .feature-page-body {
   padding-top: 10vh;
   padding-bottom: 10vh;
+  p {
+    @include fonts();
+    color: #323a46;
+    opacity: 0.9;
+  }
 }

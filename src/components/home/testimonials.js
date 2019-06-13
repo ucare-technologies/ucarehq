@@ -7,6 +7,12 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+/**
+ * 
+ * @param {*} props 
+ * @see https://github.com/kenwheeler/slick/issues/245#issuecomment-315374816
+ * about react-slick dot color change
+ */
 const PrevArrow = (props) => {
   const { onClick } = props;
   return (

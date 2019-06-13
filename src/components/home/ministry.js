@@ -15,7 +15,7 @@ const Ministry = () => (
         <p>No matter what ministry you’re involved in; UCare is focused on people so you can be too.</p>
       </div>
     </div>
-    <div className="row text-center up">
+    <div className="row text-center my-5 up">
       <div className="col-md-4">
         <div className="ministry-circle">
           <ChildrenIcon />
@@ -44,7 +44,7 @@ const Ministry = () => (
         </h6>
       </div>
     </div>
-    <div className="row text-center down">
+    <div className="row text-center my-5 down">
       <div className="col-md-4">
         <div className="ministry-circle">
           <AdminFinancesIcon />

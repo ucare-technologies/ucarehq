@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 
 import Header from './header';
-import "./layout.css";
+import "./layout.scss";
 const style = {
   color: '#fff',
   textDecoration: 'none',
@@ -46,7 +46,10 @@ class Layout extends Component {
               <main>{this.props.children}</main>
             </div>
             <footer className="footer text-center">
-              <p>
+              <p style={ {
+                fontFamily: `"lato", "Helvetica Neue", Helvetica, Arial, sans-serif`,
+                fontFeatureSettings: `"liga" 0`,
+              }}>
                 © Copyright UCare {`2006-${new Date().getFullYear()}`}&nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to="/privacy" style={style}>Privacy</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to="/terms" style={style}>Terms</Link>&nbsp;&nbsp;|&nbsp;&nbsp;

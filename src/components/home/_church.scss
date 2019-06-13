@@ -3,24 +3,32 @@ $church-manage-background-height: 100vh;
   height: $church-manage-background-height;
   position: relative;
   .church-manage-title {
-    margin-top: $church-manage-background-height / 2;
-    color: rgba(255, 255, 255, 0.9);
     h1 {
-      font-weight: 400;
+      font-feature-settings: "liga" 0;
+      font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding-top: 45vh;
+      font-size: 320%;
+      em {
+        font-style: normal;
+        font-size: 100%;
+      }
+      strong {
+        font-weight: 700;
+      }
+      animation: fadeInUp 5s;
     }
   }
 }
+
 .sidebar-inactive {
   height: 100vh;
   position: fixed;
-  z-index: 1;
   top: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
   overflow: hidden;
   transition: 0.5s;
-  padding-top: 60px;
   width: 0px;
 }
 .sidebar-active {

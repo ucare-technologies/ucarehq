@@ -2,32 +2,29 @@ $color-red: #e10332;
 $color-red-hover: #960221;
 .pricing {
   position: relative;
-  // .smaller-only-pay {
-    
-  // }
+  h1, h2, h3, h4, h5, h6, p, small, output {
+    font-feature-settings: "liga" 0;
+    font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  padding: 50px;
   .only-pay {
     position: absolute;
     bottom: 0;
-    h2 {
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 240%;
+    @media screen and (min-width: 1250px) {
+      margin-bottom: 50px;
     }
-    h3 {
-      @extend h2;
-      font-size: 150%;
+    @media screen and (max-width: 380px) {
+      h2 {
+        font-size: 160%;
+      }
     }
+    text-transform: uppercase;
   }
-  padding: 50px;
   .price-calc {
     color: #323a46;
-    // margin: 50px 100px 50px 0;
-    padding: 50px;
     width: 100%;
-    max-width: 650px;
     text-align: center;
     background: hsla(0, 0%, 100%, .9);
-    height: 460px;
     span {
       background-color: rgba(50,58,70,.5);
       font-weight: 500;
@@ -35,10 +32,6 @@ $color-red-hover: #960221;
       border-radius: 25px;
       padding: 3px 15px;
       color: #fff;
-    }
-    h5, p, small {
-      margin-top: 10px;
-      margin-bottom: 10px;
     }
     p {
       font-size: 90%;
@@ -70,23 +63,37 @@ $color-red-hover: #960221;
     .faq {
       color: $color-red;
       text-decoration: none;
+      &:hover {
+        color: $color-red-hover;
+      }
     }
-    .faq:hover {
-      color: $color-red-hover;
+    @media screen and (max-width: 380px) {
+      height: 600px;
+    }
+    @media screen and (max-width: 768px){
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+    @media screen and (min-width: 768px) {
+      max-width: 650px;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 460px;
+      margin: 50px 100px 50px 0;
     }
   }
-  .price-calc-less {
-    height: 680px;
-  }
+
   .pricing-total {
     font-weight: 400;
     font-size: 90%;
     a {
       color: $color-red;
       text-decoration: none;
-    }
-    a:hover {
-      color: $color-red-hover;
+      &:hover {
+        color: $color-red-hover;
+      }
     }
   }
 }

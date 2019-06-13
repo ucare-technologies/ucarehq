@@ -17,10 +17,13 @@ class BlogList extends Component {
   render() { 
     const { data: { blog } } = this.props;
     const posts = this.props.data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext;
+    const { totalCount } = this.props.data.allMarkdownRemark;
+    const numPages = Math.ceil(totalCount / 5);
+    const { currentPage } = this.props.pageContext;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
-    currentPage === 1 && typeof window !== `undefined` && (window.document.title = 'Blog | Ucare');
+    typeof window !== `undefined`
+      && (window.document.title = `${currentPage === 1 ? 'Blog | Ucare': `Blog | Page ${currentPage} | UCare`}`)
     const prevPage = currentPage - 1 === 1 ? "/blog" : `/blog/page/${(currentPage - 1).toString()}`
     const nextPage = `/blog/page/${(currentPage + 1).toString()}`
     return ( 
@@ -64,7 +67,7 @@ class BlogList extends Component {
                 </button> 
               </Link>
             )
-            }
+            }&nbsp;
             { !isFirst && (
               <Link to={ prevPage } rel="prev">
                 <button
@@ -94,9 +97,10 @@ export const blogListQuery = graphql`
       skip: $skip
       filter: { frontmatter: { type: {eq: "post"}}}
     ) {
+      totalCount
       edges {
         node {
-          excerpt(pruneLength: 240)
+          excerpt(pruneLength: 292)
           fields {
             slug
           }

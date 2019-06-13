@@ -8,9 +8,9 @@ import Giving from '../Icons/giving';
 import SurveysIcons from '../Icons/surveys';
 
 const FeatureList = (props) => (
-  <div>
-    <div className="row">
-      <div className="col-md-4">
+  <div className="featurelist1">
+    <div className="row row-up">
+      <div className="col-md-4 feature-el">
         <div className="circle attendance">
           <a href="/features/attendance-tracking/">
             <AttendanceIcon />
@@ -18,7 +18,7 @@ const FeatureList = (props) => (
         </div>
         <h6>Attendance Tracking</h6>
       </div>
-      <div className="col-md-4">
+      <div className="col-md-4 feature-el">
         <div className="circle child">
           <a href="/features/check-in-child-safety/">
             <ChildIcon />
@@ -26,7 +26,7 @@ const FeatureList = (props) => (
         </div>
         <h6>Check-in & Child Safety</h6>
       </div>
-      <div className="col-md-4">
+      <div className="col-md-4 feature-el">
         <div className="circle event-booking">
           <a href="/features/event-ticket-booking/">
             <EventBooking />
@@ -35,8 +35,8 @@ const FeatureList = (props) => (
         <h6>Event Bookings</h6>
       </div>
     </div>
-    <div className="row my-4">
-      <div className="col-md-4">
+    <div className="row row-down">
+      <div className="col-md-4 feature-el">
         <div className="circle groups">
           <a href="/features/groups/">
             <Group />
@@ -44,7 +44,7 @@ const FeatureList = (props) => (
         </div>
         <h6>Groups</h6>
       </div>
-      <div className="col-md-4">
+      <div className="col-md-4 feature-el">
         <div className="circle process">
           <a href="/features/processes-automation/">
             <Process />
@@ -52,7 +52,7 @@ const FeatureList = (props) => (
         </div>
         <h6>Process & Automation</h6>
       </div>
-      <div className="col-md-4">
+      <div className="col-md-4 feature-el">
         <div className={`circle ${props.location === 'root' ? 'giving': 'surveys'}`}>
           {
             props.location === `root`
