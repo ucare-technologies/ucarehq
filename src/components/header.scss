@@ -91,6 +91,7 @@ $menuOpen: false;
       color: #3c640e;
     } 
     @media screen and (max-width: 1200px) {
+      position: relative;
       margin: auto;
     }
     @media screen and (max-width: 390px){
@@ -113,7 +114,7 @@ $menuOpen: false;
     transition: all .5s ease;
     position: fixed;
     right:0;
-    z-index: 1;
+    z-index: 5;
     @media screen and (min-width: 1200px) {
       visibility: hidden;
     }
@@ -129,7 +130,7 @@ $menuOpen: false;
   .sidebar {
     position: fixed;
     white-space: nowrap;
-    z-index: 1;
+    z-index: 5;
     padding-top: 20px;
     background: $grey !important;
     .sidebar-item {
