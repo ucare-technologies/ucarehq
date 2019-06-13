@@ -25,6 +25,15 @@ $color-red-hover: #960221;
     width: 100%;
     text-align: center;
     background: hsla(0, 0%, 100%, .9);
+    h4 {
+      font-feature-settings: "liga" 0;
+      font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 80%;
+      margin: auto;
+      font-weight: 700;
+      font-size: 120%;
+      margin-bottom: 20px;
+    }
     span {
       background-color: rgba(50,58,70,.5);
       font-weight: 500;
@@ -35,6 +44,11 @@ $color-red-hover: #960221;
     }
     p {
       font-size: 90%;
+      width: 90%;
+      margin: auto;
+      &:nth-of-type(2) {
+        margin-bottom: 30px;
+      }
     }
     .slider {
       margin-bottom: 32px;

@@ -8,9 +8,12 @@ $grey_color: #323a46;
     margin: auto;
     font-size: 300%;
     width: 80%;
-    font-weight: 100;
+    font-weight: 300;
     padding-bottom: 10vh;
     color: $grey_color;
+    @media screen and (max-width: 770px){
+      width: 100%;
+    }
   }
   .try-ucare {
     font-feature-settings: "liga" 0;

@@ -54,10 +54,11 @@ $menuOpen: false;
     transition: all .6s ease;
   }
   .navbar-nav {
-    margin-top: 3vh;
+    margin-top: 15px;
     .nav-item {
       @include fonts();
       font-size: 16px;
+      font-weight: 400;
       text-transform: uppercase;
       color: hsla(0, 0%, 100%,.9);
       font-weight: 700;
@@ -168,7 +169,7 @@ $menuOpen: false;
   background-color: transparent;
 }
 .bg-light {
-  height: 60px;
+  height: 65px;
   padding-bottom: 20px;
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.1)!important;

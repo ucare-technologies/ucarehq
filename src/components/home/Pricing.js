@@ -64,7 +64,7 @@ class Pricing extends Component {
                       </div>
                     </div>
                     <div className={`col-xl-5 col-md-12 mt-5 price-calc`}>
-                      <h3>Prices start at $10/month & no long-term contracts.</h3>
+                      <h4>Prices start at $10/month & no long-term contracts.</h4>
                       <p>
                         The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.&nbsp;
                         <a href="/sign-up/" className="faq">(FAQ)</a>

@@ -5,10 +5,14 @@
     font-feature-settings: "liga" 0;
     font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
+  h5 {
+    opacity: 0.8;
+  }
   h6 {
     color: rgba(50,58,70,.6);
     font-size: 90%;
     line-height: 22px;
+    font-weight: 400;
   }
   p{
     color: #323a46;
