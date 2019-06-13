@@ -11,16 +11,31 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
-        {props.headComponents}
+        { props.headComponents }
       </head>
       <body {...props.bodyAttributes}>
-        {props.preBodyComponents}
-        <noscript key="noscript" id="gatsby-noscript">
-          This app works best with JavaScript enabled.
-        </noscript>
+        { props.preBodyComponents }
+        <div dangerouslySetInnerHTML={ {
+          __html: `
+          <style>
+          html,body{height:100%;margin:0}
+          #dino{display:none}
+          </style>
+          <!--[if lte IE 9]>
+          <style>
+          body{overflow:hidden;background:#ffffff}
+          #dino{display:block}
+          #___gatsby{display:none}
+          </style>
+          <![endif]-->
+          <div id="dino">
+            <h1>It's a dinosaur!</h1>
+            <p>Sorry, Internet Explorer uses old technology that we no longer support.</p>
+            <p>Please <a href="http://outdatedbrowser.com" target="_blank" rel="nofollow">switch to one of these newer browsers</a>.</p>
+            <img src="https://static.ucareapp.com/Content/images/dinosaur.jpg" alt="dinosaur" />
+          </div>
+          ` 
+        } }></div>
         <div
           key={`body`}
           id="___gatsby"

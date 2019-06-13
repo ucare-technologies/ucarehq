@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import styled from 'styled-components';
 import { Element } from 'react-scroll';
 import { Range, getTrackBackground } from "react-range";
 
@@ -80,9 +79,6 @@ class Pricing extends Component {
                         </div>
                       </div>
                     </div>
-                    {
-                      console.log(this.state.screenSize)
-                    }
                     <div className={`col-xl-5 col-md-12 mt-5 price-calc ${this.state.screenSize < 410 && `price-calc-less`} `}>
                       <h5>Prices start at $10/month & no long-term contracts.</h5>
                       <p>
@@ -163,16 +159,15 @@ class Pricing extends Component {
                               />
                             </div>
                           )}
-                          />
-                          <div style={ {
-                            paddingTop: '20px',
-                            paddingBottom: '20px',
-                          }}>
-                            <small>
-                              Adjust the slider to represent the number of people regularly attending your church
-                            </small>
-                          </div>
-                       
+                        />
+                        <div style={ {
+                          paddingTop: '20px',
+                          paddingBottom: '20px',
+                        }}>
+                          <small>
+                            Adjust the slider to represent the number of people regularly attending your church
+                          </small>
+                        </div>
                       </div>
                     </div>
                       <h6>
@@ -185,17 +180,16 @@ class Pricing extends Component {
                             >
                             </output>
                             :
-
-                              <div className="container w-75 m-auto">
-                                <div className="row">
-                                  <div className="col-xl-7 p-0">
-                                    <h5>Your cost would be</h5>
-                                  </div>
-                                  <div className="col-xl-5 p-0">
-                                    <span>{ `$${this.state.values[0] / 10} / month` }</span>
-                                  </div>
+                            <div className="container w-75 m-auto">
+                              <div className="row">
+                                <div className="col-xl-7 p-0">
+                                  <h5>Your cost would be</h5>
                                 </div>
-                              </div>                            
+                                <div className="col-xl-5 p-0">
+                                  <span>{ `$${this.state.values[0] / 10} / month` }</span>
+                                </div>
+                              </div>
+                            </div>                            
                           }
                         </div>
                       </h6>
@@ -211,12 +205,5 @@ class Pricing extends Component {
     );
   }
 }
- 
-const StyledPricingSection = styled(Pricing)`
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: auto;
-`
 
-export default StyledPricingSection;
+export default Pricing;

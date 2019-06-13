@@ -16,15 +16,6 @@ const style = {
   textDecoration: 'none',
 }
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  componentDidMount() {
-    window.addEventListener("resize", () => {
-      // console.log(window.innerWidth);
-    })
-  }
   render() { 
     return ( 
       <StaticQuery
@@ -56,12 +47,12 @@ class Layout extends Component {
             </div>
             <footer className="footer text-center">
               <p>
-                © Copyright UCare 2006-2019&nbsp;&nbsp;|&nbsp;&nbsp;
+                © Copyright UCare {`2006-${new Date().getFullYear()}`}&nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to="/privacy" style={style}>Privacy</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to="/terms" style={style}>Terms</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to="/sla" style={style}>SLA</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a
-                  href="http://status.ucarehq.com/?_ga=2.143113335.357659964.1558846064-1006824827.1558552278"
+                  href="http://status.ucarehq.com/"
                   style={style}
                 >
                   Status

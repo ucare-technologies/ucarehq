@@ -14,10 +14,6 @@ import './_bloglist.scss';
  * Gatsby pagination
  */
 class BlogList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
   render() { 
     const { data: { blog } } = this.props;
     const posts = this.props.data.allMarkdownRemark.edges
