@@ -11,13 +11,7 @@ $grey_color: #323a46;
     }
 }
 .featurelist1 {
-  .row-up {
-    &:after {
-      animation: fadeInUp 5s;
-    }
-  }
   .row-down {
-    animation: fadeInUp 5s;
     @media screen and (min-width: 990px) {
       padding-top: 40px;
       padding-bottom: 40px;

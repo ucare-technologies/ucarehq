@@ -1,6 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+/**
+ * 
+ * @param {*} props 
+ * @see https://www.alexhughes.dev/blog/google-tag-manager/
+ * Google Tag Manager how to 
+ */
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -11,32 +17,25 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=05724a57-ce2d-477c-8e44-fad5854f9c4f"> </script>
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
+        <noscript
+          dangerouslySetInnerHTML={ {
+            __html: `<iframe src="//www.googletagmanager.com/ns.html?id=GTM-MGRCTM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+          }}
+        >
+        </noscript>
+        <script dangerouslySetInnerHTML={ {
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MGRCTM');</script>`
+        } } />
         { props.headComponents }
       </head>
       <body {...props.bodyAttributes}>
         { props.preBodyComponents }
-        <div dangerouslySetInnerHTML={ {
-          __html: `
-          <style>
-          html,body{height:100%;margin:0}
-          #dino{display:none}
-          </style>
-          <!--[if lte IE 9]>
-          <style>
-          body{overflow:hidden;background:#ffffff}
-          #dino{display:block}
-          #___gatsby{display:none}
-          </style>
-          <![endif]-->
-          <div id="dino">
-            <h1>It's a dinosaur!</h1>
-            <p>Sorry, Internet Explorer uses old technology that we no longer support.</p>
-            <p>Please <a href="http://outdatedbrowser.com" target="_blank" rel="nofollow">switch to one of these newer browsers</a>.</p>
-            <img src="https://static.ucareapp.com/Content/images/dinosaur.jpg" alt="dinosaur" />
-          </div>
-          ` 
-        } }></div>
         <div
           key={`body`}
           id="___gatsby"

@@ -1,6 +1,5 @@
 $grey_color: #323a46;
 .management {
-  animation: fadeInUp 5s;
   margin-top: 100px;
   .title {
     font-feature-settings: "liga" 0;
@@ -37,4 +36,7 @@ $grey_color: #323a46;
       color: #3c640e;
     }
   }
+}
+.animate {
+  animation: fadeInUp 4s;
 }

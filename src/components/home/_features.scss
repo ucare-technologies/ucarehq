@@ -43,7 +43,12 @@ $security_color: #000000;
       text-decoration: none;
     }
   }
-  
+  .animate {
+    animation: fadeInUp 3s;
+  }
+  .readmore-animate {
+    animation: fadeInUp 3s;
+  }
 }
 
 
