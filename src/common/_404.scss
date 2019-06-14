@@ -18,6 +18,7 @@
   padding-bottom: 50px;
   width: 100%;
   font-size: 120%;
+  @include fonts();
   @media screen and (max-width: 770px) {
     width: 75%;
     margin: auto;

@@ -29,7 +29,7 @@ class BlogList extends Component {
     return ( 
       <Layout>
         <div className="container-fluid p-0 blog-header text-center" style={ {
-          background: `linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(${blog.publicURL})`,
+          background: `linear-gradient( rgba(50,58,70,.5), rgba(50,58,70,.5) ), url(${blog.publicURL})`,
           backgroundColor: '#323a46',
           backgroundPosition: '50%',
           backgroundSize: 'cover'
