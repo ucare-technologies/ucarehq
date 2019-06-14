@@ -8,7 +8,6 @@ import LatestBlog from "../components/blogs/latestblog";
 
 const NotFoundPage = (props) => {
   typeof window !== `undefined` && (window.document.title = "404 | UCare");
-  console.log(props.data.file.publicURL);
   return (
     <Layout>
       <SEO title="404 | UCare" />
