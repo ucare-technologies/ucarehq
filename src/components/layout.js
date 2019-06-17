@@ -1,20 +1,15 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 
 import Header from './header';
 import "./layout.scss";
+
 const style = {
   color: '#fff',
   textDecoration: 'none',
 }
+
 class Layout extends Component {
   render() { 
     return ( 

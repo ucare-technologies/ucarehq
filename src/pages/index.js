@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './index.scss';
 import ChurchManagement from '../components/home/church';
 import Management from '../components/home/management';
 import Features from '../components/home/features';
@@ -12,7 +10,9 @@ import Ministry from '../components/home/ministry';
 import Pricing from '../components/home/Pricing';
 import LatestBlog from '../components/blogs/latestblog';
 import Layout from "../components/layout"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './index.scss';
 /**
  * 
  * @param {*} props data from index.md via graphQL
