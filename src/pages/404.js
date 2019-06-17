@@ -22,7 +22,9 @@ const NotFoundPage = (props) => {
       <div className="not-exist">
         <p className="text-center">Sorry, but the page you were trying to view does not exist.</p>
       </div>
-      <LatestBlog />
+      <div className="latest-404">
+        <LatestBlog />
+      </div>
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ class LatestBlog extends Component {
     super(props);
     this.state = { 
       view: false,
-     }
+    }
   }
   handleView(inView) {
     this.setState({ view: inView });
@@ -48,7 +48,10 @@ class LatestBlog extends Component {
           const { edges } = data.allMarkdownRemark;
           return (
             <InView as="div" triggerOnce onChange={inView => this.handleView(inView)}>
-              <div className={`container-fluid text-center latestblog ${this.state.view && `fade-in-up`}`}>
+              <div className={
+                `container-fluid text-center latestblog ${ this.state.view && `fade-in-up`}`
+              }
+              >
                 <div className="container latest-blog-wrapper">
                   <h1>Latest From the Blog</h1>
                     {

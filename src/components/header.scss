@@ -57,11 +57,10 @@ $menuOpen: false;
     margin-top: 15px;
     .nav-item {
       @include fonts();
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 15px;
+      font-weight: 700;
       text-transform: uppercase;
       color: hsla(0, 0%, 100%,.9);
-      font-weight: 700;
       letter-spacing: 1px;
       text-decoration: none;
       margin: 15px;
