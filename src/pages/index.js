@@ -10,6 +10,7 @@ import Ministry from '../components/home/ministry';
 import Pricing from '../components/home/Pricing';
 import LatestBlog from '../components/blogs/latestblog';
 import Layout from "../components/layout"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.scss';
