@@ -49,7 +49,7 @@ class LatestBlog extends Component {
           return (
             <InView as="div" triggerOnce onChange={inView => this.handleView(inView)}>
               <div className={
-                `container-fluid text-center latestblog ${ this.state.view && `fade-in-up`}`
+                `container-fluid text-center latestblog ${ this.state.view ? `fade-in-up`: `fade-in-hidden`}`
               }
               >
                 <div className="container latest-blog-wrapper">

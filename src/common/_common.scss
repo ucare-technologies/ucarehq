@@ -7,6 +7,9 @@
 .fade-in-right {
   animation: fadeInRight 3s;
 }
+.fade-in-hidden {
+  opacity: 0;
+}
 .pages {
   h1, h2, h3, h4, h5, h6, p {
     font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
