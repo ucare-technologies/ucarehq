@@ -65,8 +65,8 @@ class Devices extends Component {
             <InView as="div" triggerOnce onChange={inView => this.handleAppStoreView(inView)}>
               <div className={`row apple-google-play ${this.state.appStore ? `fade-in-up`: `fade-in-hidden`}`}>
                 <div className="col-md-1 offset-md-3 text-center">
-                  <div>
-                    <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8">
+  
+                    <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8" style={{ width: '160px'}}>
                       <img
                         className="button-center"
                         src="https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg"
@@ -74,10 +74,10 @@ class Devices extends Component {
                         style={{ width: '160px' }}
                       />
                     </a>
-                  </div>
+
                 </div>
                 <div className="col-md-1 offset-md-3 text-center" >
-                  <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app">
+                  <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app"  style={{ width: '160px'}}>
                     <img
                       className="button-center"
                       src={ data.googleStore.publicURL }
