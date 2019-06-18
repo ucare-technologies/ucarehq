@@ -66,23 +66,22 @@ class Devices extends Component {
               <div className={`row apple-google-play ${this.state.appStore ? `fade-in-up`: `fade-in-hidden`}`}>
                 <div className="col-md-1 offset-md-3 text-center">
   
-                    <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8" style={{ width: '160px'}}>
+                    <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8">
                       <img
                         className="button-center"
                         src="https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg"
                         alt="Download on the AppStore"
-                        style={{ width: '160px' }}
                       />
                     </a>
 
                 </div>
                 <div className="col-md-1 offset-md-3 text-center" >
-                  <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app"  style={{ width: '160px'}}>
+                  <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app" >
                     <img
                       className="button-center"
                       src={ data.googleStore.publicURL }
                       alt="Get it on Google Play"
-                      style={ { width: '160px' } } />
+                      />
                   </a>
                 </div>
               </div>
