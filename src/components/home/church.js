@@ -8,11 +8,7 @@ class ChurchManagement extends Component {
     this.state = {
       view: false,
     }
-    this.handleSidebar = this.handleSidebar.bind(this);
     this.handleView = this.handleView.bind(this);
-  }
-  handleSidebar() {
-    this.setState({ navOpen: !this.state.navOpen });
   }
   handleView(inView) {
     this.setState({
@@ -40,8 +36,10 @@ class ChurchManagement extends Component {
                   backgroundPosition: 'center',
                 } }
               >
-                <div className={`church-manage-title text-white text-center ${this.state.view ? `fade-in-up`: `fade-in-hidden`}`}>
-                  <h1><em>church management.</em><strong>&nbsp;simplified.</strong></h1>
+                <div className={ `church-manage-title text-white text-center ${this.state.view ? `fade-in-up` : `fade-in-hidden`}` }>
+                  <div style={{ boxSizing: 'border-box'}}>
+                    <h1 className="text-white"><em>church management.</em><strong>simplified.</strong></h1>
+                  </div>
                 </div>
               </section>
             </InView>

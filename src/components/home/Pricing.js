@@ -73,8 +73,8 @@ class Pricing extends Component {
                       <div className={`col-xl-5 col-md-12 mt-5 price-calc`}>
                         <h4 className="mt-3">Prices start at $10/month & no long-term contracts.</h4>
                         <p>
-                          The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.&nbsp;
-                          <a href="/sign-up/" className="faq">(FAQ)</a>
+                          The monthly costs for UCare are just 10c per person, so for example if your church has 500 people regularly attending then UCare will cost only $50 each month.&nbsp;(
+                          <a href="/sign-up/" className="faq">FAQ</a>)
                         </p>
                         <p>If you have <span>{ this.state.values[0] > 2000 ? '2000+': this.state.values[0] }</span> people in your church</p>
                         <div>
@@ -175,7 +175,7 @@ class Pricing extends Component {
                               <div className="container m-auto">
                                 <div className="row">
                                   <div className="col-sm-12 p-0">
-                                    <h5>Your cost would be <span>{ `$${this.state.values[0] / 10} / month` }</span></h5>
+                                    <h6>Your cost would be <span>{ `$${this.state.values[0] / 10} / month` }</span></h6>
                                   </div>
                                 </div>
                               </div>                            

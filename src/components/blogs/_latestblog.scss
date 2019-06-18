@@ -14,9 +14,11 @@ $blog-radius: 5px;
   }
   h1{
     @include fonts();
-    font-weight: 100;
+    font-weight: 300;
     font-style: normal;
     margin-bottom: 50px;
+    color: $grey_color;
+    opacity: 0.9;
   }
   .latest-blog-wrapper {
     justify-content: center;
