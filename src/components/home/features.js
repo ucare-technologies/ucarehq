@@ -32,7 +32,7 @@ class Features extends Component {
           <div className="container-fuild p-0 features">
             <div className="container text-center">
               <InView as="div" triggerOnce onChange={ inView => this.handleTitleView(inView) }>
-                <div className={this.state.view ? `animate`: ``}>
+                <div className={this.state.view ? `animate`: `fade-in-hidden`}>
                   <h2 className="features-title text-center">
                     Features you will&nbsp;
                     <img

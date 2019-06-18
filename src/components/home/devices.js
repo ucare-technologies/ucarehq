@@ -41,7 +41,7 @@ class Devices extends Component {
             <div className="row">
               <div className="col-lg-4 offset-lg-2 col-sm-8 offset-sm-2">
                 <InView as="div" triggerOnce onChange={ inView => this.handleDescView(inView) }>
-                  <div className={this.state.descView ? `fade-in-left`: ``}>
+                  <div className={this.state.descView ? `fade-in-left`: `fade-in-hidden`}>
                     <h2>What you need</h2>
                     <h2>when you need it</h2>
                     <h2>on all you devices</h2>
@@ -56,25 +56,33 @@ class Devices extends Component {
               </div>
               <div className="col-lg-6 device-photo" >
                 <InView as="div" triggerOnce onChange={ inView => this.handleiDeviceView(inView) }>
-                  <div className={this.state.iDeviceView ? `fade-in-right`: ``}>
+                  <div className={this.state.iDeviceView ? `fade-in-right`: `fade-in-hidden`}>
                     <img src={ data.devices.publicURL } alt="iDevices"/>
                   </div>
                 </InView>
               </div>
             </div>
             <InView as="div" triggerOnce onChange={inView => this.handleAppStoreView(inView)}>
-              <div className={`row apple-google-play ${this.state.appStore && `fade-in-up`}`}>
+              <div className={`row apple-google-play ${this.state.appStore ? `fade-in-up`: `fade-in-hidden`}`}>
                 <div className="col-md-1 offset-md-3 text-center">
                   <div>
                     <a href="https://itunes.apple.com/us/app/ucare./id905961512?mt=8">
-                      <img src="https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg" alt="Download on the AppStore"/>
+                      <img
+                        className="button-center"
+                        src="https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg"
+                        alt="Download on the AppStore"
+                        style={{ width: '160px' }}
+                      />
                     </a>
                   </div>
                 </div>
-                <div className="col-md-1 offset-md-3 text-center">
+                <div className="col-md-1 offset-md-3 text-center" >
                   <a href="https://play.google.com/store/apps/details?id=com.ucareapp.app">
                     <img
-                      src={ data.googleStore.publicURL } alt="Download on the googleStore" style={ { width: '140px'} }/>
+                      className="button-center"
+                      src={ data.googleStore.publicURL }
+                      alt="Get it on Google Play"
+                      style={ { width: '160px' } } />
                   </a>
                 </div>
               </div>

@@ -33,7 +33,7 @@ class Ministry extends Component {
     return ( 
       <section className="container ministry">
         <InView as="div" triggerOnce onChange={inView => this.handleTitleView(inView)}>
-          <div className={`row text-center ${this.state.titleView && `fade-in-up`}`}>
+          <div className={`row text-center ${this.state.titleView ? `fade-in-up`: `fade-in-hidden`}`}>
             <div className="col-md-12">
               <h1>Ministry. We've got you covered.</h1>
               <p>No matter what ministry you’re involved in; UCare is focused on people so you can be too.</p>
@@ -41,7 +41,7 @@ class Ministry extends Component {
           </div>
         </InView>
         <InView as="div" triggerOnce onChange={inView => this.handleSecondView(inView)}>
-          <div className={`row text-center my-5 up ${this.state.secondView && `fade-in-up`}`}>
+          <div className={`row text-center my-5 up ${this.state.secondView ? `fade-in-up`: `fade-in-hidden`}`}>
             <div className="col-md-4">
               <div className="ministry-circle">
                 <ChildrenIcon />
@@ -72,7 +72,7 @@ class Ministry extends Component {
           </div>
         </InView>
         <InView as="div" triggerOnce onChange={ inView => this.handleThirdView(inView) }>
-          <div className={`row text-center my-5 down ${this.state.thirdView && `fade-in-up`}`}>
+          <div className={`row text-center my-5 down ${this.state.thirdView ? `fade-in-up`: `fade-in-hidden`}`}>
             <div className="col-md-4">
               <div className="ministry-circle">
                 <AdminFinancesIcon />

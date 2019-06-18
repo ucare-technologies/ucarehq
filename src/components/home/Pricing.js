@@ -60,7 +60,7 @@ class Pricing extends Component {
                   transition: 'background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s'
                 } }>
                   <InView as="div" triggerOnce onChange={inView => this.handleView(inView)}>
-                    <div className={`row ${this.state.view && `fade-in-up`}`} id="pricing">
+                    <div className={`row ${this.state.view ? `fade-in-up`: `fade-in-hidden`}`} id="pricing">
                       <div className="col-xl-5 col-md-12 mt-5 offset-xl-1">
                         <div className={`only-pay`}>
                           <h2 className="text-white">

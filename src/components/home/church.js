@@ -42,7 +42,7 @@ class ChurchManagement extends Component {
                   backgroundPosition: 'center',
                 } }
               >
-                <div className={`church-manage-title text-white text-center ${this.state.view && `fade-in-up`}`}>
+                <div className={`church-manage-title text-white text-center ${this.state.view ? `fade-in-up`: `fade-in-hidden`}`}>
                   <h1><em>church management.</em><strong>&nbsp;simplified.</strong></h1>
                 </div>
               </section>

@@ -1,6 +1,10 @@
 .devices {
   .apple-google-play {
     padding-bottom: 3%;
+    .button-center {
+      margin: 11px auto;
+      box-sizing: border-box;
+    }
   }
   h2, p {
     font-feature-settings: "liga" 0;

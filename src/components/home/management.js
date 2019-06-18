@@ -17,7 +17,7 @@ class Management extends Component {
   render() { 
     return ( 
       <InView as="section" triggerOnce onChange={inView => this.handleView(inView)}>
-        <section className={`container management justify-content-center ${this.state.view && `fade-in-up`}`}>
+        <section className={`container management justify-content-center ${this.state.view ? `fade-in-up`: `fade-in-hidden`}`}>
           <h1 className="text-center title ">
             Easy to use church management software isn’t optional, it’s essential.
           </h1>

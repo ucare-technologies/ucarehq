@@ -110,7 +110,7 @@ class Testimonials extends Component {
               height: '500px'
             } }>
               <InView as="div" triggerOnce onChange={ inView => this.handleView(inView) }>
-                <div className={this.state.view ? `fade-in-up`: ``}>
+                <div className={this.state.view ? `fade-in-up`: `fade-in-hidden`}>
                   <div className="container text-center text-white">
                     <h3>Churches We Work With</h3>
                   </div>
