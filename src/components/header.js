@@ -16,7 +16,6 @@ class Header extends Component {
     this.state = {
       bgColor: "transparent",
       isTop: true,
-      sizeScreen: null,
       menuOpen: false,
       location: null,
     };

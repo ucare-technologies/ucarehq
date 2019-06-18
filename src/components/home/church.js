@@ -6,8 +6,6 @@ class ChurchManagement extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobile: false,
-      navOpen: false,
       view: false,
     }
     this.handleSidebar = this.handleSidebar.bind(this);
