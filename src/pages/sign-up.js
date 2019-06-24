@@ -33,7 +33,7 @@ class Singup extends Component {
         { "Q": " Do you provide training?", "A": "Absolutely! We want to do everything we can to make sure you understand how to use UCare and are using it the best you can. After all, if no one can use it, what good is it? Use the help button to find out more." },
         { "Q": " What level of auditing exists?", "A": "For security reasons it may be important to audit user’s activity. Admins have access to a full audit log so they can see exactly who is viewing which info and what changes they are making." },
         { "Q": " What happens to deleted info?", "A": "Any deleted info (e.g. people, groups, payments, etc.) is removed right away. But a backup of this info is kept and you can undelete it at any time, it will even be available in 10 years." },
-        { "Q": " What is your service availability?", "A": "Our average up-time is over 99.95%, less than 20 minutes unplanned down time in a month. We have a <a href=\"/terms\" /> Service Level Agreement of 99.9%,</a> if we ever fail to meet this a credit will be applied to your account." },
+        { "Q": " What is your service availability?", "A": "Our average up-time is over 99.95%, less than 20 minutes unplanned down time in a month. We have a <a href=\"/sla\" /> Service Level Agreement of 99.9%,</a> if we ever fail to meet this a credit will be applied to your account." },
         { "Q": " Do you have phone support?", "A": "We find that our free email support & help center is more than adequate for most churches. But phone support packages are available, use the help button to ask for a quote." },
       ],
       rows: null,
@@ -310,14 +310,16 @@ class Singup extends Component {
           </div>
           <div className="row faq">
             <div className="text-center">
-              <h2>Frequently Asked Questions</h2>
-              <p>
-                We’re here to help. If you run into any problems at all, feel free to use the help button to contact us.
-              </p>
+              <div className="faq-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>
+                  We’re here to help. If you run into any problems at all, feel free to use the help button to contact us.
+                </p>
+              </div>
               <div className="row text-left">
               {
                 qa.map((item, key) => (
-                  <div className="col-md-4 qas" key={key}>
+                  <div className="col-md-4 m-0 p-2 pl-3 pr-3 d-inline qas" key={key}>
                     <h4>{`Q: ${item.Q}` }</h4>
                     <p dangerouslySetInnerHTML={{__html: item.A }}></p>
                   </div>

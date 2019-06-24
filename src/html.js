@@ -17,14 +17,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=05724a57-ce2d-477c-8e44-fad5854f9c4f"> </script>
+        
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
-        <noscript
-          dangerouslySetInnerHTML={ {
-            __html: `<iframe src="//www.googletagmanager.com/ns.html?id=GTM-MGRCTM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-          }}
-        >
-        </noscript>
         <script dangerouslySetInnerHTML={ {
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,6 +26,13 @@ export default function HTML(props) {
           '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-MGRCTM');</script>`
         } } />
+        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=05724a57-ce2d-477c-8e44-fad5854f9c4f"/>
+        <noscript
+          dangerouslySetInnerHTML={ {
+            __html: `<iframe src="//www.googletagmanager.com/ns.html?id=GTM-MGRCTM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+          }}
+        >
+        </noscript>
         { props.headComponents }
       </head>
       <body {...props.bodyAttributes}>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
+import { Link } from 'gatsby';
 
 import OnlinestoresIcons from '../Icons/onlinestores';
 import DashboardsIcons from '../Icons/dashboards';
@@ -30,27 +31,27 @@ class FeatureList2 extends Component {
         <InView as="div" triggerOnce onChange={inView => this.handleFirstLineView(inView)}>
           <div className={`row up ${this.state.firstLineView && `fade-in-up`}`}>
             <div className="col-md-4 feature-el">
-              <div className="circle online-stores">
-                <a href="/features/online-stores/">
+              <Link to="/features/online-stores/">
+                <div className="circle online-stores">
                   <OnlinestoresIcons />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Online Stores & POS</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle giving">
-                <a href="/features/giving-finances/">
+              <Link to="/features/giving-finances/">
+                <div className="circle giving">
                   <Giving />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Giving & Finances</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle dashboards">
-                <a href="/features/dashboards/">
+              <Link to="/features/dashboards/">  
+                <div className="circle dashboards">
                   <DashboardsIcons />
-                </a>
-              </div>
+                </div>
+                </Link>
               <h6>Dashboards</h6>
             </div>
           </div>
@@ -58,27 +59,27 @@ class FeatureList2 extends Component {
         <InView as="div" triggerOnce onChange={inView => this.handleSecondLineView(inView)}>
           <div className={`row down ${this.state.secondLineView && `fade-in-up`}`}>
             <div className="col-md-4 feature-el">
-              <div className="circle scheduling">
-                <a href="/features/scheduling-reservations/">
+              <Link to="/features/scheduling-reservations/">
+                <div className="circle scheduling">
                   <SchedulingIcons />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Scheduling & Reservations</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle people">
-                <a href="/features/people/">
+              <Link to="/features/people/">
+                <div className="circle people">
                   <PeopleIcons />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>People</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle security">
-                <a href="/features/security/">
+              <Link to="/features/security/">
+                <div className="circle security">
                   <SecurityIcons />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Security</h6>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { InView } from 'react-intersection-observer';
+import { Link } from 'gatsby';
 
 import AttendanceIcon from '../Icons/attendance';
 import ChildIcon from '../Icons/child';
@@ -31,27 +32,27 @@ class FeatureList extends Component {
         <InView as="div" triggerOnce onChange={inView => this.handleFirstLineView(inView)}>
           <div className={`row row-up ${this.state.firstLineView && `fade-in-up`}`}>
             <div className="col-md-4 feature-el">
-              <div className="circle attendance">
-                <a href="/features/attendance-tracking/">
+              <Link to="/features/attendance-tracking/">
+                <div className="circle attendance">  
                   <AttendanceIcon />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Attendance Tracking</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle child">
-                <a href="/features/check-in-child-safety/">
-                  <ChildIcon />
-                </a>
-              </div>
+              <Link to="/features/check-in-child-safety/">
+                <div className="circle child">
+                  <ChildIcon />  
+                </div>
+              </Link>
               <h6>Check-in & Child Safety</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle event-booking">
-                <a href="/features/event-ticket-booking/">
-                  <EventBooking />
-                </a>
-              </div>
+              <Link to="/features/event-ticket-booking/">
+                <div className="circle event-booking">
+                  <EventBooking />  
+                </div>
+              </Link>
               <h6>Event Bookings</h6>
             </div>
           </div>
@@ -59,33 +60,36 @@ class FeatureList extends Component {
         <InView as="div" triggerOnce onChange={inView => this.handleSecondLineView(inView)}>
           <div className={`row row-down ${this.state.secondLineView && `fade-in-up`}`}>
             <div className="col-md-4 feature-el">
-              <div className="circle groups">
-                <a href="/features/groups/">
+              <Link to="/features/groups/">
+                <div className="circle groups">
                   <Group />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Groups</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className="circle process">
-                <a href="/features/processes-automation/">
+              <Link to="/features/processes-automation/">
+                <div className="circle process">
                   <Process />
-                </a>
-              </div>
+                </div>
+              </Link>
               <h6>Process & Automation</h6>
             </div>
             <div className="col-md-4 feature-el">
-              <div className={`circle ${this.props.location === 'root' ? 'giving': 'surveys'}`}>
-                {
-                  this.props.location === `root`
-                  ? <a href="/features/giving-finances/">
-                      <Giving />
-                    </a>
-                  : <a href="/features/forms-and-surveys/">
+              {
+                this.props.location === 'root' ?
+                  <Link to="/features/giving-finances/">
+                    <div className="circle giving">
+                      <Giving /> 
+                    </div>
+                  </Link>
+                  :
+                  <Link to="/features/forms-and-surveys/">
+                    <div className="circle surveys">
                       <SurveysIcons />
-                    </a>
-                }
-              </div>
+                    </div>
+                  </Link>
+              }
               <h6>
                 {
                   this.props.location === `root` 

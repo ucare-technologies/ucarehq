@@ -24,6 +24,9 @@ $grey_color: #323a46;
   }
   .feature-el {
     @include feature-grid-effect();
+    a {
+      margin-top: 50px;
+    }
   }
 }
 .featurelist2 {
@@ -42,5 +45,8 @@ $grey_color: #323a46;
   }
   .feature-el {
     @include feature-grid-effect();
+    a {
+      margin-top: 50px;
+    }
   }
 }

@@ -3,6 +3,9 @@ $church-manage-background-height: 100vh;
   height: $church-manage-background-height;
   position: relative;
   .church-manage-title {
+    @media screen and (max-width: 700px){
+      
+    }
     h1 {
       font-feature-settings: "liga" 0;
       font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;

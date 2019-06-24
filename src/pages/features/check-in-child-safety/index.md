@@ -25,7 +25,7 @@ Whether your children’s ministry is large or small, UCare makes it quick yet s
 
 ## Still more check-in options
 
-   **Unlimited** classes, rooms, age groups, times.
+*   **Unlimited** classes, rooms, age groups, times.
 *   **Unlimited** people & households, only pay for regulars.
 *   **Unlimited** check-in stations, phone, tablet, laptop or desktop.
 *   **Touch ID or pin-code security** so sensitive info isn’t easily accessed by others on your phone.

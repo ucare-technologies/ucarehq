@@ -53,7 +53,7 @@ class LatestBlog extends Component {
               }
               >
                 <div className="container latest-blog-wrapper">
-                  <h1>Latest From the Blog</h1>
+                  <h2>Latest From the Blog</h2>
                     {
                       edges.map((item, key) => {
                         const { slug } = item.node.fields;
@@ -67,11 +67,12 @@ class LatestBlog extends Component {
                           excerpt,
                         } = item.node;
                         return (
-                          <div className="col-md-4 p-2 align-top blog-out" key={ key }>
+                          <div className="col-lg-4 p-2 align-top blog-out" key={ key }>
                             <div className="p-0 blogs text-left">
                               <a href={ slug } className="latest-blog">
                                 <div className="thumb">
                                   <img
+                                    className="m-0"
                                     src={ publicURL } alt={ title }
                                     style={ {
                                       width: '100%', height: 'auto'
@@ -81,29 +82,30 @@ class LatestBlog extends Component {
                                     { categories.split(",")[0] }
                                   </span>
                                 </div>
-                                <h3 className="ml-4">{ title }</h3>
-                                <div className="blog-excerpt">
-                                  <span className="text-left feature-date"> 
-                                    { date }
-                                  </span>
-                                  <div>
-                                    { excerpt }
+                                <div className="content">
+                                  <h3>{ title }</h3>
+                                  <div className="blog-excerpt">
+                                    <span className="text-left feature-date"> 
+                                      { date }
+                                    </span>
+                                    <div>
+                                      { excerpt }
+                                    </div>
                                   </div>
-                                  
-                                </div>
-                                <div className="readmore-link">
-                                  <span className="read-more ml-4">
-                                    Read More&nbsp;&nbsp;
-                                    <FontAwesomeIcon icon={faChevronRight} />
-                                  </span>
+                                  <div className="readmore-link">
+                                    <span className="read-more">
+                                      Read More&nbsp;&nbsp;
+                                      <FontAwesomeIcon icon={faChevronRight} />
+                                    </span>
+                                  </div>
                                 </div>
                               </a>
-                            </div>
+                            </div>                            
                           </div>
                         )
                       })
                     }
-                  </div>
+                </div>
               </div>
             </InView>
           )
