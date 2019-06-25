@@ -2,9 +2,8 @@ import React from 'react';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import hexToRgba from 'hex-to-rgba';
-// import moment from 'moment';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 import LatestBlog from '../components/blogs/latestblog';
 import FeatureList from '../components/features/featurelists';
@@ -14,14 +13,14 @@ import './_blogpost.scss';
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
-  const { title, url, svg_code, feature_colour, type } = post.frontmatter;
+  const { title, url, svg_code, feature_colour, type, date } = post.frontmatter;
   const { featured_image } = post.frontmatter;
   let publicURL = null;
   featured_image && (publicURL = featured_image.publicURL);
   let featureColorRgba = null;
   feature_colour
     ? featureColorRgba = hexToRgba(feature_colour, 0.7)
-    : featureColorRgba = 'rgba(0, 0, 0, 0.45)'
+    : featureColorRgba = 'rgba(50, 58, 70, .5)'
   typeof window !== `undefined` && (window.document.title = `${title} | UCare`);
   return (
     <Layout>
@@ -43,6 +42,7 @@ const BlogPost = (props) => {
             </div>
           }
           <h1>{ title }</h1>
+          <span><FontAwesomeIcon icon={ faCalendarAlt } />&nbsp;&nbsp;{ date }</span>
         </div>
       </div>
       <div className="container posts" >
@@ -81,7 +81,7 @@ export const query = graphql`
       frontmatter {
         title
         type
-        date
+        date(formatString: " D MMMM YYYY")
         url
         svg_code
         feature_colour
