@@ -23,42 +23,42 @@ $menuOpen: false;
   font-size: 14px;
 }
 .navbar {
-  padding-right: 0;
+  // right: 15px;
   transition: all .4s ease;
-  height: 60px;
   .biglogo {
     @include logo-position;
-    transition: all .4s ease;
-    width: 200px;
-    margin-top: 3vh;
-    @media screen and (max-width: 1200px) {
-      width: 150px;
-      margin-top: 2vh;
-    }
-    @media screen and (max-width: 700px){
-      width: 100px;
+    img {
+      transition: all .4s ease;
+      margin: 15px 0;
+      height: 70px;
+      @media screen and (max-width: 992px){
+        height: 60px;
+      }
+      @media screen and (max-width: 768px){
+        margin: 0px;
+        height: 40px;
+      }
     }
   }
   .heartlogo {
     @include logo-position;
     img {
+      position: fixed;
+      transition: all .4s ease;
+      margin: 0 15px;
       height: 50px;
-      margin-top: 4vh;
-      @media screen and (max-width: 700px){
+      top: 5px;
+      @media screen and (max-width: 990px){
         height: 40px;
+        top: 10px;
       }
     }
   }
-  .hide-logo {
-    opacity: 0;
-    transition: all .6s ease;
-  }
   .navbar-nav {
-    margin-top: 15px;
     .nav-item {
       @include fonts();
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       color: hsla(0, 0%, 100%,.9);
       letter-spacing: 1px;
@@ -85,14 +85,15 @@ $menuOpen: false;
     @include trial-btn;
     @include fonts();
     position: fixed;
-    right: 20px;
+    right: 15px;
     z-index: 4;
     &:hover {
       background: $trial_hover_color;
       color: #3c640e;
     } 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 990px) {
       position: relative;
+      right: 0px;
       margin: auto;
     }
     @media screen and (max-width: 390px){
@@ -100,7 +101,7 @@ $menuOpen: false;
     }
   }
   .trial-hide {
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 990px){
       visibility: hidden;
     }
   }
@@ -111,21 +112,23 @@ $menuOpen: false;
     border: none;
     outline: none;
     box-shadow: none;
-    border-left: 1px solid #fff;
+    border-left: 1px solid hsla(0,0%,100%,.5);
     transition: all .5s ease;
     position: fixed;
     right:0;
+    width: 74px;
+    height: 40px;
     z-index: 5;
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 990px) {
       visibility: hidden;
     }
   }
   .hamburger-active {
-    transition: all .4s ease;
+    // transition: all .4s ease;
     margin-right: 250px;
   }
   .hamburger-below {
-    padding-top: 2vh;
+    // padding-top: 2vh;
     border-left: 1px solid rgba(0, 0, 0, .1);
   }
   .sidebar {
@@ -138,7 +141,7 @@ $menuOpen: false;
       font-size: 20px;
       text-align: left;
       color: white;
-      font-weight: 500;
+      font-weight: 400;
       text-transform: uppercase;
       padding: 10px 20px;
       border: none !important;
@@ -165,11 +168,18 @@ $menuOpen: false;
   }
 }
 .navbar-trans {
+  height: 91px;
   background-color: transparent;
+  @media screen and (max-width: 772px){
+    height: 80px
+  }
 }
 .bg-light {
-  height: 65px;
-  padding-bottom: 20px;
+  padding: 0px;
+  height: 60px;
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.1)!important;
+  @media screen and (max-width: 772px){
+    height: 60px
+  }
 }

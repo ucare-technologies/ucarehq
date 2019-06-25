@@ -66,7 +66,7 @@ class Header extends Component {
                     </Link>
                   </div>
                 </div>
-                <Media query="(min-width: 1200px)">
+                <Media query="(min-width: 990px)">
                   {
                     matches => matches &&
                       <ul className="navbar-nav mx-auto">
@@ -123,7 +123,7 @@ class Header extends Component {
                   className={ `btn trial-btn ${this.state.isTop ? 'trial-hide' : ''}` }
                   to="/sign-up"
                 >
-                  free 30-day trial <FontAwesomeIcon icon={ faChevronRight } />
+                  free 30-day trial&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={ faChevronRight } />
                 </Link>
                 <button
                   className={
@@ -131,6 +131,7 @@ class Header extends Component {
                     ${this.state.menuOpen ? `hamburger-active` : `hamburger-inactive`}
                     ${!this.state.isTop && `hamburger-below`}`
                   }
+                  onClick={this.handleHamburgerClick.bind(this)}
                 >
                   {
                     this.state.menuOpen
@@ -138,22 +139,22 @@ class Header extends Component {
                         isOpen={ this.state.menuOpen }
                         menuClicked={ this.handleHamburgerClick.bind(this) }
                         width={ 24 }
-                        height={ 11 }
+                        height={ 12 }
                         strokeWidth={ 2 }
                         rotate={ 0 }
                         borderRadius={ 0 }
-                        animationDuration={ 0.5 }
+                        // animationDuration={ 0.5 }
                         color={ this.state.isTop ? `#fff` : `#000` }
                       />
                       : <HamburgerMenu
                         isOpen={ this.state.menuOpen }
                         menuClicked={ this.handleHamburgerClick.bind(this) }
                         width={ 24 }
-                        height={ 11 }
+                        height={ 12 }
                         strokeWidth={ 2 }
                         rotate={ 0 }
                         borderRadius={ 0 }
-                        animationDuration={ 0.5 }
+                        // animationDuration={ 0.5 }
                         color={ this.state.isTop ? `#fff` : `#000` }
                       />
                   }
