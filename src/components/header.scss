@@ -87,6 +87,7 @@ $menuOpen: false;
     position: fixed;
     right: 15px;
     z-index: 4;
+    letter-spacing: 1px;
     &:hover {
       background: $trial_hover_color;
       color: #3c640e;
@@ -174,7 +175,7 @@ $menuOpen: false;
     height: 80px
   }
 }
-.bg-light {
+.bg-lights {
   padding: 0px;
   height: 60px;
   background-color: #fff;

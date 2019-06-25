@@ -51,7 +51,7 @@ class Header extends Component {
         render={ data => {
           return (
             <InView as="nav" onChange={ inView => this.handleIntersection(inView) }>
-              <nav className={ `navbar navbar-expand-lg fixed-top text-center ${this.state.isTop ? 'navbar-trans' : 'bg-light'}` }>
+              <nav className={ `navbar navbar-expand-lg fixed-top text-center ${this.state.isTop ? 'navbar-trans' : 'bg-lights'}` }>
                 <div className={ this.state.isTop ? `biglogo` : `heartlogo` }>
                   <div className={ this.state.menuOpen ? `hide-logo` : `` }>
                     <Link to="/">
