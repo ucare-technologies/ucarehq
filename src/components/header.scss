@@ -126,6 +126,10 @@ $menuOpen: false;
   }
   .hamburger-active {
     margin-right: 250px;
+    transition-duration: .8s;
+  }
+  .hamburger-inactive {
+    transition-duration: .8s;
   }
   .hamburger-below {
     // padding-top: 2vh;
@@ -165,11 +169,13 @@ $menuOpen: false;
     }
   }
   .sidebar-inactive {
+    transition-duration: .8s;
     .subitem {
       opacity: 0;
     }
   }
   .sidebar-active {
+    transition-duration: .8s;
     .subitem {
       opacity: 1;
     }

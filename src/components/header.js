@@ -30,7 +30,8 @@ class Header extends Component {
   handleHamburgerClick() {
     this.setState({
       menuOpen: !this.state.menuOpen,
-    })
+    });
+    this.props.onHeaderHamburgerMenuClick();
   }
   handleIntersection(inView) {
     this.setState({ isTop: inView });

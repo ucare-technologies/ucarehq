@@ -29,7 +29,11 @@ class Layout extends Component {
         `}
         render={data => (
           <React.Fragment>
-            <Header menuLinks={ data.site.siteMetadata.menuLinks } siteTitle={ data.site.siteMetadata.title } />
+            <Header
+              menuLinks={ data.site.siteMetadata.menuLinks }
+              siteTitle={ data.site.siteMetadata.title }
+              onHeaderHamburgerMenuClick={ this.props.onHamburgerMenuClick }
+            />
             <div
               style={{
                 margin: `0`,

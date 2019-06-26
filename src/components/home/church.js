@@ -31,7 +31,7 @@ class ChurchManagement extends Component {
               <section
                 className="church-manage justify-content-center"
                 style={ {
-                  background: `url(${data.home.publicURL})`,
+                  background: `${ this.props.menuState ? `linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), `: ``} url(${data.home.publicURL})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 } }

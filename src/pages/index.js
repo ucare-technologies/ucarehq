@@ -1,5 +1,6 @@
-import React from "react"
+import React, { PureComponent } from "react"
 import { graphql } from "gatsby"
+import ScrollLock from 'react-scrolllock';
 
 import ChurchManagement from '../components/home/church';
 import Management from '../components/home/management';
@@ -19,25 +20,51 @@ import './index.scss';
  * @param {*} props data from index.md via graphQL
  * @see https://codeburst.io/build-a-blog-using-gatsby-js-react-8561bfe8fc91 
  */
-const IndexPage = (props) => {
-  const homepage = props.data.allMarkdownRemark;
-  const { title } = homepage.edges[0].node.frontmatter;
-  if(typeof window !== `undefined`) document.title = `UCare | ${title}`;
-  return (
-    <Layout>
-      <ChurchManagement/>
-      <Management />
-      <Features />
-      <Devices
-        fluid={ props.data.deviceImage.childImageSharp.fluid }
-        googlefluid={ props.data.googleImage.childImageSharp.fluid }
-      />
-      <Testimonials />
-      <Ministry />
-      <Pricing fluid={ props.data.pricingImage.childImageSharp.fluid } />
-      <LatestBlog />
-    </Layout>
-  )
+class IndexPage extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMenuOpen: false,
+    };
+    this.handleMenuClick = this.handleMenuClick.bind(this);
+    this.handleHamburgerMenuClick = this.handleHamburgerMenuClick.bind(this);
+  }
+  handleMenuClick() {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
+  }
+  handleHamburgerMenuClick() {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
+  }
+  render() { 
+    // console.log("isMenuOpen", this.state.isMenuOpen);
+    const homepage = this.props.data.allMarkdownRemark;
+    const { title } = homepage.edges[0].node.frontmatter;
+    if(typeof window !== `undefined`) document.title = `UCare | ${title}`;
+    return (
+      
+      <Layout onHamburgerMenuClick={ this.handleHamburgerMenuClick }>
+        <ScrollLock isActive={this.state.isMenuOpen}>
+          <ChurchManagement menuState={ this.state.isMenuOpen }/>
+          <Management />
+          <Features />
+          <Devices
+            fluid={ this.props.data.deviceImage.childImageSharp.fluid }
+            googlefluid={ this.props.data.googleImage.childImageSharp.fluid }
+          />
+          <Testimonials />
+          <Ministry />
+          <Pricing fluid={ this.props.data.pricingImage.childImageSharp.fluid } />
+          <LatestBlog />
+          </ScrollLock>
+        </Layout>
+      
+      
+    )
+  }
 }
 
 export default IndexPage
