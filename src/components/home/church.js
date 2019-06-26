@@ -45,7 +45,7 @@ class ChurchManagement extends Component {
 								>
 									<div style={{ boxSizing: 'border-box' }}>
 										<h1 className='text-white'>
-											<em>church management.</em>
+											<em>church management. </em>
 											<strong>simplified.</strong>
 										</h1>
 									</div>
