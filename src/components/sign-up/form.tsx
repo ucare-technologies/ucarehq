@@ -30,9 +30,10 @@ export default function SignUpForm() {
 		if (!tenant(value)) {
 			setValidatingTenant(true);
 			checkTenant(value)
-				.then(serverErrors => {
+				.then(serverErrors1 => {
 					setValidatingTenant(false);
-					setServerErrors(serverErrors);
+					setServerErrors(serverErrors1);
+					return true;
 				})
 				.catch(error => {
 					setValidatingTenant(false);
@@ -75,14 +76,15 @@ export default function SignUpForm() {
 				if (!validatingTenant && isValid() && !serverErrors.tenant) {
 					setStage('submit');
 					createTenant(fields)
-						.then(serverErrors => {
-							setServerErrors(serverErrors);
-							if (Object.keys(serverErrors).length > 0) {
+						.then(serverErrors1 => {
+							setServerErrors(serverErrors1);
+							if (Object.keys(serverErrors1).length > 0) {
 								setStage('create');
 							} else {
 								setStage('ready');
 								dataLayer.push({ userId: fields.tenant });
 							}
+							return true;
 						})
 						.catch(error => {
 							setStage('create');
@@ -174,7 +176,7 @@ export default function SignUpForm() {
 			<AnimateHeight height={stage === 'submit' ? 'auto' : 0} animateOpacity easing='ease-in-out'>
 				<div className='mt-4 text-center'>
 					<h2>Ready in under a minute</h2>
-					<p>Please wait, we're just getting your account ready</p>
+					<p>Please wait, we&apos;re just getting your account ready</p>
 					<div className='spinner-border-block pt-4'>
 						<div className='spinner-border text-success' role='status'>
 							<span className='sr-only'>Creating...</span>
@@ -190,6 +192,7 @@ export default function SignUpForm() {
 						href={`https://${fields.tenant}.ucareapp.com/account/new/${fields.email}`}
 						target='_blank'
 						className='btn btn-success trial'
+						rel='noopener noreferrer'
 					>
 						Sign in to your free 30 day trial &rarr;
 					</a>

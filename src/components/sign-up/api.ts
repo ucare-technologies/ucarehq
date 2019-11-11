@@ -11,16 +11,16 @@ function thenErrorResponse(promise: Promise<Response>) {
 					return { tenant: 'An error has occurred, please try again later' };
 				}
 				const serverErrors = {} as ServerErrors;
-				for (const key in errors.Errors) {
+				Object.keys(errors.Errors).forEach(key => {
 					serverErrors[key as keyof ServerErrors] = errors.Errors[key].join(', ');
-				}
+				});
 				return serverErrors;
 			});
 		}
 		return {} as ServerErrors;
 	});
 }
-const verifyUrl = 'http://localhost:35610/signup'; //'https://crm.ucareapp.com/signup'
+const verifyUrl = 'http://localhost:35610/signup'; // 'https://crm.ucareapp.com/signup'
 export function checkTenant(tenant: string) {
 	return thenErrorResponse(
 		fetch(verifyUrl, {
@@ -33,7 +33,7 @@ export function checkTenant(tenant: string) {
 		})
 	);
 }
-const createUrl = 'http://localhost:35610/signup'; //'https://crm.ucareapp.com/signup'
+const createUrl = 'http://localhost:35610/signup'; // 'https://crm.ucareapp.com/signup'
 export function createTenant(fields: Fields) {
 	return thenErrorResponse(
 		fetch(createUrl, {

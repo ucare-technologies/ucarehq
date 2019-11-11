@@ -1,10 +1,7 @@
-import { string } from 'prop-types';
-
 /* eslint-disable */
 declare const __PATH_PREFIX__: string;
 declare module 'gatsby-plugin-mdx' {
 	import * as React from 'react';
-
 	export interface MDXRendererProps {
 		scope?: any;
 		components?: {
@@ -13,12 +10,10 @@ declare module 'gatsby-plugin-mdx' {
 		children: string;
 		[propName: string]: any;
 	}
-
 	export class MDXRenderer extends React.Component<MDXRendererProps> {}
 }
 declare module '@mdx-js/react' {
 	import * as React from 'react';
-
 	export type Components = {
 		[key: string]: React.ComponentType<any>;
 	};
