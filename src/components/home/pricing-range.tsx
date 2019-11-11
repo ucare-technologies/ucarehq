@@ -92,7 +92,7 @@ const PricingRange: React.FC = () => {
 			<h6>
 				{value / 10 > 200 ? (
 					<div className='pricing-total'>
-						Please contact <a href='support@ucarehq.com'> support@ucarehq.com</a> for information about our volume
+						Please contact <a href='mailto:support@ucarehq.com'>support@ucarehq.com</a> for information about our volume
 						discounts.
 					</div>
 				) : (

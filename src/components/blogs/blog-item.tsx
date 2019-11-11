@@ -41,10 +41,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ title, date, slug, excerpt, imagePa
 							</div>
 						</article>
 						<div>
-							<a href={linkTo} className='readmore'>
+							<Link to={linkTo} className='readmore'>
 								Read More
 								<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

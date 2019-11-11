@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,10 +28,10 @@ export default function Features() {
 					<FeatureList1 />
 				</FeatureLists>
 				<FadeIn className='explore-more' fade='up'>
-					<a href='/features' className='explore-more-btn'>
+					<Link to='/features' className='explore-more-btn'>
 						Explore More Features
 						<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
-					</a>
+					</Link>
 				</FadeIn>
 			</div>
 		</div>

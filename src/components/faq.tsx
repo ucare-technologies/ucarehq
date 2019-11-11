@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 const FAQ: React.FC = () => (
 	<div className='row faq'>
@@ -84,8 +85,8 @@ const FAQ: React.FC = () => (
 				</QA>
 				<QA q='What is your service availability?'>
 					Our average up-time is over 99.95%, less than 20 minutes unplanned down time in a month. We have a
-					<a href='/sla'>Service Level Agreement of 99.9%</a>, if we ever fail to meet this a credit will be applied to
-					your account.
+					<Link to='/sla'>Service Level Agreement of 99.9%</Link>, if we ever fail to meet this a credit will be applied
+					to your account.
 				</QA>
 				<QA q='Do you have phone support?'>
 					We find that our free email support &amp; help center is more than adequate for most churches. But phone

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { Element } from 'react-scroll';
 
 import FadeIn from '../fade-in';
@@ -32,9 +32,9 @@ export default function Pricing() {
 						<p>
 							The monthly costs for UCare are just 10c per person, so for example if your church has 500 people
 							regularly attending then UCare will cost only $50 each month. (
-							<a href='/sign-up/' className='faq'>
+							<Link to='/sign-up/' className='faq'>
 								FAQ
-							</a>
+							</Link>
 							)
 						</p>
 						<PricingRange />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -65,7 +65,7 @@ const LatestBlog: React.FC = () => {
 						}) => (
 							<div className='col-lg-4 pt-3 px-0 align-top blog-out' key={slug}>
 								<div className='blogs text-left'>
-									<a href={`/blog${slug}`} className='latest-blog'>
+									<Link to={`/blog${slug}`} className='latest-blog'>
 										<div className='thumb'>
 											{childImageSharp ? (
 												<img
@@ -90,7 +90,7 @@ const LatestBlog: React.FC = () => {
 												</span>
 											</div>
 										</div>
-									</a>
+									</Link>
 								</div>
 							</div>
 						)
