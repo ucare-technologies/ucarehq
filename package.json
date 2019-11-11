@@ -41,6 +41,7 @@
     "gatsby-transformer-sharp": "^2.3.3",
     "hex-to-rgba": "^2.0.1",
     "intersection-observer": "^0.7.0",
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.13.0",
     "prismjs": "^1.17.1",
     "react": "^16.11.0",
@@ -83,7 +84,8 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "gatsby build",
+    "mkdir": "npx mkdirp public/content/assets/favicon",
+    "build": "npm run mkdir && gatsby build",
     "clean": "gatsby clean",
     "start": "gatsby develop",
     "format:eslint-fix": "npx eslint src/ --ext .ts,.tsx --fix",
