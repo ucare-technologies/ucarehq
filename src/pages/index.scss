@@ -1,33 +1,28 @@
 @import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
 
-@import '../components/home/church';
-
-@import '../components/home/management';
-
-@import '../components/home/features';
-
-@import '../components/home/devices';
-
-@import '../components/home/testimonials';
-
-@import '../components/home/ministry';
-
-@import '../components/home/pricing';
-
-@import '../components/blogs/latestblog';
-
-@import '../components/header.scss';
-
-@import '../components/blogs/bloglist';
-
-@import '../components/features/featurelist';
-
-@import '../common/common';
-
 @import '../common/mixins';
-
+@import '../common/common';
 @import '../common/404';
 
-@import './features';
+@import '../components/header';
+@import '../components/layout';
+@import '../components/page-header';
 
-@import './signup';
+@import '../components/home/church';
+@import '../components/home/management';
+@import '../components/home/features';
+@import '../components/home/devices';
+@import '../components/home/testimonials';
+@import '../components/home/ministry';
+@import '../components/home/pricing';
+
+@import '../components/blogs/posts';
+@import '../components/blogs/post';
+@import '../components/blogs/latest-blog';
+
+@import '../components/page';
+
+@import '../components/features/feature-list';
+
+@import './features';
+@import './sign-up';

@@ -67,9 +67,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-
-#markdown files
-mdfiles/
-
-#.vscode
-.vscode/

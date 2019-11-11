@@ -1,76 +1,70 @@
+$red: #e10332;
+$red_hover: #960221;
+$grey: #323a46;
+$green: #72be1a;
+$green_hover: #8ce229;
+$green_text: #3c640e;
+$etch: #e5e5e5;
+
 .fade-in-up {
-  animation: fadeInUp 3s;
+	animation: fadeInUp 2s;
 }
 .fade-in-left {
-  animation: fadeInLeft 3s;
+	animation: fadeInLeft 2s;
 }
 .fade-in-right {
-  animation: fadeInRight 3s;
+	animation: fadeInRight 2s;
 }
 .fade-in-hidden {
-  opacity: 0;
+	opacity: 0;
+}
+.fade-in {
+	animation: fadeIn 2s;
 }
 .pages {
-  h1, h2, h3, h4, h5, h6, p {
-    font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-feature-settings: "liga", 0;
-  }
-  p {
-    font-size: 15px;
-    opacity: 0.9;
-    img {
-      // margin-top: 50px;
-      margin-bottom: 50px;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    }
-  }
-  h1, h2 {
-    text-align: center;
-    opacity: 0.9;
-  }
-  h2 {
-    margin-top: 50px;
-    font-size: 150%;
-    opacity: 0.9;
-    font-weight: 300;
-  }
-  h2:nth-of-type(1) {
-    font-size: 200%;
-  }
-  h3 {
-    margin-top: 50px;
-    font-size: 120%;
-  }
-  h4 {
-    font-weight: 300;
-  }
-  ul {
-    li {
-      list-style: none;
-      background: url('../images/check2.svg');
-      background-repeat: no-repeat;
-      padding-left: 0;
-      padding: 2px 0 6px 36px;
-      h3 {
-        background-image: none;
-      }
-    } 
-  }
-  a {
-    text-decoration: none;
-    color: #e10332;
-    &:hover {
-      color: #960221;
-    }
-  }
+	p {
+		@include fonts;
+		font-size: 15px;
+		color: $grey;
+		img {
+			margin-bottom: 50px;
+		}
+	}
+	h1,
+	h2 {
+		text-align: center;
+		color: $grey;
+	}
+	h2 {
+		margin-top: 50px;
+		font-size: 1.5rem;
+		font-weight: 300;
+	}
+	h3 {
+		margin-top: 50px;
+		font-size: 120%;
+	}
+	h4 {
+		font-weight: 300;
+	}
+	a {
+		text-decoration: none;
+		color: $red;
+		&:hover {
+			color: $red_hover;
+		}
+	}
+}
+.post ul li {
+	background: none;
+	list-style: disc;
+	padding: 0;
 }
 #dino {
-  display: none;
+	display: none;
 }
-html,body {
-  height: 100%;
-  margin: 0;
-  font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-feature-settings: "liga",0;
-  font-style: normal;
+html,
+body {
+	height: 100%;
+	margin: 0;
 }

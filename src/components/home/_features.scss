@@ -1,4 +1,4 @@
-$attendace_color: #4caf50;
+$attendance_color: #4caf50;
 $child_color: #e91e63;
 $event-booking_color: #ff5722;
 $groups_color: #ff9800;
@@ -7,93 +7,120 @@ $giving_color: #009688;
 $forms_surveys_color: #673ab7;
 $online-stores_color: #00bcd4;
 $scheduling_color: #cddc39;
-$people_color: #2196F3;
+$people_color: #2196f3;
 $security_color: #000000;
 
 .features {
-  background-color: rgba(50,58,70,.025);
-  margin-top: 70px;
-  .features-title {
-    font-feature-settings: "liga" 0;
-    font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-top: 70px;
-    padding-bottom: 10vh;
-    color: $grey_color;
-    animation: fadeInUp 2s;
-  }
-  .explore-more {
-    padding-top: 150px;
-    padding-bottom: 200px;
-    .explore-more-btn {
-      font-feature-settings: "liga" 0;
-      font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: #475364;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 25px;
-      font-size: 14px;
-      border-radius: 30px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: all .4s ease;
-      line-height: 22px;
-    }
-    .explore-more-btn:hover {
-      background: #323a46;
-      text-decoration: none;
-    }
-  }
-  .animate {
-    animation: fadeInUp 3s;
-  }
-  .readmore-animate {
-    animation: fadeInUp 3s;
-  }
+	background-color: rgba(50, 58, 70, 0.025);
+	padding-top: 50px !important;
+	padding-bottom: 70px !important;
+	.features-title {
+		color: $grey_color;
+		margin: 10px 0;
+		font-size: 1.8rem;
+		@media (min-width: 768px) {
+			font-size: 2.4rem;
+		}
+		img {
+			margin-top: 20px;
+			width: 38px;
+			@media (min-width: 768px) {
+				margin-top: 30px;
+				width: 60px;
+			}
+		}
+	}
+	.explore-more {
+		padding-top: 80px;
+		padding-bottom: 50px;
+		.explore-more-btn {
+			@include fonts;
+			background: #475364;
+			color: #fff;
+			text-decoration: none;
+			padding: 10px 25px;
+			font-size: 14px;
+			border-radius: 30px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			transition: all 0.4s ease;
+			line-height: 22px;
+		}
+		.explore-more-btn:hover {
+			background: $grey_color;
+			text-decoration: none;
+		}
+	}
 }
-
 
 .circle {
-  background-color: $attendace_color;
-  width: 100px;
-  height: 100px;
-  display: block;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 60px;
-  h6 {
-    font-size: 80%;
-    color: #000;
-  }
+	background-color: $grey_color;
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 60px;
+}
+.feature-circle {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	border: 1px solid #fff;
+	margin: 0 auto;
+	padding: 12px 10px 0;
+	@media (min-width: 768px) {
+		width: 80px;
+		height: 80px;
+		border-width: 2px;
+		margin: 0 auto;
+		padding: 18px 10px 0;
+	}
+	svg {
+		height: 30px;
+		width: 30px;
+		padding: 0;
+		margin: 0;
+		@media (min-width: 768px) {
+			height: 40px;
+			width: 40px;
+		}
+	}
+	//	position: relative;
 }
 
+.attendance,
+.dashboards {
+	background: $attendance_color;
+}
 .child {
-  background: $child_color;
+	background: $child_color;
 }
 .event-booking {
-  background: $event-booking_color;
+	background: $event-booking_color;
 }
 .groups {
-  background: $groups_color;
+	background: $groups_color;
 }
 .process {
-  background: $process_automation_color;
+	background: $process_automation_color;
 }
 .giving {
-  background: $giving_color;
+	background: $giving_color;
 }
 .surveys {
-  background: $forms_surveys_color;
+	background: $forms_surveys_color;
 }
 .online-stores {
-  background: $online-stores_color;
+	background: $online-stores_color;
 }
 .scheduling {
-  background: $scheduling_color;
+	background: $scheduling_color;
 }
 .people {
-  background: $people_color;
+	background: $people_color;
 }
 .security {
-  background: $security_color;
+	background: $security_color;
 }
