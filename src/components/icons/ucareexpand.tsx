@@ -2,7 +2,6 @@ import React from 'react';
 
 const UCareExpand: React.FC<{ height: string }> = ({ height }) => (
 	<svg
-		// style={ style }
 		height={height}
 		viewBox='0 0 200 70'
 		fill='#fff'

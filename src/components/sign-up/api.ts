@@ -20,7 +20,7 @@ function thenErrorResponse(promise: Promise<Response>) {
 		return {} as ServerErrors;
 	});
 }
-const verifyUrl = 'http://localhost:35610/signup'; // 'https://crm.ucareapp.com/signup'
+const verifyUrl = 'https://crm.ucareapp.com/signup'
 export function checkTenant(tenant: string) {
 	return thenErrorResponse(
 		fetch(verifyUrl, {
@@ -33,7 +33,7 @@ export function checkTenant(tenant: string) {
 		})
 	);
 }
-const createUrl = 'http://localhost:35610/signup'; // 'https://crm.ucareapp.com/signup'
+const createUrl = 'https://crm.ucareapp.com/signup'
 export function createTenant(fields: Fields) {
 	return thenErrorResponse(
 		fetch(createUrl, {
