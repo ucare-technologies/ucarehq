@@ -168,8 +168,8 @@ module.exports = {
 								title: post.title,
 								description: post.excerpt,
 								date: post.date,
-								url: site.siteMetadata.siteUrl + post.slug,
-								guid: site.siteMetadata.siteUrl + post.slug,
+								url: site.siteMetadata.siteUrl + '/blog' + post.slug,
+								guid: site.siteMetadata.siteUrl + '/blog' + post.slug,
 							}));
 						},
 						query: `
@@ -199,6 +199,12 @@ module.exports = {
 						match: '^/blog/',
 					},
 				],
+			},
+		},
+		{
+			resolve: `gatsby-plugin-offline`,
+			options: {
+				precachePages: [`/features/*`],
 			},
 		},
 	].filter(Boolean),
