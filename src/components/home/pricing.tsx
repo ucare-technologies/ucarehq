@@ -1,22 +1,28 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 import { Element } from 'react-scroll';
 
+import { FluidImageSrc } from '../../types';
 import FadeIn from '../fade-in';
 
 import PricingRange from './pricing-range';
 
 export default function Pricing() {
-	const { pricing } = useStaticQuery(graphql`
+	const { pricing } = useStaticQuery<{ pricing: FluidImageSrc }>(graphql`
 		query {
 			pricing: file(relativePath: { eq: "home/pricing.jpg" }) {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 	`);
 	return (
 		<Element id='pricing' name='pricing'>
-			<div className='container-fluid pricing' style={{ backgroundImage: `url(${pricing.publicURL})` }}>
+			<BackgroundImage Tag='div' className='container-fluid pricing' fluid={pricing.childImageSharp.fluid}>
 				<FadeIn className='row'>
 					<div className='col-xl-5 offset-xl-1 only-pay-container'>
 						<div className='only-pay'>
@@ -40,7 +46,7 @@ export default function Pricing() {
 						<PricingRange />
 					</div>
 				</FadeIn>
-			</div>
+			</BackgroundImage>
 		</Element>
 	);
 }

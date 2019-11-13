@@ -16,7 +16,11 @@ export const postQuery = graphql`
 			excerpt
 			body
 			featured_image {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 		site: site {

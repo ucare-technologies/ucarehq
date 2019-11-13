@@ -2,11 +2,11 @@ import React from 'react';
 
 import FadeIn from '../fade-in';
 
-const FeatureLists: React.FC = ({ children }) => (
+const FeatureList: React.FC = ({ children }) => (
 	<div className='feature-list'>
 		<FadeIn className='row' fade='up'>
 			{children}
 		</FadeIn>
 	</div>
 );
-export default FeatureLists;
+export default FeatureList;

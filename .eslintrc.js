@@ -88,7 +88,9 @@ module.exports = {
 		'react/prop-types': 'off',
 		'react/display-name': 'off', // ["error", { "ignoreTranspilerName": true }],
 
+		'no-nested-ternary': 'off',
 		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/camelcase': 'off',
 		'react/jsx-filename-extension': 'off', // tsx
 		'react/jsx-props-no-spreading': 'off',
 		'react/destructuring-assignment': 'off',

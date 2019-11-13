@@ -11,12 +11,8 @@ $grey_color: #323a46;
 	}
 }
 .feature-list {
-	h3 {
-		color: $grey_color;
-		font-size: 1.2rem;
-		font-weight: 500;
-	}
-	.feature-el {
+	a.feature-el {
+		display: inline-block;
 		margin-top: 50px;
 		padding: 15px 0;
 		transform: scale(1);
@@ -27,11 +23,14 @@ $grey_color: #323a46;
 			cursor: pointer;
 			background: #fff;
 		}
-		a {
-			margin-top: 50px;
+		&,
+		&:hover {
+			text-decoration: none;
 		}
-	}
-	.row {
-		margin: 15px;
+		h3 {
+			color: $grey_color;
+			font-size: 1.2rem;
+			font-weight: 500;
+		}
 	}
 }

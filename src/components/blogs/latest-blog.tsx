@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { FixedObject } from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+import { FixedImageSrc } from '../../types';
 import FadeIn from '../fade-in';
 
 interface LatestBlogPosts {
@@ -15,11 +15,7 @@ interface LatestBlogPosts {
 				categories: string;
 				slug: string;
 				excerpt: string;
-				featured_image: {
-					childImageSharp: {
-						fixed: FixedObject;
-					};
-				};
+				featured_image: FixedImageSrc;
 			};
 		}[];
 	};

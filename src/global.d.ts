@@ -23,23 +23,3 @@ declare module '@mdx-js/react' {
 	}
 	export class MDXProvider extends React.Component<MDXProviderProps> {}
 }
-declare interface BlogPostNode {
-	id: string;
-	title: string;
-	slug: string;
-	date: string;
-	excerpt: string;
-	body: string;
-	type: string;
-	categories: string;
-	featured_image: {
-		publicURL: string;
-		relativePath: string;
-	} | null;
-}
-interface GoogleDataLayer {
-	push(vars: Record<string, string>): void;
-}
-declare global {
-	var dataLayer: GoogleDataLayer;
-}

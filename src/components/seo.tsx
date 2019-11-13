@@ -69,7 +69,7 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, keywords, title }) =
 		.concat(meta || []) as JSX.IntrinsicElements['meta'][];
 	return (
 		<Helmet
-			htmlAttributes={{ lang }}
+			htmlAttributes={{ lang: lang || 'en' }}
 			title={title}
 			titleTemplate={`%s | ${site.siteMetadata.title || 'UCare'}`}
 			meta={metaArray}

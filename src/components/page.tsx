@@ -1,16 +1,17 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import SEO from './seo';
 import Layout from './layout';
-import PageHeader from './page-header';
+import PageHeader, { FluidObject } from './page-header';
 import UCareEmbed from './ucare-embed';
 import YouTube from './youtube';
 import LatestBlog from './blogs/latest-blog';
 import ThreeUp from './features/three-up';
-import FeatureLists from './features/feature-lists';
-import FeatureList2 from './features/feature-list2';
+import FeatureList from './features/feature-list';
+import AllFeatures from './features/features';
 
 const shortcodes = {
 	ThreeUp,
@@ -41,8 +42,7 @@ const Page: React.FC<PageProps> = ({
 		allImageSharp: {
 			edges: {
 				node: {
-					original: { src: string };
-					image: { originalName: string };
+					image: FluidObject & { originalName: string };
 				};
 			}[];
 		};
@@ -52,10 +52,8 @@ const Page: React.FC<PageProps> = ({
 			allImageSharp {
 				edges {
 					node {
-						original {
-							src
-						}
-						image: fluid {
+						image: fluid(quality: 100, maxWidth: 1600) {
+							...GatsbyImageSharpFluid_withWebp
 							originalName
 						}
 					}
@@ -66,11 +64,12 @@ const Page: React.FC<PageProps> = ({
 	const image = featured_image
 		? images.allImageSharp.edges.find(edge => featured_image.indexOf(edge.node.image.originalName) >= 0)
 		: null;
+	const headerImage = image ? { childImageSharp: { fluid: image.node.image } } : null;
 	return (
 		<Layout>
 			<SEO title={title} />
 			<main className='page'>
-				<PageHeader imageUrl={image ? image.node.original.src : null} align={header_alignment} color={feature_colour}>
+				<PageHeader image={headerImage} align={header_alignment} color={feature_colour}>
 					{svg_code && (
 						<div className='feature-circle'>
 							<div dangerouslySetInnerHTML={{ __html: `${svg_code}` }} />
@@ -88,9 +87,9 @@ const Page: React.FC<PageProps> = ({
 				<div className='row m-0 blog-feature-part'>
 					<div className='container text-center'>
 						<h2>More Features</h2>
-						<FeatureLists>
-							<FeatureList2 />
-						</FeatureLists>
+						<FeatureList>
+							<AllFeatures />
+						</FeatureList>
 					</div>
 				</div>
 			)}

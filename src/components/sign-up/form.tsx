@@ -11,6 +11,12 @@ import { defaultFields, Fields, FieldErrors, ServerErrors } from './fields';
 import TenantField from './tenant-field';
 import { required, email, tenant } from './validation';
 
+interface GoogleDataLayer {
+	push(vars: Record<string, string>): void;
+}
+declare global {
+	const dataLayer: GoogleDataLayer;
+}
 type signUpStage = 'create' | 'submit' | 'ready';
 export default function SignUpForm() {
 	const [stage, setStage] = React.useState('create' as signUpStage);

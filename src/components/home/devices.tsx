@@ -2,15 +2,27 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import FadeIn from '../fade-in';
+import FixedImage, { FixedImageProps } from '../fixed-image';
 
 export default function Devices() {
-	const { googleStore, devices } = useStaticQuery(graphql`
+	const { googleStore, devices } = useStaticQuery<{
+		googleStore: FixedImageProps;
+		devices: FixedImageProps;
+	}>(graphql`
 		query {
 			googleStore: file(relativePath: { eq: "home/en_badge_web_generic-300x89.png" }) {
-				publicURL
+				childImageSharp {
+					fixed(width: 160) {
+						...GatsbyImageSharpFixed_withWebp
+					}
+				}
 			}
 			devices: file(relativePath: { eq: "home/iDevices2.png" }) {
-				publicURL
+				childImageSharp {
+					fixed(width: 1000) {
+						...GatsbyImageSharpFixed_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -39,13 +51,13 @@ export default function Devices() {
 				</div>
 				<div className='col-lg-6 col-md-6 device-photo'>
 					<FadeIn fade='right'>
-						<img src={devices.publicURL} alt='iDevices' />
+						<FixedImage alt='iDevices' image={devices} />
 					</FadeIn>
 				</div>
 			</div>
 			<FadeIn className='container apple-google-play' fade='up'>
 				<div className='col-md-6 text-center'>
-					<a href='https://itunes.apple.com/us/app/ucare./id905961512?mt=8'>
+					<a href='https://itunes.apple.com/us/app/ucare./id905961512?mt=8' target='_blank' rel='noopener noreferrer'>
 						<img
 							className='button-center'
 							src='https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg'
@@ -54,8 +66,12 @@ export default function Devices() {
 					</a>
 				</div>
 				<div className='col-md-6 text-center'>
-					<a href='https://play.google.com/store/apps/details?id=com.ucareapp.app'>
-						<img className='button-center' src={googleStore.publicURL} alt='Get it on Google Play' />
+					<a
+						href='https://play.google.com/store/apps/details?id=com.ucareapp.app'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<FixedImage alt='Get it on Google Play' image={googleStore} className='button-center' />
 					</a>
 				</div>
 			</FadeIn>

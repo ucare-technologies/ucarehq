@@ -1,11 +1,13 @@
 import { Fields, ServerErrors } from './fields';
 
+declare function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>;
 interface ErrorResponse {
 	Errors: Record<string, string[]>;
 }
 function thenErrorResponse(promise: Promise<Response>) {
 	return promise.then(res => {
 		if (res.status === 400) {
+			// eslint-disable-next-line promise/no-nesting
 			return res.json().then((errors: ErrorResponse) => {
 				if (!errors || !errors.Errors) {
 					return { tenant: 'An error has occurred, please try again later' };
@@ -20,10 +22,10 @@ function thenErrorResponse(promise: Promise<Response>) {
 		return {} as ServerErrors;
 	});
 }
-const verifyUrl = 'https://crm.ucareapp.com/signup'
+const signUpUrl = 'https://crm.ucareapp.com/signup';
 export function checkTenant(tenant: string) {
 	return thenErrorResponse(
-		fetch(verifyUrl, {
+		fetch(signUpUrl, {
 			method: 'PUT',
 			headers: {
 				Accept: 'application/json',
@@ -33,10 +35,9 @@ export function checkTenant(tenant: string) {
 		})
 	);
 }
-const createUrl = 'https://crm.ucareapp.com/signup'
 export function createTenant(fields: Fields) {
 	return thenErrorResponse(
-		fetch(createUrl, {
+		fetch(signUpUrl, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

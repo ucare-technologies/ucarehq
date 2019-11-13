@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import HamburgerMenu from 'react-hamburger-menu';
 
+import { FilePublicUrl } from '../types';
+
 import { FeaturesLink, SupportLink, BlogLink, SignInLink, TrialLink, PricingLink } from './header-links';
 
 interface HeaderProps {
@@ -11,7 +13,7 @@ interface HeaderProps {
 	forwardRef: React.MutableRefObject<HTMLElement | null>;
 }
 const Header: React.FC<HeaderProps> = ({ isTop, menuOpen, onClick, forwardRef }) => {
-	const { bigLogo, heartLogo } = useStaticQuery(graphql`
+	const { bigLogo, heartLogo } = useStaticQuery<{ bigLogo: FilePublicUrl; heartLogo: FilePublicUrl }>(graphql`
 		query {
 			heartLogo: file(relativePath: { eq: "ucare-heart.svg" }) {
 				publicURL

@@ -4,15 +4,19 @@ import { useStaticQuery, graphql } from 'gatsby';
 import LatestBlog from '../components/blogs/latest-blog';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import PageHeader from '../components/page-header';
+import PageHeader, { FluidImage } from '../components/page-header';
 import FAQ from '../components/faq';
 import SignUpForm from '../components/sign-up/form';
 
 const SingUp: React.FC = () => {
-	const { signup } = useStaticQuery(graphql`
+	const { signup } = useStaticQuery<{ signup: FluidImage }>(graphql`
 		query SignupImage {
 			signup: file(relativePath: { eq: "sign-up/pricing.jpg" }) {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -20,7 +24,7 @@ const SingUp: React.FC = () => {
 		<Layout>
 			<SEO title='30-day free trial' />
 			<main>
-				<PageHeader imageUrl={signup.publicURL}>
+				<PageHeader image={signup}>
 					<h1>30-day free trial</h1>
 					<h3>No obligations and no credit card required.</h3>
 				</PageHeader>

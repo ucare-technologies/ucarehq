@@ -4,6 +4,7 @@ module.exports = {
 		title: `UCare`,
 		description: `Church management software simplified`,
 		author: `UCare`,
+		siteUrl: 'https://ucarehq.com',
 	},
 	plugins: [
 		{
@@ -123,11 +124,81 @@ module.exports = {
 		`gatsby-plugin-emotion`,
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-extract-schema`,
+		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-robots-txt`,
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: 'https://ucarehq.com',
+				stripQueryString: true,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-catch-links`,
+			options: {
+				excludePattern: /(excluded-link|external)/,
+			},
+		},
 		{
 			resolve: 'gatsby-plugin-google-tagmanager',
 			options: {
 				id: 'GTM-KNWKJ4',
 				includeInDevelopment: false,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-feed`,
+			options: {
+				query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+				feeds: [
+					{
+						serialize: ({ query: { site, allBlogPost } }) => {
+							return allBlogPost.posts.map(({ post }) => ({
+								title: post.title,
+								description: post.excerpt,
+								date: post.date,
+								url: site.siteMetadata.siteUrl + post.slug,
+								guid: site.siteMetadata.siteUrl + post.slug,
+							}));
+						},
+						query: `
+              {
+								allBlogPost(
+									sort: { fields: [date, title], order: DESC }
+									filter: { type: { eq: "post" } }
+								) {
+									posts: edges {
+										post: node {
+											excerpt
+											title
+											slug
+											date(formatString: "D MMMM YYYY")
+											type
+										}
+									}
+								}
+              }
+            `,
+						output: '/feed',
+						title: "UCare's RSS Feed",
+						// optional configuration to insert feed reference in pages:
+						// if `string` is used, it will be used to create RegExp and then test if pathname of
+						// current page satisfied this regular expression;
+						// if not provided or `undefined`, all pages will have feed reference inserted
+						match: '^/blog/',
+					},
+				],
 			},
 		},
 	].filter(Boolean),

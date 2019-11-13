@@ -3,29 +3,28 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
-import PageHeader from '../components/page-header';
+import PageHeader, { FluidImage } from '../components/page-header';
 import LatestBlog from '../components/blogs/latest-blog';
-import FeatureLists from '../components/features/feature-lists';
-import FeatureList2 from '../components/features/feature-list2';
+import FeatureList from '../components/features/feature-list';
+import AllFeatures from '../components/features/features';
 
 const Features: React.FC = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			allFile(filter: { relativePath: { eq: "features/hero.jpg" } }) {
-				edges {
-					node {
-						publicURL
+	const { file } = useStaticQuery<{ file: FluidImage }>(graphql`
+		query FeaturesHeroQuery {
+			file(relativePath: { eq: "features/hero.jpg" }) {
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}
 		}
 	`);
-	const { publicURL } = data.allFile.edges[0].node;
 	return (
 		<Layout>
 			<SEO title='UCare’s Powerful Features' />
 			<main>
-				<PageHeader imageUrl={publicURL}>
+				<PageHeader image={file}>
 					<h1>UCare’s Powerful Features</h1>
 					<h3>Church can be complex, but your software doesn’t need to be.</h3>
 				</PageHeader>
@@ -39,9 +38,9 @@ const Features: React.FC = () => {
 							</p>
 						</div>
 						<div className='feature-body-list mb-5'>
-							<FeatureLists>
-								<FeatureList2 />
-							</FeatureLists>
+							<FeatureList>
+								<AllFeatures />
+							</FeatureList>
 						</div>
 					</div>
 				</div>

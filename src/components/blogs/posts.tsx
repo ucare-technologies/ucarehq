@@ -5,11 +5,25 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 import SEO from '../seo';
 import Layout from '../layout';
-import PageHeader from '../page-header';
+import PageHeader, { FluidImage } from '../page-header';
 
 import BlogItem from './blog-item';
 import LatestBlog from './latest-blog';
 
+interface BlogPostNode {
+	id: string;
+	title: string;
+	slug: string;
+	date: string;
+	excerpt: string;
+	body: string;
+	type: string;
+	categories: string;
+	featured_image: {
+		publicURL: string;
+		relativePath: string;
+	} | null;
+}
 interface PostsProps {
 	posts: { post: BlogPostNode }[];
 	currentPage: number;
@@ -21,10 +35,14 @@ const Posts: React.FC<PostsProps> = ({ posts, currentPage, limit }) => {
 	const isLast = currentPage === numPages;
 	const prevPage = currentPage - 1 <= 1 ? '/blog' : `/blog/page/${currentPage - 1}`;
 	const nextPage = `/blog/page/${currentPage + 1}`;
-	const { file } = useStaticQuery<{ file: { publicURL: string } }>(graphql`
+	const { file } = useStaticQuery<{ file: FluidImage }>(graphql`
 		query PostsQuery {
 			file(relativePath: { eq: "page/blog/friends04.jpg" }) {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -34,7 +52,7 @@ const Posts: React.FC<PostsProps> = ({ posts, currentPage, limit }) => {
 		<Layout>
 			<SEO title={currentPage === 1 ? 'Blog' : `Blog | Page ${currentPage}`} />
 			<main>
-				<PageHeader imageUrl={file.publicURL}>
+				<PageHeader image={file}>
 					<h1>Blog</h1>
 					<h3>Latest News &amp; Updates from the UCare Team</h3>
 				</PageHeader>

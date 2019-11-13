@@ -4,13 +4,17 @@ import { graphql, useStaticQuery } from 'gatsby';
 import LatestBlog from '../components/blogs/latest-blog';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
-import PageHeader from '../components/page-header';
+import PageHeader, { FluidImage } from '../components/page-header';
 
 const NotFound: React.FC = () => {
-	const { file } = useStaticQuery<{ file: { publicURL: string } }>(graphql`
+	const { file } = useStaticQuery<{ file: FluidImage }>(graphql`
 		query FourOhFourImageQuery {
 			file(relativePath: { eq: "404.jpg" }) {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -18,7 +22,7 @@ const NotFound: React.FC = () => {
 		<Layout>
 			<SEO title='404' />
 			<main>
-				<PageHeader imageUrl={file.publicURL}>
+				<PageHeader image={file}>
 					<h1>FOUR, OH FOUR.</h1>
 				</PageHeader>
 				<div className='not-exist'>

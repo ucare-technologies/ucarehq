@@ -1,11 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { FilePublicUrl, FluidImageSrc } from '../../types';
 import FadeIn from '../fade-in';
 
 /**
@@ -37,10 +39,21 @@ const NextArrow: React.FC = () => (
 	</div>
 );
 export default function Testimonials() {
-	const { bgImg, ourchurch, rcbc, flc, metro, kings } = useStaticQuery(graphql`
+	const { bgImg, ourchurch, rcbc, flc, metro, kings } = useStaticQuery<{
+		bgImg: FluidImageSrc;
+		ourchurch: FilePublicUrl;
+		rcbc: FilePublicUrl;
+		flc: FilePublicUrl;
+		metro: FilePublicUrl;
+		kings: FilePublicUrl;
+	}>(graphql`
 		query TestimonialQuery {
 			bgImg: file(relativePath: { eq: "testimonials-bg.jpg" }) {
-				publicURL
+				childImageSharp {
+					fluid(quality: 100, maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 			ourchurch: file(relativePath: { eq: "ourchurch.png" }) {
 				publicURL
@@ -60,7 +73,12 @@ export default function Testimonials() {
 		}
 	`);
 	return (
-		<section className='container-fluid p-0 testimonial' style={{ backgroundImage: `url(${bgImg.publicURL})` }}>
+		<BackgroundImage
+			Tag='section'
+			className='container-fluid p-0 testimonial'
+			fluid={bgImg.childImageSharp.fluid}
+			backgroundColor='#e10332'
+		>
 			<FadeIn fade='up'>
 				<div className='container text-center text-white'>
 					<h2>Churches We Work With</h2>
@@ -102,6 +120,6 @@ export default function Testimonials() {
 					</div>
 				</div>
 			</FadeIn>
-		</section>
+		</BackgroundImage>
 	);
 }

@@ -4,14 +4,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import FadeIn from '../fade-in';
-import FeatureLists from '../features/feature-lists';
-import FeatureList1 from '../features/feature-list1';
+import FixedImage, { FixedImageProps } from '../fixed-image';
+import FeatureList from '../features/feature-list';
+import {
+	AttendanceFeature,
+	CheckInFeature,
+	EventsFeature,
+	GroupsFeature,
+	ProcessesFeature,
+	GivingFeature,
+} from '../features/features';
 
 export default function Features() {
-	const { file } = useStaticQuery(graphql`
+	const { file } = useStaticQuery<{ file: FixedImageProps }>(graphql`
 		query FeaturesQuery {
 			file(relativePath: { eq: "favicon.png" }) {
-				publicURL
+				childImageSharp {
+					fixed(width: 60) {
+						...GatsbyImageSharpFixed_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -21,12 +33,17 @@ export default function Features() {
 				<FadeIn fade='up'>
 					<h2 className='features-title text-center'>
 						Features you will
-						<img src={file.publicURL} alt='features you will love' className='ml-2' />
+						<FixedImage alt='features you will love' image={file} />
 					</h2>
 				</FadeIn>
-				<FeatureLists>
-					<FeatureList1 />
-				</FeatureLists>
+				<FeatureList>
+					<AttendanceFeature />
+					<CheckInFeature />
+					<EventsFeature />
+					<GroupsFeature />
+					<ProcessesFeature />
+					<GivingFeature />
+				</FeatureList>
 				<FadeIn className='explore-more' fade='up'>
 					<Link to='/features' className='explore-more-btn'>
 						Explore More Features
