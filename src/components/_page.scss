@@ -25,7 +25,7 @@ main.page {
 			.gatsby-resp-image-wrapper {
 				animation: fadeInUp 2s;
 				margin-bottom: 50px;
-				box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+				box-shadow: 0 0 10px 0 rgba($black, 0.5);
 				background-clip: $grey;
 			}
 			&.feature {

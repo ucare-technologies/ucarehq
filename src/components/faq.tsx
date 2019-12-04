@@ -4,10 +4,10 @@ import { Link } from 'gatsby';
 const FAQ: React.FC = () => (
 	<div className='row faq'>
 		<div className='text-center'>
-			<div className='faq-title px-3'>
+			<header className='faq-title px-3'>
 				<h2>Frequently Asked Questions</h2>
 				<p>We’re here to help. If you run into any problems at all, feel free to use the help button to contact us.</p>
-			</div>
+			</header>
 			<div className='row text-left'>
 				<QA q='What happens after my trial?'>
 					You can subscribe any time during your 30-day trial. However, if you hit the end of your trial without
@@ -84,7 +84,7 @@ const FAQ: React.FC = () => (
 					kept and you can undelete it at any time, it will even be available in 10 years.
 				</QA>
 				<QA q='What is your service availability?'>
-					Our average up-time is over 99.95%, less than 20 minutes unplanned down time in a month. We have a
+					Our average up-time is over 99.95%, less than 20 minutes unplanned down time in a month. We have a{' '}
 					<Link to='/sla'>Service Level Agreement of 99.9%</Link>, if we ever fail to meet this a credit will be applied
 					to your account.
 				</QA>

@@ -2,7 +2,7 @@
 	padding-top: 70px !important;
 	padding-bottom: 70px !important;
 	h2 {
-		color: $grey_color;
+		color: $grey;
 		font-weight: 100;
 		margin: 10px 0;
 		font-size: 1.8rem;
@@ -12,24 +12,24 @@
 	}
 	h5 {
 		font-weight: 400;
-		color: $grey_color;
+		color: $grey;
 		font-size: 1.2rem;
 		margin-bottom: 20px;
 	}
 	h6 {
-		color: rgba(50, 58, 70, 0.6);
+		color: rgba($grey, 0.6);
 		font-size: 1rem;
 		line-height: 1.428571429rem;
 		font-weight: 400;
 	}
 	p {
 		@include fonts;
-		color: $grey_color;
+		color: $grey;
 	}
 	.ministry-circle {
 		width: 100px;
 		height: 100px;
-		border: 2px solid $grey_color;
+		border: 2px solid $grey;
 		border-radius: 50px;
 		margin: 0 auto 20px;
 		svg {

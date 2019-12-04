@@ -1,14 +1,26 @@
 /* eslint-disable import/prefer-default-export */
-export const defaultFields = {
+export const defaultSignUpFields = {
 	firstName: '',
 	lastName: '',
 	email: '',
 	country: 'Australia',
 	mobile: '',
 	tenant: '',
+	edition: 'growth',
+	size: '500',
 };
-export type Fields = typeof defaultFields;
-export type FieldErrors = Partial<Fields>;
-export interface ServerErrors extends FieldErrors {
+export type SignUpFields = typeof defaultSignUpFields;
+export type SignUpFieldErrors = Partial<SignUpFields>;
+export interface SignUpServerErrors extends SignUpFieldErrors {
 	tenantAvailable?: string;
 }
+export const defaultContactFields = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	country: 'Australia',
+	mobile: '',
+	message: '',
+};
+export type ContactFields = typeof defaultContactFields;
+export type ContactFieldErrors = Partial<ContactFields>;

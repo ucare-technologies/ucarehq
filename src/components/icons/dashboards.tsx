@@ -9,7 +9,6 @@ const Dashboards: React.FC<{ style?: React.CSSProperties; height?: string }> = (
 		stroke='#fff'
 		className='dashboards'
 		xmlns='http://www.w3.org/2000/svg'
-		xmlnsXlink='http://www.w3.org/1999/xlink'
 	>
 		<g fill='none' stroke='#fff' strokeLinejoin='round' strokeMiterlimit='10'>
 			<g strokeLinecap='round'>

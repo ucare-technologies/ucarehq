@@ -49,6 +49,7 @@
     "mkdirp": "^0.5.1",
     "node-sass": "^4.13.0",
     "prismjs": "^1.17.1",
+    "query-string": "^6.9.0",
     "react": "^16.11.0",
     "react-animate-height": "^2.0.17",
     "react-dom": "^16.11.0",

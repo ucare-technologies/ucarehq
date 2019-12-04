@@ -7,7 +7,7 @@ import AgreeField from './agree-field';
 import { checkTenant, createTenant } from './api';
 import CountryField from './country-field';
 import Field from './field';
-import { defaultFields, Fields, FieldErrors, ServerErrors } from './fields';
+import { defaultSignUpFields, SignUpFields, SignUpFieldErrors, SignUpServerErrors } from './fields';
 import TenantField from './tenant-field';
 import { required, email, tenant } from './validation';
 
@@ -18,18 +18,18 @@ declare global {
 	const dataLayer: GoogleDataLayer;
 }
 type signUpStage = 'create' | 'submit' | 'ready';
-export default function SignUpForm() {
+export default function SignUpForm({ size, edition }: { size: number; edition: string }) {
 	const [stage, setStage] = React.useState('create' as signUpStage);
-	const [fields, setFields] = React.useState(defaultFields);
+	const [fields, setFields] = React.useState(defaultSignUpFields);
 	const [agreed, setAgreed] = React.useState(false);
-	const [errors, setErrors] = React.useState({} as FieldErrors);
-	const [serverErrors, setServerErrors] = React.useState({} as ServerErrors);
+	const [errors, setErrors] = React.useState({} as SignUpFieldErrors);
+	const [serverErrors, setServerErrors] = React.useState({} as SignUpServerErrors);
 	const [validate, setValidate] = React.useState(false);
 	const [validatingTenant, setValidatingTenant] = React.useState(false);
 	const handleChange = React.useCallback((name: string, value: string) => {
 		setFields(current => ({
 			...current,
-			[name as keyof Fields]: value,
+			[name as keyof SignUpFields]: value,
 		}));
 	}, []);
 	const validateTenant = React.useCallback((value: string) => {
@@ -63,6 +63,7 @@ export default function SignUpForm() {
 			firstName: required(fields.firstName),
 			lastName: required(fields.lastName),
 			email: required(fields.email) || email(fields.email),
+			mobile: required(fields.mobile),
 			country: required(fields.country),
 			tenant: tenant(fields.tenant),
 		};
@@ -81,6 +82,8 @@ export default function SignUpForm() {
 			window.setTimeout(() => {
 				if (!validatingTenant && isValid() && !serverErrors.tenant) {
 					setStage('submit');
+					fields.edition = edition;
+					fields.size = String(size);
 					createTenant(fields)
 						.then(serverErrors1 => {
 							setServerErrors(serverErrors1);
@@ -99,7 +102,7 @@ export default function SignUpForm() {
 				}
 			}, 0);
 		},
-		[validatingTenant, isValid, fields, serverErrors]
+		[validatingTenant, isValid, fields, serverErrors, size, edition]
 	);
 	return (
 		<>
@@ -127,7 +130,7 @@ export default function SignUpForm() {
 								onChange={handleChange}
 								disabled={stage !== 'create'}
 							>
-								&nbsp;
+								<span className='d-none d-md-block'>&nbsp;</span>
 							</Field>
 						</div>
 					</div>
@@ -145,20 +148,20 @@ export default function SignUpForm() {
 						</Field>
 					</div>
 					<div className='form-group'>
-						<CountryField value={fields.country} onChange={handleChange} disabled={stage !== 'create'} />
-					</div>
-					<div className='form-group'>
 						<Field
 							value={fields.mobile}
 							error={errors.mobile}
 							name='mobile'
-							placeholder='Required for sms features'
+							placeholder='Required to enable sms features'
 							type='tel'
 							onChange={handleChange}
 							disabled={stage !== 'create'}
 						>
-							Your mobile phone
+							Your mobile phone*
 						</Field>
+					</div>
+					<div className='form-group'>
+						<CountryField value={fields.country} onChange={handleChange} disabled={stage !== 'create'} />
 					</div>
 					<div className='form-group account-address'>
 						<TenantField

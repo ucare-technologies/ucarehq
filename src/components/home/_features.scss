@@ -1,21 +1,9 @@
-$attendance_color: #4caf50;
-$child_color: #e91e63;
-$event-booking_color: #ff5722;
-$groups_color: #ff9800;
-$process_automation_color: #3f51b5;
-$giving_color: #009688;
-$forms_surveys_color: #673ab7;
-$online-stores_color: #00bcd4;
-$scheduling_color: #cddc39;
-$people_color: #2196f3;
-$security_color: #000000;
-
 .features {
-	background-color: rgba(50, 58, 70, 0.025);
+	background-color: rgba($grey, 0.025);
 	padding-top: 50px !important;
 	padding-bottom: 70px !important;
 	.features-title {
-		color: $grey_color;
+		color: $grey;
 		margin: 10px 0;
 		font-size: 1.8rem;
 		@media (min-width: 768px) {
@@ -37,8 +25,8 @@ $security_color: #000000;
 		padding-bottom: 50px;
 		.explore-more-btn {
 			@include fonts;
-			background: #475364;
-			color: #fff;
+			background: $grey2;
+			color: $light;
 			text-decoration: none;
 			padding: 10px 25px;
 			font-size: 14px;
@@ -49,27 +37,27 @@ $security_color: #000000;
 			line-height: 22px;
 		}
 		.explore-more-btn:hover {
-			background: $grey_color;
+			background: $grey;
 			text-decoration: none;
 		}
 	}
 }
 
 .circle {
-	background-color: $grey_color;
+	background-color: $grey;
 	width: 100px;
 	height: 100px;
 	display: block;
 	margin: 0 auto 20px;
 	border-radius: 50%;
-	color: #fff;
+	color: $light;
 	font-size: 60px;
 }
 .feature-circle {
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
-	border: 1px solid #fff;
+	border: 1px solid $light;
 	margin: 0 auto;
 	padding: 12px 10px 0;
 	@media (min-width: 768px) {

@@ -10,7 +10,7 @@
 			@include fonts();
 			list-style: none;
 			padding: 2px 0 4px 36px;
-			color: $grey_color;
+			color: $grey;
 			h5 {
 				font-size: 20px;
 				opacity: 0.9;
@@ -20,7 +20,7 @@
 	label {
 		@include fonts();
 		display: block;
-		color: $grey_color;
+		color: $grey;
 		margin-bottom: 0;
 		small {
 			color: #999;
@@ -36,8 +36,8 @@
 			.form-control {
 				font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue';
 				border: 2px solid $etch;
-				border-radius: 1.5em;
-				color: #000;
+				border-radius: 0.5rem;
+				color: $black;
 				padding: 0.25em 0.75em;
 				outline: 0;
 				box-shadow: none;
@@ -59,10 +59,10 @@
 				color: $red;
 			}
 			.trial {
-				border-radius: 30px;
+				border-radius: 0.5rem;
 				background: $green;
 				border-color: $green;
-				color: #fff;
+				color: $light;
 				padding: 0.5em 1.5em;
 				&:disabled {
 					opacity: 1;
@@ -70,10 +70,19 @@
 					border-color: $etch;
 					color: #777;
 				}
-				&:hover:not(:disabled) {
-					background: $green_hover;
-					border-color: $green_hover;
-					color: $green_text;
+				&:not(:disabled) {
+					&:hover,
+					&:active {
+						background: $green_hover;
+						border-color: $green_hover;
+						color: $green_text;
+					}
+					&:focus {
+						&,
+						&:active {
+							box-shadow: 0 0 0 0.2rem rgba($green, 0.5);
+						}
+					}
 				}
 			}
 			.form-group {
@@ -106,15 +115,15 @@
 		.input-group-prepend {
 			.input-group-text {
 				border-right-width: 0 !important;
-				border-top-left-radius: 1.5em;
-				border-bottom-left-radius: 1.5em;
+				border-top-left-radius: 0.5rem;
+				border-bottom-left-radius: 0.5rem;
 			}
 		}
 		.input-group-append {
 			.input-group-text {
 				border-left-width: 0 !important;
-				border-top-right-radius: 1.5em;
-				border-bottom-right-radius: 1.5em;
+				border-top-right-radius: 0.5rem;
+				border-bottom-right-radius: 0.5rem;
 			}
 		}
 		.account-address {
@@ -150,49 +159,9 @@
 			}
 		}
 		.spinner-border.text-success {
-			color: #72be1a !important;
-		}
-	}
-	.faq {
-		padding-bottom: 10%;
-		h2,
-		h4,
-		p {
-			color: $grey_color;
-		}
-		h2 {
-			font-size: 1.8rem;
-			@media (min-width: 768px) {
-				font-size: 2.4rem;
-			}
-		}
-		h4 {
-			font-size: 20px;
-			font-weight: 400;
-			margin-bottom: 0.5em;
-		}
-		p {
-			font-size: 16px;
-			a {
-				text-decoration: none;
-				color: $red;
-				&:hover {
-					color: $red_hover;
-				}
-			}
-		}
-		.faq-title {
-			margin-top: 40px;
-			margin-bottom: 40px;
-		}
-	}
-	ul {
-		li {
-			list-style: none;
-			background: url('../images/check2.svg');
-			background-repeat: no-repeat;
-			padding-left: 0;
-			padding: 2px 0 6px 36px;
+			color: $green !important;
 		}
 	}
 }
+
+@import 'faq';

@@ -3,7 +3,7 @@ import React from 'react';
 
 declare global {
 	interface Window {
-		UCareEmbed: Function;
+		UCareEmbed: (elementId: string, url: string, path: string, cssUrl: string) => void;
 	}
 }
 
