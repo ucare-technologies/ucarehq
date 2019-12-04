@@ -20,7 +20,7 @@ const SingUp: React.FC<{ location: { search: string } }> = ({ location: { search
 			}
 		}
 	`);
-	const searchProps = location.search ? queryString.parse(location.search) : {};
+	const searchProps = search ? queryString.parse(search) : {};
 	const size = Number(searchProps.size) || 500;
 	const edition = String(searchProps.edition) || 'growth';
 	return (
