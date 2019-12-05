@@ -17,9 +17,6 @@
 		background: $green_hover;
 		color: $green_text;
 	}
-	&:focus,&:focus:active {
-		box-shadow: 0 0 0 0.2rem rgba($green, 0.5);
-	}
 }
 .navbar {
 	transition: all 0.4s ease;

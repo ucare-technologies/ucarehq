@@ -60,9 +60,6 @@
 			}
 			.trial {
 				border-radius: 0.5rem;
-				background: $green;
-				border-color: $green;
-				color: $light;
 				padding: 0.5em 1.5em;
 				&:disabled {
 					opacity: 1;
@@ -76,12 +73,6 @@
 						background: $green_hover;
 						border-color: $green_hover;
 						color: $green_text;
-					}
-					&:focus {
-						&,
-						&:active {
-							box-shadow: 0 0 0 0.2rem rgba($green, 0.5);
-						}
 					}
 				}
 			}

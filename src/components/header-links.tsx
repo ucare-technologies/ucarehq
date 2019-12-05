@@ -29,7 +29,7 @@ const SignInLink: React.FC<LinkProps> = ({ className }) => (
 );
 const TrialLink: React.FC<LinkProps> = ({ className }) => (
 	<Link to='/pricing' className={className}>
-		Free 30-day trial
+		Free trial
 		<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
 	</Link>
 );

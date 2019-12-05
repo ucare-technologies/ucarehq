@@ -10,7 +10,6 @@ import LatestBlog from '../components/blogs/latest-blog';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
 
 const IndexPage: React.FC = () => (
