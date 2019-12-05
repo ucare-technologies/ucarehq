@@ -57,7 +57,10 @@ a.link-down {
 		flex-wrap: wrap;
 		margin: auto;
 		line-height: 1em;
-		width: 95%;
+		width: 80%;
+		@media (min-width: 768px) {
+			width: 95%;
+		}
 		.pricing-range-slider {
 			width: 100%;
 		}

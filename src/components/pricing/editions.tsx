@@ -23,7 +23,7 @@ const EditionSelect: React.FC = () => {
 		<>
 			{!isLarge && estimate}
 			<TermsSelect value={terms} onChange={handleTermsChange} />
-			<Editions value={value} slider={!isLarge ? 'above' : 'below'} terms={terms} />
+			<Editions value={value} terms={terms} />
 			{isLarge && estimate}
 			<Contact />
 		</>
@@ -97,17 +97,16 @@ function sectionClasses(is: boolean) {
 
 interface EditionsProps {
 	value?: number;
-	slider: string;
 	terms: Terms;
 }
-const Editions: React.FC<EditionsProps> = ({ value, slider, terms }) => {
+const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 	const people = value || 500;
 	const tier = getTier(people);
 	const signUpUrl = `/sign-up/?size=${people}&edition=`;
 	return (
 		<div className='row'>
 			<section className={sectionClasses(tier === 'essentials')}>
-				<Recommend is={tier === 'essentials'} slider={slider} />
+				<Recommend is={tier === 'essentials'} />
 				<header>
 					<h3>Essentials</h3>
 					<p>For new churches and churches wanting to track attendance and start growing each person.</p>
@@ -132,7 +131,7 @@ const Editions: React.FC<EditionsProps> = ({ value, slider, terms }) => {
 				</footer>
 			</section>
 			<section className={sectionClasses(tier === 'growth')}>
-				<Recommend is={tier === 'growth'} slider={slider} isDefault={!value} />
+				<Recommend is={tier === 'growth'} />
 				<header>
 					<h3>Growth</h3>
 					<p>For growing churches focused on child safety, outreach and wanting follow-up automation.</p>
@@ -158,7 +157,7 @@ const Editions: React.FC<EditionsProps> = ({ value, slider, terms }) => {
 				</footer>
 			</section>
 			<section className={sectionClasses(tier === 'lighthouse')}>
-				<Recommend is={tier === 'lighthouse'} slider={slider} />
+				<Recommend is={tier === 'lighthouse'} />
 				<header>
 					<h3>Lighthouse</h3>
 					<p>For large or multi-site churches focused on volunteers, in-depth analytics and wanting full automation.</p>
@@ -227,9 +226,7 @@ const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepP
 
 interface RecommendProps {
 	is: boolean;
-	isDefault?: boolean;
-	slider: string;
 }
-const Recommend: React.FC<RecommendProps> = ({ is, isDefault, slider }) => (
-	<div className='top'>{is ? isDefault ? `adjust the slider ${slider}` : `recommended for you*` : <br />}</div>
+const Recommend: React.FC<RecommendProps> = ({ is }) => (
+	<div className='top'>{is ? `recommended for you*` : <br />}</div>
 );
