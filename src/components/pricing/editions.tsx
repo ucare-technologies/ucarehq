@@ -192,11 +192,11 @@ const Editions: React.FC<EditionsProps> = ({ value, slider, terms }) => {
 				</ul>
 				<footer>
 					<Link
-						to={people >= 2000 ? '/contact' : signUpUrl + 'lighthouse'}
+						to={people >= bookCallSize ? '/contact' : signUpUrl + 'lighthouse'}
 						className={btnClasses(tier === 'lighthouse')}
 						role='button'
 					>
-						{people >= 2000 ? <BookCall /> : `Get started for free`}
+						{people >= bookCallSize ? <BookCall /> : `Get started for free`}
 					</Link>
 				</footer>
 			</section>
