@@ -2,7 +2,7 @@
 	@include fonts();
 	background: $green;
 	transition: all 0.4s ease;
-	color: rgba($light, 0.85);
+	color: rgba($white, 0.85);
 	text-decoration: none;
 	border: none;
 	letter-spacing: 0;
@@ -101,7 +101,7 @@
 			font-size: 15px;
 			font-weight: 600;
 			text-transform: uppercase;
-			color: rgba($light, 0.9);
+			color: rgba($white, 0.9);
 			letter-spacing: 2px;
 			text-decoration: none;
 			margin: 12px;
@@ -111,8 +111,8 @@
 			border-bottom: 2px solid transparent;
 			&:hover {
 				padding-bottom: 5px;
-				border-bottom-color: rgba($light, 0.9);
-				color: rgba($light, 0.9);
+				border-bottom-color: rgba($white, 0.9);
+				color: rgba($white, 0.9);
 			}
 		}
 		.item-down {
@@ -152,7 +152,7 @@
 		border: none;
 		outline: none;
 		box-shadow: none;
-		border-left: 1px solid rgba($light, 0.5);
+		border-left: 1px solid rgba($white, 0.5);
 		transition: all 0.5s ease;
 		position: fixed;
 		right: 0;
@@ -245,7 +245,7 @@
 .bg-lights {
 	padding: 0px;
 	height: 60px;
-	background-color: rgba($light, 0.98);
+	background-color: rgba($white, 0.98);
 	border-bottom: 1px solid rgba($grey, 0.1) !important;
 	@media (max-width: 772px) {
 		height: 60px;
@@ -284,7 +284,7 @@
 		border-left: 1px solid #ddd;
 	}
 	.openbtn:hover {
-		background-color: $light;
+		background-color: $white;
 	}
 	#main {
 		transition: margin-left 0.5s;

@@ -32,7 +32,7 @@ div.latest-blog {
 		}
 		.blogs {
 			border: 1px solid rgba($grey, 0.12);
-			background: $light;
+			background: $white;
 			border-radius: 5px;
 			@media (min-width: 992px) {
 				margin: 0 10px;
@@ -53,9 +53,9 @@ div.latest-blog {
 						position: absolute;
 						top: 10px;
 						left: 10px;
-						color: $light;
+						color: $white;
 						border-radius: 20px;
-						border: 2px solid rgba($light, 0.8);
+						border: 2px solid rgba($white, 0.8);
 						background: rgba($grey, 0.25);
 						padding: 5px 15px;
 						font-size: 90%;
@@ -80,7 +80,7 @@ div.latest-blog {
 				.read-more {
 					display: inline-block;
 					text-decoration: none;
-					color: rgba($light, 0.85);
+					color: rgba($white, 0.85);
 					background: $grey2;
 					font-size: 14px;
 					font-weight: 700;

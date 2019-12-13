@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import Badge from '../badge';
+import useScript from '../useScript';
 
 import Estimate from './estimate';
 import { getTier } from './features';
@@ -68,6 +69,9 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 	);
 };
 
+declare module Calendly {
+	function initPopupWidget(options: { url: string }): void;
+}
 const Contact: React.FC = () => {
 	return (
 		<div className='pricing-estimate pb-4 text-center'>
@@ -75,21 +79,37 @@ const Contact: React.FC = () => {
 				<h3>Not sure which edition is for you?</h3>
 				<p>We'd love to talk with you and discuss the unique needs of your church.</p>
 			</header>
-			<Link to='/contact' className='btn btn-outline-secondary' role='button'>
-				<BookCall />
-			</Link>
+			<BookCall />
 		</div>
 	);
 };
 
-const BookCall: React.FC = () => (
-	<>
-		Book a call <FontAwesomeIcon icon={faPhone} className='ml-2' />
-	</>
-);
+const BookCall: React.FC = () => {
+	const { loaded, error } = useScript('https://assets.calendly.com/assets/external/widget.js');
+	const handleClick = React.useCallback(() => {
+		if (error) {
+			if (confirm('The "Book a call" tool failed, please try again after the page reloads')) {
+				document.location.reload();
+			}
+		} else {
+			Calendly.initPopupWidget({
+				url:
+					'https://calendly.com/ucareapp/book-a-call?hide_event_type_details=1&background_color=ffffff&text_color=323232&primary_color=72be1a',
+			});
+		}
+	}, [error]);
+	return !loaded && !error ? null : (
+		<>
+			<link href='https://assets.calendly.com/assets/external/widget.css' rel='stylesheet' />
+			<a href='#' onClick={handleClick} className='btn btn-outline-primary btn-lg' role='button'>
+				Book a call <FontAwesomeIcon icon={faPhone} className='ml-2' />
+			</a>
+		</>
+	);
+};
 
 function btnClasses(is: boolean) {
-	return `btn btn-block ${is ? `btn-primary` : `btn-outline-secondary`}`;
+	return `btn ${is ? `btn-primary` : `btn-outline-secondary`}`;
 }
 function sectionClasses(is: boolean) {
 	return `col-md edition ${is ? `recommend` : ``}`;
@@ -183,20 +203,22 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>
 						Wave Automation Studio <Badge type='success'>New</Badge>
 					</li>
-					<li>Wave Graph API</li>
+					<li>
+						Wave Graph API <Badge type='success'>New</Badge>
+					</li>
 					<li>Phone support available</li>
 					<li>Unlimited campuses</li>
 					<li>Implementation specialists</li>
 					<li>Coaching & Masterclasses</li>
 				</ul>
 				<footer>
-					<Link
-						to={people >= bookCallSize ? '/contact' : signUpUrl + 'lighthouse'}
-						className={btnClasses(tier === 'lighthouse')}
-						role='button'
-					>
-						{people >= bookCallSize ? <BookCall /> : `Get started for free`}
-					</Link>
+					{people >= bookCallSize ? (
+						<BookCall />
+					) : (
+						<Link to={signUpUrl + 'lighthouse'} className={btnClasses(tier === 'lighthouse')} role='button'>
+							Get started for free
+						</Link>
+					)}
 				</footer>
 			</section>
 		</div>

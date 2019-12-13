@@ -43,7 +43,7 @@ function L(name: string, value: React.ReactNode = <Yes />) {
 	return Values(name, <NA />, <NA />, <NA />, value);
 }
 function AL(name: string, other: React.ReactNode = `Add on`, lighthouse: React.ReactNode = <Yes />) {
-	return Values(name, other, <NA />, other, lighthouse);
+	return Values(name, <NA />, <NA />, other, lighthouse);
 }
 function GL(name: string, value: React.ReactNode = <Yes />) {
 	return Values(name, <NA />, <NA />, value, value);
@@ -67,7 +67,7 @@ export function features() {
 			description: `All your people stored safely in one place`,
 			features: [
 				Values(
-					`Included people (you don't pay for visitors or archived people)`,
+					`Included people (you don’t pay for visitors or archived people)`,
 					`200 people included`,
 					`500 people included`,
 					`500 people included`,
@@ -94,7 +94,6 @@ export function features() {
 					lighthouse: `20/person/month included`,
 				},
 				Values(`Extra Email messages`, `$2/1000`, `$3/1000`, `$2/1000`, `$1/1000`),
-				LGL(`View attendance, payment and event history`),
 			],
 		},
 		{
@@ -125,7 +124,13 @@ export function features() {
 			description: `Speed up, secure and simplify check-in & reporting`,
 			features: [
 				LGL(`Unlimited classes, rooms, age groups, times`),
-				Values(`Check-in stations (phone, tablet, laptop or desktop)`, `Unlimited`, <NA />, `20 included`, `Unlimited`),
+				Values(
+					`Check-in stations (phone, tablet, laptop or desktop)`,
+					`20 included`,
+					<NA />,
+					`20 included`,
+					`Unlimited`
+				),
 				LGL(`Assisted Check-in for registering & checking in visitors, updating personal info, and check-out`),
 				LGL(`Self Check-in so regulars can quickly check-in themselves`),
 				LGL(`Roster Check-in for room check-in & check-out`),
@@ -332,7 +337,7 @@ export function features() {
 				All(`Data migration`, `Add on`),
 				All(`Online help center`),
 				All(`Email based technical support`),
-				GL(`Email based coaching`),
+				Values(`Email based coaching`, `Limited`, <NA />, <Yes />, <Yes />),
 				GL(`Monthly Webinars`),
 				GL(`Tailored Coaching and Masterclasses`, `Add on`),
 				GL(`Implementation specialists`, `Add on`),
@@ -352,18 +357,12 @@ export function features() {
 				),
 				All(`Encrypted internet connection to protect all data`),
 				All(`Optimized for low bandwidth internet`),
-				Values(
-					`All UCare activity is fully audited for data privacy reporting needs`,
-					`Unlimited`,
-					`12 months`,
-					`3 years`,
-					`Unlimited`
-				),
+				All(`All UCare activity is fully audited for data privacy reporting needs`),
 				Values(`Multi-site`, `5 sites included`, <NA />, `5 sites included`, `Unlimited`),
 				Values(`Bandwidth`, `25 GB included`, `10 GB included`, `25 GB included`, `100 GB included`),
 				All(`Extra Bandwidth`, `$25/100 GB`),
 				L(`Guaranteed 99.9% SLA- The industry’s best uptime SLAs with service credits`),
-				Values(`Encrypted data backup`, `Daily`, `Daily`, `Hourly`, `Continual`),
+				Values(`Encrypted data backup`, `Hourly`, `Daily`, `Hourly`, `Continual`),
 			],
 		},
 	] as FeatureSet[];

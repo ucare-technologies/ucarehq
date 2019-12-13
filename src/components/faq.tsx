@@ -39,8 +39,8 @@ const FAQ: React.FC = () => (
 					our easy to use child safety features.
 				</QA>
 				<QA q='What types of payment do you accept?'>
-					Once your trial ends you’ll be able to pay your monthly subscription using any major credit card or you can
-					use PayPal.
+					Once your trial ends you’ll be able to pay your monthly subscription using any major credit card, Australian
+					churches can also pay via bank deposit.
 				</QA>
 				<QA q='Are there setup costs?'>None, simply subscribe after your 30-day trial ends to keep your account.</QA>
 				<QA q='Can I import our data?'>

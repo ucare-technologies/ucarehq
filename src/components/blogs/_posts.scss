@@ -64,7 +64,7 @@ $transition_attr: all 0.4s ease;
 		.readmore {
 			text-decoration: none;
 			background-color: $red2;
-			color: $light;
+			color: $white;
 			font-size: 80%;
 			transition: $transition_attr;
 			padding: 10px 25px;
@@ -88,7 +88,7 @@ $transition_attr: all 0.4s ease;
 		.arrow-btn {
 			text-decoration: none;
 			background-color: $red2;
-			color: $light;
+			color: $white;
 			font-size: 80%;
 			transition: $transition_attr;
 			padding: 10px 25px;
@@ -101,7 +101,7 @@ $transition_attr: all 0.4s ease;
 				background-color: $red;
 			}
 			.arrow-icon {
-				color: $light;
+				color: $white;
 				font-size: 70%;
 			}
 		}

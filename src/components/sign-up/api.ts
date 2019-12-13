@@ -47,16 +47,3 @@ export function createTenant(fields: SignUpFields) {
 		})
 	);
 }
-const contactUrl = 'https://crm.ucareapp.com/contact';
-export function submitContact(fields: ContactFields) {
-	return thenErrorResponse(
-		fetch(contactUrl, {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(fields),
-		})
-	);
-}

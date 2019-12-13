@@ -13,6 +13,7 @@ module.exports = {
 				useResolveUrlLoader: {
 					options: {
 						removeCR: true,
+						precision: 6, // for bootstrap
 						//debug: true,
 						sourceMap: true, //default is false
 					},

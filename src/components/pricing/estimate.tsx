@@ -8,7 +8,9 @@ const PricingEstimate: React.FC<{ value: number; onChange: (value: number) => vo
 		<div className='pricing-estimate text-center'>
 			<header>
 				<h3>Which edition?</h3>
-				<p>* Our recommendation is based on how may people are regularly connected to your church.</p>
+				<p>
+					* Our recommendation is based on how may people (including children) are regularly connected to your church.
+				</p>
 			</header>
 			<Range value={value} onChange={handleValueChange} />
 		</div>

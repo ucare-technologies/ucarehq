@@ -72,8 +72,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 						position: 'absolute',
 						top: '40px',
 						color: '#fff',
-						fontWeight: 'bold',
-						fontSize: '14px',
+						fontSize: '16px',
 						padding: '6px',
 						borderRadius: '6px',
 						backgroundColor: highlight,
@@ -81,7 +80,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 						boxShadow: '0 2px 5px rgba(0,0,0,.2)',
 					}}
 				>
-					{value >= 2000 ? '2000+' : value.toFixed(0)} people
+					{value >= 2000 ? `${(2000).toLocaleString()}+` : value.toLocaleString()} people
 				</div>
 				<div
 					style={{
