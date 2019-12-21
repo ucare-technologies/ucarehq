@@ -1,6 +1,6 @@
 $transition_attr: all 0.4s ease;
 .blog-list {
-	@media (max-width: 767px) {
+	@include media-breakpoint-down(md) {
 		max-width: 100%;
 	}
 	.entry-image {
@@ -39,7 +39,7 @@ $transition_attr: all 0.4s ease;
 				@media (min-width: 480px) {
 					font-size: 1.8rem;
 				}
-				@media (min-width: 768px) {
+				@include media-breakpoint-up(md) {
 					font-size: calc(2.4rem * 0.8);
 					margin-top: 10px;
 				}
@@ -81,7 +81,7 @@ $transition_attr: all 0.4s ease;
 }
 
 .blog-list-main {
-	@media (max-width: 767px) {
+	@include media-breakpoint-down(md) {
 		max-width: 100% !important;
 	}
 	.arrow {
@@ -107,10 +107,10 @@ $transition_attr: all 0.4s ease;
 		}
 	}
 	margin-bottom: 50px;
-	@media (min-width: 768px) {
+	@include media-breakpoint-up(md) {
 		margin-bottom: 80px;
 	}
-	@media (min-width: 992px) {
+	@include media-breakpoint-up(lg) {
 		margin-bottom: 100px;
 	}
 }

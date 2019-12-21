@@ -25,10 +25,10 @@ const SingUp: React.FC<{ location: { search: string } }> = ({ location: { search
 	const edition = String(searchProps.edition) || 'growth';
 	return (
 		<Layout>
-			<SEO title='Free 30-day trial' />
+			<SEO title='Free 21-day trial' />
 			<main>
 				<PageHeader image={file}>
-					<h1>Free 30-day trial</h1>
+					<h1>Free 21-day trial</h1>
 					<h3>No obligations and no credit card required.</h3>
 				</PageHeader>
 				<div className='container sign-up pb-5'>
@@ -39,11 +39,7 @@ const SingUp: React.FC<{ location: { search: string } }> = ({ location: { search
 					</div>
 				</div>
 			</main>
-			<div className='container-fluid text-center latest-blog'>
-				<div className='container'>
-					<FAQ />
-				</div>
-			</div>
+			<FAQ />
 		</Layout>
 	);
 };

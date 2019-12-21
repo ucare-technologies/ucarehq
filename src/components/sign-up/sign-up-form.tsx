@@ -177,7 +177,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 					</div>
 					<footer>
 						<button type='submit' className='btn btn-success trial' disabled={!agreed || stage !== 'create'}>
-							Start your free 30-day trial
+							Start your free 21-day trial
 						</button>
 					</footer>
 				</form>
@@ -185,7 +185,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 			<AnimateHeight height={stage === 'submit' ? 'auto' : 0} animateOpacity easing='ease-in-out'>
 				<div className='mt-4 text-center'>
 					<h2>Ready in under a minute</h2>
-					<p>Please wait, we&apos;re just getting your account ready</p>
+					<p>Please wait, we’re just getting your account ready</p>
 					<div className='spinner-border-block pt-4'>
 						<div className='spinner-border text-success' role='status'>
 							<span className='sr-only'>Creating...</span>
@@ -203,7 +203,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 						className='btn btn-success trial'
 						rel='noopener noreferrer'
 					>
-						Sign in to your free 30 day trial &rarr;
+						Sign in to your free 21 day trial &rarr;
 					</a>
 				</div>
 			</AnimateHeight>

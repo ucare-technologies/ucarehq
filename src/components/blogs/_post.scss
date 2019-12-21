@@ -13,7 +13,7 @@ main.page {
 				}
 				h2 {
 					font-size: 2.4rem;
-					@media (max-width: 767px) {
+					@include media-breakpoint-down(md) {
 						font-size: 1.8rem;
 						margin: 10px 0;
 					}

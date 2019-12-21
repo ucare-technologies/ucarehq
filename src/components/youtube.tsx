@@ -3,25 +3,16 @@ import React from 'react';
 
 interface YouTubeProps {
 	id: string;
+	autoPlay?: boolean;
 }
-const YouTubeComponent: React.FC<YouTubeProps> = ({ id }) => {
-	const src = `https://www.youtube-nocookie.com/embed/${id}?feature=oembed&autoplay=1&start&end&wmode=opaque&loop=0&controls=1&mute=0&showinfo=1&rel=1&modestbranding=0`;
+const YouTubeComponent: React.FC<YouTubeProps> = ({ id, autoPlay }) => {
+	const src = `https://www.youtube-nocookie.com/embed/${id}?feature=oembed&autoplay=${
+		autoPlay === false ? 0 : 1
+	}&start&end&wmode=opaque&loop=0&controls=1&mute=0&showinfo=1&rel=0&modestbranding=0`;
+	const allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
 	return (
-		<div
-			style={{
-				paddingBottom: `${((9 / 16) * 100).toFixed(2)}%`,
-				position: 'relative',
-				height: 0,
-				overflow: 'hidden',
-			}}
-		>
-			<iframe
-				src={src}
-				className='youtube-iframe'
-				allowFullScreen
-				title={id}
-				style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-			/>
+		<div className='embed-responsive embed-responsive-16by9'>
+			<iframe src={src} className='embed-responsive-item' allowFullScreen title={id} frameBorder='0' allow={allow} />
 		</div>
 	);
 };

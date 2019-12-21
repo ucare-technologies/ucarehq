@@ -3,7 +3,7 @@
 	width: 100%;
 	font-size: 120%;
 	@include fonts();
-	@media (max-width: 768px) {
+	@include media-breakpoint-down(md) {
 		width: 75%;
 		margin: auto;
 	}

@@ -127,6 +127,7 @@ module.exports = {
 		`gatsby-plugin-extract-schema`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-robots-txt`,
+		`gatsby-plugin-optimize-svgs`,
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
@@ -202,11 +203,12 @@ module.exports = {
 				],
 			},
 		},
-		{
-			resolve: `gatsby-plugin-offline`,
-			options: {
-				precachePages: [`/features/*`],
-			},
-		},
+		// {
+		// 	resolve: `gatsby-plugin-offline`,
+		// 	options: {
+		// 		precachePages: [`/features/*`],
+		// 	},
+		// },
+		`gatsby-plugin-remove-serviceworker`,
 	].filter(Boolean),
 };

@@ -3,13 +3,13 @@ import * as React from 'react';
 import Yes from '../icons/check';
 import NA from '../icons/remove';
 
-export type Tier = `legacy` | `essentials` | `growth` | `lighthouse`;
-export function getTier(value: number): Tier {
-	if (value <= 200) return 'essentials';
-	if (value <= 1000) return 'growth';
-	return 'lighthouse';
+export type Edition = `Legacy` | `Essentials` | `Growth` | `Lighthouse`;
+export function getEdition(value: number): Edition {
+	if (value <= 200) return 'Essentials';
+	if (value <= 1000) return 'Growth';
+	return 'Lighthouse';
 }
-type Feature = Record<Tier, React.ReactNode> & { name: string };
+export type Feature = Record<Edition, React.ReactNode> & { name: string };
 interface FeatureSet {
 	name: string;
 	description: string;
@@ -17,17 +17,17 @@ interface FeatureSet {
 }
 function Values(
 	name: string,
-	legacy: React.ReactNode,
-	essentials: React.ReactNode,
-	growth: React.ReactNode,
-	lighthouse: React.ReactNode
+	Legacy: React.ReactNode,
+	Essentials: React.ReactNode,
+	Growth: React.ReactNode,
+	Lighthouse: React.ReactNode
 ) {
 	return {
 		name,
-		legacy,
-		essentials,
-		growth,
-		lighthouse,
+		Legacy,
+		Essentials,
+		Growth,
+		Lighthouse,
 	} as Feature;
 }
 function Same(name: string, value: React.ReactNode) {
@@ -48,17 +48,49 @@ function AL(name: string, other: React.ReactNode = `Add on`, lighthouse: React.R
 function GL(name: string, value: React.ReactNode = <Yes />) {
 	return Values(name, <NA />, <NA />, value, value);
 }
-function GLS(name: string) {
+function GLS(name: string, other: React.ReactNode = `Add on - Coming 2020`) {
 	return Values(
 		name,
 		<NA />,
 		<NA />,
-		`Add on - Coming 2020`,
+		other,
 		<span>
 			<Yes /> Coming 2020
 		</span>
 	);
 }
+function GSLS(name: string) {
+	return Values(
+		name,
+		<NA />,
+		<NA />,
+		<span>
+			<Yes /> Coming 2020
+		</span>,
+		<span>
+			<Yes /> Coming 2020
+		</span>
+	);
+}
+function emailPerMonth(edition: Edition, people: number, pp: number) {
+	return <div>{included() * pp}/month included</div>;
+	function included() {
+		switch (edition) {
+			case 'Lighthouse':
+				return calc(500, 500);
+			case 'Growth':
+			case 'Essentials':
+				return calc(500, 100);
+			case 'Legacy':
+			default:
+				return calc(200, 1);
+		}
+		function calc(included: number, step: number) {
+			return Math.ceil(Math.max(0, people - included) / step) + included;
+		}
+	}
+}
+emailPerMonth.displayName = 'EmailPerMonth';
 
 export function features() {
 	return [
@@ -88,10 +120,10 @@ export function features() {
 				Same(`Send bulk SMS directly from UCare`, `Add on`),
 				{
 					name: `Send bulk email directly from UCare`,
-					legacy: `10/person/month included`,
-					essentials: `5/person/month included`,
-					growth: `10/person/month included`,
-					lighthouse: `20/person/month included`,
+					Legacy: `10/person/month included`,
+					Essentials: `5/person/month included`,
+					Growth: `10/person/month included`,
+					Lighthouse: `20/person/month included`,
 				},
 				Values(`Extra Email messages`, `$2/1000`, `$3/1000`, `$2/1000`, `$1/1000`),
 			],
@@ -189,6 +221,7 @@ export function features() {
 				LGL(`Link to processes for prayer requests, volunteer applications, getting married, etc.`),
 				LGL(`Automate adding or removing from a group, meeting or another process`),
 				LGL(`Automate updating the person’s profile`),
+				GSLS(`Wave Forms upgrades`),
 			],
 		},
 		{
@@ -263,58 +296,59 @@ export function features() {
 			],
 		},
 		{
-			name: `Wave Services`,
-			description: `Organize services with a detailed plan`,
-			features: [
-				AL(`Manage unlimited services across multiple locations`),
-				AL(`Support multiple service and rehearsal times for each service`),
-				AL(`Manage order of service and item length, assign items to different team and roles`),
-				AL(`Set service teams, roles and required skills then let UCare assign the right people`),
-				GLS(`Multi-service planner to speed up service order management and volunteer assignment`),
-				GLS(`Live Services to facilitate team communication and service timings`),
-			],
-		},
-		{
-			name: `Wave Teams`,
-			description: `Schedule people across all your teams and services`,
-			features: [
-				AL(`Manage unlimited teams across multiple locations`),
-				AL(`Assign people based on their team skills and location`),
-				AL(`Schedule volunteers based on their preferences, block-out dates, conflicts and declines.`),
-				AL(`Email and SMS position requests`),
-				AL(`Set automatic reminder preferences per team and service time`),
-				GLS(`Enable volunteer decline mode or ask them to find their own replacement`),
-				GLS(`Manage your own songs or import from SongSelect`),
-				GLS(`Organize and attach files to services, teams and positions`),
-			],
-		},
-		{
 			name: `Wave Analytics`,
 			description: `Reporting reimagined`,
 			features: [
-				GLS(`Create and publish unlimited dashboards and reports`),
-				GLS(`Build dashboards and reports using the Microsoft Power BI Desktop app`),
+				GLS(`Build dashboards and reports using the Power BI Desktop app`),
+				GLS(`Create and publish standard dashboards and reports`),
+				L(`Create and publish advanced dashboards and reports`, `Add on`),
 			],
 		},
 		{
 			name: `Wave Automation Studio`,
 			description: `Work smarter not harder`,
 			features: [
-				GLS(`Automate multi-step actions based on activity triggers`),
-				GLS(`Automate multi-step actions based on polling conditions`),
+				GLS(`Automate multi-step actions based on activity triggers`, `3 automations included`),
+				GLS(`Automate multi-step actions based on polling conditions`, `3 automations included`),
+			],
+		},
+		{
+			name: `Wave Services`,
+			description: `Organize services with a detailed plan`,
+			features: [
+				AL(`Manage unlimited services across multiple locations`, `1 service included`),
+				AL(`Support multiple service and rehearsal times for each service`, `1 service included`),
+				GL(`Manage order of service and item length, assign items to different team and roles`),
+				GL(`Set service teams, roles and required skills then let UCare assign the right people`),
+				GSLS(`Multi-service planner to speed up service order management and volunteer assignment`),
+				GSLS(`Live Services to facilitate team communication and service timings`),
+			],
+		},
+		{
+			name: `Wave Teams`,
+			description: `Schedule people across all your teams and services`,
+			features: [
+				GL(`Manage unlimited teams across multiple locations`),
+				GL(`Assign people based on their team skills and location`),
+				GL(`Schedule volunteers based on their preferences, block-out dates, conflicts and declines.`),
+				GL(`Email and SMS position requests`),
+				GL(`Set automatic reminder preferences per team and service time`),
+				GSLS(`Enable volunteer decline mode or ask them to find their own replacement`),
+				GSLS(`Manage your own songs or import from SongSelect`),
+				GSLS(`Organize and attach files to services, teams and positions`),
 			],
 		},
 		{
 			name: `Wave Graph API`,
 			description: `Extend UCare for your custom needs`,
 			features: [
-				AL(`Query and mutate the graph using GraphQL`),
-				AL(`Subscribe to realtime changes in the graph`),
-				AL(`Use the GraphQL playground to test your ideas`),
+				AL(`Query and mutate the graph using GraphQL`, <><Yes /> Query complexity up to 1000 nodes</>, <><Yes /> Query complexity up to 5000 nodes</>),
+				GL(`Use the GraphQL playground to test your ideas`),
+				L(`Subscribe to realtime changes in the graph`),
 			],
 		},
 		{
-			name: `Access Control`,
+			name: `Wave Security`,
 			description: `Limit access to sensitive info`,
 			features: [
 				All(`Easy to use access management`),

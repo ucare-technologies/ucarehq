@@ -29,7 +29,9 @@
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-mdx": "^1.0.56",
     "gatsby-plugin-offline": "^3.0.20",
+    "gatsby-plugin-optimize-svgs": "^1.0.3",
     "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.21",
     "gatsby-plugin-sharp": "^2.2.37",
@@ -96,7 +98,7 @@
     "build": "npm run mkdir && gatsby build",
     "serve": "npm run build && gatsby serve",
     "clean": "gatsby clean",
-    "start": "gatsby develop",
+    "start": "npm run mkdir && gatsby develop",
     "eslint-fix": "npx eslint src/ --ext .ts,.tsx --fix",
     "prettier": "prettier --write src/**/*.{js,jsx,json,ts,tsx,scss,md,mdx}",
     "type-check": "tsc --noEmit"

@@ -67,7 +67,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 					outline: 'none',
 				}}
 			>
-				<div
+				{/* <div
 					style={{
 						position: 'absolute',
 						top: '40px',
@@ -81,7 +81,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 					}}
 				>
 					{value >= 2000 ? `${(2000).toLocaleString()}+` : value.toLocaleString()} people
-				</div>
+				</div> */}
 				<div
 					style={{
 						height: px(barHeight),

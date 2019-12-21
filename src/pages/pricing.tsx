@@ -31,11 +31,7 @@ const Features: React.FC = () => {
 					<Pricing />
 				</div>
 			</main>
-			<div className='container-fluid text-center latest-blog'>
-				<div className='container'>
-					<FAQ />
-				</div>
-			</div>
+			<FAQ />
 		</Layout>
 	);
 };

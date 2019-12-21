@@ -29,10 +29,10 @@
 		h1 {
 			margin: 10px 0;
 			font-size: 43px;
-			@media (min-width: 768px) {
+			@include media-breakpoint-up(md) {
 				font-size: 52px;
 			}
-			@media (min-width: 992px) {
+			@include media-breakpoint-up(lg) {
 				font-size: 60px;
 			}
 			em {

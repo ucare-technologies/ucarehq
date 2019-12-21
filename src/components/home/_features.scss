@@ -6,17 +6,16 @@
 		color: $grey;
 		margin: 10px 0;
 		font-size: 1.8rem;
-		@media (min-width: 768px) {
+		@include media-breakpoint-up(md) {
 			font-size: 2.4rem;
 		}
 		img {
 			height: auto;
 			margin-left: 5px;
 			margin-top: 20px;
-			width: 38px;
-			@media (min-width: 768px) {
-				margin-top: 30px;
-				width: 60px;
+			width: 43px;
+			@include media-breakpoint-up(md) {
+				width: 70px;
 			}
 		}
 	}
@@ -60,7 +59,7 @@
 	border: 1px solid $white;
 	margin: 0 auto;
 	padding: 12px 10px 0;
-	@media (min-width: 768px) {
+	@include media-breakpoint-up(md) {
 		width: 80px;
 		height: 80px;
 		border-width: 2px;
@@ -72,7 +71,7 @@
 		width: 30px;
 		padding: 0;
 		margin: 0;
-		@media (min-width: 768px) {
+		@include media-breakpoint-up(md) {
 			height: 40px;
 			width: 40px;
 		}

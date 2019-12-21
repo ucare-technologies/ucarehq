@@ -8,7 +8,7 @@ import Badge from '../badge';
 import useScript from '../useScript';
 
 import Estimate from './estimate';
-import { getTier } from './features';
+import { getEdition } from './features';
 
 const bookCallSize = 1500;
 type Terms = 'monthly' | 'yearly';
@@ -42,19 +42,6 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 			<div className='custom-control custom-radio custom-control-inline'>
 				<input
 					type='radio'
-					id='customRadioInline1'
-					className='custom-control-input'
-					checked={value === 'yearly'}
-					value='yearly'
-					onChange={handleTermsChange}
-				/>
-				<label className='custom-control-label' htmlFor='customRadioInline1'>
-					Annually
-				</label>
-			</div>
-			<div className='custom-control custom-radio custom-control-inline'>
-				<input
-					type='radio'
 					id='customRadioInline2'
 					className='custom-control-input'
 					checked={value === 'monthly'}
@@ -62,16 +49,26 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 					onChange={handleTermsChange}
 				/>
 				<label className='custom-control-label' htmlFor='customRadioInline2'>
-					Monthly
+					Billed Monthly
+				</label>
+			</div>
+			<div className='custom-control custom-radio custom-control-inline'>
+				<input
+					type='radio'
+					id='customRadioInline1'
+					className='custom-control-input'
+					checked={value === 'yearly'}
+					value='yearly'
+					onChange={handleTermsChange}
+				/>
+				<label className='custom-control-label' htmlFor='customRadioInline1'>
+					Billed Annually <Badge type={value === 'yearly' ? 'success' : 'light'}>Save 10%</Badge>
 				</label>
 			</div>
 		</div>
 	);
 };
 
-declare module Calendly {
-	function initPopupWidget(options: { url: string }): void;
-}
 const Contact: React.FC = () => {
 	return (
 		<div className='pricing-estimate pb-4 text-center'>
@@ -84,6 +81,9 @@ const Contact: React.FC = () => {
 	);
 };
 
+declare module Calendly {
+	function initPopupWidget(options: { url: string }): void;
+}
 const BookCall: React.FC = () => {
 	const { loaded, error } = useScript('https://assets.calendly.com/assets/external/widget.js');
 	const handleClick = React.useCallback(() => {
@@ -121,12 +121,12 @@ interface EditionsProps {
 }
 const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 	const people = value || 500;
-	const tier = getTier(people);
+	const edition = getEdition(people);
 	const signUpUrl = `/sign-up/?size=${people}&edition=`;
 	return (
 		<div className='row'>
-			<section className={sectionClasses(tier === 'essentials')}>
-				<Recommend is={tier === 'essentials'} />
+			<section className={sectionClasses(edition === 'Essentials')}>
+				<Recommend is={edition === 'Essentials'} />
 				<header>
 					<h3>Essentials</h3>
 					<p>For new churches and churches wanting to track attendance and start growing each person.</p>
@@ -145,13 +145,13 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>Email support</li>
 				</ul>
 				<footer>
-					<Link to={signUpUrl + 'essentials'} className={btnClasses(tier === 'essentials')} role='button'>
+					<Link to={signUpUrl + 'essentials'} className={btnClasses(edition === 'Essentials')} role='button'>
 						Get started for free
 					</Link>
 				</footer>
 			</section>
-			<section className={sectionClasses(tier === 'growth')}>
-				<Recommend is={tier === 'growth'} />
+			<section className={sectionClasses(edition === 'Growth')}>
+				<Recommend is={edition === 'Growth'} />
 				<header>
 					<h3>Growth</h3>
 					<p>For growing churches focused on child safety, outreach and wanting follow-up automation.</p>
@@ -166,18 +166,26 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>Forms & Processes</li>
 					<li>Giving & Finances</li>
 					<li>Stores</li>
-					<li>Basic church metrics</li>
+					<li>
+						Church metrics <Badge type='light'>Basic</Badge>
+					</li>
 					<li>Up to 5 campuses</li>
-					<li>Monthly webinars</li>
+					<li>Monthly training webinars</li>
+					<li>
+						Wave Services & Teams <Badge type='light'>Basic</Badge>
+					</li>
+					<li>
+						Wave Automation Studio <Badge type='light'>Basic</Badge>
+					</li>
 				</ul>
 				<footer>
-					<Link to={signUpUrl + 'growth'} className={btnClasses(tier === 'growth')} role='button'>
+					<Link to={signUpUrl + 'growth'} className={btnClasses(edition === 'Growth')} role='button'>
 						Get started for free
 					</Link>
 				</footer>
 			</section>
-			<section className={sectionClasses(tier === 'lighthouse')}>
-				<Recommend is={tier === 'lighthouse'} />
+			<section className={sectionClasses(edition === 'Lighthouse')}>
+				<Recommend is={edition === 'Lighthouse'} />
 				<header>
 					<h3>Lighthouse</h3>
 					<p>For large or multi-site churches focused on volunteers, in-depth analytics and wanting full automation.</p>
@@ -195,13 +203,13 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 						<b>All Growth features</b>
 					</li>
 					<li>
-						Wave Services & Teams <Badge type='success'>New</Badge>
-					</li>
-					<li>
 						Wave Analytics <Badge type='success'>New</Badge>
 					</li>
 					<li>
 						Wave Automation Studio <Badge type='success'>New</Badge>
+					</li>
+					<li>
+						Wave Services & Teams <Badge type='success'>New</Badge>
 					</li>
 					<li>
 						Wave Graph API <Badge type='success'>New</Badge>
@@ -215,7 +223,7 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					{people >= bookCallSize ? (
 						<BookCall />
 					) : (
-						<Link to={signUpUrl + 'lighthouse'} className={btnClasses(tier === 'lighthouse')} role='button'>
+						<Link to={signUpUrl + 'lighthouse'} className={btnClasses(edition === 'Lighthouse')} role='button'>
 							Get started for free
 						</Link>
 					)}

@@ -15,7 +15,7 @@ export default function Ministry() {
 				<div className='col-md-12'>
 					<h2>
 						Ministry. <br className='visible-xs' />
-						We&apos;ve got you covered.
+						We’ve got you covered.
 					</h2>
 					<p>No matter what ministry you’re involved in; UCare is focused on people so you can be too.</p>
 				</div>

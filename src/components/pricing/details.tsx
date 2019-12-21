@@ -38,9 +38,9 @@ const PricingDetails: React.FC = () => {
 								{set.features.map(f => (
 									<tr key={f.name}>
 										<th scope='row'>{f.name}</th>
-										<td className='edition'>{f.essentials}</td>
-										<td className='edition'>{f.growth}</td>
-										<td className='edition'>{f.lighthouse}</td>
+										<td className='edition'>{f.Essentials}</td>
+										<td className='edition'>{f.Growth}</td>
+										<td className='edition'>{f.Lighthouse}</td>
 									</tr>
 								))}
 							</tbody>
