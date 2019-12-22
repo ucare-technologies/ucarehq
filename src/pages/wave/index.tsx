@@ -2,7 +2,7 @@ import React from 'react';
 
 import WaveVideo from '../../components/wave/wave-video';
 import Hero from '../../components/wave/hero';
-import FAQ from '../../components/wave/FAQ';
+import FAQ from '../../components/wave/faq';
 import Features from '../../components/wave/features';
 import SEO from '../../components/seo';
 import Layout from '../../components/layout';
