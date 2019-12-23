@@ -1,9 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import { FilePublicUrl, FixedImageSrc } from '../../types';
+import { FluidImageSrc, FixedImageSrc } from '../../types';
 import FadeIn from '../fade-in';
 import FixedImage from '../fixed-image';
+
 import WaveLogo from './wavetech';
 import WaveHeart from './waveheart-white';
 
@@ -12,9 +14,9 @@ export default function Features() {
 		planner: FixedImageSrc;
 		analytics: FixedImageSrc;
 		checkIn: FixedImageSrc;
-		automation: FilePublicUrl;
-		security: FilePublicUrl;
-		forms: FilePublicUrl;
+		automation: FluidImageSrc;
+		security: FluidImageSrc;
+		forms: FluidImageSrc;
 	}>(graphql`
 		query {
 			planner: file(relativePath: { eq: "wave/planner.png" }) {
@@ -38,14 +40,26 @@ export default function Features() {
 					}
 				}
 			}
-			automation: file(relativePath: { eq: "wave/automation.svg" }) {
-				publicURL
+			automation: file(relativePath: { eq: "wave/automation.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
-			security: file(relativePath: { eq: "wave/security.svg" }) {
-				publicURL
+			security: file(relativePath: { eq: "wave/security.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
-			forms: file(relativePath: { eq: "wave/forms.svg" }) {
-				publicURL
+			forms: file(relativePath: { eq: "wave/forms.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 1600) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
 			}
 		}
 	`);
@@ -108,7 +122,7 @@ export default function Features() {
 								<p>
 									Once you have started defining what church health looks like, how is it surfaced and communicated?
 									Dashboards displaying your vitals tell the story of church health, empowering leaders to make more
-									strategic and better-informed decisions?
+									strategic and better-informed decisions.
 								</p>
 								<p>
 									Wave Analytics has been developed on top of Microsoft Power BI, the most powerful business
@@ -135,7 +149,7 @@ export default function Features() {
 			<div className='container-fluid automation-studio'>
 				<FadeIn fade='up'>
 					<div className='centered-image mx-auto'>
-						<img src={automation.publicURL} alt='Automation' />
+						<Img fluid={automation.childImageSharp.fluid} alt='Automation' />
 					</div>
 					<div className='container'>
 						<h2>Automation Studio</h2>
@@ -229,7 +243,7 @@ export default function Features() {
 			<div className='container-fluid wave-security'>
 				<FadeIn fade='up'>
 					<div className='centered-image mx-auto'>
-						<img src={security.publicURL} alt='Security' />
+						<Img fluid={security.childImageSharp.fluid} alt='Security' />
 					</div>
 					<div className='container'>
 						<h2>Security</h2>
@@ -341,7 +355,7 @@ export default function Features() {
 			<div className='container-fluid wave-forms'>
 				<FadeIn fade='up'>
 					<div className='centered-image mx-auto'>
-						<img src={forms.publicURL} alt='Forms' />
+						<Img fluid={forms.childImageSharp.fluid} alt='Forms' />
 					</div>
 					<div className='container'>
 						<h2>Forms</h2>
