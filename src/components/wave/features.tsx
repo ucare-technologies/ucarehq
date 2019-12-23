@@ -21,42 +21,42 @@ export default function Features() {
 		query {
 			planner: file(relativePath: { eq: "wave/planner.png" }) {
 				childImageSharp {
-					fixed(width: 1280) {
+					fixed(width: 1280, quality: 100) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
 			}
 			analytics: file(relativePath: { eq: "wave/analytics.png" }) {
 				childImageSharp {
-					fixed(width: 1280) {
+					fixed(width: 1280, quality: 100) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
 			}
 			checkIn: file(relativePath: { eq: "wave/check-in.png" }) {
 				childImageSharp {
-					fixed(width: 1280) {
+					fixed(width: 1280, quality: 100) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
 			}
 			automation: file(relativePath: { eq: "wave/automation.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 1600) {
+					fluid(maxWidth: 1600, quality: 100) {
 						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}
 			security: file(relativePath: { eq: "wave/security.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 1600) {
+					fluid(maxWidth: 1600, quality: 100) {
 						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}
 			forms: file(relativePath: { eq: "wave/forms.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 1600) {
+					fluid(maxWidth: 1600, quality: 100) {
 						...GatsbyImageSharpFluid_withWebp
 					}
 				}
