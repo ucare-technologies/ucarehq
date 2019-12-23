@@ -1,3 +1,9 @@
+@mixin gradientBG($angle: 135deg) {
+	background: $red;
+	background: linear-gradient($angle, $red 0%, rgb(255, 72, 134) 40%, rgb(13, 101, 177) 70%, rgb(62, 174, 217) 100%);
+	background-size: 400% 400%;
+	background-position: 50%;
+}
 @mixin animateBG($angle: 135deg) {
 	background: $red;
 	background: linear-gradient($angle, $red 0%, rgb(255, 72, 134) 40%, rgb(13, 101, 177) 70%, rgb(62, 174, 217) 100%);
@@ -255,7 +261,7 @@ svg.wave-heart {
 			max-width: 70vw;
 		}
 	}
-	@include animateBG;
+	@include gradientBG;
 }
 .wave-logo {
 	display: flex;
