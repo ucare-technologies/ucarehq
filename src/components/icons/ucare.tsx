@@ -1,15 +1,7 @@
 import React from 'react';
 
 const UCareIcon: React.FC<{ height: string }> = ({ height }) => (
-	<svg
-		height={height}
-		viewBox='0 0 140 70'
-		fill='#e10332'
-		stroke='#e10332'
-		className=''
-		xmlns='http://www.w3.org/2000/svg'
-		xmlnsXlink='http://www.w3.org/1999/xlink'
-	>
+	<svg height={height} viewBox='0 0 140 70' fill='#e10332' stroke='#e10332' xmlns='http://www.w3.org/2000/svg'>
 		<path
 			d='M49.9,5.2c-5.3,0-10.4,2.3-13.9,5.9c-0.5,0.5-1.2,0.5-1.7,0c-3.6-3.7-8.7-5.9-13.9-5.9c-10.1,0-18.1,8-18.1,18.1
         c0,12.4,11.2,22.6,28.1,37.9l3.8,3.5c0.5,0.5,1.3,0.5,1.9,0l3.8-3.5C56.8,45.8,68,35.7,68,23.3C68,13.1,60.1,5.2,49.9,5.2z

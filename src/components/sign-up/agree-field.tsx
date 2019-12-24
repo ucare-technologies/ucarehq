@@ -12,11 +12,21 @@ const AgreeField: React.FC<AgreeFieldProps> = ({ checked, onChange, disabled }) 
 		[onChange]
 	);
 	return (
-		<label>
-			<input type='checkbox' onChange={handleChange} checked={checked} disabled={disabled} /> I agree to the
-			<Link to='/terms'> terms</Link> and
-			<Link to='/privacy'> privacy policy</Link>.
-		</label>
+		<div className='custom-control custom-checkbox'>
+			<input
+				id='terms-agree'
+				type='checkbox'
+				className='custom-control-input'
+				onChange={handleChange}
+				checked={checked}
+				disabled={disabled}
+			/>
+			<label className='custom-control-label' htmlFor='terms-agree'>
+				I agree to the
+				<Link to='/legal/terms'> terms</Link> and
+				<Link to='/legal/privacy'> privacy policy</Link>.
+			</label>
+		</div>
 	);
 };
 export default AgreeField;

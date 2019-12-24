@@ -22,9 +22,8 @@ const Image: React.FC<ImageProps> = ({ src, ...rest }) => {
 			}[];
 		};
 	};
-
 	const images = useStaticQuery<QueryShape>(graphql`
-		query LatestImages {
+		query {
 			allImageSharp {
 				edges {
 					node {

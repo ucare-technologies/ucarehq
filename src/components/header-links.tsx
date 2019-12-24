@@ -3,7 +3,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
-import { Link as ScrollLink } from 'react-scroll';
 
 interface LinkProps {
 	className?: string;
@@ -29,34 +28,14 @@ const SignInLink: React.FC<LinkProps> = ({ className }) => (
 	</a>
 );
 const TrialLink: React.FC<LinkProps> = ({ className }) => (
-	<Link to='/sign-up' className={className}>
-		Free 30-day trial
+	<Link to='/pricing' className={className}>
+		Free trial
 		<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
 	</Link>
 );
-interface PricingLinkProps extends LinkProps {
-	onClick?: () => void;
-}
-const PricingLink: React.FC<PricingLinkProps> = ({ className, onClick }) => {
-	const location = typeof window !== 'undefined' ? window.location.pathname : null;
-	return location === '/' ? (
-		<ScrollLink
-			href='#pricing'
-			to='pricing'
-			smooth
-			spy
-			hashSpy
-			duration={500}
-			className={className}
-			activeClass='pricing-active-class'
-			onClick={onClick}
-		>
-			Pricing
-		</ScrollLink>
-	) : (
-		<Link to='/#pricing' className={className} onClick={onClick}>
-			Pricing
-		</Link>
-	);
-};
+const PricingLink: React.FC<LinkProps> = ({ className }) => (
+	<Link to='/pricing' className={className}>
+		Pricing
+	</Link>
+);
 export { FeaturesLink, SupportLink, BlogLink, SignInLink, TrialLink, PricingLink };

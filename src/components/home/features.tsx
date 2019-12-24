@@ -3,8 +3,8 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+import { FilePublicUrl } from '../../types';
 import FadeIn from '../fade-in';
-import FixedImage, { FixedImageProps } from '../fixed-image';
 import FeatureList from '../features/feature-list';
 import {
 	AttendanceFeature,
@@ -16,14 +16,10 @@ import {
 } from '../features/features';
 
 export default function Features() {
-	const { file } = useStaticQuery<{ file: FixedImageProps }>(graphql`
+	const { heartLogo } = useStaticQuery<{ heartLogo: FilePublicUrl }>(graphql`
 		query FeaturesQuery {
-			file(relativePath: { eq: "favicon.png" }) {
-				childImageSharp {
-					fixed(width: 60) {
-						...GatsbyImageSharpFixed_withWebp
-					}
-				}
+			heartLogo: file(relativePath: { eq: "ucare-heart2.svg" }) {
+				publicURL
 			}
 		}
 	`);
@@ -33,7 +29,7 @@ export default function Features() {
 				<FadeIn fade='up'>
 					<h2 className='features-title text-center'>
 						Features you will
-						<FixedImage alt='features you will love' image={file} />
+						<img src={heartLogo.publicURL} alt='Logo' />
 					</h2>
 				</FadeIn>
 				<FeatureList>

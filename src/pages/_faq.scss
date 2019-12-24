@@ -1,0 +1,55 @@
+.faq {
+	padding-bottom: 30px;
+	h2,
+	h4,
+	p {
+		color: $grey;
+	}
+	h2 {
+		font-size: 1.8rem;
+		@include media-breakpoint-up(md) {
+			font-size: 2.4rem;
+		}
+	}
+	h4 {
+		font-size: 20px;
+		font-weight: 400;
+		margin-bottom: 0.5em;
+	}
+	p {
+		font-size: 16px;
+		a {
+			text-decoration: none;
+			color: $red;
+			&:hover {
+				color: $red_hover;
+			}
+		}
+	}
+	.faq-title {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	a {
+		color: $red;
+		text-decoration: none;
+		&:hover {
+			color: $red_hover;
+			text-decoration: underline;
+		}
+	}
+}
+.faq-container,
+.faq-container-2 {
+	background-color: rgba($grey, 0.05);
+}
+.faq-container {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.faq-container-2 {
+	padding: 0;
+	& > div {
+		padding: 50px 0;
+	}
+}

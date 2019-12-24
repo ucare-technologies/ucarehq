@@ -15,7 +15,7 @@ interface FadeInProps {
 	fade?: 'left' | 'right' | 'up';
 }
 const FadeIn: React.FC<FadeInProps> = ({ as, className, fade, children }) => {
-	const [inViewRef, inView] = useInView();
+	const [inViewRef, inView] = useInView({ triggerOnce: true });
 	return React.createElement(
 		as || 'div',
 		{

@@ -67,25 +67,27 @@ const Posts: React.FC<PostsProps> = ({ posts, currentPage, limit }) => {
 					/>
 				))}
 				<div className='container blog-list-main'>
-					<div className='col-lg-9 mx-auto'>
-						<div className='arrow'>
-							{!isLast && (
-								<Link to={nextPage} rel='next'>
-									<button type='button' className='btn btn-default arrow-btn'>
-										<FontAwesomeIcon icon={faChevronLeft} className='arrow-icon mr-2' />
-										Older
-									</button>
-								</Link>
-							)}
-							&nbsp;&nbsp;&nbsp;
-							{!isFirst && (
-								<Link to={prevPage} rel='prev'>
-									<button type='button' className='btn btn-default arrow-btn'>
-										Newer
-										<FontAwesomeIcon icon={faChevronRight} className='arrow-icon ml-2' />
-									</button>
-								</Link>
-							)}
+					<div className='row'>
+						<div className='col-lg-9 mx-auto'>
+							<div className='arrow'>
+								{!isLast && (
+									<Link to={nextPage} rel='next'>
+										<button type='button' className='btn btn-default arrow-btn'>
+											<FontAwesomeIcon icon={faChevronLeft} className='arrow-icon mr-2' />
+											Older
+										</button>
+									</Link>
+								)}
+								&nbsp;&nbsp;&nbsp;
+								{!isFirst && (
+									<Link to={prevPage} rel='prev'>
+										<button type='button' className='btn btn-default arrow-btn'>
+											Newer
+											<FontAwesomeIcon icon={faChevronRight} className='arrow-icon ml-2' />
+										</button>
+									</Link>
+								)}
+							</div>
 						</div>
 					</div>
 				</div>

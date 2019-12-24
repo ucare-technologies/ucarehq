@@ -81,11 +81,11 @@ export default function Testimonials() {
 		>
 			<FadeIn fade='up'>
 				<div className='container text-center text-white'>
-					<h2>Churches We Work With</h2>
+					{/* <h2>Churches We Work With</h2> */}
 				</div>
 				<div className='row m-0'>
 					<div className='container text-center my-5 slick-panel'>
-						<Slider
+						{/* <Slider
 							dots
 							infinite
 							speed={500}
@@ -111,12 +111,12 @@ export default function Testimonials() {
 								},
 							]}
 						>
-							<img src={ourchurch.publicURL} className='w-50' alt='ourchurch' />
-							<img src={rcbc.publicURL} className='w-50' alt='ourchurch' />
-							<img src={flc.publicURL} className='w-50' alt='ourchurch' />
-							<img src={metro.publicURL} className='w-50' alt='ourchurch' />
-							<img src={kings.publicURL} className='w-50' alt='ourchurch' />
-						</Slider>
+							<img src={ourchurch.publicURL} className='w-25' alt='ourchurch' />
+							<img src={rcbc.publicURL} className='w-25' alt='rcbc' />
+							<img src={flc.publicURL} className='w-25' alt='flc' />
+							<img src={metro.publicURL} className='w-25' alt='metro' />
+							<img src={kings.publicURL} className='w-25' alt='kings' />
+						</Slider> */}
 					</div>
 				</div>
 			</FadeIn>

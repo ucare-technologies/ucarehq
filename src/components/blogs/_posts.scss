@@ -1,6 +1,6 @@
 $transition_attr: all 0.4s ease;
 .blog-list {
-	@media (max-width: 767px) {
+	@include media-breakpoint-down(md) {
 		max-width: 100%;
 	}
 	.entry-image {
@@ -23,11 +23,11 @@ $transition_attr: all 0.4s ease;
 	.entry-content {
 		padding: 10px 0 2rem;
 		margin-bottom: 30px;
-		border-bottom: 1px solid rgba(50, 58, 70, 0.1);
+		border-bottom: 1px solid rgba($grey, 0.1);
 		article {
 			@include fonts();
 			span {
-				color: rgba(50, 58, 70, 0.6);
+				color: rgba($grey, 0.6);
 				font-size: 90%;
 				line-height: 1.5;
 				@include fonts();
@@ -39,17 +39,17 @@ $transition_attr: all 0.4s ease;
 				@media (min-width: 480px) {
 					font-size: 1.8rem;
 				}
-				@media (min-width: 768px) {
+				@include media-breakpoint-up(md) {
 					font-size: calc(2.4rem * 0.8);
 					margin-top: 10px;
 				}
 				.blog-title {
-					color: #323a46;
+					color: $grey;
 					transition: $transition_attr;
 					text-decoration: none;
 					&:hover {
 						text-decoration: none;
-						color: #e10332;
+						color: $red;
 					}
 				}
 			}
@@ -57,14 +57,14 @@ $transition_attr: all 0.4s ease;
 				margin-top: 25px;
 				opacity: 0.95;
 				@include fonts();
-				color: $grey_color;
+				color: $grey;
 				font-size: 16px;
 			}
 		}
 		.readmore {
 			text-decoration: none;
-			background-color: #af0227;
-			color: hsla(0, 0%, 100%, 0.85);
+			background-color: $red2;
+			color: $white;
 			font-size: 80%;
 			transition: $transition_attr;
 			padding: 10px 25px;
@@ -74,36 +74,43 @@ $transition_attr: all 0.4s ease;
 			border: none;
 			font-weight: 400px;
 			&:hover {
-				background-color: #e10332;
+				background-color: $red;
 			}
 		}
 	}
 }
 
 .blog-list-main {
-	@media (max-width: 767px) {
+	@include media-breakpoint-down(md) {
 		max-width: 100% !important;
 	}
 	.arrow {
 		.arrow-btn {
-			padding: 8px 20px 10px;
-			border-radius: 0;
-			background: #e10332;
-			color: #fff;
-			.arrow-icon {
-				color: #fff;
-				font-size: 70%;
-			}
+			text-decoration: none;
+			background-color: $red2;
+			color: $white;
+			font-size: 80%;
+			transition: $transition_attr;
+			padding: 10px 25px;
+			line-height: 22px;
+			border-radius: 30px;
+			letter-spacing: 1px;
+			border: none;
+			font-weight: 400px;
 			&:hover {
-				background: #af0227;
+				background-color: $red;
+			}
+			.arrow-icon {
+				color: $white;
+				font-size: 70%;
 			}
 		}
 	}
 	margin-bottom: 50px;
-	@media (min-width: 768px) {
+	@include media-breakpoint-up(md) {
 		margin-bottom: 80px;
 	}
-	@media (min-width: 992px) {
+	@include media-breakpoint-up(lg) {
 		margin-bottom: 100px;
 	}
 }

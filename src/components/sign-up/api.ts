@@ -1,4 +1,4 @@
-import { Fields, ServerErrors } from './fields';
+import { ContactFields, SignUpFields, SignUpServerErrors } from './fields';
 
 declare function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>;
 interface ErrorResponse {
@@ -12,14 +12,14 @@ function thenErrorResponse(promise: Promise<Response>) {
 				if (!errors || !errors.Errors) {
 					return { tenant: 'An error has occurred, please try again later' };
 				}
-				const serverErrors = {} as ServerErrors;
+				const serverErrors = {} as SignUpServerErrors;
 				Object.keys(errors.Errors).forEach(key => {
-					serverErrors[key as keyof ServerErrors] = errors.Errors[key].join(', ');
+					serverErrors[key as keyof SignUpServerErrors] = errors.Errors[key].join(', ');
 				});
 				return serverErrors;
 			});
 		}
-		return {} as ServerErrors;
+		return {} as SignUpServerErrors;
 	});
 }
 const signUpUrl = 'https://crm.ucareapp.com/signup';
@@ -35,7 +35,7 @@ export function checkTenant(tenant: string) {
 		})
 	);
 }
-export function createTenant(fields: Fields) {
+export function createTenant(fields: SignUpFields) {
 	return thenErrorResponse(
 		fetch(signUpUrl, {
 			method: 'POST',

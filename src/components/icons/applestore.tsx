@@ -9,7 +9,6 @@ const AppleStore: React.FC<{ style?: React.CSSProperties; height?: string }> = (
 		stroke='#fff'
 		className='applestore'
 		xmlns='http://www.w3.org/2000/svg'
-		xmlnsXlink='http://www.w3.org/1999/xlink'
 		x='0px'
 		y='0px'
 		width='135px'

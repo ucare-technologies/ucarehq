@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ isTop, menuOpen, onClick, forwardRef })
 			</button>
 			<div className={`sidebar ${menuOpen ? 'sidebar-active' : 'sidebar-inactive'}`}>
 				<FeaturesLink className='sidebar-item' />
-				<PricingLink className='sidebar-item' onClick={onClick} />
+				<PricingLink className='sidebar-item' />
 				<SupportLink className='sidebar-item' />
 				<BlogLink className='sidebar-item' />
 				<SignInLink className='sidebar-item' />

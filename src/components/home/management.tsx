@@ -10,8 +10,8 @@ export default function Management() {
 		<FadeIn as='section' className='container management justify-content-center' fade='up'>
 			<h1 className='text-center title'>Easy to use church management software isn’t optional, it’s essential.</h1>
 			<h2 className='text-center try-ucare'>
-				Try UCare FREE for 30 days.{' '}
-				<Link to='/sign-up'>
+				Try UCare FREE for 21 days.{' '}
+				<Link to='/pricing'>
 					<button className='try-today align-text-bottom' type='button'>
 						try today
 						<FontAwesomeIcon icon={faChevronRight} className='ml-2' />

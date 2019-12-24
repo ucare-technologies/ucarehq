@@ -23,7 +23,7 @@ const Image: React.FC<ImageProps> = ({ src, ...rest }) => {
 		};
 	};
 	const images = useStaticQuery<QueryShape>(graphql`
-		query BlogItemImages {
+		query {
 			allImageSharp {
 				edges {
 					node {

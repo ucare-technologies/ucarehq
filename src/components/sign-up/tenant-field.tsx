@@ -20,7 +20,7 @@ const TenantField: React.FC<TenantFieldProps> = ({ value, error, onChange, valid
 		[onChange]
 	);
 	return (
-		<label style={{ display: 'inline-block' }}>
+		<label>
 			Reserve your UCare site address*
 			<small> — this is where you will sign-in</small>
 			<div>
