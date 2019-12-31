@@ -92,7 +92,8 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 				/>
 			</div>
 		),
-		[value]
+		[]
+		// [value]
 	);
 	return (
 		<div className='pricing-range-bar pb-5'>

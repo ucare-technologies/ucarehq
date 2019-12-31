@@ -68,7 +68,6 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 		</div>
 	);
 };
-
 const Contact: React.FC = () => {
 	return (
 		<div className='pricing-estimate pb-4 text-center'>
@@ -80,7 +79,6 @@ const Contact: React.FC = () => {
 		</div>
 	);
 };
-
 declare module Calendly {
 	function initPopupWidget(options: { url: string }): void;
 }
@@ -107,7 +105,6 @@ const BookCall: React.FC = () => {
 		</>
 	);
 };
-
 function btnClasses(is: boolean) {
 	return `btn ${is ? `btn-primary` : `btn-outline-secondary`}`;
 }
@@ -232,7 +229,6 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 		</div>
 	);
 };
-
 interface PriceEstimateProps {
 	base: number;
 	people: number;
@@ -253,7 +249,6 @@ const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepP
 		</div>
 	);
 };
-
 interface RecommendProps {
 	is: boolean;
 }
