@@ -69,7 +69,6 @@ export default function Features() {
 				<div className='container text-center'>
 					<FadeIn fade='up'>
 						<WaveLogo />
-						<h3>Arriving January 20, 2020</h3>
 					</FadeIn>
 					<FadeIn fade='up' className='col-lg-8 mx-auto pt-5 text-block text-left'>
 						<p>
@@ -88,10 +87,7 @@ export default function Features() {
 							UCare Wave brings an even faster, more intelligent, and efficient platform to empower your teams,
 							collaborate on services, and deliver a more personalized experience across the discipleship journey.
 						</p>
-						<p>
-							The UCare Wave platform upgrade will happen on January 20, 2020. If you have selected one of the new
-							editions of UCare by this date, we will upgrade your account to UCare Wave at this time.
-						</p>
+						<p>The UCare Wave platform upgrade happened on January 20, 2020.</p>
 						<p>
 							Following the platform upgrade to UCare Wave, we will be releasing the first set of intelligent solutions
 							built with Wave, including the following.
@@ -104,7 +100,7 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Analytics</h2>
-						<h3>Arriving February, 2020</h3>
+						<h3>Now Available</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -114,10 +110,10 @@ export default function Features() {
 									For instance, do you have five key indicators of church health, or do you want more detail?
 								</p>
 								<p>
-									If you can't measure church health, you can't improve it. And yet, as Pastor Craig Groeschel has said,
-									"It's difficult to measure success in leading people spiritually. How do you accurately gauge if
+									If you can’t measure church health, you can’t improve it. And yet, as Pastor Craig Groeschel has said,
+									"It’s difficult to measure success in leading people spiritually. How do you accurately gauge if
 									people are growing closer to God?" Numerical growth alone is not a good indicator of health; you need
-									a broader picture to know what happens in people's hearts.
+									a broader picture to know what happens in people’s hearts.
 								</p>
 								<p>
 									Once you have started defining what church health looks like, how is it surfaced and communicated?
@@ -193,7 +189,7 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Services & Teams</h2>
-						<h3>Arriving February, 2020</h3>
+						<h3>Arriving first quarter, 2020</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -259,8 +255,8 @@ export default function Features() {
 								</p>
 								<p>
 									These simple access options make it easy to get started and get others started with UCare. Yet, often
-									you'll later want to do things like further lock-down your youth from editing Forms, viewing notes, or
-									changing parent's profiles.
+									you’ll later want to do things like further lock-down your youth from editing Forms, viewing notes, or
+									changing parent’s profiles.
 								</p>
 								<p>
 									The Wave Graph is our new single source of truth and Wave intelligence, and it has had these concepts
@@ -274,12 +270,12 @@ export default function Features() {
 									<li>
 										<b>Fine-grained permission</b> - enables you to grant view, create, edit and delete permission
 										individually at the feature level (e.g., Groups), type level (e.g., Small groups), item level (e.g.,
-										Andy's Bible Study) or item detail level (e.g., a demographic stored under the groups details
+										Andy’s Bible Study) or item detail level (e.g., a demographic stored under the groups details
 										section).
 									</li>
 									<li>
 										<b>Two-factor authentication (2FA)</b> - this means after signing in, people also need to enter a
-										code (e.g., sent via SMS). The code is a second factor and helps ensure that hackers can't get
+										code (e.g., sent via SMS). The code is a second factor and helps ensure that hackers can’t get
 										access if they happen to guess or steal your password.
 									</li>
 									<li>
@@ -303,7 +299,7 @@ export default function Features() {
 							<FadeIn fade='left' className='text-block'>
 								<p>
 									The Check in Kiosk is the most relied on element of UCare during services. It not only tracks vital
-									information about children while they are in the church's care but is also the primary way most
+									information about children while they are in the church’s care but is also the primary way most
 									parents interact with UCare, which is especially important for the experience of new families.
 								</p>
 								<p>
@@ -336,7 +332,7 @@ export default function Features() {
 										<b>Direct SMS</b> - enables volunteers to message parents without leaving Check-in.
 									</li>
 									<li>
-										<b>Scheduled volunteer check-in</b> - so Team leaders can see in today's Service which volunteers
+										<b>Scheduled volunteer check-in</b> - so Team leaders can see in today’s Service which volunteers
 										have arrived.
 									</li>
 								</ol>
@@ -380,7 +376,7 @@ export default function Features() {
 										<b>Conditional questions</b> - display based on other answers using an easy-to-use logic builder.
 									</li>
 									<li>
-										<b>Skip questions</b> - when they're not required by placing them in repeating sections or pages.
+										<b>Skip questions</b> - when they’re not required by placing them in repeating sections or pages.
 									</li>
 									<li>
 										<b>Office only</b> - set questions to view or edit by "Office only".

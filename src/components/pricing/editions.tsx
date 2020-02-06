@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
 		<div className='pricing-estimate pb-4 text-center'>
 			<header>
 				<h3>Not sure which edition is for you?</h3>
-				<p>We'd love to talk with you and discuss the unique needs of your church.</p>
+				<p>We’d love to talk with you and discuss the unique needs of your church.</p>
 			</header>
 			<BookCall />
 		</div>
@@ -142,7 +142,7 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>Email support</li>
 				</ul>
 				<footer>
-					<Link to={signUpUrl + 'essentials'} className={btnClasses(edition === 'Essentials')} role='button'>
+					<Link to={`${signUpUrl}essentials`} className={btnClasses(edition === 'Essentials')} role='button'>
 						Get started for free
 					</Link>
 				</footer>
@@ -176,7 +176,7 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					</li>
 				</ul>
 				<footer>
-					<Link to={signUpUrl + 'growth'} className={btnClasses(edition === 'Growth')} role='button'>
+					<Link to={`${signUpUrl}growth`} className={btnClasses(edition === 'Growth')} role='button'>
 						Get started for free
 					</Link>
 				</footer>
@@ -188,7 +188,7 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<p>For large or multi-site churches focused on volunteers, in-depth analytics and wanting full automation.</p>
 					{people >= bookCallSize ? (
 						<div className='price'>
-							Let's discuss
+							Let’s discuss
 							<br /> your unique needs
 						</div>
 					) : (
@@ -220,7 +220,7 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					{people >= bookCallSize ? (
 						<BookCall />
 					) : (
-						<Link to={signUpUrl + 'lighthouse'} className={btnClasses(edition === 'Lighthouse')} role='button'>
+						<Link to={`${signUpUrl}lighthouse`} className={btnClasses(edition === 'Lighthouse')} role='button'>
 							Get started for free
 						</Link>
 					)}
