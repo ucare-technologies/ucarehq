@@ -189,7 +189,7 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Services & Teams</h2>
-						<h3>Arriving first quarter, 2020</h3>
+						<h3>Arriving first half, 2020</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
