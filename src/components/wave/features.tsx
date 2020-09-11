@@ -423,30 +423,30 @@ function WaveSection({ d, alt }: { d: number; alt?: boolean }) {
 			preserveAspectRatio='none'
 			className='section-divide-video'
 		>
-			<path d={waves[d]} filter={`url(#${name})`}></path>
+			<path d={waves[d]} filter={`url(#${name})`} />
 			<defs>
 				{alt ? (
 					<filter x='-50%' y='-50%' width='200%' height='200%' filterUnits='objectBoundingBox' id={name}>
-						<feOffset dx='0' dy='5' in='SourceAlpha' result='offset1'></feOffset>
-						<feGaussianBlur stdDeviation='3' in='offset1' result='blur1'></feGaussianBlur>
+						<feOffset dx='0' dy='5' in='SourceAlpha' result='offset1' />
+						<feGaussianBlur stdDeviation='3' in='offset1' result='blur1' />
 						<feColorMatrix
 							values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0'
 							in='blur1'
 							type='matrix'
 							result='matrix1'
-						></feColorMatrix>
+						/>
 						<feBlend in='SourceGraphic' in2='matrix1' mode='normal' />
 					</filter>
 				) : (
 					<filter x='-50%' y='-50%' width='200%' height='200%' filterUnits='objectBoundingBox' id={name}>
-						<feOffset dx='0' dy='-5' in='SourceAlpha' result='offset1'></feOffset>
-						<feGaussianBlur stdDeviation='3' in='offset1' result='blur1'></feGaussianBlur>
+						<feOffset dx='0' dy='-5' in='SourceAlpha' result='offset1' />
+						<feGaussianBlur stdDeviation='3' in='offset1' result='blur1' />
 						<feColorMatrix
 							values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0'
 							in='blur1'
 							type='matrix'
 							result='matrix1'
-						></feColorMatrix>
+						/>
 						<feBlend in='SourceGraphic' in2='matrix1' mode='normal' />
 					</filter>
 				)}

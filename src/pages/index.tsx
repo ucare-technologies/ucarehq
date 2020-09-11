@@ -11,7 +11,7 @@ import LatestBlog from '../components/blogs/latest-blog';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-//import './index.scss';
+// import './index.scss';
 
 const IndexPage: React.FC = () => (
 	<Layout>

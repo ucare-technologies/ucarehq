@@ -68,18 +68,16 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 		</div>
 	);
 };
-const Contact: React.FC = () => {
-	return (
-		<div className='pricing-estimate pb-4 text-center'>
-			<header>
-				<h3>Not sure which edition is for you?</h3>
-				<p>We’d love to talk with you and discuss the unique needs of your church.</p>
-			</header>
-			<BookCall />
-		</div>
-	);
-};
-declare module Calendly {
+const Contact: React.FC = () => (
+	<div className='pricing-estimate pb-4 text-center'>
+		<header>
+			<h3>Not sure which edition is for you?</h3>
+			<p>We’d love to talk with you and discuss the unique needs of your church.</p>
+		</header>
+		<BookCall />
+	</div>
+);
+declare namespace Calendly {
 	function initPopupWidget(options: { url: string }): void;
 }
 const BookCall: React.FC = () => {

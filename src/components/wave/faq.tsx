@@ -7,7 +7,7 @@ const FAQ: React.FC = () => (
 				<div className='text-center'>
 					<header className='faq-title px-3'>
 						<h2>Frequently Asked Questions</h2>
-						<p></p>
+						<p />
 					</header>
 					<div className='row text-left mx-auto'>
 						<QA q='What will Wave change in UCare?'>
