@@ -80,9 +80,7 @@ export default function Testimonials() {
 			backgroundColor='#e10332'
 		>
 			<FadeIn fade='up'>
-				<div className='container text-center text-white'>
-					{/* <h2>Churches We Work With</h2> */}
-				</div>
+				<div className='container text-center text-white'>{/* <h2>Churches We Work With</h2> */}</div>
 				<div className='row m-0'>
 					<div className='container text-center my-5 slick-panel'>
 						{/* <Slider

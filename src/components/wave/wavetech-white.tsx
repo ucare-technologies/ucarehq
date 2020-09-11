@@ -1,11 +1,7 @@
 import * as React from 'react';
 
 const WaveTech: React.FC = () => (
-	<svg
-		xmlns='http://www.w3.org/2000/svg'
-		viewBox='0 0 566.929 198.425'
-		enableBackground='new 0 0 566.929 198.425'
-	>
+	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 566.929 198.425' enableBackground='new 0 0 566.929 198.425'>
 		<g>
 			<defs>
 				<path
