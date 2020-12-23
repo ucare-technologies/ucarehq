@@ -100,7 +100,6 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Analytics</h2>
-						<h3>Now Available</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -149,7 +148,6 @@ export default function Features() {
 					</div>
 					<div className='container'>
 						<h2>Automation Studio</h2>
-						<h3>Arriving 2020</h3>
 						<div className='row pt-5'>
 							<div className='col-lg-8 mx-auto text-block'>
 								<p>
@@ -189,7 +187,6 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Services & Teams</h2>
-						<h3>Arriving first half, 2020</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -243,7 +240,6 @@ export default function Features() {
 					</div>
 					<div className='container'>
 						<h2>Security</h2>
-						<h3>Arriving second half of 2020</h3>
 						<div className='row pt-5'>
 							<div className='col-lg-8 mx-auto text-block'>
 								<p>
@@ -292,7 +288,6 @@ export default function Features() {
 				<div className='container'>
 					<FadeIn fade='up'>
 						<h2>Check-in</h2>
-						<h3>Arriving second half of 2020</h3>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -355,7 +350,6 @@ export default function Features() {
 					</div>
 					<div className='container'>
 						<h2>Forms</h2>
-						<h3>Arriving third quarter of 2020</h3>
 						<div className='row pt-5'>
 							<div className='col-lg-8 mx-auto text-block'>
 								<p>
@@ -373,14 +367,13 @@ export default function Features() {
 										answers.
 									</li>
 									<li>
-										<b>Conditional questions</b> - display based on other answers using an easy-to-use logic builder
-										<b>- complete</b>.
+										<b>Conditional questions</b> - display based on other answers using an easy-to-use logic builder.
 									</li>
 									<li>
 										<b>Skip questions</b> - when they’re not required by placing them in repeating sections or pages.
 									</li>
 									<li>
-										<b>Office only</b> - set questions to view or edit by "Office only" <b>- complete</b>.
+										<b>Office only</b> - set questions to view or edit by "Office only".
 									</li>
 									<li>
 										<b>Rating question type</b> - for example, "Disagree strongly" through to "Agree strongly", or 3 out
@@ -391,8 +384,7 @@ export default function Features() {
 									</li>
 									<li>
 										<b>Form Process Action</b> - A new process action that sends Forms or display them to the assigned
-										person. Response can then move people to other processes or steps based on answers <b>- complete</b>
-										.
+										person. Response can then move people to other processes or steps based on answers.
 									</li>
 								</ol>
 							</div>

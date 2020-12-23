@@ -389,7 +389,7 @@ export function features() {
 			features: [
 				All(`Assign tasks that anyone can complete from their email inbox, no password required`),
 				All(`Flexible data import & export; including unlimited custom fields`),
-				All(`UCare mobile app is supported on iOS 10+ and Android 5+`),
+				All(`UCare mobile app is supported on iOS 12+ and Android 8+`),
 				All(`Touch ID or pin-code security so sensitive info isn’t easily accessed by others on your phone`),
 				All(
 					`Supported on any internet connected device with a recent version of Google Chrome, Safari, Firefox and Edge+`
