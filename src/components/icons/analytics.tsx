@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Dashboards: React.FC<{ style?: React.CSSProperties; height?: string }> = ({ style, height = '50px' }) => (
+const Analytics: React.FC<{ style?: React.CSSProperties; height?: string }> = ({ style, height = '50px' }) => (
 	<svg
 		style={style}
 		height={height}
 		viewBox='0 0 24 24'
 		fill='none'
 		stroke='#fff'
-		className='dashboards'
+		className='analytics'
 		xmlns='http://www.w3.org/2000/svg'
 	>
 		<g fill='none' stroke='#fff' strokeLinejoin='round' strokeMiterlimit='10'>
@@ -23,4 +23,4 @@ const Dashboards: React.FC<{ style?: React.CSSProperties; height?: string }> = (
 		</g>
 	</svg>
 );
-export default Dashboards;
+export default Analytics;

@@ -8,7 +8,7 @@ import Process from '../icons/process';
 import Giving from '../icons/giving';
 import SurveysIcons from '../icons/surveys';
 import OnlineStoresIcons from '../icons/onlinestores';
-import DashboardsIcons from '../icons/dashboards';
+import AnalyticsIcons from '../icons/analytics';
 import SchedulingIcons from '../icons/scheduling';
 import PeopleIcons from '../icons/people';
 import SecurityIcons from '../icons/security';
@@ -55,9 +55,9 @@ const GivingFeature: React.FC = () => (
 		<Giving />
 	</Feature>
 );
-const DashboardsFeature: React.FC = () => (
-	<Feature to='dashboards' className='dashboards' label='Dashboards'>
-		<DashboardsIcons />
+const AnalyticsFeature: React.FC = () => (
+	<Feature to='analytics' className='analytics' label='Analytics'>
+		<AnalyticsIcons />
 	</Feature>
 );
 const SchedulingFeature: React.FC = () => (
@@ -85,7 +85,7 @@ const AllFeatures: React.FC = () => (
 		<FormsFeature />
 		<StoresFeature />
 		<GivingFeature />
-		<DashboardsFeature />
+		<AnalyticsFeature />
 		<SchedulingFeature />
 		<PeopleFeature />
 		<SecurityFeature />
@@ -101,7 +101,7 @@ export {
 	FormsFeature,
 	StoresFeature,
 	GivingFeature,
-	DashboardsFeature,
+	AnalyticsFeature,
 	SchedulingFeature,
 	PeopleFeature,
 	SecurityFeature,
