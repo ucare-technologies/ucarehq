@@ -203,12 +203,6 @@ module.exports = {
 				],
 			},
 		},
-		// {
-		// 	resolve: `gatsby-plugin-offline`,
-		// 	options: {
-		// 		precachePages: [`/features/*`],
-		// 	},
-		// },
 		`gatsby-plugin-remove-serviceworker`,
 	].filter(Boolean),
 };
