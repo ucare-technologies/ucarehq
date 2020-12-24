@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable camelcase */
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';

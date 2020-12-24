@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 import Details from './details';
 import EditionSelect from './editions';

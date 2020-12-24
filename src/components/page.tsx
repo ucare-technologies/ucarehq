@@ -1,5 +1,7 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/no-danger */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 

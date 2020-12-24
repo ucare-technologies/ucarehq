@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';

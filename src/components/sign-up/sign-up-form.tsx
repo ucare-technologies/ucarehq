@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import AnimateHeight from 'react-animate-height';
 
 import AgreeField from './agree-field';
@@ -14,6 +14,7 @@ import { required, email, tenant } from './validation';
 interface GoogleDataLayer {
 	push(vars: Record<string, string>): void;
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare global {
 	const dataLayer: GoogleDataLayer;
 }

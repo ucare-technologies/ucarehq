@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
 const WaveHeart: React.FC<{ fill?: string; delay: number }> = ({ fill = '#fff', delay }) => {

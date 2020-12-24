@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { useInView } from 'react-intersection-observer';
 import 'intersection-observer';
 

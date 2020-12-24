@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
+// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { useMediaQuery } from 'react-responsive';
@@ -12,25 +16,6 @@ import { getEdition } from './features';
 
 const bookCallSize = 1500;
 type Terms = 'monthly' | 'yearly';
-
-const EditionSelect: React.FC = () => {
-	const [terms, setTerms] = React.useState('yearly' as Terms);
-	const [value, setValue] = React.useState(undefined as undefined | number);
-	const handleTermsChange = React.useCallback((newTerms: Terms) => setTerms(newTerms), [setTerms]);
-	const handleValueChange = React.useCallback((newValue: number) => setValue(newValue), [setValue]);
-	const isLarge = useMediaQuery({ query: '(min-width: 768px)' });
-	const estimate = <Estimate value={value || 500} onChange={handleValueChange} />;
-	return (
-		<>
-			{!isLarge && estimate}
-			<TermsSelect value={terms} onChange={handleTermsChange} />
-			<Editions value={value} terms={terms} />
-			{isLarge && estimate}
-			<Contact />
-		</>
-	);
-};
-export default EditionSelect;
 
 const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> = ({ value, onChange }) => {
 	const handleTermsChange = React.useCallback(
@@ -68,15 +53,7 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 		</div>
 	);
 };
-const Contact: React.FC = () => (
-	<div className='pricing-estimate pb-4 text-center'>
-		<header>
-			<h3>Not sure which edition is for you?</h3>
-			<p>We’d love to talk with you and discuss the unique needs of your church.</p>
-		</header>
-		<BookCall />
-	</div>
-);
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Calendly {
 	function initPopupWidget(options: { url: string }): void;
 }
@@ -109,7 +86,38 @@ function btnClasses(is: boolean) {
 function sectionClasses(is: boolean) {
 	return `col-md edition ${is ? `recommend` : ``}`;
 }
-
+const Contact: React.FC = () => (
+	<div className='pricing-estimate pb-4 text-center'>
+		<header>
+			<h3>Not sure which edition is for you?</h3>
+			<p>We’d love to talk with you and discuss the unique needs of your church.</p>
+		</header>
+		<BookCall />
+	</div>
+);
+const Recommend: React.FC<{ is: boolean }> = ({ is }) => (
+	<div className='top'>{is ? `recommended for you*` : <br />}</div>
+);
+interface PriceEstimateProps {
+	base: number;
+	people: number;
+	step: number;
+	stepPrice: number;
+	terms: Terms;
+}
+const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepPrice, terms }) => {
+	const price = base + Math.ceil(Math.max(0, (people || 0) - 500) / step) * stepPrice;
+	const termsPrice = terms === 'yearly' ? Math.floor(price * 0.9) : price;
+	return (
+		<div className='price'>
+			<div>
+				<small>from...</small>
+			</div>
+			<sup>$</sup>
+			{termsPrice} <small>AUD/month</small>
+		</div>
+	);
+};
 interface EditionsProps {
 	value?: number;
 	terms: Terms;
@@ -227,29 +235,21 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 		</div>
 	);
 };
-interface PriceEstimateProps {
-	base: number;
-	people: number;
-	step: number;
-	stepPrice: number;
-	terms: Terms;
-}
-const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepPrice, terms }) => {
-	const price = base + Math.ceil(Math.max(0, (people || 0) - 500) / step) * stepPrice;
-	const termsPrice = terms === 'yearly' ? Math.floor(price * 0.9) : price;
+const EditionSelect: React.FC = () => {
+	const [terms, setTerms] = React.useState('yearly' as Terms);
+	const [value, setValue] = React.useState(undefined as undefined | number);
+	const handleTermsChange = React.useCallback((newTerms: Terms) => setTerms(newTerms), [setTerms]);
+	const handleValueChange = React.useCallback((newValue: number) => setValue(newValue), [setValue]);
+	const isLarge = useMediaQuery({ query: '(min-width: 768px)' });
+	const estimate = <Estimate value={value || 500} onChange={handleValueChange} />;
 	return (
-		<div className='price'>
-			<div>
-				<small>from...</small>
-			</div>
-			<sup>$</sup>
-			{termsPrice} <small>AUD/month</small>
-		</div>
+		<>
+			{!isLarge && estimate}
+			<TermsSelect value={terms} onChange={handleTermsChange} />
+			<Editions value={value} terms={terms} />
+			{isLarge && estimate}
+			<Contact />
+		</>
 	);
 };
-interface RecommendProps {
-	is: boolean;
-}
-const Recommend: React.FC<RecommendProps> = ({ is }) => (
-	<div className='top'>{is ? `recommended for you*` : <br />}</div>
-);
+export default EditionSelect;

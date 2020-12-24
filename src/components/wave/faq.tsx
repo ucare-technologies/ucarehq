@@ -1,5 +1,12 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
+const QA: React.FC<{ q: string }> = ({ q, children }) => (
+	<div className='col-lg-4 py-2 px-3 d-inline'>
+		<h4>Q: {q}</h4>
+		<p>{children}</p>
+	</div>
+);
 const FAQ: React.FC = () => (
 	<div className='container-fluid faq-container-2'>
 		<div className='container'>
@@ -45,10 +52,3 @@ const FAQ: React.FC = () => (
 	</div>
 );
 export default FAQ;
-
-const QA: React.FC<{ q: string }> = ({ q, children }) => (
-	<div className='col-lg-4 py-2 px-3 d-inline'>
-		<h4>Q: {q}</h4>
-		<p>{children}</p>
-	</div>
-);

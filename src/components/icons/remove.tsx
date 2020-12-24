@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 const Remove: React.FC<{ style?: React.CSSProperties; height?: string }> = ({ style, height = '24px' }) => (
 	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' style={style} height={height} className='remove-icon'>

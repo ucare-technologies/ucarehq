@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 const UCareIcon: React.FC<{ height: string }> = ({ height }) => (
 	<svg height={height} viewBox='0 0 140 70' fill='#e10332' stroke='#e10332' xmlns='http://www.w3.org/2000/svg'>

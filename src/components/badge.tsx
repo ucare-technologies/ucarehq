@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
 type BadgeType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';

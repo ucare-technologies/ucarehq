@@ -1,23 +1,9 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import * as Scroll from 'react-scroll';
 
 import FadeIn from '../fade-in';
 import YouTube from '../youtube';
-
-export default function WaveVideo({ autoPlay }: { autoPlay: boolean }) {
-	return (
-		<Scroll.Element type='div' className='wave-section wave-video' name='video'>
-			<div className='container-fluid video-container p-0'>
-				<div className='container px-0 text-center'>
-					<FadeIn fade='up'>
-						<YouTube id='PCogeHdoBQI' autoPlay={autoPlay} />
-					</FadeIn>
-				</div>
-			</div>
-			<WaveSection />
-		</Scroll.Element>
-	);
-}
 
 function WaveSection() {
 	return (
@@ -48,5 +34,20 @@ function WaveSection() {
 				</filter>
 			</defs>
 		</svg>
+	);
+}
+
+export default function WaveVideo({ autoPlay }: { autoPlay: boolean }) {
+	return (
+		<Scroll.Element type='div' className='wave-section wave-video' name='video'>
+			<div className='container-fluid video-container p-0'>
+				<div className='container px-0 text-center'>
+					<FadeIn fade='up'>
+						<YouTube id='PCogeHdoBQI' autoPlay={autoPlay} />
+					</FadeIn>
+				</div>
+			</div>
+			<WaveSection />
+		</Scroll.Element>
 	);
 }

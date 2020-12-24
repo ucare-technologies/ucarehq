@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable camelcase */
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

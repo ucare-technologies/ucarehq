@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { Link } from 'gatsby';
 
 const Feature: React.FC<{ to: string; label: string; className: string }> = ({ to, label, className, children }) => (

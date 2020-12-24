@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import { IThumbProps, ITrackProps } from 'react-range/lib/types';
@@ -11,7 +12,7 @@ const min = 100;
 const max = 2000;
 const PricingRange: React.FC<{ value: number; onChange: (value: number) => void }> = ({ value, onChange }) => {
 	const handleRangeChange = React.useCallback((newValues: number[]) => onChange(newValues[0]), [onChange]);
-	const values = [value];
+	// const values = [value];
 	const renderTrack = React.useCallback(
 		({
 			props: { onMouseDown, onTouchStart, style, ref },
@@ -29,7 +30,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 						borderRadius: px(barHeight / 2),
 						paddingBottom: px(barHeight),
 						background: getTrackBackground({
-							values,
+							values: [value],
 							colors: [highlight, 'rgba(50,58,70,.08)'],
 							min,
 							max,
@@ -40,7 +41,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 				</div>
 			</div>
 		),
-		[values]
+		[value]
 	);
 	const renderThumb = React.useCallback(
 		({ props, isDragged }: { props: IThumbProps; isDragged: boolean }) => (
@@ -98,7 +99,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 	return (
 		<div className='pricing-range-bar pb-5'>
 			<Range
-				values={values}
+				values={[value]}
 				step={10}
 				min={min}
 				max={max}

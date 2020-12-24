@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import hexToRgba from 'hex-to-rgba';
 import BackgroundImage, { IFluidObject } from 'gatsby-background-image';
 

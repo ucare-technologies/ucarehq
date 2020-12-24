@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 const EventBooking: React.FC<{ style?: React.CSSProperties; height?: string }> = ({ style, height = '50px' }) => (
 	<svg

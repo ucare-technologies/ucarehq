@@ -1,4 +1,4 @@
-import { ContactFields, SignUpFields, SignUpServerErrors } from './fields';
+import { SignUpFields, SignUpServerErrors } from './fields';
 
 declare function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>;
 interface ErrorResponse {

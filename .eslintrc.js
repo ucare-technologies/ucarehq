@@ -60,7 +60,7 @@ module.exports = {
 			'error',
 			{ blankLine: 'never', prev: ['const', 'let'], next: ['const', 'let'] },
 		],
-		'linebreak-style': ['error', 'windows'],
+		//'linebreak-style': ['error', 'windows'],
 		'prefer-template': ['error'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
@@ -98,5 +98,9 @@ module.exports = {
 		'jsx-a11y/no-noninteractive-element-interactions': 'off',
 		'jsx-a11y/no-static-element-interactions': 'off',
 		'jsx-a11y/label-has-associated-control': 'off',
+
+		'import/extensions': ['error', 'never'],
+		'react/no-unescaped-entities': 'off',
+		'@typescript-eslint/explicit-module-boundary-types': 'off',
 	},
 };

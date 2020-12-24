@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 import ChildrenIcon from '../icons/ministry-icons/children';
 import YouthIcon from '../icons/ministry-icons/youth';

@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 const UCareExpand: React.FC<{ height: string }> = ({ height }) => (
 	<svg height={height} viewBox='0 0 200 70' fill='#fff' stroke='#fff' x='0' y='0' xmlns='http://www.w3.org/2000/svg'>

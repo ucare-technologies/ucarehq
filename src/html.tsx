@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/html-has-lang */
 /* eslint-disable react/no-danger */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 interface HtmlProps {
 	htmlAttributes: JSX.IntrinsicElements['html'];

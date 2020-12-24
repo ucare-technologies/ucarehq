@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
 // from https://octicons.github.com/icon/link/
 const LinkIcon: React.FC = props => (
@@ -9,6 +10,7 @@ const LinkIcon: React.FC = props => (
 		/>
 	</svg>
 );
+// eslint-disable-next-line react/require-default-props
 const heading = (type: string) => (props: { children: React.ReactNode; id?: string }) =>
 	React.createElement(
 		type,

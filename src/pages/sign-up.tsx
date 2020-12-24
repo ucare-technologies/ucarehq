@@ -1,4 +1,5 @@
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import queryString from 'query-string';
 

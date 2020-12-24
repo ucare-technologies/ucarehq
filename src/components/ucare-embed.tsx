@@ -1,6 +1,7 @@
-/* eslint-disable no-undef */
-import React from 'react';
+// eslint-disable-next-line no-use-before-define
+import * as React from 'react';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare global {
 	interface Window {
 		UCareEmbed: (elementId: string, url: string, path: string, cssUrl: string) => void;
