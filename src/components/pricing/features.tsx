@@ -48,14 +48,14 @@ function AL(name: string, other: React.ReactNode = `Add on`, lighthouse: React.R
 function GL(name: string, value: React.ReactNode = <Yes />) {
 	return Values(name, <NA />, <NA />, value, value);
 }
-function GLS(name: string, other: React.ReactNode = `Add on - Coming 2020`) {
+function GLS(name: string, other: React.ReactNode = `Add on - Coming 2021`) {
 	return Values(
 		name,
 		<NA />,
 		<NA />,
 		other,
 		<span>
-			<Yes /> Coming 2020
+			<Yes /> Coming 2021
 		</span>
 	);
 }
@@ -65,10 +65,10 @@ function GSLS(name: string) {
 		<NA />,
 		<NA />,
 		<span>
-			<Yes /> Coming 2020
+			<Yes /> Coming 2021
 		</span>,
 		<span>
-			<Yes /> Coming 2020
+			<Yes /> Coming 2021
 		</span>
 	);
 }
@@ -198,7 +198,7 @@ export function features() {
 				LGL(`Group discount options & promo codes`),
 				LGL(`Add analytics tracking`),
 				LGL(`No per ticket fees from UCare`),
-				LGL(`Payments in person or online via PayPal and Card`),
+				LGL(`Payments in person or online via PayPal, Card, and Direct debit`),
 				LGL(`Card transaction rates start at 1.75% + 30c per transaction with Stripe`, `Optional`),
 			],
 		},
@@ -220,7 +220,6 @@ export function features() {
 				LGL(`Link to processes for prayer requests, volunteer applications, getting married, etc.`),
 				LGL(`Automate adding or removing from a group, meeting or another process`),
 				LGL(`Automate updating the person’s profile`),
-				GSLS(`Wave Forms upgrades`),
 			],
 		},
 		{
@@ -246,18 +245,19 @@ export function features() {
 			name: `Giving & Finances`,
 			description: `It’s about the heart`,
 			features: [
-				LGL(`Unlimited payments`),
+				LGL(`Unlimited donations and other payments`),
 				LGL(`Record pledges, donations and other payments`),
 				LGL(`Categorize payments`),
 				LGL(`Send tax statements to the entire church`),
 				LGL(`Export payments to your favorite accounting software, i.e. QuickBooks, Xero, etc.`),
 				LGL(`Optionally email receipts with every payment`),
-				LGL(`Issue refunds, both cash & Card`),
-				LGL(`Payments via card, cash, ACH, check or PayPal`),
+				LGL(`Payments via card, cash, direct debit, check, or PayPal`),
+				LGL(`Issue refunds, both cash, Card & Direct debit`),
+				LGL(`Accept Google Pay and Apple Pay`),
 				LGL(`PCI DSS compliant gives peace of mind that all payment info is secure`),
 				LGL(`Over 100 currencies accepted by our payment processors`),
 				LGL(`Card transaction rates start at 1.75% + 30c per transaction with Stripe`, `Optional`),
-				LGL(`No per transaction fees from UCare`),
+				LGL(`No additional transaction fees from UCare`),
 				LGL(`Embed payment forms on your website or in an app`),
 				LGL(`Publish a payment form to the UCare portal`),
 				LGL(`Customize embedded payment forms to match your website or app style`),
@@ -278,7 +278,7 @@ export function features() {
 				LGL(`Customers are emailed invoices upon order completion`),
 				LGL(`Issue order refunds, both cash & card`),
 				LGL(`Add product variations and extra options, each with its own price`),
-				LGL(`Payments in person or online via card or PayPal`),
+				LGL(`Payments in person or online via PayPal, Card, and Direct debit`),
 				LGL(`Card transaction rates start at 1.75% + 30c per transaction with Stripe`, `Optional`),
 				LGL(`No per order fees from UCare`),
 				LGL(`Embed stores on your website or church app`),
@@ -296,8 +296,8 @@ export function features() {
 			name: `Wave Analytics`,
 			description: `Reporting reimagined`,
 			features: [
-				GLS(`Build dashboards and reports using the Power BI Desktop app`),
-				GLS(`Create and publish standard dashboards and reports`),
+				GL(`Build dashboards and reports using the Power BI Desktop app`),
+				GL(`Create and publish standard dashboards and reports`),
 				L(`Create and publish advanced dashboards and reports`, `Add on`),
 			],
 		},
@@ -317,7 +317,7 @@ export function features() {
 				AL(`Support multiple service and rehearsal times for each service`, `1 service included`),
 				GL(`Manage order of service and item length, assign items to different team and roles`),
 				GL(`Set service teams, roles and required skills then let UCare assign the right people`),
-				GSLS(`Multi-service planner to speed up service order management and volunteer assignment`),
+				GL(`Multi-service planner to speed up service order management and volunteer assignment`),
 				GSLS(`Live Services to facilitate team communication and service timings`),
 			],
 		},
@@ -362,10 +362,10 @@ export function features() {
 				),
 				GL(
 					`Fine grained access management. Grant permission to View, Create, Edit, Delete specific data`,
-					`Coming 2020`
+					`Coming 2021`
 				),
-				GL(`Create and manage access Roles`, `Coming 2020`),
-				GL(`Assign fine grained permissions based on Roles`, `Coming 2020`),
+				GL(`Create and manage access Roles`, `Coming 2021`),
+				GL(`Assign fine grained permissions based on Roles`, `Coming 2021`),
 			],
 		},
 		{
