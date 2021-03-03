@@ -81,10 +81,7 @@ const FAQ: React.FC = () => (
 							<QA q='Can we export our data?'>
 								Whether you want a backup or you have decided to close your account you can export your data from UCare.
 							</QA>
-							<QA q='What format can we export?'>
-								You can export your data in CSV format when you need, or contact support to request a copy of the latest
-								backup of your data.
-							</QA>
+							<QA q='What format can we export?'>You can export your data in CSV or PDF format when you need.</QA>
 							<QA q='Where is our data stored?'>
 								Your data is stored as close to you as possible, this can be important to ensure that your data is
 								governed by to laws of your country. We currently have two locations in the United States, two in Europe
