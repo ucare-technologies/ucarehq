@@ -173,13 +173,13 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>Up to 5 campuses</li>
 					<li>Monthly training webinars</li>
 					<li>
-						Wave Services & Teams
+						Wave Services & Teams <Badge type='success'>New</Badge>
 						<div>
 							<Badge type='light'>Supports up to 2 campuses</Badge>
 						</div>
 					</li>
 					<li>
-						Wave Automation Studio
+						Wave Automation Studio <Badge type='success'>New</Badge>
 						<div>
 							<Badge type='light'>3 automations included</Badge>
 						</div>
