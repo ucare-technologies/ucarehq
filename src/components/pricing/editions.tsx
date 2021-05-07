@@ -145,6 +145,9 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 						Personalized Bulk SMS <Badge type='light'>add-on</Badge>
 					</li>
 					<li>Follow-up tasks</li>
+					<li>
+						Websites <Badge type='light'>add-on</Badge>
+					</li>
 					<li>Email support</li>
 				</ul>
 				<footer>
@@ -174,9 +177,6 @@ const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
 					<li>Monthly training webinars</li>
 					<li>
 						Wave Services & Teams <Badge type='success'>New</Badge>
-						<div>
-							<Badge type='light'>Supports up to 2 campuses</Badge>
-						</div>
 					</li>
 					<li>
 						Wave Automation Studio <Badge type='success'>New</Badge>

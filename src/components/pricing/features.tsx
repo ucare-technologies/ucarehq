@@ -314,8 +314,8 @@ export function features() {
 			name: `Wave Services`,
 			description: `Organize services with a detailed plan`,
 			features: [
-				AL(`Manage unlimited services across multiple locations`, `2 campuses included`),
-				AL(`Support multiple service and rehearsal times for each service`, `2 campuses included`),
+				AL(`Manage unlimited services across multiple locations`, `5 campuses included`),
+				AL(`Support multiple service and rehearsal times for each service`, `5 campuses included`),
 				GL(`Manage order of service and item length, assign items to different team and roles`),
 				GL(`Set service teams, roles and required skills then let UCare assign the right people`),
 				GL(`Multi-service planner to speed up service order management and volunteer assignment`),
