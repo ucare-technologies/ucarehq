@@ -42,7 +42,7 @@ const FAQ: React.FC = () => (
 							</QA>
 							<QA q='Who are considered active?'>
 								Any person that is recorded as having attended three or more times in 60 days becomes active. People who
-								are a member of a public group in UCare are also considered active.
+								are a member of a public or attendance group in UCare are also considered active.
 							</QA>
 							<QA q='Can I still contact archived people?'>
 								Yes, archived people are similar to active people &amp; visitors. You can still view their full profile,
