@@ -4,7 +4,6 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
@@ -244,14 +243,11 @@ const EditionSelect: React.FC = () => {
 	const [value, setValue] = React.useState(undefined as undefined | number);
 	const handleTermsChange = React.useCallback((newTerms: Terms) => setTerms(newTerms), [setTerms]);
 	const handleValueChange = React.useCallback((newValue: number) => setValue(newValue), [setValue]);
-	const isLarge = useMediaQuery({ query: '(min-width: 768px)' });
-	const estimate = <Estimate value={value || 500} onChange={handleValueChange} />;
 	return (
 		<>
-			{!isLarge && estimate}
+			<Estimate value={value || 500} onChange={handleValueChange} />
 			<TermsSelect value={terms} onChange={handleTermsChange} />
 			<Editions value={value} terms={terms} />
-			{isLarge && estimate}
 			<Contact />
 		</>
 	);
