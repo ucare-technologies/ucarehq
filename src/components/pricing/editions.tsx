@@ -17,7 +17,7 @@ const bookCallSize = 1500;
 type Terms = 'monthly' | 'yearly';
 
 const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> = ({ value, onChange }) => {
-	const handleTermsChange = React.useCallback(
+	const handleChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.currentTarget.value as Terms),
 		[onChange]
 	);
@@ -30,7 +30,7 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 					className='custom-control-input'
 					checked={value === 'monthly'}
 					value='monthly'
-					onChange={handleTermsChange}
+					onChange={handleChange}
 				/>
 				<label className='custom-control-label' htmlFor='customRadioInline2'>
 					Billed Monthly
@@ -43,7 +43,7 @@ const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> 
 					className='custom-control-input'
 					checked={value === 'yearly'}
 					value='yearly'
-					onChange={handleTermsChange}
+					onChange={handleChange}
 				/>
 				<label className='custom-control-label' htmlFor='customRadioInline1'>
 					Billed Annually <Badge type={value === 'yearly' ? 'success' : 'light'}>Save 10%</Badge>
@@ -97,14 +97,13 @@ const Contact: React.FC = () => (
 const Recommend: React.FC<{ is: boolean }> = ({ is }) => (
 	<div className='top'>{is ? `recommended for you*` : <br />}</div>
 );
-interface PriceEstimateProps {
+const PriceEstimate: React.FC<{
 	base: number;
 	people: number;
 	step: number;
 	stepPrice: number;
 	terms: Terms;
-}
-const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepPrice, terms }) => {
+}> = ({ base, people, step, stepPrice, terms }) => {
 	const price = base + Math.ceil(Math.max(0, (people || 0) - 500) / step) * stepPrice;
 	const termsPrice = terms === 'yearly' ? Math.floor(price * 0.9) : price;
 	return (
@@ -117,11 +116,10 @@ const PriceEstimate: React.FC<PriceEstimateProps> = ({ base, people, step, stepP
 		</div>
 	);
 };
-interface EditionsProps {
+const Editions: React.FC<{
 	value?: number;
 	terms: Terms;
-}
-const Editions: React.FC<EditionsProps> = ({ value, terms }) => {
+}> = ({ value, terms }) => {
 	const people = value || 500;
 	const edition = getEdition(people);
 	const signUpUrl = `/sign-up/?size=${people}&edition=`;
