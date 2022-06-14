@@ -6,14 +6,13 @@ import { faChevronRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons
 
 import Image from './blog-item-image';
 
-interface BlogItemProps {
+const BlogItem: React.FC<{
 	title: string;
 	date: string;
 	slug: string;
 	excerpt: string;
 	imagePath: string | null;
-}
-const BlogItem: React.FC<BlogItemProps> = ({ title, date, slug, excerpt, imagePath }) => {
+}> = ({ title, date, slug, excerpt, imagePath }) => {
 	const linkTo = `/blog${slug}`;
 	return (
 		<div className='container blog-list'>

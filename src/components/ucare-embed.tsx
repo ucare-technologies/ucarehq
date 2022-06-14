@@ -11,13 +11,8 @@ declare global {
 function loaded() {
 	return typeof window.UCareEmbed === 'function';
 }
-
-interface UCareEmbedProps {
-	id: string;
-	path: string;
-}
 const cssUrl = 'https://ucarehq.com/form-styles.css'; // this file is in the static folder
-const UCareEmbedComponent: React.FC<UCareEmbedProps> = ({ id, path }) => {
+const UCareEmbedComponent: React.FC<{ id: string; path: string }> = ({ id, path }) => {
 	const divId = `ucare-embed-${id}`;
 	const load = React.useCallback(() => {
 		window.UCareEmbed(divId, 'https://crm.ucareapp.com', path, cssUrl);

@@ -16,7 +16,10 @@ import { getEdition } from './features';
 const bookCallSize = 1500;
 type Terms = 'monthly' | 'yearly';
 
-const TermsSelect: React.FC<{ value: Terms; onChange: (terms: Terms) => void }> = ({ value, onChange }) => {
+const TermsSelect: React.FC<{
+	value: Terms;
+	onChange: (terms: Terms) => void;
+}> = ({ value, onChange }) => {
 	const handleChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.currentTarget.value as Terms),
 		[onChange]
@@ -133,10 +136,10 @@ const Editions: React.FC<{
 					<PriceEstimate base={99} people={people} step={100} stepPrice={10} terms={terms} />
 				</header>
 				<ul>
-					<li>People & Households</li>
+					<li>People &amp; Households</li>
 					<li>Secure notes</li>
 					<li>Custom fields</li>
-					<li>Groups & Attendance</li>
+					<li>Groups &amp; Attendance</li>
 					<li>Personalized Bulk Email</li>
 					<li>
 						Personalized Bulk SMS <Badge type='light'>add-on</Badge>
@@ -164,16 +167,16 @@ const Editions: React.FC<{
 					<li>
 						<b>All Essentials features</b>
 					</li>
-					<li>Check-in & Child Safety</li>
+					<li>Check-in &amp; Child Safety</li>
 					<li>Event registrations</li>
-					<li>Forms & Processes</li>
-					<li>Giving & Finances</li>
+					<li>Forms &amp; Processes</li>
+					<li>Giving &amp; Finances</li>
 					<li>Stores</li>
 					<li>Church metrics</li>
 					<li>Up to 5 campuses</li>
 					<li>Monthly training webinars</li>
 					<li>
-						Wave Services & Teams <Badge type='success'>New</Badge>
+						Wave Services &amp; Teams <Badge type='success'>New</Badge>
 					</li>
 					<li>
 						Wave Automation Studio <Badge type='success'>New</Badge>
@@ -213,7 +216,7 @@ const Editions: React.FC<{
 						Wave Automation Studio <Badge type='success'>New</Badge>
 					</li>
 					<li>
-						Wave Services & Teams <Badge type='success'>New</Badge>
+						Wave Services &amp; Teams <Badge type='success'>New</Badge>
 					</li>
 					<li>
 						Wave Graph API <Badge type='success'>New</Badge>
@@ -221,7 +224,7 @@ const Editions: React.FC<{
 					<li>Phone support available</li>
 					<li>Unlimited campuses</li>
 					<li>Implementation specialists</li>
-					<li>Coaching & Masterclasses</li>
+					<li>Coaching &amp; Masterclasses</li>
 				</ul>
 				<footer>
 					{people >= bookCallSize ? (

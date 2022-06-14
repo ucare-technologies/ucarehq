@@ -2,12 +2,11 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-interface AgreeFieldProps {
+const AgreeField: React.FC<{
 	checked: boolean;
 	onChange: (checked: boolean) => void;
 	disabled: boolean;
-}
-const AgreeField: React.FC<AgreeFieldProps> = ({ checked, onChange, disabled }) => {
+}> = ({ checked, onChange, disabled }) => {
 	const handleChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.currentTarget.checked),
 		[onChange]

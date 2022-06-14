@@ -3,14 +3,12 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 
-interface ImageProps {
+const Image: React.FC<{
 	src: string;
 	className: string;
 	alt: string;
 	style: React.CSSProperties;
-}
-
-const Image: React.FC<ImageProps> = ({ src, ...rest }) => {
+}> = ({ src, ...rest }) => {
 	type QueryShape = {
 		allImageSharp: {
 			edges: {
@@ -39,9 +37,6 @@ const Image: React.FC<ImageProps> = ({ src, ...rest }) => {
 		}
 	`);
 	const image = images.allImageSharp.edges.find(edge => src.indexOf(edge.node.fluid.originalName) >= 0);
-	if (image) {
-		return <Img fluid={image.node.fluid} {...rest} />;
-	}
-	return null;
+	return !image ? null : <Img fluid={image.node.fluid} {...rest} />;
 };
 export default Image;

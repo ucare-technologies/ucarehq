@@ -49,14 +49,15 @@ function AL(name: string, other: React.ReactNode = `Add on`, lighthouse: React.R
 function GL(name: string, value: React.ReactNode = <Yes />) {
 	return Values(name, <NA />, <NA />, value, value);
 }
-function GLS(name: string, other: React.ReactNode = `Add on - Coming 2021`) {
+const coming2022 = 'Coming 2022';
+function GLS(name: string, other: React.ReactNode = `Add on - ${coming2022}`) {
 	return Values(
 		name,
 		<NA />,
 		<NA />,
 		other,
 		<span>
-			<Yes /> Coming 2021
+			<Yes /> {coming2022}
 		</span>
 	);
 }
@@ -66,10 +67,10 @@ function GSLS(name: string) {
 		<NA />,
 		<NA />,
 		<span>
-			<Yes /> Coming 2021
+			<Yes /> {coming2022}
 		</span>,
 		<span>
-			<Yes /> Coming 2021
+			<Yes /> {coming2022}
 		</span>
 	);
 }
@@ -361,12 +362,9 @@ export function features() {
 				All(
 					`Security areas for restricting access to sensitive info. For example notes, contact info, custom dates & fields, groups, forms, processes, etc.`
 				),
-				GL(
-					`Fine grained access management. Grant permission to View, Create, Edit, Delete specific data`,
-					`Coming 2021`
-				),
-				GL(`Create and manage access Roles`, `Coming 2021`),
-				GL(`Assign fine grained permissions based on Roles`, `Coming 2021`),
+				GL(`Fine grained access management. Grant permission to View, Create, Edit, Delete specific data`, coming2022),
+				GL(`Create and manage access Roles`, coming2022),
+				GL(`Assign fine grained permissions based on Roles`, coming2022),
 			],
 		},
 		{

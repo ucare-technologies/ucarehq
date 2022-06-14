@@ -3,17 +3,14 @@ import * as React from 'react';
 
 import countryNames from './country-names';
 
-interface CountryFieldProps {
+const CountryField: React.FC<{
 	value: string;
 	onChange: (name: string, value: string) => void;
 	disabled: boolean;
 	noHelp?: boolean;
-}
-const CountryField: React.FC<CountryFieldProps> = ({ value, onChange, disabled, noHelp }) => {
+}> = ({ value, onChange, disabled, noHelp }) => {
 	const handleChange = React.useCallback(
-		(e: React.ChangeEvent<HTMLSelectElement>) => {
-			onChange('country', e.currentTarget.value);
-		},
+		(e: React.ChangeEvent<HTMLSelectElement>) => onChange('country', e.currentTarget.value),
 		[onChange]
 	);
 	return (

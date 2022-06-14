@@ -5,14 +5,13 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 import FieldError from './field-error';
 
-interface TenantFieldProps {
+const TenantField: React.FC<{
 	value: string;
 	error: string | undefined;
 	onChange: (value: string) => void;
 	validating: boolean;
 	disabled: boolean;
-}
-const TenantField: React.FC<TenantFieldProps> = ({ value, error, onChange, validating, disabled }) => {
+}> = ({ value, error, onChange, validating, disabled }) => {
 	const [focused, setFocused] = React.useState(false);
 	const handleFocus = React.useCallback(() => setFocused(true), [setFocused]);
 	const handleBlur = React.useCallback(() => setFocused(false), [setFocused]);

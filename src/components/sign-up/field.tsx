@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import FieldError from './field-error';
 
-interface FieldProps {
+const Field: React.FC<{
 	value: string;
 	error: string | undefined;
 	name: string;
@@ -12,22 +12,9 @@ interface FieldProps {
 	maxLength?: number;
 	onChange: (name: string, value: string) => void;
 	disabled: boolean;
-}
-const Field: React.FC<FieldProps> = ({
-	children,
-	value,
-	name,
-	error,
-	placeholder,
-	type = 'text',
-	maxLength = 255,
-	onChange,
-	disabled,
-}) => {
+}> = ({ children, value, name, error, placeholder, type = 'text', maxLength = 255, onChange, disabled }) => {
 	const handleChange = React.useCallback(
-		(e: React.ChangeEvent<HTMLInputElement>) => {
-			onChange(e.currentTarget.name, e.currentTarget.value);
-		},
+		(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.currentTarget.name, e.currentTarget.value),
 		[onChange]
 	);
 	return (

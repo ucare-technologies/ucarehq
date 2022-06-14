@@ -82,8 +82,8 @@ export default function Features() {
 							Think of it like a new heart, brain, and nervous system powering UCare.
 						</p>
 						<p>
-							Wave establishes UCare as the most sophisticated & scalable church software service in the world, enabling
-							churches to engage and disciple people better than ever before.
+							Wave establishes UCare as the most sophisticated &amp; scalable church software service in the world,
+							enabling churches to engage and disciple people better than ever before.
 						</p>
 						<p>
 							UCare Wave brings an even faster, more intelligent, and efficient platform to empower your teams,
@@ -188,7 +188,7 @@ export default function Features() {
 				<WaveSection d={0} alt />
 				<div className='container'>
 					<FadeIn fade='up'>
-						<h2>Services & Teams</h2>
+						<h2>Services &amp; Teams</h2>
 					</FadeIn>
 					<div className='row pt-5'>
 						<div className='col-lg-9 mx-lg-auto col-xl-6 align-self-center'>
@@ -246,7 +246,7 @@ export default function Features() {
 							<div className='col-lg-8 mx-auto text-block'>
 								<p>
 									At UCare, we have the philosophy that a church should be able to start using UCare with as little set
-									up work as possible. Access & Security is a big area that was influenced by this philosophy. UCare
+									up work as possible. Access &amp; Security is a big area that was influenced by this philosophy. UCare
 									avoids passwords where possible; for example, when a form is sent via email or SMS, the fields can
 									still be prepopulated. When giving others access to UCare, you simply pick the areas of UCare they
 									need to access.

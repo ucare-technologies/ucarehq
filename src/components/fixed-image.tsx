@@ -4,12 +4,11 @@ import * as React from 'react';
 import { FixedImageSrc } from '../types';
 
 export type FixedImageProps = FixedImageSrc;
-interface ImageProps {
+const FixedImage: React.FC<{
 	alt: string;
 	className?: string;
 	image: FixedImageProps;
-}
-const FixedImage: React.FC<ImageProps> = ({
+}> = ({
 	alt,
 	className,
 	image: {

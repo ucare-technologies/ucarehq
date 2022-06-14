@@ -36,9 +36,9 @@ const FAQ: React.FC = () => (
 							precisely to your needs.
 						</QA>
 						<QA q='We use Planning center, do we need both?'>
-							The Lighthouse edition of UCare Wave includes Services & Teams, which may replace your need for Planning
-							Center Services. Many churches we've spoken tell us the Lighthouse edition is cheaper than UCare legacy
-							pricing + Planning Center Services.
+							The Lighthouse edition of UCare Wave includes Services &amp; Teams, which may replace your need for
+							Planning Center Services. Many churches we've spoken tell us the Lighthouse edition is cheaper than UCare
+							legacy pricing + Planning Center Services.
 						</QA>
 						<QA q='Can I stay on the legacy edition?'>
 							Yes. We will keep your current subscription features in place for as long as you choose to stay

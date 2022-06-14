@@ -26,12 +26,11 @@ interface BlogPostNode {
 		relativePath: string;
 	} | null;
 }
-interface PostsProps {
+const Posts: React.FC<{
 	posts: { post: BlogPostNode }[];
 	currentPage: number;
 	limit: number;
-}
-const Posts: React.FC<PostsProps> = ({ posts, currentPage, limit }) => {
+}> = ({ posts, currentPage, limit }) => {
 	const numPages = Math.ceil(posts.length / limit);
 	const isFirst = currentPage === 1;
 	const isLast = currentPage === numPages;

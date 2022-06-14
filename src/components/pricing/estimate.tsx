@@ -6,7 +6,10 @@ import Badge from '../badge';
 
 import Range from './range';
 
-const PricingEstimate: React.FC<{ value: number; onChange: (value: number) => void }> = ({ value, onChange }) => {
+const PricingEstimate: React.FC<{
+	value: number;
+	onChange: (value: number) => void;
+}> = ({ value, onChange }) => {
 	const handleValueChange = React.useCallback((newValue: number) => onChange(newValue), [onChange]);
 	return (
 		<div className='pricing-estimate text-center'>

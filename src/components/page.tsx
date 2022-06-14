@@ -20,7 +20,7 @@ const shortcodes = {
 	UCareEmbed,
 	YouTube,
 };
-interface PageProps {
+const Page: React.FC<{
 	pageContext: {
 		frontmatter: {
 			title: string;
@@ -32,9 +32,7 @@ interface PageProps {
 		};
 	};
 	path: string;
-}
-
-const Page: React.FC<PageProps> = ({
+}> = ({
 	children,
 	pageContext: {
 		frontmatter: { title, type, featured_image, feature_colour, svg_code, header_alignment },

@@ -7,13 +7,12 @@ import { FilePublicUrl } from '../types';
 
 import { FeaturesLink, SupportLink, BlogLink, SignInLink, TrialLink, PricingLink } from './header-links';
 
-interface HeaderProps {
+const Header: React.FC<{
 	isTop: boolean;
 	menuOpen: boolean;
 	onClick: () => void;
 	forwardRef: React.MutableRefObject<HTMLElement | null>;
-}
-const Header: React.FC<HeaderProps> = ({ isTop, menuOpen, onClick, forwardRef }) => {
+}> = ({ isTop, menuOpen, onClick, forwardRef }) => {
 	const { bigLogo, heartLogo } = useStaticQuery<{ bigLogo: FilePublicUrl; heartLogo: FilePublicUrl }>(graphql`
 		query {
 			heartLogo: file(relativePath: { eq: "ucare-heart.svg" }) {

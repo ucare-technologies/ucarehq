@@ -18,7 +18,7 @@ const shortCodes = {
 	YouTube,
 	UCareEmbed,
 };
-interface PostProps {
+const BlogPost: React.FC<{
 	data: {
 		post: {
 			id: string;
@@ -29,9 +29,7 @@ interface PostProps {
 			featured_image: FluidImage | undefined;
 		};
 	};
-}
-
-const BlogPost: React.FC<PostProps> = ({ data: { post } }) => {
+}> = ({ data: { post } }) => {
 	const { title, excerpt, date, featured_image, body } = post;
 	return (
 		<Layout>

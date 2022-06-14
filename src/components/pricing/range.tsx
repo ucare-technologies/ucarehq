@@ -10,8 +10,11 @@ const highlight = '#475364';
 const barHeight = 16;
 const min = 100;
 const max = 2000;
-const PricingRange: React.FC<{ value: number; onChange: (value: number) => void }> = ({ value, onChange }) => {
-	const handleRangeChange = React.useCallback((newValues: number[]) => onChange(newValues[0]), [onChange]);
+const PricingRange: React.FC<{
+	value: number;
+	onChange: (value: number) => void;
+}> = ({ value, onChange }) => {
+	const handleChange = React.useCallback((newValues: number[]) => onChange(newValues[0]), [onChange]);
 	// const values = [value];
 	const renderTrack = React.useCallback(
 		({
@@ -103,7 +106,7 @@ const PricingRange: React.FC<{ value: number; onChange: (value: number) => void 
 				step={10}
 				min={min}
 				max={max}
-				onChange={handleRangeChange}
+				onChange={handleChange}
 				renderTrack={renderTrack}
 				renderThumb={renderThumb}
 			/>

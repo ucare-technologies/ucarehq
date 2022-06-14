@@ -7,25 +7,21 @@ import { FluidImageSrc } from '../types';
 
 export type FluidObject = IFluidObject;
 export type FluidImage = FluidImageSrc;
-interface PageHeaderProps {
+const className = 'container-fluid p-0 page-header';
+const PageHeader: React.FC<{
 	image?: FluidImageSrc | null;
 	align?: string;
 	color?: string;
-}
-const className = 'container-fluid p-0 page-header';
-const PageHeader: React.FC<PageHeaderProps> = ({ children, image, align, color }) => {
+}> = ({ children, image, align, color }) => {
 	const rgbaColor = !color ? 'rgba(50, 58, 70, 0.5)' : color.indexOf('#') === 0 ? hexToRgba(color, 0.75) : color;
 	const backgroundImage = `linear-gradient(${rgbaColor}, ${rgbaColor})`;
 	const backgroundColor = color || '#323a46';
 	const inner = <div className='container text-center'>{children}</div>;
-	if (!image) {
-		return (
-			<header className={className} style={{ backgroundImage, backgroundColor }}>
-				{inner}
-			</header>
-		);
-	}
-	return (
+	return !image ? (
+		<header className={className} style={{ backgroundImage, backgroundColor }}>
+			{inner}
+		</header>
+	) : (
 		<BackgroundImage
 			Tag='header'
 			className={className}
