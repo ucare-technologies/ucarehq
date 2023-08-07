@@ -1,0 +1,118 @@
+.devices {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  overflow: hidden;
+  .apple-google-play {
+    padding-top: 50px;
+    .button-center {
+      margin: 11px auto;
+      box-sizing: border-box;
+    }
+    img {
+      max-width: none;
+      width: 160px;
+    }
+    .text-center {
+      display: inline-block;
+    }
+  }
+  img {
+    margin-bottom: 0;
+  }
+  .device-photo {
+    img {
+      height: auto;
+      max-width: 100%;
+      @include media-breakpoint-up(md) {
+        max-width: 200%;
+      }
+    }
+    @media (max-width: 479.98px) {
+      padding: 0;
+    }
+  }
+  .devices-text {
+    display: flex;
+    align-items: center;
+    padding: 0 50px 30px;
+    @include media-breakpoint-up(md) {
+      padding: 0 0 0 50px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 0 50px 0 150px;
+      & > div {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        & > div {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+
+  //   h2,
+  //   p {
+  //     line-height: 30px;
+  //     color: $grey;
+  //   }
+
+  //   h2 {
+  //     margin: 0;
+  //     font-weight: 300;
+  //     font-size: 1.8rem;
+  //     @include media-breakpoint-up(md) {
+  //       font-size: 2.4rem;
+  //       line-height: 1.1em;
+  //     }
+  //   }
+
+  p {
+    @include fonts;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .hidden-xs {
+      display: none !important;
+    }
+  }
+
+  .devices_text_wrapper {
+    .devices_text_title {
+      display: inline-block;
+      max-width: unset;
+
+      p {
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(md) {
+          font-size: 2.4rem;
+          line-height: 1.1em;
+        }
+      }
+    }
+
+    .devices_text_description {
+      display: inline-block;
+      max-width: unset;
+
+      p {
+        margin-bottom: 16px;
+      }
+    }
+
+    p {
+      line-height: 30px;
+      color: $grey;
+      margin: 0;
+    }
+  }
+}

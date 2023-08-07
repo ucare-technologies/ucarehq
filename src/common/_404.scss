@@ -1,0 +1,10 @@
+.not-exist {
+	padding-bottom: 50px;
+	width: 100%;
+	font-size: 120%;
+	@include fonts();
+	@include media-breakpoint-down(md) {
+		width: 75%;
+		margin: auto;
+	}
+}

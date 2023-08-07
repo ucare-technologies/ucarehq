@@ -1,0 +1,51 @@
+main.page {
+	.pages {
+		p {
+			font-size: 16px;
+		}
+		.page {
+			h1,
+			h2,
+			h3 {
+				font-weight: 500;
+			}
+			h2 {
+				font-size: 1.8rem;
+				//				margin: 10px 0;
+				margin-top: 80px;
+				&:nth-of-type(1) {
+					margin-top: 60px;
+					// 	font-size: 200%;
+				}
+			}
+			h3 {
+				font-size: 1.2rem;
+				margin: 10px 0;
+			}
+			.gatsby-resp-image-wrapper {
+				animation: fadeInUp 2s;
+				margin-bottom: 50px;
+				box-shadow: 0 0 10px 0 rgba($black, 0.5);
+				background-clip: $grey;
+			}
+			&.feature {
+				ul {
+					margin-left: 0;
+					li {
+						list-style: none;
+						background: url('../images/check2.svg');
+						background-repeat: no-repeat;
+						padding-left: 0;
+						padding: 2px 0 6px 36px;
+						h3 {
+							background-image: none;
+						}
+					}
+				}
+			}
+			.three-up {
+				padding-top: 50px;
+			}
+		}
+	}
+}

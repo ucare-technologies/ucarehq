@@ -1,0 +1,119 @@
+.features {
+  background-color: rgba($grey, 0.025);
+  padding-top: 50px !important;
+  padding-bottom: 70px !important;
+  .features-title {
+    color: $grey;
+    margin: 10px 0;
+    font-size: 1.8rem;
+    @include media-breakpoint-up(md) {
+      font-size: 2.4rem;
+    }
+    img {
+      height: auto;
+      margin-left: 5px;
+      margin-top: 20px;
+      width: 43px;
+      @include media-breakpoint-up(md) {
+        width: 70px;
+      }
+    }
+  }
+  .explore-more {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    .explore-more-btn {
+      @include fonts;
+      background: $grey2;
+      color: $white;
+      text-decoration: none;
+      padding: 10px 25px;
+      font-size: 14px;
+      border-radius: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: all 0.4s ease;
+      line-height: 22px;
+    }
+    .explore-more-btn:hover {
+      background: $grey;
+      text-decoration: none;
+    }
+  }
+}
+
+.circle {
+  background-color: $grey;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  color: $white;
+  font-size: 60px;
+
+  img {
+    margin-bottom: 0;
+  }
+}
+.feature-circle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: 1px solid $white;
+  margin: 0 auto;
+  padding: 12px 10px 0;
+  @include media-breakpoint-up(md) {
+    width: 80px;
+    height: 80px;
+    border-width: 2px;
+    margin: 0 auto;
+    padding: 18px 10px 0;
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    @include media-breakpoint-up(md) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  //	position: relative;
+}
+
+.attendance,
+.analytics {
+  background: $attendance_color;
+}
+.child {
+  background: $child_color;
+}
+.event-booking {
+  background: $event-booking_color;
+}
+.groups {
+  background: $groups_color;
+}
+.process {
+  background: $process_automation_color;
+}
+.giving {
+  background: $giving_color;
+}
+.surveys {
+  background: $forms_surveys_color;
+}
+.online-stores {
+  background: $online-stores_color;
+}
+.scheduling {
+  background: $scheduling_color;
+}
+.people {
+  background: $people_color;
+}
+.security {
+  background: $security_color;
+}

@@ -1,0 +1,18 @@
+.testimonial {
+	padding-top: 50px !important;
+	padding-bottom: 70px !important;
+	@include media-breakpoint-up(md) {
+		padding-top: 70px !important;
+		padding-bottom: 50px !important;
+	}
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 500px;
+	.slick-dots li button:before {
+		color: rgba(#fff, 0.5);
+	}
+	.slick-dots li.slick-active button:before {
+		color: $white;
+	}
+}
