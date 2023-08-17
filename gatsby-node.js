@@ -177,10 +177,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   }
-}
-
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
 
   const featuresListResult = await graphql(`
     {
@@ -215,6 +211,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   tag
                   blog_date
                   feature_slug
+                  blog_slug
                 }
               }
             }
@@ -232,9 +229,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  // console.log('featuresListResult', featuresListResult)
-
-  const blogsPageData =
+  const featurePageData =
     featuresListResult?.data?.allContentfulPage?.edges[0]?.node?.sections?.filter(
       (item) => item?.slice_name === 'all_features'
     )
@@ -242,8 +237,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create the Feature details page
   const FeatureDetailsTemplate = require.resolve(`./src/templates/feature.tsx`)
 
-  if (blogsPageData[0]?.cards.length > 0) {
-    blogsPageData[0]?.cards.forEach((post, index) => {
+  if (featurePageData[0]?.cards.length > 0) {
+    featurePageData[0]?.cards.forEach((post, index) => {
       if (post.feature_slug !== null) {
         createPage({
           path: `/features/${post.feature_slug}`,
@@ -255,6 +250,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     })
   }
+
+  // console.log('featuresListResult', featuresListResult)
 
   // console.log('cards', blogsPageData[0]?.cards)
   // console.log('blogsPageData', blogsPageData)

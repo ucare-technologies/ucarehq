@@ -37,6 +37,11 @@
   p {
     font-size: 16px;
   }
+
+  p:has(img) {
+    text-align: center;
+  }
+
   &.post {
     h1,
     h2,
@@ -54,11 +59,36 @@
     h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
+      text-align: left;
     }
     .gatsby-resp-image-wrapper {
       animation: fadeInUp 2s;
       margin-bottom: 50px;
       box-shadow: 0 0 10px 0 rgba($black, 0.5);
     }
+
+    img {
+      margin-bottom: 0;
+    }
+
+    ul li {
+      list-style: none;
+    }
   }
+}
+
+.footer_des {
+  &.post {
+    h3 {
+      text-align: left;
+    }
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.three-up {
+  padding-top: 50px;
 }

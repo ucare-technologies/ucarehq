@@ -115,6 +115,7 @@ export const pageQuery = graphql`
               }
             }
             feature_slug
+            blog_slug
           }
         }
         ... on ContentfulDividedSection {

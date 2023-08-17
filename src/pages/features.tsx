@@ -99,6 +99,7 @@ export const pageQuery = graphql`
                 tag
                 blog_date
                 feature_slug
+                blog_slug
               }
             }
           }

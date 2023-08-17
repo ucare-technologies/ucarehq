@@ -71,7 +71,7 @@ export default function Features(data: DataPropsTypes) {
             <FadeIn className="explore-more" fade="up">
               <Link to="/features" className="explore-more-btn">
                 {data?.button_text}
-                <span className="ms-2">
+                <span className="ml-2">
                   <FontAwesomeIcon icon={faChevronRight} />
                 </span>
               </Link>
