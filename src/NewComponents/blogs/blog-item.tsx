@@ -21,16 +21,18 @@ const BlogItem: React.FC<{
       <div className="container blog-list">
         <div className="row">
           <div className="col-lg-9 mx-auto">
-            <div className="entry-image">
-              <Link to={linkTo}>
-                <img
-                  src={imagePath}
-                  className="m-0"
-                  alt="img"
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </Link>
-            </div>
+            {imagePath && (
+              <div className="entry-image">
+                <Link to={linkTo}>
+                  <img
+                    src={imagePath}
+                    className="m-0"
+                    alt="img"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </Link>
+              </div>
+            )}
 
             <div className="entry-content">
               <article>
@@ -44,6 +46,7 @@ const BlogItem: React.FC<{
 
                 <span>
                   <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+
                   {formatDate(date)}
                 </span>
 

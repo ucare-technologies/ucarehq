@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allContentfulAllBlogs(sort: { single_blogs: { blog_date: ASC } }) {
+        allContentfulAllBlogs {
           edges {
             node {
               slice_name
