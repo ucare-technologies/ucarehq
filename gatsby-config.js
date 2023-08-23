@@ -91,32 +91,6 @@ module.exports = {
         ], // Add or remove icon sizes as desired
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     extensions: [`.mdx`, `.md`],
-    //     defaultLayouts: {
-    //       default: require.resolve(`./src/NewComponents/page.tsx`),
-    //     },
-    //     gatsbyRemarkPlugins: [
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //         options: {
-    //           quality: 90,
-    //           withWebp: { quality: 90 },
-    //           maxWidth: 1200,
-    //           linkImagesToOriginal: false,
-    //         },
-    //       },
-    //       { resolve: `gatsby-remark-copy-linked-files` },
-    //       { resolve: `gatsby-remark-numbered-footnotes` },
-    //       { resolve: `gatsby-remark-smartypants` },
-    //       { resolve: `gatsby-remark-external-links` },
-    //       { resolve: `gatsby-remark-responsive-iframe` },
-    //     ],
-    //     remarkPlugins: [remarkSlug],
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -128,8 +102,11 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        // host: process.env.CONTENTFUL_HOST
+        accessToken:
+          process.env.CONTENTFUL_NODE_ENV === 'development'
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
       },
     },
     'gatsby-transformer-remark',
