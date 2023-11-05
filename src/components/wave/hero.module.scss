@@ -1,0 +1,38 @@
+.wave-hero {
+	height: calc(100vh + 1px);
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+	position: relative; // to show the shadow
+}
+.title {
+	padding: 0 50px;
+	filter: drop-shadow(0 0 5px);
+	h1 {
+		margin: 10px 0;
+		font-size: 5vw;
+		@media (min-width: 992px) {
+			font-size: 4vw;
+		}
+		em {
+			font-style: normal;
+			font-size: 100%;
+			font-weight: 300;
+		}
+		svg {
+			width: 80vw;
+			@media (min-width: 992px) {
+				width: 65vw;
+			}
+		}
+	}
+	footer {
+		margin-top: 10vh;
+		a {
+			border-width: 2px;
+			transform: scale(1.5);
+		}
+	}
+}

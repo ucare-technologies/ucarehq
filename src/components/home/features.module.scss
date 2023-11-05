@@ -1,0 +1,42 @@
+.features {
+	background-color: rgba(var(--theme-greyRGB), 0.025);
+	padding-top: 50px !important;
+	padding-bottom: 70px !important;
+}
+.title {
+	color: var(--theme-grey);
+	margin: 10px 0;
+	font-size: 1.8rem;
+	@media (min-width: 768px) {
+		font-size: 2.4rem;
+	}
+	img {
+		height: auto;
+		margin-left: 5px;
+		margin-top: 20px;
+		width: 43px;
+		@media (min-width: 768px) {
+			width: 70px;
+		}
+	}
+}
+.explore-more {
+	padding-top: 80px;
+	padding-bottom: 50px;
+}
+.explore-more .explore-more-button {
+	background: var(--theme-grey2);
+	color: var(--theme-white);
+	text-decoration: none;
+	padding: 10px 25px;
+	font-size: 14px;
+	border-radius: 30px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	transition: all 0.4s ease;
+	line-height: 22px;
+	&:hover {
+		background: var(--theme-grey);
+		text-decoration: none;
+	}
+}

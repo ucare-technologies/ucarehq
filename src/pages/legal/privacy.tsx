@@ -1,119 +1,131 @@
-import React from 'react'
-import Layout from '../../NewComponents/layout'
-import SEO from '../../NewComponents/seo'
-import { graphql } from 'gatsby'
-import PageHeader from '../../NewComponents/page-header'
-import LatestBlog from '../../NewComponents/blogs/latest-blog'
+import React from 'react';
 
-const PrivacyPage = (props: any) => {
-  const { page_name, sections, slug }: any =
-    props?.data?.allContentfulPage?.edges[0]?.node
+import { HeadFC, PageProps, graphql } from 'gatsby';
 
-  const PageSections = sections?.map((item: any, index: number) => {
-    switch (item.slice_name) {
-      case 'privacy_banner':
-        return <PageHeader key={index} {...item} />
-      case 'footer_details_page_description':
-        return (
-          <>
-            {item?.description && (
-              <div className="container posts px-4 pb-5">
-                <div className="pages post feature_des footer_des">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: item?.description?.childMarkdownRemark?.html,
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-          </>
-        )
-      case 'latest_blog':
-        return <LatestBlog key={index} {...item} />
+import { LatestBlog } from '../../components/blogs/latest-blog';
+import { HeadTags } from '../../components/head-tags';
+import { Layout } from '../../components/layout';
+import { Footer } from '../../components/legal/footer';
+import { PageHeader } from '../../components/page-header';
+import { Slice, isSlice } from '../../components/slice';
+import { trimPTag } from '../../utils/trimTag';
 
-      default:
-        return null
-    }
-  })
+const PrivacyPage: React.FC<PageProps<Queries.PrivacyPageQuery>> = ({ data }) => (
+	<Layout>
+		<main>
+			{(data?.page?.sections ?? []).filter(isSlice).map((item, index) => {
+				if (isBannerSection(item)) {
+					return (
+						<PageHeader
+							key={index}
+							backgroundImageUrl={item.background_image?.file?.url || ''}
+							titleHtml={item.rich_title?.childMarkdownRemark?.html || ''}
+						/>
+					);
+				}
+				if (isFooterDetailsPageSection(item)) {
+					return <Footer key={index} html={item.description?.childMarkdownRemark?.html || ''} />;
+				}
+				if (isCardSection(item)) {
+					return (
+						<LatestBlog
+							key={index}
+							title={item.title || ''}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								title: c!.title || '',
+								tag: c!.tag || '',
+								slug: c!.blog_slug || '',
+								date: c!.blog_date || '',
+								html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
+								image: c!.card_image?.gatsbyImageData,
+							}))}
+						/>
+					);
+				}
+				return null;
+			})}
+		</main>
+	</Layout>
+);
+export default PrivacyPage;
+export const Head: HeadFC<Queries.PrivacyPageQuery> = ({ data }) => (
+	<HeadTags title={data.page?.page_title || 'Privacy'} />
+);
 
-  return (
-    <>
-      <Layout>
-        <SEO title="Terms & Conditions" />
-        <main>{PageSections}</main>
-      </Layout>
-    </>
-  )
+function isBannerSection(item: Slice): item is Queries.LegalBannerSectionFragment {
+	return item.slice_name === 'privacy_banner';
 }
-
-export default PrivacyPage
-
+function isFooterDetailsPageSection(item: Slice): item is Queries.LegalFooterDetailsPageSectionFragment {
+	return item.slice_name === 'footer_details_page_description';
+}
+function isCardSection(item: Slice): item is Queries.LegalCardSectionFragment {
+	return item.slice_name === 'latest_blog';
+}
 export const pageQuery = graphql`
-  query TermsPageQuery {
-    allContentfulPage(filter: { slug: { eq: "/legal/privacy" } }) {
-      edges {
-        node {
-          id
-          page_name
-          slug
-          sections {
-            ... on ContentfulBannerSection {
-              slice_name
-              banner_page_name
-              rich_title {
-                childMarkdownRemark {
-                  html
-                }
-              }
-              background_image {
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulCardSection {
-              slice_name
-              card_section_name
-              section3_title: title
-              rich_description {
-                childMarkdownRemark {
-                  html
-                }
-              }
-              cards {
-                card_name
-                title
-                image_classname
-                button_text
-                card_image {
-                  file {
-                    url
-                  }
-                }
-                long_description {
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-                tag
-                blog_date
-                feature_slug
-                blog_slug
-              }
-            }
-            ... on ContentfulFooterDetailsPageSection {
-              slice_name
-              section_name
-              description {
-                childMarkdownRemark {
-                  html
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+	query PrivacyPage {
+		page: contentfulPage(slug: { eq: "/legal/privacy" }) {
+			page_name
+			page_title
+			sections {
+				... on ContentfulBannerSection {
+					...LegalBannerSection
+				}
+				... on ContentfulFooterDetailsPageSection {
+					...LegalFooterDetailsPageSection
+				}
+				... on ContentfulCardSection {
+					...LegalCardSection
+				}
+			}
+		}
+	}
+	fragment LegalBannerSection on ContentfulBannerSection {
+		slice_name
+		rich_title {
+			childMarkdownRemark {
+				html
+			}
+		}
+		background_image {
+			file {
+				url
+			}
+		}
+	}
+	fragment LegalFooterDetailsPageSection on ContentfulFooterDetailsPageSection {
+		slice_name
+		description {
+			childMarkdownRemark {
+				html
+			}
+		}
+	}
+	fragment LegalCardSection on ContentfulCardSection {
+		slice_name
+		title
+		rich_description {
+			childMarkdownRemark {
+				html
+			}
+		}
+		cards {
+			title
+			image_className
+			card_image {
+				gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF], layout: CONSTRAINED, quality: 80)
+				file {
+					url
+				}
+			}
+			long_description {
+				childMarkdownRemark {
+					html
+				}
+			}
+			tag
+			blog_date
+			blog_slug
+			feature_slug
+		}
+	}
+`;

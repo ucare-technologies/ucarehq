@@ -1,0 +1,123 @@
+.latest-blog {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: rgba(var(--theme-greyRGB), 0.05);
+	h2 {
+		font-weight: 300;
+		margin-bottom: 30px;
+		color: var(--theme-grey);
+		font-size: 1.8rem;
+		@media (min-width: 768px) {
+			font-size: 2.4rem;
+		}
+	}
+}
+.wrapper {
+	justify-content: center;
+	padding: 8px;
+	@media (min-width: 768px) {
+		width: 750px;
+	}
+	@media (min-width: 992px) {
+		padding: 0;
+		width: 970px;
+	}
+	@media (min-width: 1200px) {
+		width: 1170px;
+	}
+}
+.blog-out {
+	display: inline-block;
+}
+.blogs {
+	border: 1px solid rgba(var(--theme-greyRGB), 0.12);
+	background: var(--theme-white);
+	border-radius: 5px;
+	@media (min-width: 992px) {
+		margin: 0 10px;
+	}
+}
+.blog {
+	text-decoration: none;
+	h3 {
+		color: var(--theme-grey);
+		width: 100%;
+		font-size: 1.6rem;
+		font-weight: 500;
+		margin-bottom: 10px;
+	}
+	img {
+		transition: all 0.4s ease !important;
+	}
+	&:hover {
+		text-decoration: none;
+		img {
+			transform: scale(1.05);
+			cursor: pointer;
+		}
+	}
+}
+.thumb {
+	position: relative;
+	overflow: hidden;
+}
+
+.cat {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: var(--theme-white);
+	border-radius: 20px;
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	background: rgba(var(--theme-greyRGB), 0.25);
+	padding: 5px 15px;
+	font-size: 90%;
+	text-transform: uppercase;
+}
+.read-more {
+	margin: 10px 0px 30px 0px;
+	display: flex;
+	span {
+		display: inline-block;
+		text-decoration: none;
+		color: rgba(255, 255, 255, 0.85);
+		background: var(--theme-grey2);
+		font-size: 14px;
+		font-weight: 700;
+		padding: 10px 25px;
+		letter-spacing: 1px;
+		border-radius: 30px;
+	}
+}
+
+.content {
+	padding: 50px 50px 20px;
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+
+	h3 {
+		text-align: left;
+	}
+}
+
+.blog-excerpt {
+	padding-bottom: 20px;
+	text-align: left;
+	color: rgba(var(--theme-greyRGB), 0.6);
+	margin: auto;
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+.feature-date {
+	color: rgba(var(--theme-greyRGB), 0.7);
+	border-radius: 20px;
+	background: rgba(var(--theme-greyRGB), 0.05);
+	padding: 5px 15px;
+	margin-bottom: 10px;
+	font-size: 80%;
+	font-weight: 700;
+	display: inline-block;
+	letter-spacing: 1px;
+}

@@ -1,0 +1,37 @@
+.feature {
+	display: inline-block;
+	margin-top: 50px;
+	padding: 15px 0;
+	transform: scale(1);
+	transition-duration: 0.4s;
+	&:focus,
+	&:hover {
+		transform: scale(1.05);
+		transition-duration: 0.4s;
+		cursor: pointer;
+		background: var(--theme-white);
+	}
+	&,
+	&:hover {
+		text-decoration: none;
+	}
+	h3 {
+		color: var(--theme-grey);
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+}
+.circle {
+	background-color: var(--theme-grey);
+	color: var(--theme-white);
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	font-size: 60px;
+
+	img {
+		margin-bottom: 0;
+	}
+}

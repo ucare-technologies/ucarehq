@@ -1,117 +1,120 @@
-import React from 'react'
-import Layout from '../../NewComponents/layout'
-import SEO from '../../NewComponents/seo'
-import Hero from '../../NewComponents/wave/hero'
-import { graphql } from 'gatsby'
-import WaveVideo from '../../NewComponents/wave/wave-video'
-import Features from '../../NewComponents/wave/features'
-import FAQ from '../../NewComponents/faq'
+import React from 'react';
 
-const WavePage = (props) => {
-  const { data }: any = props
+import { HeadFC, PageProps, graphql } from 'gatsby';
 
-  // console.log('data', data)
+import { FAQ } from '../../components/faq';
+import { HeadTags } from '../../components/head-tags';
+import { Layout } from '../../components/layout';
+import { Slice, isSlice } from '../../components/slice';
+import { Features } from '../../components/wave/features';
+import { Hero } from '../../components/wave/hero';
+import { WaveVideo } from '../../components/wave/wave-video';
+import { trimPTag } from '../../utils/trimTag';
 
-  const [autoPlay, setAutoPlay] = React.useState(false)
+const WavePage: React.FC<PageProps<Queries.WavePageQuery>> = ({ data }) => {
+	const [autoPlay, setAutoPlay] = React.useState(false);
+	const handleClick = React.useCallback(() => setAutoPlay(true), [setAutoPlay]);
+	const sections = (data?.page?.sections ?? []).filter(isSlice);
+	return (
+		<>
+			<Layout>
+				{sections.filter(isBannerSection).map((item, index) => (
+					<Hero
+						key={index}
+						backgroundImageUrl={item.background_image?.file?.url || ''}
+						titleHtml={trimPTag(item.rich_title?.childMarkdownRemark?.html)}
+						onPlayClick={handleClick}
+					/>
+				))}
+				<WaveVideo autoPlay={autoPlay} />
+				{sections.filter(isCardSection).map((item, index) =>
+					item.slice_name === 'wave_features' ? (
+						<Features
+							key={index}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								name: c!.card_name || '',
+								title: c!.title || '',
+								cardImageUrl: c!.card_image?.file?.url || '',
+								descriptionHtml: c!.long_description?.childMarkdownRemark?.html || '',
+							}))}
+						/>
+					) : (
+						<FAQ
+							key={index}
+							title={item.title || ''}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								title: c!.title || '',
+								descriptionHtml: c!.long_description?.childMarkdownRemark?.html || '',
+							}))}
+						/>
+					)
+				)}
+			</Layout>
+		</>
+	);
+};
 
-  const handlePlayClick = React.useCallback(
-    () => setAutoPlay(true),
-    [setAutoPlay]
-  )
+export default WavePage;
+export const Head: HeadFC<Queries.WavePageQuery> = ({ data }) => (
+	<HeadTags title={data.page?.page_title || 'UCare Wave'} />
+);
 
-  const sections = data?.contentfulPage?.sections?.map(
-    (item: any, index: number) => {
-      switch (item.slice_name) {
-        case 'wave_page_banner':
-          return <Hero key={index} {...item} onPlayClick={handlePlayClick} />
-
-        default:
-          return null
-      }
-    }
-  )
-
-  const otherSections = data?.contentfulPage?.sections?.map(
-    (item: any, index: number) => {
-      switch (item.slice_name) {
-        case 'wave_features':
-          return <Features key={index} {...item} />
-
-        case 'frequently_asked_questions':
-          return <FAQ key={index} {...item} />
-
-        default:
-          return null
-      }
-    }
-  )
-
-  return (
-    <>
-      <Layout>
-        <SEO title="UCare Wave" />
-
-        {sections}
-
-        <WaveVideo autoPlay={autoPlay} />
-
-        {/* <Features /> */}
-
-        {otherSections}
-      </Layout>
-    </>
-  )
+function isBannerSection(item: Slice): item is Queries.WaveBannerSectionFragment {
+	return item.slice_name === 'wave_page_banner';
 }
-
-export default WavePage
-
+function isCardSection(item: Slice): item is Queries.WaveCardSectionFragment {
+	return item.slice_name === 'wave_features' || item.slice_name === 'frequently_asked_questions';
+}
 export const pageQuery = graphql`
-  query WavePageQuery {
-    contentfulPage(slug: { eq: "/wave" }) {
-      page_name
-      slug
-      sections {
-        ... on ContentfulBannerSection {
-          id
-          slice_name
-          banner_page_name
-          rich_title {
-            childMarkdownRemark {
-              html
-            }
-          }
-          background_image {
-            file {
-              url
-            }
-          }
-          image {
-            file {
-              url
-            }
-          }
-          button_text
-        }
-        ... on ContentfulCardSection {
-          id
-          slice_name
-          card_section_name
-          cards {
-            card_name
-            title
-            long_description {
-              childMarkdownRemark {
-                html
-              }
-            }
-            card_image {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+	query WavePage {
+		page: contentfulPage(slug: { eq: "/wave" }) {
+			page_title
+			sections {
+				... on ContentfulBannerSection {
+					...WaveBannerSection
+				}
+				... on ContentfulCardSection {
+					...WaveCardSection
+				}
+			}
+		}
+	}
+	fragment WaveBannerSection on ContentfulBannerSection {
+		slice_name
+		rich_title {
+			childMarkdownRemark {
+				html
+			}
+		}
+		background_image {
+			file {
+				url
+			}
+		}
+		image {
+			file {
+				url
+			}
+		}
+		button_text
+	}
+	fragment WaveCardSection on ContentfulCardSection {
+		slice_name
+		title
+		cards {
+			title
+			card_name
+			long_description {
+				childMarkdownRemark {
+					html
+				}
+			}
+			card_image {
+				gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF], layout: CONSTRAINED, quality: 80)
+				file {
+					url
+				}
+			}
+		}
+	}
+`;

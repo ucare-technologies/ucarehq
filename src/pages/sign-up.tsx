@@ -1,121 +1,110 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../NewComponents/layout'
-import SEO from '../NewComponents/seo'
-import PageHeader from '../NewComponents/page-header'
-import FAQ from '../NewComponents/faq'
-import queryString from 'query-string'
-import SignUpForm from '../NewComponents/sign-up/sign-up-form'
+import React from 'react';
 
-const SignUp = (props: any) => {
-  // console.log('props', props)
+import { HeadFC, PageProps, graphql } from 'gatsby';
 
-  const {
-    location: { search },
-  } = props
+import { FAQ } from '../components/faq';
+import { HeadTags } from '../components/head-tags';
+import { Layout } from '../components/layout';
+import { PageHeader } from '../components/page-header';
+import SignUpForm from '../components/sign-up/sign-up-form';
+import { Slice, isSlice } from '../components/slice';
 
-  const { page_name, sections, slug }: any =
-    props?.data?.allContentfulPage?.edges[0]?.node
+const SignUp: React.FC<PageProps<Queries.SignUpPageQuery>> = ({ location, data }) => {
+	const { size, edition } = getQueryStringValues(location.search);
+	const sections = (data?.page?.sections ?? []).filter(isSlice);
+	return (
+		<>
+			<Layout>
+				<main>
+					{sections.filter(isBannerSection).map((item, index) => (
+						<PageHeader
+							key={index}
+							backgroundImageUrl={item.background_image?.file?.url || ''}
+							titleHtml={item.rich_title?.childMarkdownRemark?.html || ''}
+							subTitleHtml={item.bannerDescription?.childMarkdownRemark?.html || ''}
+						/>
+					))}
 
-  // console.log('sections', sections)
+					<SignUpForm size={size} edition={edition} />
 
-  const PageSections = sections?.map((item: any, index: number) => {
-    switch (item.slice_name) {
-      case 'sign_up_page_banner':
-        return <PageHeader key={index} {...item} />
+					{sections.filter(isCardSection).map((item, index) => (
+						<FAQ
+							key={index}
+							title={item.title || ''}
+							description={item.description || ''}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								title: c!.title || '',
+								descriptionHtml: c!.long_description?.childMarkdownRemark?.html || '',
+							}))}
+						/>
+					))}
+				</main>
+			</Layout>
+		</>
+	);
+};
+export default SignUp;
+export const Head: HeadFC<Queries.SignUpPageQuery> = ({ data }) => (
+	<HeadTags title={data.page?.page_title || 'Free 21-day trial'} />
+);
 
-      // case 'asked_questions':
-      //   return <FAQ key={index} {...item} />
-
-      default:
-        return null
-    }
-  })
-
-  const OtherPageSections = sections?.map((item: any, index: number) => {
-    switch (item.slice_name) {
-      case 'asked_questions':
-        return <FAQ key={index} {...item} />
-
-      default:
-        return null
-    }
-  })
-
-  const searchProps = search ? queryString.parse(search) : {}
-  const size = Number(searchProps.size) || 500
-  const edition = String(searchProps.edition) || 'growth'
-
-  return (
-    <>
-      <Layout>
-        <SEO title="Free 21-day trial" />
-
-        <main>
-          {PageSections}
-
-          <div className="container sign-up pb-5">
-            <div className="row sign-up-form">
-              <div className="col-lg-6 m-auto user-input-form">
-                <SignUpForm size={size} edition={edition} />
-              </div>
-            </div>
-          </div>
-
-          {OtherPageSections}
-        </main>
-      </Layout>
-    </>
-  )
+function getQueryStringValues(search: string) {
+	if (!search) return { size: 500, edition: 'Growth' };
+	const params = new URLSearchParams(search);
+	const size = Number(params.get('size')) || 500;
+	const edition = String(params.get('edition')) || 'Growth';
+	return { size, edition };
 }
-
-export default SignUp
-
+function isBannerSection(item: Slice): item is Queries.SignUpBannerSectionFragment {
+	return item.slice_name === 'sign_up_page_banner';
+}
+function isCardSection(item: Slice): item is Queries.SignUpCardSectionFragment {
+	return item.slice_name === 'asked_questions';
+}
 export const pageQuery = graphql`
-  query SignUpPageQuery {
-    allContentfulPage(filter: { slug: { eq: "/sign-up" } }) {
-      edges {
-        node {
-          page_name
-          slug
-          sections {
-            ... on ContentfulBannerSection {
-              slice_name
-              banner_page_name
-              rich_title {
-                childMarkdownRemark {
-                  html
-                }
-              }
-              section1_des: description {
-                childMarkdownRemark {
-                  html
-                }
-              }
-              background_image {
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulCardSection {
-              slice_name
-              card_section_name
-              title
-              section4_des: description
-              cards {
-                card_name
-                title
-                long_description {
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+	query SignUpPage {
+		page: contentfulPage(slug: { eq: "/sign-up" }) {
+			page_title
+			sections {
+				... on ContentfulBannerSection {
+					...SignUpBannerSection
+				}
+				... on ContentfulCardSection {
+					...SignUpCardSection
+				}
+			}
+		}
+	}
+	fragment SignUpBannerSection on ContentfulBannerSection {
+		slice_name
+		rich_title {
+			childMarkdownRemark {
+				html
+			}
+		}
+		bannerDescription: description {
+			childMarkdownRemark {
+				html
+			}
+		}
+		background_image {
+			file {
+				url
+			}
+		}
+	}
+	fragment SignUpCardSection on ContentfulCardSection {
+		slice_name
+		title
+		description
+		cards {
+			card_name
+			title
+			long_description {
+				childMarkdownRemark {
+					html
+				}
+			}
+		}
+	}
+`;

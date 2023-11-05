@@ -1,0 +1,125 @@
+@import './mixins.scss';
+
+.container {
+	& > div {
+		padding: 0;
+		&:nth-child(odd) {
+			background: var(--theme-white);
+		}
+		&:nth-child(even) {
+			@include animateBG(315deg);
+			color: var(--theme-white);
+			h2,
+			h3 {
+				text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+			}
+		}
+		&:nth-child(4n + 4) {
+			@include animateBG(225deg);
+		}
+	}
+	h2 {
+		font-size: 1.8rem;
+		@media (min-width: 768px) {
+			font-size: 2.4rem;
+		}
+		text-align: center;
+	}
+	h3 {
+		text-align: center;
+	}
+	img {
+		height: auto;
+		@media (min-width: 1200px) {
+			max-width: 100vw;
+		}
+	}
+}
+.container2 {
+	padding-bottom: 50px;
+	@media (min-width: 1440px) {
+		max-width: 1368px;
+	}
+	@media (min-width: 1600px) {
+		max-width: 1520px;
+	}
+}
+.centered-image {
+	max-width: 90vw;
+	img {
+		margin: 0;
+	}
+	@media (min-width: 768px) {
+		max-width: 50vw;
+	}
+	@media (min-width: 992px) {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+.shadow {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) !important;
+	margin-bottom: 3rem;
+}
+.text-block {
+	font-size: 1.25rem;
+	margin-bottom: 3rem;
+	p:last-child {
+		margin: 0;
+	}
+	@media (max-width: 1199.98px) {
+		padding: 1.5rem 2.5rem;
+	}
+	ol > li {
+		margin-bottom: 0.5rem;
+	}
+}
+.block {
+	background: rgba(0, 0, 0, 0.2);
+	padding: 1.5rem 2.5rem;
+	border-radius: 0.3rem;
+}
+.logo,
+.automation,
+.services,
+.security,
+.forms,
+.relative,
+.analytics,
+.check-in {
+	position: relative;
+	overflow: hidden;
+}
+.forms {
+	padding-bottom: 100px !important;
+}
+.delay1 {
+	animation-delay: 1.5s;
+}
+.delay2 {
+	animation-delay: 3s;
+}
+.services-svg {
+	right: 0;
+	top: 7vw;
+}
+.check-in-svg {
+	right: 0;
+	bottom: 0vw;
+}
+.analytics-svg {
+	left: -2vw;
+	top: 9vw;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	svg {
+		max-width: 100%;
+		height: auto;
+	}
+	div.container {
+		padding: 0 15px;
+	}
+}

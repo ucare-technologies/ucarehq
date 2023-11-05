@@ -1,0 +1,23 @@
+@keyframes heartAnimation {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	20% {
+		opacity: 0.1;
+	}
+	100% {
+		transform: scale(3);
+		opacity: 0;
+	}
+}
+.heart {
+	position: absolute;
+	width: 30%;
+	display: none;
+}
+.animate {
+	display: block;
+	opacity: 0;
+	animation: heartAnimation 5s ease;
+}

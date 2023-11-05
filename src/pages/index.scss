@@ -1,128 +1,137 @@
-$red: #e10332;
-$red2: #af0227;
-$red_hover: #960221;
-$green: #72be1a;
-$green_hover: #8ce229;
-$green_text: #3c640e;
-$black: #000;
-$grey: #323a46;
-$grey2: #475364;
-$mid_grey: #999;
-$light_grey: #ccc;
-$etch: #e5e5e5;
-$white: #fff;
-$blue: #39f;
+:root {
+	--theme-red: #e10332;
+	--redH: 347;
+	--redS: 97%;
+	--redL: 45%;
+	--theme-red2: #af0227;
+	--theme-red_hover: #960221;
+	--theme-green: #72be1a;
+	--theme-green_hover: #8ce229;
+	--theme-green_text: #3c640e;
+	--theme-greyRGB: 50, 58, 70;
+	--theme-grey: rgb(var(--theme-greyRGB));
+	--theme-grey2: #475364;
+	--theme-grey3: #323a46;
+	--theme-mid_grey: #999;
+	--theme-light_grey: #ccc;
+	--theme-etch: #e5e5e5;
+	--theme-white: #fff;
+}
 
-$attendance_color: #4caf50;
-$child_color: #e91e63;
-$event-booking_color: #ff5722;
-$groups_color: #ff9800;
-$process_automation_color: #3f51b5;
-$giving_color: #009688;
-$forms_surveys_color: #673ab7;
-$online-stores_color: #00bcd4;
-$scheduling_color: #cddc39;
-$people_color: #2196f3;
-$security_color: $black;
-
-$light: $etch;
 $theme-colors: (
-  'primary': $green,
-  'danger': $red,
-  'white': $white,
+	'primary': #72be1a,
+	'success': #72be1a,
+	'danger': #e10332,
+	'white': #fff,
+	'light': #e5e5e5,
 );
-
-// a[href]:link {
-//   color: #e10332;
-// }
-// a[href]:focus,
-// a[href]:hover {
-//   color: #960221;
-// }
-
-form input[type='submit'] {
-  background: #72be1a;
-  border-color: #72be1a;
-  color: #fff;
-  border-radius: 1em;
-}
-form input[type='submit']:hover,
-form input[type='submit']:focus,
-form input[type='submit']:active {
-  background: #8ce229 !important;
-  border-color: #8ce229 !important;
-  color: #3c640e !important;
-}
-form input[type='submit'].big-button {
-  border-radius: 30px;
-}
-input[type='email'],
-input[type='tel'],
-input[type='text'],
-select,
-textarea {
-  border-radius: 1em;
-  padding: 0.25em 0.75em;
-}
-.no-touch canvas.signature,
-.touch canvas.signature {
-  border-radius: 1em;
-}
-canvas.signature:hover,
-input[type='email']:hover,
-input[type='tel']:hover,
-input[type='text']:hover,
-select:hover,
-textarea:hover,
-canvas.signature:focus,
-input[type='email']:focus,
-input[type='tel']:focus,
-input[type='text']:focus,
-select:focus,
-textarea:focus {
-  border-color: #72be1a !important;
-}
-input[type='email'].error,
-input[type='tel'].error,
-input[type='text'].error,
-select.error,
-textarea.error,
-.error {
-  border-color: #e10332 !important;
-  color: #e10332 !important;
-}
-ul.multi label.selected,
-ul.multi label:active,
-ul.multi label:hover {
-  background: #72be1a !important;
-  color: #fff !important;
-}
-::-webkit-input-placeholder {
-  font-size: 0.9em;
-}
-::-moz-placeholder {
-  font-size: 0.9em;
-}
-:-ms-input-placeholder {
-  font-size: 0.9em;
-}
-:-moz-placeholder {
-  font-size: 0.9em;
-}
-.info {
-  font-size: 0.8em;
-}
-
 @import 'bootstrap/scss/bootstrap';
 
-@import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+	background: var(--theme-green_hover) !important;
+	border-color: var(--theme-green_hover) !important;
+	color: var(--theme-green_text) !important;
+}
 
-// @import '../../static/form-styles';
+div {
+	&.attendance-background,
+	&.analytics-background {
+		background-color: #4caf50;
+	}
+	&.child-background {
+		background-color: #e91e63;
+	}
+	&.event-booking-background {
+		background-color: #ff5722;
+	}
+	&.groups-background {
+		background-color: #ff9800;
+	}
+	&.process-background {
+		background-color: #3f51b5;
+	}
+	&.giving-background {
+		background-color: #009688;
+	}
+	&.surveys-background {
+		background-color: #673ab7;
+	}
+	&.online-stores-background {
+		background-color: #00bcd4;
+	}
+	&.scheduling-background {
+		background-color: #cddc39;
+	}
+	&.people-background {
+		background-color: #2196f3;
+	}
+	&.security-background {
+		background-color: #000;
+	}
+}
+
+.svg-inline--fa {
+	overflow: visible;
+	box-sizing: content-box;
+	display: inline-block;
+	height: 1em;
+	overflow: visible;
+	vertical-align: -0.125em;
+}
+
+.three-up {
+	@media (min-width: 768px) {
+		display: flex;
+		gap: 30px;
+	}
+	& > div {
+		position: relative;
+		width: 100%;
+	}
+}
+
+.embed-responsive {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+	&:before {
+		display: block;
+		content: '';
+	}
+
+	.embed-responsive-item,
+	embed,
+	iframe,
+	object,
+	video {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	&.e21by9:before {
+		padding-top: 42.85714%;
+	}
+	&.e16by9:before {
+		padding-top: 56.25%;
+	}
+	&.e4by3:before {
+		padding-top: 75%;
+	}
+	&.e1by1:before {
+		padding-top: 100%;
+	}
+}
 
 @import '../common/mixins';
 @import '../common/common';
-@import '../common/404';
-@import '../NewComponents/index';
-@import './features';
-@import './pricing';
-@import './sign_up';
+@import '../common/form';
+@import '../common/layout';

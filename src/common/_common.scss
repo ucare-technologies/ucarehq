@@ -15,9 +15,8 @@
 }
 .pages {
 	p {
-		@include fonts;
 		font-size: 15px;
-		color: $grey;
+		color: var(--theme-grey);
 		img {
 			margin-bottom: 50px;
 		}
@@ -25,7 +24,7 @@
 	h1,
 	h2 {
 		text-align: center;
-		color: $grey;
+		color: var(--theme-grey);
 	}
 	h2 {
 		margin-top: 50px;
@@ -41,9 +40,9 @@
 	}
 	a {
 		text-decoration: none;
-		color: $red;
+		color: var(--theme-red);
 		&:hover {
-			color: $red_hover;
+			color: var(--theme-red_hover);
 		}
 	}
 }
@@ -52,11 +51,19 @@
 	list-style: disc;
 	padding: 0;
 }
-#dino {
-	display: none;
-}
 html,
 body {
 	height: 100%;
 	margin: 0;
+}
+.flipX {
+	transform: scaleX(-1);
+}
+.calendly-overlay .calendly-popup {
+	@media (min-width: 976px) {
+		max-height: 1100px !important;
+	}
+	@media (min-width: 1266px) {
+		max-height: 720px !important;
+	}
 }
