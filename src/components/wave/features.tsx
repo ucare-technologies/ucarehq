@@ -2,10 +2,10 @@
 import * as React from 'react';
 
 import { FadeIn } from '../fade-in';
+import * as styles from './features.module.scss';
 import { WaveLogo } from './wave-logo';
 import { WaveSection } from './wave-section';
 import { WaveHeart } from './waveheart-white';
-import * as styles from './features.module.scss';
 
 // TODO: css & <GatsbyImage
 export const Features: React.FC<{

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useScript } from './use-script';
 
 export function useUCareEmbed() {

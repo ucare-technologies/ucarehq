@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as styles from './content.module.scss';
 import { useUCareEmbed } from '../use-ucare-embed';
+import * as styles from './content.module.scss';
 
 export const Content: React.FC<{ html: string }> = ({ html }) => {
 	useUCareEmbed();
@@ -13,4 +13,3 @@ export const Content: React.FC<{ html: string }> = ({ html }) => {
 		</div>
 	);
 };
-

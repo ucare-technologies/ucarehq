@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { FadeIn } from '../fade-in';
 import * as styles from './all-features.module.scss';
 import { Feature } from './feature';
-import { FadeIn } from '../fade-in';
 
 export const AllFeatures: React.FC<{
 	part?: boolean;

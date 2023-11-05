@@ -30,11 +30,7 @@ export const WaveVideo: React.FC<{ autoPlay: boolean }> = ({ autoPlay }) => (
 );
 
 const WaveSection: React.FC = () => (
-	<svg
-		viewBox='0 0 1440 204'
-		style={{ fill: '#fff', width: '100%' }}
-		preserveAspectRatio='none'
-	>
+	<svg viewBox='0 0 1440 204' style={{ fill: '#fff', width: '100%' }} preserveAspectRatio='none'>
 		<path
 			d='M6.05022984e-08,204 C0.00535896441,203.997351 356.00274,28.000572 720,104 C1084,180 1440,4 1440,4 L0,4 L0,204 L0,4 L1440,4 L1440,204 L0,204 Z'
 			filter='url(#filter1)'
