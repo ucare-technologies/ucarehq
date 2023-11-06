@@ -23,7 +23,8 @@
 		margin: 11px auto;
 		box-sizing: border-box;
 	}
-	& > div {
+	& > div,
+	a {
 		display: inline-block;
 	}
 }

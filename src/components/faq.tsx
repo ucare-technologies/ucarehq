@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import * as Scroll from 'react-scroll';
 
+import { handleLinkClick } from '../utils/handleLinkClick';
 import * as styles from './faq.module.scss';
 
 export const FAQ: React.FC<{
@@ -27,7 +28,7 @@ export const FAQ: React.FC<{
 								!item ? null : (
 									<div className='col-lg-4 py-2 px-3 d-inline' key={index}>
 										<h4>{item.title}</h4>
-										<div dangerouslySetInnerHTML={{ __html: item.descriptionHtml }} />
+										<div dangerouslySetInnerHTML={{ __html: item.descriptionHtml }} onClick={handleLinkClick} />
 									</div>
 								)
 							)}

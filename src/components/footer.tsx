@@ -24,7 +24,7 @@ const Layout: React.FC = () => (
 				</a>
 			</li>
 		</ul>
-		<div>UCare © {`2006-${new Date().getFullYear()}`}</div>
+		<div>UCare © {`2006-${new Date().getUTCFullYear()}`}</div>
 	</footer>
 );
 export default Layout;

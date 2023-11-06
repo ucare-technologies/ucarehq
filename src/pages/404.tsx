@@ -7,6 +7,7 @@ import { HeadTags } from '../components/head-tags';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
 import { Slice, isSlice } from '../components/slice';
+import { handleLinkClick } from '../utils/handleLinkClick';
 import { trimPTag } from '../utils/trimTag';
 
 const NotFound: React.FC<PageProps<Queries.Page404Query>> = ({ data }) => {
@@ -32,6 +33,7 @@ const NotFound: React.FC<PageProps<Queries.Page404Query>> = ({ data }) => {
 										dangerouslySetInnerHTML={{
 											__html: item?.description?.childMarkdownRemark?.html || '',
 										}}
+										onClick={handleLinkClick}
 									/>
 								</div>
 							</div>

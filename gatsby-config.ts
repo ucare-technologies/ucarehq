@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
 		siteUrl: 'https://ucarehq.com',
 	},
 	plugins: [
-		'gatsby-transformer-sharp', // TODO
+		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-image',
 		'gatsby-transformer-sharp', // Needed for dynamic images
@@ -55,7 +55,6 @@ const config: GatsbyConfig = {
 			},
 		},
 		{
-			// TODO: Mask for Lighthouse?
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				name: 'UCare',

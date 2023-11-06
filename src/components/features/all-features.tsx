@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { FadeIn } from '../fade-in';
 import * as styles from './all-features.module.scss';
 import { Feature } from './feature';
@@ -21,7 +22,11 @@ export const AllFeatures: React.FC<{
 		<div className='container text-center'>
 			{!!title && <h2>{title}</h2>}
 			{!!descriptionHtml && (
-				<div className={`row ${styles.summary}`} dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+				<div
+					className={`row ${styles.summary}`}
+					dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+					onClick={handleLinkClick}
+				/>
 			)}
 			<FadeIn className='row' fade='up'>
 				{cards.map(item => (

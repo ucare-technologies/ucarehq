@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { Check } from '../icons/check';
 import { Remove } from '../icons/remove';
 import * as styles from './feature-sets.module.scss';
@@ -22,7 +23,7 @@ export const FeatureSets: React.FC<{
 		}[];
 	}[];
 }> = props => (
-	<div className={styles.featureSets}>
+	<div className={styles.featureSets} onClick={handleLinkClick}>
 		<header className='text-center'>
 			<h2>{props.title}</h2>
 			<p dangerouslySetInnerHTML={{ __html: props.descriptionHtml }} />

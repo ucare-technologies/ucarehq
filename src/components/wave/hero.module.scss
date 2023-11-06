@@ -1,4 +1,4 @@
-.wave-hero {
+.waveHero {
 	height: calc(100vh + 1px);
 	display: flex;
 	align-items: center;
@@ -9,7 +9,7 @@
 }
 .title {
 	padding: 0 50px;
-	filter: drop-shadow(0 0 5px);
+	filter: drop-shadow(0 0 5px #000);
 	h1 {
 		margin: 10px 0;
 		font-size: 5vw;

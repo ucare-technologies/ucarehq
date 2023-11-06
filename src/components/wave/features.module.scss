@@ -44,7 +44,7 @@
 		max-width: 1520px;
 	}
 }
-.centered-image {
+.centeredImage {
 	max-width: 90vw;
 	img {
 		margin: 0;
@@ -62,7 +62,7 @@
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) !important;
 	margin-bottom: 3rem;
 }
-.text-block {
+.textBlock {
 	font-size: 1.25rem;
 	margin-bottom: 3rem;
 	p:last-child {
@@ -87,7 +87,7 @@
 .forms,
 .relative,
 .analytics,
-.check-in {
+.checkIn {
 	position: relative;
 	overflow: hidden;
 }
@@ -100,15 +100,15 @@
 .delay2 {
 	animation-delay: 3s;
 }
-.services-svg {
+.servicesSvg {
 	right: 0;
 	top: 7vw;
 }
-.check-in-svg {
+.checkInSvg {
 	right: 0;
 	bottom: 0vw;
 }
-.analytics-svg {
+.analyticsSvg {
 	left: -2vw;
 	top: 9vw;
 }

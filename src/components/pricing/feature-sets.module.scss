@@ -1,4 +1,4 @@
-.feature-sets {
+.featureSets {
 	section {
 		margin-bottom: 3rem;
 		details {
@@ -112,7 +112,7 @@
 	}
 }
 
-.visually-hidden {
+.visuallyHidden {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -123,11 +123,11 @@
 	white-space: nowrap;
 	width: 1px;
 }
-.check-icon {
+.checkIcon {
 	fill: var(--theme-green);
 	height: 24px;
 }
-.remove-icon {
+.removeIcon {
 	fill: var(--theme-light_grey);
 	height: 24px;
 }

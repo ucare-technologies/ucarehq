@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
 
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { FadeIn } from '../fade-in';
 import * as styles from './devices.module.scss';
 
@@ -25,7 +26,7 @@ export const Devices: React.FC<{
 							}}
 						/>
 
-						<div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+						<div dangerouslySetInnerHTML={{ __html: descriptionHtml }} onClick={handleLinkClick} />
 					</FadeIn>
 				</div>
 				<div className={`col-lg-6 col-md-6 ${styles.photo}`}>

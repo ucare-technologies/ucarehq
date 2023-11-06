@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { FadeIn } from '../fade-in';
 import * as styles from './features.module.scss';
 import { WaveLogo } from './wave-logo';
 import { WaveSection } from './wave-section';
 import { WaveHeart } from './waveheart-white';
 
-// TODO: css & <GatsbyImage
+// TODO: <GatsbyImage
 export const Features: React.FC<{
 	cards: {
 		name: string;
@@ -16,7 +17,7 @@ export const Features: React.FC<{
 		cardImageUrl: string;
 	}[];
 }> = ({ cards }) => (
-	<div className={styles.container}>
+	<div className={styles.container} onClick={handleLinkClick}>
 		{cards.map(item => {
 			switch (item.name) {
 				case 'Wave Feature Card':

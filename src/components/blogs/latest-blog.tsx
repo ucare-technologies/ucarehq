@@ -5,10 +5,12 @@ import { Link } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
 
 import { formatDate } from '../../utils/convertDateToText';
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { FadeIn } from '../fade-in';
 import { ChevronRight } from '../icons/chevron-right';
 import * as styles from './latest-blog.module.scss';
 
+// TODO: query from blogs instead of having a latest blogs section
 export const LatestBlog: React.FC<{
 	title: string;
 	cards: CardData[];
@@ -49,7 +51,7 @@ const LatestBlogCard: React.FC<CardData> = ({ image, title, tag, slug, date, htm
 						{!!date && <span className={`text-left ${styles.featureDate}`}>{formatDate(date)}</span>}
 
 						<div className={styles.blogExcerpt}>
-							<div dangerouslySetInnerHTML={{ __html: html }} />
+							<div dangerouslySetInnerHTML={{ __html: html }} onClick={handleLinkClick} />
 						</div>
 
 						<div className={styles.readMore}>

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { formatDate } from '../../utils/convertDateToText';
+import { handleLinkClick } from '../../utils/handleLinkClick';
 import { CalendarDays } from '../icons/calendar-days';
 import { ChevronRight } from '../icons/chevron-right';
 import * as styles from './blog-item.module.scss';
@@ -36,7 +37,7 @@ export const BlogItem: React.FC<{
 								{formatDate(date)}
 							</span>
 							<div>
-								<p dangerouslySetInnerHTML={{ __html: excerpt }} />
+								<p dangerouslySetInnerHTML={{ __html: excerpt }} onClick={handleLinkClick} />
 							</div>
 						</article>
 						<div>

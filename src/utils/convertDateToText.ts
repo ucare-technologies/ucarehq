@@ -1,8 +1,8 @@
 export function formatDate(dateString: string) {
 	const date = new Date(dateString);
-	const day = date.getDate();
-	const month = date.getMonth();
-	const year = date.getFullYear();
+	const day = date.getUTCDate();
+	const month = date.getUTCMonth();
+	const year = date.getUTCFullYear();
 	return `${day} ${monthNames[month]} ${year}`;
 }
 const monthNames = [

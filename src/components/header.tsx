@@ -50,7 +50,13 @@ const Header: React.FC<{
 				</li>
 			</ul>
 			<TrialLink className={`btn ${styles.trialBtn} ${isTop || menuOpen ? styles.trialHide : ''}`} />
-			<button className={`text-center text-white ${menuButtonClassName}`} onClick={onClick} type='button'>
+			<button
+				className={`text-center text-white ${menuButtonClassName}`}
+				onClick={onClick}
+				type='button'
+				role='menu'
+				area-label='Open Menu'
+			>
 				<div>
 					<HamburgerMenu
 						isOpen={menuOpen}
