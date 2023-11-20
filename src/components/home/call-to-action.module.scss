@@ -1,0 +1,43 @@
+.management {
+	padding: 70px 20px !important;
+	&.container {
+		max-width: 992px;
+	}
+
+	h1 {
+		margin: 10px auto;
+		text-wrap: balance;
+		color: var(--theme-grey);
+		font-weight: 300;
+		font-size: 3rem;
+		@media (min-width: 768px) {
+			font-size: 3.6rem;
+		}
+	}
+	h2 {
+		padding-top: 80px;
+		margin-bottom: 0;
+		font-size: 1.8rem;
+		@media (min-width: 768px) {
+			font-size: 2.4rem;
+		}
+		button {
+			text-decoration: none;
+			background-color: var(--theme-green);
+			color: rgba(255, 255, 255, 0.85);
+			padding: 10px 25px;
+			line-height: 22px;
+			font-size: 14px;
+			font-weight: 700;
+			border-radius: 30px;
+			border: none;
+			letter-spacing: 0px;
+			transition: all 0.4s ease;
+			text-transform: uppercase;
+			&:hover {
+				background-color: var(--theme-green_hover);
+				color: var(--theme-green_text);
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.features {
+	background-color: var(--theme-white);
+	padding-bottom: 3rem;
+	h2 {
+		margin: 10px 0;
+		color: var(--theme-grey);
+		font-weight: 300;
+		font-size: 240%;
+	}
+	p {
+		color: var(--theme-grey);
+		font-size: 18px;
+	}
+}
+.featuresPart {
+	background-color: rgba(var(--theme-greyRGB), 0.025);
+	padding: 50px 0 100px;
+}
+.summary {
+	padding: 40px 50px 0;
+	color: var(--theme-grey);
+	font-size: 18px;
+}

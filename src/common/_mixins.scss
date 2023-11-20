@@ -85,8 +85,3 @@
 .fadeInUp {
 	animation-name: fadeInUp;
 }
-
-@mixin fonts {
-	font-feature-settings: 'liga' 0;
-	font-family: 'lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}

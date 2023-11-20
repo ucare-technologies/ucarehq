@@ -1,0 +1,28 @@
+.hero {
+	height: 100vh;
+	width: 100%;
+}
+.wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title {
+	padding: 0 50px;
+}
+.header {
+	margin: 10px 0;
+	font-size: 43px;
+	font-weight: 300;
+	@media (min-width: 768px) {
+		font-size: 52px;
+	}
+	@media (min-width: 992px) {
+		font-size: 60px;
+	}
+}

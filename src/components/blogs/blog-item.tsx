@@ -1,49 +1,49 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
+import React from 'react';
+
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-import Image from './blog-item-image';
+import { formatDate } from '../../utils/convertDateToText';
+import { handleLinkClick } from '../../utils/handleLinkClick';
+import { CalendarDays } from '../icons/calendar-days';
+import { ChevronRight } from '../icons/chevron-right';
+import * as styles from './blog-item.module.scss';
 
-const BlogItem: React.FC<{
+export const BlogItem: React.FC<{
 	title: string;
 	date: string;
 	slug: string;
 	excerpt: string;
 	imagePath: string | null;
 }> = ({ title, date, slug, excerpt, imagePath }) => {
-	const linkTo = `/blog${slug}`;
+	const linkTo = `/blog/${slug}`;
 	return (
-		<div className='container blog-list'>
+		<div className={`container ${styles.list}`}>
 			<div className='row'>
 				<div className='col-lg-9 mx-auto'>
-					<div className='entry-image'>
-						{imagePath && (
+					{imagePath && (
+						<div className={styles.image}>
 							<Link to={linkTo}>
-								<Image src={imagePath} className='m-0' alt={title} style={{ width: '100%', height: 'auto' }} />
+								<img src={imagePath} className='m-0' alt='img' style={{ width: '100%', height: 'auto' }} />
 							</Link>
-						)}
-					</div>
-					<div className='entry-content'>
+						</div>
+					)}
+					<div className={styles.content}>
 						<article>
-							<h2>
-								<Link to={linkTo} className='blog-title'>
-									{title}
-								</Link>
-							</h2>
+							<Link to={linkTo} className={styles.title}>
+								<h2 dangerouslySetInnerHTML={{ __html: title }} />
+							</Link>
 							<span>
-								<FontAwesomeIcon icon={faCalendarAlt} className='mr-2' />
-								{date}
+								<CalendarDays className='mr-2' />
+								{formatDate(date)}
 							</span>
-							<div className='entry-summary'>
-								<p>{excerpt}</p>
+							<div>
+								<p dangerouslySetInnerHTML={{ __html: excerpt }} onClick={handleLinkClick} />
 							</div>
 						</article>
 						<div>
-							<Link to={linkTo} className='readmore'>
+							<Link to={linkTo} className={styles.arrowBtn}>
 								Read More
-								<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
+								<ChevronRight className='ml-2' />
 							</Link>
 						</div>
 					</div>
@@ -52,4 +52,3 @@ const BlogItem: React.FC<{
 		</div>
 	);
 };
-export default BlogItem;

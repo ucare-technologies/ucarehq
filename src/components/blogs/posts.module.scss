@@ -1,0 +1,14 @@
+@import './common.scss';
+
+.main {
+	@media (max-width: 991.98px) {
+		max-width: 100% !important;
+	}
+	margin-bottom: 50px;
+	@media (min-width: 768px) {
+		margin-bottom: 80px;
+	}
+	@media (min-width: 992px) {
+		margin-bottom: 100px;
+	}
+}

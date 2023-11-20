@@ -1,55 +1,133 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
 
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import PageHeader, { FluidImage } from '../components/page-header';
-import LatestBlog from '../components/blogs/latest-blog';
-import FeatureList from '../components/features/feature-list';
-import AllFeatures from '../components/features/features';
+import { HeadFC, PageProps, graphql } from 'gatsby';
 
-const Features: React.FC = () => {
-	const { file } = useStaticQuery<{ file: FluidImage }>(graphql`
-		query FeaturesHeroQuery {
-			file(relativePath: { eq: "features/hero.jpg" }) {
-				childImageSharp {
-					fluid(quality: 100, maxWidth: 1600) {
-						...GatsbyImageSharpFluid_withWebp
-					}
+import { LatestBlog } from '../components/blogs/latest-blog';
+import { AllFeatures } from '../components/features/all-features';
+import { HeadTags } from '../components/head-tags';
+import { Layout } from '../components/layout';
+import { PageHeader } from '../components/page-header';
+import { Slice, isSlice } from '../components/slice';
+import { trimPTag } from '../utils/trimTag';
+
+const Features: React.FC<PageProps<Queries.FeaturePageQueryQuery>> = props => (
+	<Layout>
+		<main>
+			{(props?.data?.page?.sections ?? []).filter(isSlice).map((item, index) => {
+				if (isBannerSection(item)) {
+					return (
+						<PageHeader
+							key={index}
+							backgroundImageUrl={item.background_image?.file?.url || ''}
+							titleHtml={item.rich_title?.childMarkdownRemark?.html || ''}
+							subTitleHtml={item.description?.childMarkdownRemark?.html || ''}
+						/>
+					);
+				}
+				if (isCardSection(item)) {
+					return item.slice_name === 'all_features' ? (
+						<AllFeatures
+							key={index}
+							descriptionHtml={item.rich_description?.childMarkdownRemark?.html || ''}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								title: c!.title || '',
+								slug: c!.feature_slug || '',
+								image: {
+									className: c!.image_className || '',
+									url: c!.card_image?.file?.url || '',
+								},
+							}))}
+						/>
+					) : (
+						<LatestBlog
+							key={index}
+							title={item.title || ''}
+							cards={(item.cards ?? []).filter(Boolean).map(c => ({
+								title: c!.title || '',
+								tag: c!.tag || '',
+								slug: c!.blog_slug || '',
+								date: c!.blog_date || '',
+								html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
+								image: c!.card_image?.gatsbyImageData,
+							}))}
+						/>
+					);
+				}
+				return null;
+			})}
+		</main>
+	</Layout>
+);
+export default Features;
+export const Head: HeadFC<Queries.FeaturePageQueryQuery> = ({ data }) => (
+	<HeadTags title={data.page?.page_title || 'UCare’s Powerful Features'} />
+);
+
+function isBannerSection(item: Slice): item is Queries.FeaturePageBannerSectionFragment {
+	return item.slice_name === 'feature_page_banner';
+}
+function isCardSection(item: Slice): item is Queries.FeaturePageCardSectionFragment {
+	return item.slice_name === 'latest_blog' || item.slice_name === 'all_features';
+}
+export const pageQuery = graphql`
+	query FeaturePageQuery {
+		page: contentfulPage(slug: { eq: "/features" }) {
+			page_name
+			page_title
+			sections {
+				... on ContentfulBannerSection {
+					...FeaturePageBannerSection
+				}
+				... on ContentfulCardSection {
+					...FeaturePageCardSection
 				}
 			}
 		}
-	`);
-	return (
-		<Layout>
-			<SEO title='UCare’s Powerful Features' />
-			<main>
-				<PageHeader image={file}>
-					<h1>UCare’s Powerful Features</h1>
-					<h3>Church can be complex, but your software doesn’t need to be.</h3>
-				</PageHeader>
-				<div className='container-fluid p-0 m-0 feature-page'>
-					<div className='container text-center my-4'>
-						<div className='row feature-page-body'>
-							<p>
-								UCare provides effective and easy to use all-in-one church management solution that doesn’t cost the
-								world so you can focus on ministry and loving people. Explore each powerful feature to find out how
-								UCare handles the simplest to the most complex needs.
-							</p>
-						</div>
-						<div className='feature-body-list mb-5'>
-							<FeatureList>
-								<AllFeatures />
-							</FeatureList>
-						</div>
-					</div>
-				</div>
-			</main>
-			<div>
-				<LatestBlog />
-			</div>
-		</Layout>
-	);
-};
-export default Features;
+	}
+	fragment FeaturePageBannerSection on ContentfulBannerSection {
+		slice_name
+		rich_title {
+			childMarkdownRemark {
+				html
+			}
+		}
+		description {
+			childMarkdownRemark {
+				html
+			}
+		}
+		background_image {
+			file {
+				url
+			}
+		}
+	}
+	fragment FeaturePageCardSection on ContentfulCardSection {
+		slice_name
+		title
+		rich_description {
+			childMarkdownRemark {
+				html
+			}
+		}
+		cards {
+			title
+			image_className
+			card_image {
+				gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF], layout: CONSTRAINED, quality: 80)
+				file {
+					url
+				}
+			}
+			long_description {
+				childMarkdownRemark {
+					html
+				}
+			}
+			tag
+			blog_date
+			blog_slug
+			feature_slug
+		}
+	}
+`;

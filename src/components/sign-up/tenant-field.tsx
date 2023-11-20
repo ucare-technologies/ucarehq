@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
 
+import { Lock } from '../icons/lock';
 import FieldError from './field-error';
 
 const TenantField: React.FC<{
@@ -27,7 +26,7 @@ const TenantField: React.FC<{
 				<div className={`input-group ${focused ? 'focused' : ''} ${error ? 'error' : ''}`}>
 					<div className='input-group-prepend'>
 						<span className='input-group-text'>
-							<FontAwesomeIcon icon={faLock} />
+							<Lock />
 						</span>
 					</div>
 					<input

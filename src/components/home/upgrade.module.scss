@@ -1,0 +1,54 @@
+.background {
+	position: relative;
+	background-color: #cccccc;
+}
+.hero {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.logo {
+	padding-top: 30px;
+	padding-bottom: 70px;
+	filter: drop-shadow(0 0 5px #000);
+	h1 {
+		margin: 0;
+		font-size: 5vw;
+		@media (min-width: 1200px) {
+			font-size: 4vw;
+		}
+		em {
+			font-style: normal;
+			font-size: 100%;
+			font-weight: 300;
+		}
+		svg {
+			max-width: 100%;
+			width: 80vw;
+			@media (min-width: 992px) {
+				width: 65vw;
+			}
+		}
+	}
+	footer {
+		margin-top: 4vh;
+	}
+}
+.more {
+	border-width: 2px;
+	@media (min-width: 992px) {
+		transform: scale(1.5);
+	}
+}
+.title {
+	p {
+		font-style: normal;
+		font-size: 100%;
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+}

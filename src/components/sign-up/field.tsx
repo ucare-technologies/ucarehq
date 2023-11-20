@@ -3,16 +3,18 @@ import * as React from 'react';
 
 import FieldError from './field-error';
 
-const Field: React.FC<{
-	value: string;
-	error: string | undefined;
-	name: string;
-	placeholder: string;
-	type?: 'text' | 'email' | 'tel';
-	maxLength?: number;
-	onChange: (name: string, value: string) => void;
-	disabled: boolean;
-}> = ({ children, value, name, error, placeholder, type = 'text', maxLength = 255, onChange, disabled }) => {
+const Field: React.FC<
+	React.PropsWithChildren<{
+		value: string;
+		error: string | undefined;
+		name: string;
+		placeholder: string;
+		type?: 'text' | 'email' | 'tel';
+		maxLength?: number;
+		onChange: (name: string, value: string) => void;
+		disabled: boolean;
+	}>
+> = ({ children, value, name, error, placeholder, type = 'text', maxLength = 255, onChange, disabled }) => {
 	const handleChange = React.useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.currentTarget.name, e.currentTarget.value),
 		[onChange]

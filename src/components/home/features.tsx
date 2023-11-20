@@ -1,53 +1,49 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { FilePublicUrl } from '../../types';
-import FadeIn from '../fade-in';
-import FeatureList from '../features/feature-list';
-import {
-	AttendanceFeature,
-	CheckInFeature,
-	EventsFeature,
-	GroupsFeature,
-	ProcessesFeature,
-	GivingFeature,
-} from '../features/features';
+import { Link } from 'gatsby';
 
-export default function Features() {
-	const { heartLogo } = useStaticQuery<{ heartLogo: FilePublicUrl }>(graphql`
-		query FeaturesQuery {
-			heartLogo: file(relativePath: { eq: "ucare-heart2.svg" }) {
-				publicURL
-			}
-		}
-	`);
-	return (
-		<div className='container-fluid features'>
-			<div className='container p-0 text-center'>
-				<FadeIn fade='up'>
-					<h2 className='features-title text-center'>
-						Features you will
-						<img src={heartLogo.publicURL} alt='Logo' />
-					</h2>
-				</FadeIn>
-				<FeatureList>
-					<AttendanceFeature />
-					<CheckInFeature />
-					<EventsFeature />
-					<GroupsFeature />
-					<ProcessesFeature />
-					<GivingFeature />
-				</FeatureList>
-				<FadeIn className='explore-more' fade='up'>
-					<Link to='/features' className='explore-more-btn'>
-						Explore More Features
-						<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
-					</Link>
-				</FadeIn>
-			</div>
+import heartLogo from '../../../content/assets/ucare-heart2.svg';
+import { FadeIn } from '../fade-in';
+import { Feature } from '../features/feature';
+import { ChevronRight } from '../icons/chevron-right';
+import * as styles from './features.module.scss';
+
+export const Features: React.FC<{
+	title: string;
+	buttonText: string;
+	cards: {
+		slug: string;
+		title: string;
+		image: {
+			className: string;
+			url: string;
+		};
+	}[];
+}> = ({ title, buttonText, cards }) => (
+	<div className={`container-fluid ${styles.features}`}>
+		<div className='container p-0 text-center'>
+			<FadeIn fade='up'>
+				<h2 className={`text-center ${styles.title}`}>
+					{title}
+					<img src={heartLogo} alt='UCare Heart Logo' />
+				</h2>
+			</FadeIn>
+			<FadeIn className='row' fade='up'>
+				{cards.map((item, index) =>
+					!item.slug ? null : (
+						<Feature to={item.slug} className={item.image.className} label={item.title} key={index}>
+							<img src={item.image.url} alt={item.title} width='50' height='50' />
+						</Feature>
+					)
+				)}
+			</FadeIn>
+			<FadeIn className={styles.exploreMore} fade='up'>
+				<Link to='/features' className={styles.exploreMoreButton}>
+					{buttonText}
+					<ChevronRight className='ml-2' />
+				</Link>
+			</FadeIn>
 		</div>
-	);
-}
+	</div>
+);

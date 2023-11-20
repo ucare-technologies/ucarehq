@@ -1,35 +1,65 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
+import React from 'react';
+
 import hexToRgba from 'hex-to-rgba';
-import BackgroundImage, { IFluidObject } from 'gatsby-background-image';
 
-import { FluidImageSrc } from '../types';
+import { formatDate } from '../utils/convertDateToText';
+import { trimPTag } from '../utils/trimTag';
+import { CalendarDays } from './icons/calendar-days';
+import * as styles from './page-header.module.scss';
 
-export type FluidObject = IFluidObject;
-export type FluidImage = FluidImageSrc;
-const className = 'container-fluid p-0 page-header';
-const PageHeader: React.FC<{
-	image?: FluidImageSrc | null;
-	align?: string;
-	color?: string;
-}> = ({ children, image, align, color }) => {
-	const rgbaColor = !color ? 'rgba(50, 58, 70, 0.5)' : color.indexOf('#') === 0 ? hexToRgba(color, 0.75) : color;
-	const backgroundImage = `linear-gradient(${rgbaColor}, ${rgbaColor})`;
-	const backgroundColor = color || '#323a46';
-	const inner = <div className='container text-center'>{children}</div>;
-	return !image ? (
-		<header className={className} style={{ backgroundImage, backgroundColor }}>
-			{inner}
-		</header>
-	) : (
-		<BackgroundImage
-			Tag='header'
-			className={className}
-			fluid={[backgroundImage, image.childImageSharp.fluid]}
-			style={{ backgroundPosition: align || 'center center', backgroundColor }}
+export const PageHeader: React.FC<{
+	featureColor?: string;
+	backgroundImageUrl: string;
+	titleHtml: string;
+	subTitleHtml?: string;
+	imageUrl?: string;
+	blog_date?: string;
+}> = ({ featureColor, backgroundImageUrl, titleHtml, subTitleHtml, imageUrl, blog_date }) => {
+	const background = getBackground(featureColor);
+	const backgroundColor = featureColor || 'var(--theme-grey)';
+	// TODO: <GatsbyImage
+	return (
+		<div
+			className={`container-fluid p-0 ${styles.wrapper}`}
+			style={{
+				backgroundImage: `${background},url(${backgroundImageUrl})`,
+			}}
 		>
-			{inner}
-		</BackgroundImage>
+			<div
+				className={styles.imageBackground}
+				style={{
+					backgroundColor: backgroundColor,
+					opacity: featureColor ? 0.5 : 0,
+				}}
+			/>
+
+			<div className={`container text-center ${styles.title}`}>
+				{!!imageUrl && (
+					<div className={styles.bannerIcon}>
+						<div>
+							<img src={imageUrl} alt='Icon' />
+						</div>
+					</div>
+				)}
+
+				{titleHtml && <h1 dangerouslySetInnerHTML={{ __html: trimPTag(titleHtml) }} />}
+				{subTitleHtml && <h3 dangerouslySetInnerHTML={{ __html: trimPTag(subTitleHtml) }} />}
+
+				{!!blog_date && (
+					<div>
+						<CalendarDays className='mr-2' />
+						{formatDate(blog_date)}
+					</div>
+				)}
+			</div>
+		</div>
 	);
 };
-export default PageHeader;
+function getBackground(featureColor: string | undefined) {
+	const rgbaColor = !featureColor
+		? 'rgba(var(--theme-greyRGB), 0.5)'
+		: featureColor.startsWith('#')
+		? hexToRgba(featureColor, 0.5)
+		: featureColor;
+	return `linear-gradient(${rgbaColor}, ${rgbaColor})`;
+}

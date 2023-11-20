@@ -1,0 +1,35 @@
+@mixin gradientBG($angle: 135deg) {
+	background: var(--theme-red);
+	background: linear-gradient(
+		$angle,
+		var(--theme-red) 0%,
+		rgb(255, 72, 134) 40%,
+		rgb(13, 101, 177) 70%,
+		rgb(62, 174, 217) 100%
+	);
+	background-size: 400% 400%;
+	background-position: 50%;
+}
+@mixin animateBG($angle: 135deg) {
+	background: var(--theme-red);
+	background: linear-gradient(
+		$angle,
+		var(--theme-red) 0%,
+		rgb(255, 72, 134) 40%,
+		rgb(13, 101, 177) 70%,
+		rgb(62, 174, 217) 100%
+	);
+	background-size: 400% 400%;
+	animation: gradientBG 15s ease-out infinite;
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

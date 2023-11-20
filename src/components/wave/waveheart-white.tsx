@@ -1,7 +1,12 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-const WaveHeart: React.FC<{ fill?: string; delay: number }> = ({ fill = '#fff', delay }) => {
+import * as styles from './waveheart-white.module.scss';
+
+export const WaveHeart: React.FC<{
+	fill?: string;
+	className: string;
+}> = ({ fill = '#fff', className }) => {
 	const [animate, setAnimate] = React.useState(true);
 	const handleAnimation = React.useCallback(() => {
 		setAnimate(false);
@@ -11,7 +16,7 @@ const WaveHeart: React.FC<{ fill?: string; delay: number }> = ({ fill = '#fff', 
 		<svg
 			viewBox='0 0 200 198.425'
 			enableBackground='new 0 0 200 198.425'
-			className={`wave-heart ${animate ? 'animate' : ''} delay${delay}`}
+			className={`${styles.heart} ${animate ? styles.animate : ''} ${className}`}
 			onAnimationEnd={handleAnimation}
 		>
 			<g>
@@ -55,4 +60,3 @@ const WaveHeart: React.FC<{ fill?: string; delay: number }> = ({ fill = '#fff', 
 		</svg>
 	);
 };
-export default WaveHeart;

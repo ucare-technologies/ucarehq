@@ -1,101 +1,68 @@
-/* eslint-disable camelcase */
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import { FixedImageSrc } from '../../types';
-import FadeIn from '../fade-in';
+import { Link } from 'gatsby';
+import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
 
-interface LatestBlogPosts {
-	posts: {
-		edges: {
-			node: {
-				title: string;
-				date: string;
-				categories: string;
-				slug: string;
-				excerpt: string;
-				featured_image: FixedImageSrc;
-			};
-		}[];
-	};
-}
-const LatestBlog: React.FC = () => {
-	const { posts } = useStaticQuery<LatestBlogPosts>(graphql`
-		query LatestBlogPosts {
-			posts: allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 3) {
-				edges {
-					node {
-						title
-						date(formatString: "D MMMM YYYY")
-						categories
-						slug
-						excerpt(pruneLength: 300)
-						featured_image {
-							childImageSharp {
-								fixed(width: 375, height: 250) {
-									src
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	`);
+import { formatDate } from '../../utils/convertDateToText';
+import { handleLinkClick } from '../../utils/handleLinkClick';
+import { FadeIn } from '../fade-in';
+import { ChevronRight } from '../icons/chevron-right';
+import * as styles from './latest-blog.module.scss';
+
+// TODO: query from blogs instead of having a latest blogs section
+export const LatestBlog: React.FC<{
+	title: string;
+	cards: CardData[];
+}> = ({ title, cards }) => (
+	<div className={`container-fluid text-center ${styles.latestBlog}`}>
+		<FadeIn fade='up'>
+			<div className={`container ${styles.wrapper}`}>
+				<h2>{title}</h2>
+				{cards.map(item => (
+					<LatestBlogCard key={item.slug} {...item} />
+				))}
+			</div>
+		</FadeIn>
+	</div>
+);
+type CardData = {
+	image?: IGatsbyImageData | null;
+	title: string;
+	tag: string;
+	slug: string;
+	date: string;
+	html: string;
+};
+const LatestBlogCard: React.FC<CardData> = ({ image, title, tag, slug, date, html }) => {
+	const cardImage = !!image && getImage(image);
 	return (
-		<div className='container-fluid text-center latest-blog'>
-			<FadeIn fade='up'>
-				<div className='container latest-blog-wrapper'>
-					<h2>Latest From the Blog</h2>
-					{posts.edges.map(
-						({
-							node: {
-								title,
-								date,
-								categories,
-								featured_image: { childImageSharp },
-								excerpt,
-								slug,
-							},
-						}) => (
-							<div className='col-lg-4 pt-3 px-0 align-top blog-out' key={slug}>
-								<div className='blogs text-left'>
-									<Link to={`/blog${slug}`} className='latest-blog'>
-										<div className='thumb'>
-											{childImageSharp ? (
-												<img
-													src={childImageSharp.fixed.src}
-													className='m-0'
-													alt={title}
-													style={{ width: '100%', height: 'auto' }}
-												/>
-											) : null}
-											<span className='cat'>{categories.split(',')[0]}</span>
-										</div>
-										<div className='content'>
-											<h3>{title}</h3>
-											<span className='text-left feature-date'>{date}</span>
-											<div className='blog-excerpt'>
-												<div>{excerpt}</div>
-											</div>
-											<div className='readmore-link'>
-												<span className='read-more'>
-													Read More
-													<FontAwesomeIcon icon={faChevronRight} className='ml-2' />
-												</span>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-						)
-					)}
-				</div>
-			</FadeIn>
+		<div className={`col-lg-4 pt-3 px-0 align-top ${styles.blogOut}`} key={slug}>
+			<div className={`text-left ${styles.blogs}`}>
+				<Link to={`/blog/${slug}`} className={styles.blog}>
+					<div className={styles.thumb}>
+						{!!cardImage && <GatsbyImage image={cardImage} alt={title || ''} loading='lazy' className='m-0' />}
+
+						<span className={styles.cat}>{tag}</span>
+					</div>
+
+					<div className={styles.content}>
+						<h3>{title}</h3>
+						{!!date && <span className={`text-left ${styles.featureDate}`}>{formatDate(date)}</span>}
+
+						<div className={styles.blogExcerpt}>
+							<div dangerouslySetInnerHTML={{ __html: html }} onClick={handleLinkClick} />
+						</div>
+
+						<div className={styles.readMore}>
+							<span>
+								Read More
+								<ChevronRight className='ml-2' />
+							</span>
+						</div>
+					</div>
+				</Link>
+			</div>
 		</div>
 	);
 };
-export default LatestBlog;

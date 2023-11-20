@@ -1,26 +1,24 @@
 import * as React from 'react';
-import { useInView } from 'react-intersection-observer';
-import 'intersection-observer';
 
-function fadeClassName(inView: boolean, fade: string | undefined) {
-	if (inView) {
-		return fade ? `-${fade}` : '';
-	}
-	return '-hidden';
-}
-const FadeIn: React.FC<{
-	as?: 'section';
-	className?: string;
-	fade?: 'left' | 'right' | 'up';
-}> = ({ as, className, fade, children }) => {
+import { useInView } from 'react-intersection-observer';
+
+export const FadeIn: React.FC<
+	React.PropsWithChildren<{
+		as?: 'section';
+		className?: string;
+		fade?: 'left' | 'right' | 'up';
+	}>
+> = ({ as, className, fade, children }) => {
 	const [inViewRef, inView] = useInView({ triggerOnce: true });
 	return React.createElement(
 		as || 'div',
 		{
 			ref: inViewRef,
-			className: `${className || ''} fade-in${fadeClassName(inView, fade)}`,
+			className: `${className || ''} ${fadeClassName(inView, fade)}`,
 		},
 		children
 	);
 };
-export default FadeIn;
+function fadeClassName(inView: boolean, fade: string | undefined) {
+	return inView ? (fade ? `fade-in-${fade}` : 'fade-in') : 'fade-in-hidden';
+}
