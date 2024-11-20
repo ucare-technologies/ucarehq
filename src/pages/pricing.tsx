@@ -36,7 +36,7 @@ const PricingPage: React.FC<PageProps<Queries.PricingPageQuery>> = ({ data }) =>
 										key={index}
 										activeProfiles={item.active_profiles || 500}
 										titleHtml={item.editions_title?.childMarkdownRemark?.html || ''}
-										subTitleHtml={trimPTag(item.sub_title?.childMarkdownRemark?.html)}
+										// subTitleHtml={trimPTag(item.sub_title?.childMarkdownRemark?.html)}
 										subDescriptionHtml={trimPTag(item.sub_description?.childMarkdownRemark?.html)}
 										yearlyDiscountPercentage={item.discount_percentage_yearly || 0}
 										// calendlyUrl={item.calendlyUrl || ''}
@@ -163,11 +163,11 @@ export const pageQuery = graphql`
 				html
 			}
 		}
-		sub_title {
-			childMarkdownRemark {
-				html
-			}
-		}
+		# sub_title {
+		# 	childMarkdownRemark {
+		# 		html
+		# 	}
+		# }
 		sub_description {
 			childMarkdownRemark {
 				html

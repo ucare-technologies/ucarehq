@@ -9,7 +9,7 @@ import { Terms, TermsSelect } from './terms-select';
 export const EditionSelect: React.FC<{
 	activeProfiles: number;
 	titleHtml: string;
-	subTitleHtml: string;
+	// subTitleHtml: string;
 	subDescriptionHtml: string;
 	yearlyDiscountPercentage: number;
 	cards: FeatureCardType[];
