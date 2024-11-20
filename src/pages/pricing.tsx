@@ -168,11 +168,11 @@ export const pageQuery = graphql`
 		# 		html
 		# 	}
 		# }
-		sub_description {
-			childMarkdownRemark {
-				html
-			}
-		}
+		# sub_description {
+		# 	childMarkdownRemark {
+		# 		html
+		# 	}
+		# }
 		discount_percentage_yearly
 		active_profiles
 		# calendlyUrl
