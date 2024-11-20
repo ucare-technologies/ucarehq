@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HeadFC, PageProps, graphql } from 'gatsby';
 
-import { LatestBlog } from '../components/blogs/latest-blog';
+// import { LatestBlog } from '../components/blogs/latest-blog';
 import { AllFeatures } from '../components/features/all-features';
 import { Content } from '../components/features/content';
 import { HeadTags } from '../components/head-tags';
@@ -46,19 +46,19 @@ const Feature: React.FC<PageProps<Queries.FeatureBySlugQuery>> = ({ data }) => {
 									},
 								}))}
 							/>
-						) : (
-							<LatestBlog
-								key={index}
-								title={item.title || ''}
-								cards={(item.cards ?? []).filter(Boolean).map(c => ({
-									title: c!.title || '',
-									tag: c!.tag || '',
-									slug: c!.blog_slug || '',
-									date: c!.blog_date || '',
-									html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
-									image: c!.card_image?.gatsbyImageData,
-								}))}
-							/>
+						) : (null
+							// <LatestBlog
+							// 	key={index}
+							// 	title={item.title || ''}
+							// 	cards={(item.cards ?? []).filter(Boolean).map(c => ({
+							// 		title: c!.title || '',
+							// 		tag: c!.tag || '',
+							// 		slug: c!.blog_slug || '',
+							// 		date: c!.blog_date || '',
+							// 		html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
+							// 		image: c!.card_image?.gatsbyImageData,
+							// 	}))}
+							// />
 						);
 					}
 					return null;

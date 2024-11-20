@@ -6,7 +6,7 @@ import HamburgerMenu from 'react-hamburger-menu';
 
 import ucareHeart from '../../content/assets/ucare-heart.svg';
 import ucareLogo from '../../content/assets/ucare-logo.svg';
-import { BlogLink, FeaturesLink, PricingLink, SignInLink, SupportLink, TrialLink } from './header-links';
+import { UpdatesLink, FeaturesLink, PricingLink, SignInLink, SupportLink, TrialLink } from './header-links';
 import * as styles from './header.module.scss';
 
 const Header: React.FC<{
@@ -43,7 +43,7 @@ const Header: React.FC<{
 					<SupportLink className={navClassName} />
 				</li>
 				<li>
-					<BlogLink className={navClassName} />
+					<UpdatesLink className={navClassName} />
 				</li>
 				<li>
 					<SignInLink className={navClassName} />
@@ -72,7 +72,7 @@ const Header: React.FC<{
 				<FeaturesLink className={styles.sidebarItem} />
 				<PricingLink className={styles.sidebarItem} />
 				<SupportLink className={styles.sidebarItem} />
-				<BlogLink className={styles.sidebarItem} />
+				<UpdatesLink className={styles.sidebarItem} />
 				<SignInLink className={styles.sidebarItem} />
 				<TrialLink className={`${styles.sidebarItem} ${styles.trialsFreeBtn}`} />
 			</div>

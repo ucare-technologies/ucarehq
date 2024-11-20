@@ -59,11 +59,11 @@ body {
 .flipX {
 	transform: scaleX(-1);
 }
-.calendly-overlay .calendly-popup {
-	@media (min-width: 976px) {
-		max-height: 1100px !important;
-	}
-	@media (min-width: 1266px) {
-		max-height: 720px !important;
-	}
-}
+// .calendly-overlay .calendly-popup {
+// 	@media (min-width: 976px) {
+// 		max-height: 1100px !important;
+// 	}
+// 	@media (min-width: 1266px) {
+// 		max-height: 720px !important;
+// 	}
+// }
