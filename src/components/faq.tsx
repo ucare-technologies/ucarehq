@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import * as Scroll from 'react-scroll';
+import Scroll from 'react-scroll';
 
 import { handleLinkClick } from '../utils/handleLinkClick';
 import * as styles from './faq.module.scss';

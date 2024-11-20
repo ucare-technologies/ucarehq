@@ -12,13 +12,13 @@ import { SignUpFieldErrors, SignUpFields, SignUpServerErrors, defaultSignUpField
 import TenantField from './tenant-field';
 import { email, required, tenant } from './validation';
 
-interface GoogleDataLayer {
-	push(vars: Record<string, string>): void;
-}
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare global {
-	const dataLayer: GoogleDataLayer;
-}
+// interface GoogleDataLayer {
+// 	push(vars: Record<string, string>): void;
+// }
+// // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// declare global {
+// 	const dataLayer: GoogleDataLayer;
+// }
 type signUpStage = 'create' | 'submit' | 'ready';
 export default function SignUpForm({ size, edition }: { size: number; edition: string }) {
 	const [stage, setStage] = React.useState('create' as signUpStage);
@@ -93,7 +93,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 								setStage('create');
 							} else {
 								setStage('ready');
-								dataLayer.push({ userId: fields.tenant, event: 'signup_form' }); // TODO: remove from GoogleTags
+								// dataLayer.push({ userId: fields.tenant, event: 'signup_form' }); // TODO: remove from GoogleTags
 							}
 							return true;
 						})

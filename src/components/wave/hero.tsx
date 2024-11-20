@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as Scroll from 'react-scroll';
+import Scroll from 'react-scroll';
 
 import { FadeIn } from '../fade-in';
 import { Play } from '../icons/play';
