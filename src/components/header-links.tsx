@@ -18,10 +18,10 @@ export const SupportLink: React.FC<LinkProps> = ({ className }) => (
 		Support
 	</a>
 );
-export const BlogLink: React.FC<LinkProps> = ({ className }) => (
-	<Link to='/blog' className={className}>
-		Blog
-	</Link>
+export const UpdatesLink: React.FC<LinkProps> = ({ className }) => (
+	<a href='https://help.ucareapp.com/hc/en-us/categories/11296398536207-Updates' className={className}>
+		Updates
+	</a>
 );
 export const SignInLink: React.FC<LinkProps> = ({ className }) => (
 	<a href='https://connect.ucareapp.com/signin' className={className}>

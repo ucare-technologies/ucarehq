@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HeadFC, PageProps, graphql, useStaticQuery } from 'gatsby';
 
-import { LatestBlog } from '../components/blogs/latest-blog';
+// import { LatestBlog } from '../components/blogs/latest-blog';
 import { HeadTags } from '../components/head-tags';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
@@ -40,20 +40,20 @@ const NotFound: React.FC<PageProps<Queries.Page404Query>> = ({ data }) => {
 						);
 					}
 					if (isCardSection(item)) {
-						return (
-							<LatestBlog
-								key={index}
-								title={item.title || ''}
-								cards={(item.cards ?? []).filter(Boolean).map(c => ({
-									title: c!.title || '',
-									tag: c!.tag || '',
-									slug: c!.blog_slug || '',
-									date: c!.blog_date || '',
-									html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
-									image: c!.card_image?.gatsbyImageData,
-								}))}
-							/>
-						);
+					// 	return (
+					// 		<LatestBlog
+					// 			key={index}
+					// 			title={item.title || ''}
+					// 			cards={(item.cards ?? []).filter(Boolean).map(c => ({
+					// 				title: c!.title || '',
+					// 				tag: c!.tag || '',
+					// 				slug: c!.blog_slug || '',
+					// 				date: c!.blog_date || '',
+					// 				html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
+					// 				image: c!.card_image?.gatsbyImageData,
+					// 			}))}
+					// 		/>
+					// 	);
 					}
 					return null;
 				})}
