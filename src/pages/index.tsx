@@ -5,11 +5,12 @@ import { HeadFC, PageProps, graphql } from 'gatsby';
 // import { LatestBlog } from '../components/blogs/latest-blog';
 import { HeadTags } from '../components/head-tags';
 import { CallToAction } from '../components/home/call-to-action';
+import { DataIntelligence } from '../components/home/data-intelligence';
 import { Devices } from '../components/home/devices';
 import { Features } from '../components/home/features';
 import { Hero } from '../components/home/hero';
 import { Ministry } from '../components/home/ministry';
-import { Upgrade } from '../components/home/upgrade';
+// import { Upgrade } from '../components/home/upgrade';
 import { Layout } from '../components/layout';
 import { Slice, isSlice } from '../components/slice';
 import { trimPTag } from '../utils/trimTag';
@@ -18,19 +19,11 @@ const HomePage: React.FC<PageProps<Queries.HomeQueryQuery>> = ({ data }) => (
 	<Layout>
 		{(data?.page?.sections ?? []).filter(isSlice).map((item, index) => {
 			if (isBannerSection(item)) {
-				return item.slice_name === 'home_page_banner' ? (
+				return (
 					<Hero
 						key={index}
 						titleHtml={trimPTag(item.rich_title?.childMarkdownRemark?.html)}
 						backgroundImage={item.background_image?.gatsbyImageData}
-					/>
-				) : (
-					<Upgrade
-						key={index}
-						titleHtml={trimPTag(item.rich_title?.childMarkdownRemark?.html)}
-						backgroundImage={item.background_image?.gatsbyImageData}
-						buttonText={item.button_text || ''}
-						linkTo={item.button_link || ''}
 					/>
 				);
 			}
@@ -73,19 +66,39 @@ const HomePage: React.FC<PageProps<Queries.HomeQueryQuery>> = ({ data }) => (
 							},
 						}))}
 					/>
-				) : (null
-					// <LatestBlog
-					// 	key={index}
-					// 	title={item.section3_title || ''}
-					// 	cards={(item.cards ?? []).filter(Boolean).map(c => ({
-					// 		title: c!.title || '',
-					// 		tag: c!.tag || '',
-					// 		slug: c!.blog_slug || '',
-					// 		date: c!.blog_date || '',
-					// 		html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
-					// 		image: c!.card_image?.gatsbyImageData,
-					// 	}))}
-					// />
+				) : null;
+				// <LatestBlog
+				// 	key={index}
+				// 	title={item.section3_title || ''}
+				// 	cards={(item.cards ?? []).filter(Boolean).map(c => ({
+				// 		title: c!.title || '',
+				// 		tag: c!.tag || '',
+				// 		slug: c!.blog_slug || '',
+				// 		date: c!.blog_date || '',
+				// 		html: trimPTag(c!.long_description?.childMarkdownRemark?.html),
+				// 		image: c!.card_image?.gatsbyImageData,
+				// 	}))}
+				// />
+			}
+			// if (isWave(item)) {
+			// 	return (
+			// 		<Upgrade
+			// 			key={index}
+			// 			titleHtml={trimPTag(item.rich_title?.childMarkdownRemark?.html)}
+			// 			backgroundImage={item.background_image?.gatsbyImageData}
+			// 			buttonText={item.button_text || ''}
+			// 			linkTo={item.button_link || ''}
+			// 		/>
+			// 	);
+			// }
+			if (isDataIntelligence(item)) {
+				return (
+					<DataIntelligence
+						key={index}
+						titleHtml={trimPTag(item.title?.childMarkdownRemark?.html)}
+						descriptionHtml={item.description?.childMarkdownRemark?.html || ''}
+						firstImage={item.first_image?.gatsbyImageData}
+					/>
 				);
 			}
 			if (isDividedSection(item)) {
@@ -110,13 +123,19 @@ export const Head: HeadFC<Queries.HomeQueryQuery> = ({ data }) => (
 );
 
 function isBannerSection(item: Slice): item is Queries.HomeBannerSectionFragment {
-	return item.slice_name === 'home_page_banner' || item.slice_name === 'wave';
+	return item.slice_name === 'home_page_banner';
+}
+function isWave(item: Slice): item is Queries.HomeBannerSectionFragment {
+	return item.slice_name === 'wave';
+}
+function isDataIntelligence(item: Slice): item is Queries.HomeDividedSectionFragment {
+	return item.slice_name === 'ChMS_Meets_Data_Intelligence';
 }
 function isBasicInfoSection(item: Slice): item is Queries.HomeBasicInfoSectionFragment {
 	return item.slice_name === 'try_free';
 }
 function isDividedSection(item: Slice): item is Queries.HomeDividedSectionFragment {
-	return item.slice_name === 'what_you_need';
+	return item.slice_name === 'Available_on_All_Your_Devices';
 }
 function isCardSection(item: Slice): item is Queries.HomeCardSectionFragment {
 	return item.slice_name === 'features' || item.slice_name === 'ministry_covered' || item.slice_name === 'latest_blog';

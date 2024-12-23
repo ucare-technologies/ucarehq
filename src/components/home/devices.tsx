@@ -9,8 +9,8 @@ import * as styles from './devices.module.scss';
 
 export const Devices: React.FC<{
 	firstImage?: IGatsbyImageData | null;
-	secondImageUrl: string;
-	thirdImageUrl: string;
+	secondImageUrl?: string;
+	thirdImageUrl?: string;
 	titleHtml: string;
 	descriptionHtml: string;
 }> = ({ firstImage, secondImageUrl, thirdImageUrl, titleHtml, descriptionHtml }) => {
@@ -37,22 +37,32 @@ export const Devices: React.FC<{
 					</FadeIn>
 				</div>
 			</div>
-			<FadeIn className={`container ${styles.buttons}`} fade='up'>
-				<div className='col-md-6 text-center'>
-					<a href='https://itunes.apple.com/us/app/ucare./id905961512?mt=8' target='_blank' rel='noopener noreferrer'>
-						<img src={secondImageUrl} alt='Download on the AppStore' loading='lazy' className='button-center' />
-					</a>
-				</div>
-				<div className='col-md-6 text-center'>
-					<a
-						href='https://play.google.com/store/apps/details?id=com.ucareapp.app'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						<img src={thirdImageUrl} alt='Get it on Google Play' loading='lazy' className='button-center' />
-					</a>
-				</div>
-			</FadeIn>
+			{!!secondImageUrl && !!thirdImageUrl && (
+				<FadeIn className={`container ${styles.buttons}`} fade='up'>
+					{!!secondImageUrl && (
+						<div className='col-md-6 text-center'>
+							<a
+								href='https://itunes.apple.com/us/app/ucare./id905961512?mt=8'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<img src={secondImageUrl} alt='Download on the AppStore' loading='lazy' className='button-center' />
+							</a>
+						</div>
+					)}
+					{!!thirdImageUrl && (
+						<div className='col-md-6 text-center'>
+							<a
+								href='https://play.google.com/store/apps/details?id=com.ucareapp.app'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<img src={thirdImageUrl} alt='Get it on Google Play' loading='lazy' className='button-center' />
+							</a>
+						</div>
+					)}
+				</FadeIn>
+			)}
 		</section>
 	);
 };
