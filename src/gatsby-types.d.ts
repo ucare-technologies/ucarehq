@@ -4557,17 +4557,9 @@ type ContentfulPlanFeatureSysSortInput = {
 type ContentfulPlansSection = ContentfulEntry & ContentfulReference & Node & {
   readonly active_profiles: Maybe<Scalars['Int']>;
   readonly cards: Maybe<ReadonlyArray<Maybe<ContentfulPriceCard>>>;
-  /** Returns the first child node of type contentfulPlansSectionSubDescriptionTextNode or null if there are no children of given type on this node */
-  readonly childContentfulPlansSectionSubDescriptionTextNode: Maybe<contentfulPlansSectionSubDescriptionTextNode>;
-  /** Returns the first child node of type contentfulPlansSectionSubTitleTextNode or null if there are no children of given type on this node */
-  readonly childContentfulPlansSectionSubTitleTextNode: Maybe<contentfulPlansSectionSubTitleTextNode>;
   /** Returns the first child node of type contentfulPlansSectionTitleTextNode or null if there are no children of given type on this node */
   readonly childContentfulPlansSectionTitleTextNode: Maybe<contentfulPlansSectionTitleTextNode>;
   readonly children: ReadonlyArray<Node>;
-  /** Returns all children nodes filtered by type contentfulPlansSectionSubDescriptionTextNode */
-  readonly childrenContentfulPlansSectionSubDescriptionTextNode: Maybe<ReadonlyArray<Maybe<contentfulPlansSectionSubDescriptionTextNode>>>;
-  /** Returns all children nodes filtered by type contentfulPlansSectionSubTitleTextNode */
-  readonly childrenContentfulPlansSectionSubTitleTextNode: Maybe<ReadonlyArray<Maybe<contentfulPlansSectionSubTitleTextNode>>>;
   /** Returns all children nodes filtered by type contentfulPlansSectionTitleTextNode */
   readonly childrenContentfulPlansSectionTitleTextNode: Maybe<ReadonlyArray<Maybe<contentfulPlansSectionTitleTextNode>>>;
   readonly contentful_id: Scalars['String'];
@@ -4581,8 +4573,6 @@ type ContentfulPlansSection = ContentfulEntry & ContentfulReference & Node & {
   readonly plan_section_name: Maybe<Scalars['String']>;
   readonly slice_name: Maybe<Scalars['String']>;
   readonly spaceId: Maybe<Scalars['String']>;
-  readonly sub_description: Maybe<contentfulPlansSectionSubDescriptionTextNode>;
-  readonly sub_title: Maybe<contentfulPlansSectionSubTitleTextNode>;
   readonly sys: Maybe<ContentfulPlansSectionSys>;
   readonly title: Maybe<contentfulPlansSectionTitleTextNode>;
   readonly updatedAt: Maybe<Scalars['Date']>;
@@ -4652,12 +4642,8 @@ type ContentfulPlansSectionEdge = {
 type ContentfulPlansSectionFieldSelector = {
   readonly active_profiles: InputMaybe<FieldSelectorEnum>;
   readonly cards: InputMaybe<ContentfulPriceCardFieldSelector>;
-  readonly childContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFieldSelector>;
-  readonly childContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFieldSelector>;
   readonly childContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
-  readonly childrenContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFieldSelector>;
-  readonly childrenContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFieldSelector>;
   readonly childrenContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFieldSelector>;
   readonly contentful_id: InputMaybe<FieldSelectorEnum>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
@@ -4670,8 +4656,6 @@ type ContentfulPlansSectionFieldSelector = {
   readonly plan_section_name: InputMaybe<FieldSelectorEnum>;
   readonly slice_name: InputMaybe<FieldSelectorEnum>;
   readonly spaceId: InputMaybe<FieldSelectorEnum>;
-  readonly sub_description: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFieldSelector>;
-  readonly sub_title: InputMaybe<contentfulPlansSectionSubTitleTextNodeFieldSelector>;
   readonly sys: InputMaybe<ContentfulPlansSectionSysFieldSelector>;
   readonly title: InputMaybe<contentfulPlansSectionTitleTextNodeFieldSelector>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
@@ -4680,12 +4664,8 @@ type ContentfulPlansSectionFieldSelector = {
 type ContentfulPlansSectionFilterInput = {
   readonly active_profiles: InputMaybe<IntQueryOperatorInput>;
   readonly cards: InputMaybe<ContentfulPriceCardFilterListInput>;
-  readonly childContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-  readonly childContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
   readonly childContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly childrenContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterListInput>;
-  readonly childrenContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterListInput>;
   readonly childrenContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFilterListInput>;
   readonly contentful_id: InputMaybe<StringQueryOperatorInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
@@ -4698,8 +4678,6 @@ type ContentfulPlansSectionFilterInput = {
   readonly plan_section_name: InputMaybe<StringQueryOperatorInput>;
   readonly slice_name: InputMaybe<StringQueryOperatorInput>;
   readonly spaceId: InputMaybe<StringQueryOperatorInput>;
-  readonly sub_description: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-  readonly sub_title: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
   readonly sys: InputMaybe<ContentfulPlansSectionSysFilterInput>;
   readonly title: InputMaybe<contentfulPlansSectionTitleTextNodeFilterInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
@@ -4753,12 +4731,8 @@ type ContentfulPlansSectionGroupConnection_sumArgs = {
 type ContentfulPlansSectionSortInput = {
   readonly active_profiles: InputMaybe<SortOrderEnum>;
   readonly cards: InputMaybe<ContentfulPriceCardSortInput>;
-  readonly childContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSortInput>;
-  readonly childContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeSortInput>;
   readonly childContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
-  readonly childrenContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSortInput>;
-  readonly childrenContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeSortInput>;
   readonly childrenContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeSortInput>;
   readonly contentful_id: InputMaybe<SortOrderEnum>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
@@ -4771,8 +4745,6 @@ type ContentfulPlansSectionSortInput = {
   readonly plan_section_name: InputMaybe<SortOrderEnum>;
   readonly slice_name: InputMaybe<SortOrderEnum>;
   readonly spaceId: InputMaybe<SortOrderEnum>;
-  readonly sub_description: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSortInput>;
-  readonly sub_title: InputMaybe<contentfulPlansSectionSubTitleTextNodeSortInput>;
   readonly sys: InputMaybe<ContentfulPlansSectionSysSortInput>;
   readonly title: InputMaybe<contentfulPlansSectionTitleTextNodeSortInput>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
@@ -6909,8 +6881,6 @@ type Query = {
   readonly allContentfulPlanFeatureSection: ContentfulPlanFeatureSectionConnection;
   readonly allContentfulPlanFeatureSectionDescriptionTextNode: contentfulPlanFeatureSectionDescriptionTextNodeConnection;
   readonly allContentfulPlansSection: ContentfulPlansSectionConnection;
-  readonly allContentfulPlansSectionSubDescriptionTextNode: contentfulPlansSectionSubDescriptionTextNodeConnection;
-  readonly allContentfulPlansSectionSubTitleTextNode: contentfulPlansSectionSubTitleTextNodeConnection;
   readonly allContentfulPlansSectionTitleTextNode: contentfulPlansSectionTitleTextNodeConnection;
   readonly allContentfulPosts: ContentfulPostsConnection;
   readonly allContentfulPriceCard: ContentfulPriceCardConnection;
@@ -6954,8 +6924,6 @@ type Query = {
   readonly contentfulPlanFeatureSection: Maybe<ContentfulPlanFeatureSection>;
   readonly contentfulPlanFeatureSectionDescriptionTextNode: Maybe<contentfulPlanFeatureSectionDescriptionTextNode>;
   readonly contentfulPlansSection: Maybe<ContentfulPlansSection>;
-  readonly contentfulPlansSectionSubDescriptionTextNode: Maybe<contentfulPlansSectionSubDescriptionTextNode>;
-  readonly contentfulPlansSectionSubTitleTextNode: Maybe<contentfulPlansSectionSubTitleTextNode>;
   readonly contentfulPlansSectionTitleTextNode: Maybe<contentfulPlansSectionTitleTextNode>;
   readonly contentfulPosts: Maybe<ContentfulPosts>;
   readonly contentfulPriceCard: Maybe<ContentfulPriceCard>;
@@ -7209,22 +7177,6 @@ type Query_allContentfulPlansSectionArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<ContentfulPlansSectionSortInput>>>;
-};
-
-
-type Query_allContentfulPlansSectionSubDescriptionTextNodeArgs = {
-  filter: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSortInput>>>;
-};
-
-
-type Query_allContentfulPlansSectionSubTitleTextNodeArgs = {
-  filter: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<contentfulPlansSectionSubTitleTextNodeSortInput>>>;
 };
 
 
@@ -7854,12 +7806,8 @@ type Query_contentfulPlanFeatureSectionDescriptionTextNodeArgs = {
 type Query_contentfulPlansSectionArgs = {
   active_profiles: InputMaybe<IntQueryOperatorInput>;
   cards: InputMaybe<ContentfulPriceCardFilterListInput>;
-  childContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-  childContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
   childContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
-  childrenContentfulPlansSectionSubDescriptionTextNode: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterListInput>;
-  childrenContentfulPlansSectionSubTitleTextNode: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterListInput>;
   childrenContentfulPlansSectionTitleTextNode: InputMaybe<contentfulPlansSectionTitleTextNodeFilterListInput>;
   contentful_id: InputMaybe<StringQueryOperatorInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
@@ -7872,35 +7820,9 @@ type Query_contentfulPlansSectionArgs = {
   plan_section_name: InputMaybe<StringQueryOperatorInput>;
   slice_name: InputMaybe<StringQueryOperatorInput>;
   spaceId: InputMaybe<StringQueryOperatorInput>;
-  sub_description: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-  sub_title: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
   sys: InputMaybe<ContentfulPlansSectionSysFilterInput>;
   title: InputMaybe<contentfulPlansSectionTitleTextNodeFilterInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
-};
-
-
-type Query_contentfulPlansSectionSubDescriptionTextNodeArgs = {
-  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
-  children: InputMaybe<NodeFilterListInput>;
-  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  parent: InputMaybe<NodeFilterInput>;
-  sub_description: InputMaybe<StringQueryOperatorInput>;
-  sys: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSysFilterInput>;
-};
-
-
-type Query_contentfulPlansSectionSubTitleTextNodeArgs = {
-  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
-  children: InputMaybe<NodeFilterListInput>;
-  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  parent: InputMaybe<NodeFilterInput>;
-  sub_title: InputMaybe<StringQueryOperatorInput>;
-  sys: InputMaybe<contentfulPlansSectionSubTitleTextNodeSysFilterInput>;
 };
 
 
@@ -10726,310 +10648,6 @@ type contentfulPlanFeatureSectionDescriptionTextNodeSysSortInput = {
   readonly type: InputMaybe<SortOrderEnum>;
 };
 
-type contentfulPlansSectionSubDescriptionTextNode = Node & {
-  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
-  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
-  readonly children: ReadonlyArray<Node>;
-  /** Returns all children nodes filtered by type MarkdownRemark */
-  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly parent: Maybe<Node>;
-  readonly sub_description: Maybe<Scalars['String']>;
-  readonly sys: Maybe<contentfulPlansSectionSubDescriptionTextNodeSys>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNodeEdge>;
-  readonly group: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNodeGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNode>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection_distinctArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection_groupArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection_maxArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection_minArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeConnection_sumArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeEdge = {
-  readonly next: Maybe<contentfulPlansSectionSubDescriptionTextNode>;
-  readonly node: contentfulPlansSectionSubDescriptionTextNode;
-  readonly previous: Maybe<contentfulPlansSectionSubDescriptionTextNode>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeFieldSelector = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly sub_description: InputMaybe<FieldSelectorEnum>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSysFieldSelector>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeFilterInput = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-  readonly sub_description: InputMaybe<StringQueryOperatorInput>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSysFilterInput>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeFilterListInput = {
-  readonly elemMatch: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeFilterInput>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNodeEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNodeGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<contentfulPlansSectionSubDescriptionTextNode>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection_distinctArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection_groupArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection_maxArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection_minArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubDescriptionTextNodeGroupConnection_sumArgs = {
-  field: contentfulPlansSectionSubDescriptionTextNodeFieldSelector;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeSortInput = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly parent: InputMaybe<NodeSortInput>;
-  readonly sub_description: InputMaybe<SortOrderEnum>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubDescriptionTextNodeSysSortInput>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeSys = {
-  readonly type: Maybe<Scalars['String']>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeSysFieldSelector = {
-  readonly type: InputMaybe<FieldSelectorEnum>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeSysFilterInput = {
-  readonly type: InputMaybe<StringQueryOperatorInput>;
-};
-
-type contentfulPlansSectionSubDescriptionTextNodeSysSortInput = {
-  readonly type: InputMaybe<SortOrderEnum>;
-};
-
-type contentfulPlansSectionSubTitleTextNode = Node & {
-  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
-  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
-  readonly children: ReadonlyArray<Node>;
-  /** Returns all children nodes filtered by type MarkdownRemark */
-  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly parent: Maybe<Node>;
-  readonly sub_title: Maybe<Scalars['String']>;
-  readonly sys: Maybe<contentfulPlansSectionSubTitleTextNodeSys>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<contentfulPlansSectionSubTitleTextNodeEdge>;
-  readonly group: ReadonlyArray<contentfulPlansSectionSubTitleTextNodeGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<contentfulPlansSectionSubTitleTextNode>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeConnection_distinctArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeConnection_groupArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeConnection_maxArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeConnection_minArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeConnection_sumArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-type contentfulPlansSectionSubTitleTextNodeEdge = {
-  readonly next: Maybe<contentfulPlansSectionSubTitleTextNode>;
-  readonly node: contentfulPlansSectionSubTitleTextNode;
-  readonly previous: Maybe<contentfulPlansSectionSubTitleTextNode>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeFieldSelector = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly sub_title: InputMaybe<FieldSelectorEnum>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubTitleTextNodeSysFieldSelector>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeFilterInput = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-  readonly sub_title: InputMaybe<StringQueryOperatorInput>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubTitleTextNodeSysFilterInput>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeFilterListInput = {
-  readonly elemMatch: InputMaybe<contentfulPlansSectionSubTitleTextNodeFilterInput>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<contentfulPlansSectionSubTitleTextNodeEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<contentfulPlansSectionSubTitleTextNodeGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<contentfulPlansSectionSubTitleTextNode>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection_distinctArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection_groupArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection_maxArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection_minArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-
-type contentfulPlansSectionSubTitleTextNodeGroupConnection_sumArgs = {
-  field: contentfulPlansSectionSubTitleTextNodeFieldSelector;
-};
-
-type contentfulPlansSectionSubTitleTextNodeSortInput = {
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly parent: InputMaybe<NodeSortInput>;
-  readonly sub_title: InputMaybe<SortOrderEnum>;
-  readonly sys: InputMaybe<contentfulPlansSectionSubTitleTextNodeSysSortInput>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeSys = {
-  readonly type: Maybe<Scalars['String']>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeSysFieldSelector = {
-  readonly type: InputMaybe<FieldSelectorEnum>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeSysFilterInput = {
-  readonly type: InputMaybe<StringQueryOperatorInput>;
-};
-
-type contentfulPlansSectionSubTitleTextNodeSysSortInput = {
-  readonly type: InputMaybe<SortOrderEnum>;
-};
-
 type contentfulPlansSectionTitleTextNode = Node & {
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
@@ -11433,7 +11051,7 @@ type Page404FooterDetailsFragment = { readonly slice_name: string | null, readon
 type PricingPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PricingPageQuery = { readonly page: { readonly page_title: string | null, readonly sections: ReadonlyArray<{ readonly slice_name: string | null, readonly rich_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly banner_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly background_image: { readonly file: { readonly url: string | null } | null } | null } | { readonly slice_name: string | null, readonly card_section_name: string | null, readonly faq_title: string | null, readonly faq_description: string | null, readonly cards: ReadonlyArray<{ readonly title: string | null, readonly long_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null> | null } | { readonly slice_name: string | null, readonly plan_title: string | null, readonly plan_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_sets: ReadonlyArray<{ readonly title: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly features: ReadonlyArray<{ readonly feature_text: string | null, readonly essentials_text: string | null, readonly essentials_check: boolean | null, readonly growth_text: string | null, readonly growth_check: boolean | null, readonly lighthouse_text: string | null, readonly lighthouse_check: boolean | null } | null> | null } | null> | null } | { readonly slice_name: string | null, readonly discount_percentage_yearly: number | null, readonly active_profiles: number | null, readonly editions_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly sub_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly sub_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly cards: ReadonlyArray<{ readonly card_name: string | null, readonly class_name: string | null, readonly title: string | null, readonly price: number | null, readonly step: number | null, readonly stepPrice: number | null, readonly button_text: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_list: ReadonlyArray<{ readonly feature_text: string | null, readonly bold: boolean | null, readonly addOnText: string | null, readonly newText: string | null } | null> | null } | null> | null } | {} | null> | null } | null };
+type PricingPageQuery = { readonly page: { readonly page_title: string | null, readonly sections: ReadonlyArray<{ readonly slice_name: string | null, readonly rich_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly banner_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly background_image: { readonly file: { readonly url: string | null } | null } | null } | { readonly slice_name: string | null, readonly card_section_name: string | null, readonly faq_title: string | null, readonly faq_description: string | null, readonly cards: ReadonlyArray<{ readonly title: string | null, readonly long_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null> | null } | { readonly slice_name: string | null, readonly plan_title: string | null, readonly plan_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_sets: ReadonlyArray<{ readonly title: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly features: ReadonlyArray<{ readonly feature_text: string | null, readonly essentials_text: string | null, readonly essentials_check: boolean | null, readonly growth_text: string | null, readonly growth_check: boolean | null, readonly lighthouse_text: string | null, readonly lighthouse_check: boolean | null } | null> | null } | null> | null } | { readonly slice_name: string | null, readonly discount_percentage_yearly: number | null, readonly active_profiles: number | null, readonly editions_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly cards: ReadonlyArray<{ readonly card_name: string | null, readonly class_name: string | null, readonly title: string | null, readonly price: number | null, readonly step: number | null, readonly stepPrice: number | null, readonly button_text: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_list: ReadonlyArray<{ readonly feature_text: string | null, readonly bold: boolean | null, readonly addOnText: string | null, readonly newText: string | null } | null> | null } | null> | null } | {} | null> | null } | null };
 
 type PricingPageBannerFragment = { readonly slice_name: string | null, readonly rich_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly banner_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly background_image: { readonly file: { readonly url: string | null } | null } | null };
 
@@ -11441,7 +11059,7 @@ type PricingPageCardFragment = { readonly slice_name: string | null, readonly ca
 
 type PricingPagePlanFeatureFragment = { readonly slice_name: string | null, readonly plan_title: string | null, readonly plan_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_sets: ReadonlyArray<{ readonly title: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly features: ReadonlyArray<{ readonly feature_text: string | null, readonly essentials_text: string | null, readonly essentials_check: boolean | null, readonly growth_text: string | null, readonly growth_check: boolean | null, readonly lighthouse_text: string | null, readonly lighthouse_check: boolean | null } | null> | null } | null> | null };
 
-type PricingPagePlansFragment = { readonly slice_name: string | null, readonly discount_percentage_yearly: number | null, readonly active_profiles: number | null, readonly editions_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly sub_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly sub_description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly cards: ReadonlyArray<{ readonly card_name: string | null, readonly class_name: string | null, readonly title: string | null, readonly price: number | null, readonly step: number | null, readonly stepPrice: number | null, readonly button_text: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_list: ReadonlyArray<{ readonly feature_text: string | null, readonly bold: boolean | null, readonly addOnText: string | null, readonly newText: string | null } | null> | null } | null> | null };
+type PricingPagePlansFragment = { readonly slice_name: string | null, readonly discount_percentage_yearly: number | null, readonly active_profiles: number | null, readonly editions_title: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly cards: ReadonlyArray<{ readonly card_name: string | null, readonly class_name: string | null, readonly title: string | null, readonly price: number | null, readonly step: number | null, readonly stepPrice: number | null, readonly button_text: string | null, readonly description: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly feature_list: ReadonlyArray<{ readonly feature_text: string | null, readonly bold: boolean | null, readonly addOnText: string | null, readonly newText: string | null } | null> | null } | null> | null };
 
 type PrivacyPageQueryVariables = Exact<{ [key: string]: never; }>;
 
