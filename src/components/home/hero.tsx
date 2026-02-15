@@ -22,7 +22,7 @@ export const Hero: React.FC<{
 					<h1
 						className={`${styles.header} text-white`}
 						dangerouslySetInnerHTML={{
-							__html: trimPTag(titleHtml),
+							__html: trimPTag(titleHtml).replace(/\n/g, '<br>'),
 						}}
 					/>
 				</div>

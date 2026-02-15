@@ -16,7 +16,7 @@ export const CallToAction: React.FC<{
 	<FadeIn as='section' className={`container p-0 justify-content-center text-center ${styles.management}`} fade='up'>
 		<h1>{title}</h1>
 		<h2>
-			{subTitle}
+			{subTitle?.replace(/\n/g, '<br>')}
 			{!!linkTo && (
 				<Link to={linkTo} className='ml-2'>
 					<button className='align-text-bottom' type='button'>
