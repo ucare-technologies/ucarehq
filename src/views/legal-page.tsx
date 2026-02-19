@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout } from '../components/layout';
 import { Footer } from '../components/legal/footer';
 import { PageHeader } from '../components/page-header';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const LegalPageView: React.FC<{
 	page: ContentEntry | null;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Content } from '../components/blogs/content';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const BlogPostPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => {
 	const sections = asArray(page?.blog_details_page_sections);

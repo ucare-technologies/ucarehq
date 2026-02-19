@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 import { handleLinkClick } from '../utils/handleLinkClick';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
 
 export const NotFoundPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => (
 	<Layout>

@@ -16,7 +16,7 @@ const title = (page?.page_title as string | null) || 'Church management software
 <BaseLayout title={title}>
 	<Layout client:load>
 		{
-			asArray(page?.sections).map((item) => {
+			asArray(page?.sections).map(item => {
 				if (item.slice_name === 'home_page_banner') {
 					return (
 						<HeroSection

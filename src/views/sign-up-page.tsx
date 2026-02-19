@@ -4,7 +4,7 @@ import { FAQ } from '../components/faq';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
 import SignUpForm from '../components/sign-up/sign-up-form';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 function getQueryStringValues(search: string) {
 	if (!search) {

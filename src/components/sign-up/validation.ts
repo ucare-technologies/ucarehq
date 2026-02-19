@@ -14,9 +14,9 @@ export function tenant(value: string) {
 		(value.length < 3
 			? 'The address is too short, it must be more than 2 characters.'
 			: value.length > 63
-			? 'The address is too long, it must be less than 64 characters.'
-			: !tenantRegex.test(value)
-			? 'The address must start and end with a letter or number, and contain only letters, numbers or dash (-).'
-			: undefined)
+				? 'The address is too long, it must be less than 64 characters.'
+				: !tenantRegex.test(value)
+					? 'The address must start and end with a letter or number, and contain only letters, numbers or dash (-).'
+					: undefined)
 	);
 }

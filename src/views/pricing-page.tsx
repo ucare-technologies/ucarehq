@@ -5,7 +5,7 @@ import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
 import { EditionSelect } from '../components/pricing/edition-select';
 import { FeatureSets } from '../components/pricing/feature-sets';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const PricingPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => {
 	const sections = asArray(page?.sections);

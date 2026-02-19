@@ -3,7 +3,7 @@ import React from 'react';
 import { AllFeatures } from '../components/features/all-features';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const FeaturesPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => (
 	<Layout>

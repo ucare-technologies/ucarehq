@@ -5,7 +5,7 @@ import { Layout } from '../components/layout';
 import { Features } from '../components/wave/features';
 import { Hero } from '../components/wave/hero';
 import { WaveVideo } from '../components/wave/wave-video';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const WavePageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => {
 	const [autoPlay, setAutoPlay] = React.useState(false);

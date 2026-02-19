@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Content } from '../components/features/content';
 import { AllFeatures } from '../components/features/all-features';
+import { Content } from '../components/features/content';
 import { Layout } from '../components/layout';
 import { PageHeader } from '../components/page-header';
-import { asArray, assetUrl, markdownToHtml, markdownToInlineHtml, type ContentEntry } from '../lib/contentful/queries';
+import { type ContentEntry, asArray, assetUrl, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 export const FeatureDetailPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => {
 	const sections = asArray(page?.feature_details_page_sections);

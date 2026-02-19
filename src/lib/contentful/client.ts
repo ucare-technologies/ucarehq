@@ -1,4 +1,4 @@
-import { createClient, type EntryCollection } from 'contentful';
+import { type EntryCollection, createClient } from 'contentful';
 
 type ContentfulRawEntry = {
 	sys: {

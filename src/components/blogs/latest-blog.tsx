@@ -33,31 +33,31 @@ type CardData = {
 	html: string;
 };
 const LatestBlogCard: React.FC<CardData> = ({ imagePath, title, tag, slug, date, html }) => (
-		<div className={`col-lg-4 pt-3 px-0 align-top ${styles.blogOut}`} key={slug}>
-			<div className={`text-left ${styles.blogs}`}>
-				<Link to={`/blog/${slug}`} className={styles.blog}>
-					<div className={styles.thumb}>
-						{!!imagePath && <img src={imagePath} alt={title || ''} loading='lazy' className='m-0' />}
+	<div className={`col-lg-4 pt-3 px-0 align-top ${styles.blogOut}`} key={slug}>
+		<div className={`text-left ${styles.blogs}`}>
+			<Link to={`/blog/${slug}`} className={styles.blog}>
+				<div className={styles.thumb}>
+					{!!imagePath && <img src={imagePath} alt={title || ''} loading='lazy' className='m-0' />}
 
-						<span className={styles.cat}>{tag}</span>
+					<span className={styles.cat}>{tag}</span>
+				</div>
+
+				<div className={styles.content}>
+					<h3>{title}</h3>
+					{!!date && <span className={`text-left ${styles.featureDate}`}>{formatDate(date)}</span>}
+
+					<div className={styles.blogExcerpt}>
+						<div dangerouslySetInnerHTML={{ __html: html }} onClick={handleLinkClick} />
 					</div>
 
-					<div className={styles.content}>
-						<h3>{title}</h3>
-						{!!date && <span className={`text-left ${styles.featureDate}`}>{formatDate(date)}</span>}
-
-						<div className={styles.blogExcerpt}>
-							<div dangerouslySetInnerHTML={{ __html: html }} onClick={handleLinkClick} />
-						</div>
-
-						<div className={styles.readMore}>
-							<span>
-								Read More
-								<ChevronRight className='ml-2' />
-							</span>
-						</div>
+					<div className={styles.readMore}>
+						<span>
+							Read More
+							<ChevronRight className='ml-2' />
+						</span>
 					</div>
-				</Link>
-			</div>
+				</div>
+			</Link>
 		</div>
+	</div>
 );
