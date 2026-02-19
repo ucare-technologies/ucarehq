@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContentPage } from '../../lib/contentful/queries';
+import { LegalPageView } from '../../views/legal-page';
+
+const page = await getContentPage('/legal/terms');
+const title = (page?.page_title as string | null) || 'Terms & Conditions';
+---
+
+<BaseLayout title={title}>
+	<LegalPageView client:load page={page} bannerSliceName='terms_banner' />
+</BaseLayout>

@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
+import { Link } from '../link';
 import * as styles from './feature.module.scss';
 
 export const Feature: React.FC<

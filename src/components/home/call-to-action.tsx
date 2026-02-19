@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import { FadeIn } from '../fade-in';
 import { ChevronRight } from '../icons/chevron-right';
+import { Link } from '../link';
 import * as styles from './call-to-action.module.scss';
 
 export const CallToAction: React.FC<{

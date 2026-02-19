@@ -1,9 +1,8 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import { ChevronRight } from './icons/chevron-right';
+import { Link } from './link';
 
 interface LinkProps {
 	className?: string;

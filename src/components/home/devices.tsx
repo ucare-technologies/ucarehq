@@ -1,21 +1,17 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
-
 import { handleLinkClick } from '../../utils/handleLinkClick';
 import { FadeIn } from '../fade-in';
 import * as styles from './devices.module.scss';
 
 export const Devices: React.FC<{
-	firstImage?: IGatsbyImageData | null;
+	firstImageUrl?: string;
 	secondImageUrl?: string;
 	thirdImageUrl?: string;
 	titleHtml: string;
 	descriptionHtml: string;
-}> = ({ firstImage, secondImageUrl, thirdImageUrl, titleHtml, descriptionHtml }) => {
-	const devicesImage = firstImage && getImage(firstImage);
-	return (
+}> = ({ firstImageUrl, secondImageUrl, thirdImageUrl, titleHtml, descriptionHtml }) => (
 		<section className={`container-fluid ${styles.devices}`}>
 			<div className='row'>
 				<div className={`col-lg-6 col-md-6 ${styles.wrapper}`}>
@@ -31,9 +27,7 @@ export const Devices: React.FC<{
 				</div>
 				<div className={`col-lg-6 col-md-6 ${styles.photo}`}>
 					<FadeIn fade='right'>
-						{!!devicesImage && (
-							<GatsbyImage image={devicesImage} alt='devices' loading='lazy' style={{ overflow: 'visible' }} />
-						)}
+						{!!firstImageUrl && <img src={firstImageUrl} alt='devices' loading='lazy' style={{ overflow: 'visible' }} />}
 					</FadeIn>
 				</div>
 			</div>
@@ -64,5 +58,4 @@ export const Devices: React.FC<{
 				</FadeIn>
 			)}
 		</section>
-	);
-};
+);

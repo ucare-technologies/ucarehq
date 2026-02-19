@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContentPage } from '../../lib/contentful/queries';
+import { WavePageView } from '../../views/wave-page';
+
+const page = await getContentPage('/wave');
+const title = (page?.page_title as string | null) || 'UCare Wave';
+---
+
+<BaseLayout title={title}>
+	<WavePageView client:load page={page} />
+</BaseLayout>

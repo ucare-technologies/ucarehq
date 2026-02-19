@@ -1,58 +1,50 @@
 {
-  "name": "ucarehq",
-  "private": true,
-  "description": "Church Management Software Simplified",
-  "version": "5.0.0",
-  "author": "UCare",
-  "dependencies": {
-    "@fontsource/lato": "^5.1.0",
-    "bootstrap": "^4.6.2",
-    "country-list": "^2.3.0",
-    "gatsby": "^5.14.0",
-    "gatsby-plugin-image": "^3.14.0",
-    "gatsby-plugin-manifest": "^5.14.0",
-    "gatsby-plugin-sass": "^6.14.0",
-    "gatsby-plugin-sharp": "^5.14.0",
-    "gatsby-plugin-typescript": "^5.14.0",
-    "gatsby-source-contentful": "^8.14.0",
-    "gatsby-transformer-remark": "^6.14.0",
-    "gatsby-transformer-sharp": "^5.14.0",
-    "hex-to-rgba": "^2.0.1",
-    "react": "^18.3.1",
-    "react-animate-height": "^3.2.3",
-    "react-dom": "^18.3.1",
-    "react-hamburger-menu": "^1.2.1",
-    "react-intersection-observer": "^9.13.1",
-    "react-range": "^1.10.0",
-    "react-scroll": "^1.9.0",
-    "reading-time": "^2.0.0-1",
-    "sass": "^1.69.5"
-  },
-  "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/country-list": "^2.1.4",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@types/react-hamburger-menu": "^0.0.6",
-    "@types/react-scroll": "^1.8.10",
-    "contentful-import": "^9.4.72",
-    "gatsby-provision-contentful": "^0.0.5",
-    "netlify-cli": "^17.37.2",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.3"
-  },
-  "optionalDependencies": {
-    "@parcel/watcher-linux-x64-glibc": "^2.5.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "serve": "gatsby serve",
-    "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN",
-    "prettier": "prettier --write src/**/*.{js,jsx,json,ts,tsx,scss}"
-  }
+	"name": "ucarehq",
+	"private": true,
+	"description": "Church Management Software Simplified",
+	"version": "6.0.0",
+	"author": "UCare",
+	"dependencies": {
+		"@astrojs/react": "^4.4.2",
+		"@fontsource/lato": "^5.1.0",
+		"astro": "^5.17.2",
+		"bootstrap": "^4.6.2",
+		"country-list": "^2.3.0",
+		"hex-to-rgba": "^2.0.1",
+		"react": "^18.3.1",
+		"react-animate-height": "^3.2.3",
+		"react-dom": "^18.3.1",
+		"react-hamburger-menu": "^1.2.1",
+		"react-intersection-observer": "^9.13.1",
+		"react-range": "^1.10.0",
+		"react-scroll": "^1.9.0",
+		"reading-time": "^2.0.0-1",
+		"sass": "^1.69.5"
+	},
+	"devDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "^4.57.1",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@types/country-list": "^2.1.4",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"@types/react-hamburger-menu": "^0.0.6",
+		"@types/react-scroll": "^1.8.10",
+		"contentful-import": "^9.4.72",
+		"dotenv": "^17.3.1",
+		"netlify-cli": "^17.37.2",
+		"prettier": "^3.3.3",
+		"typescript": "^5.6.3"
+	},
+	"optionalDependencies": {
+		"@parcel/watcher-linux-x64-glibc": "^2.5.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"prettier": "prettier --write src/**/*.{js,jsx,json,ts,tsx,scss,astro}"
+	}
 }

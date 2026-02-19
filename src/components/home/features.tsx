@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import heartLogo from '../../../content/assets/ucare-heart2.svg';
+import { assetPath } from '../../utils/assetPath';
 import { FadeIn } from '../fade-in';
 import { Feature } from '../features/feature';
 import { ChevronRight } from '../icons/chevron-right';
+import { Link } from '../link';
 import * as styles from './features.module.scss';
 
 export const Features: React.FC<{
@@ -26,7 +26,7 @@ export const Features: React.FC<{
 			<FadeIn fade='up'>
 				<h2 className={`text-center ${styles.title}`}>
 					{title}
-					<img src={heartLogo} alt='UCare Heart Logo' />
+					<img src={assetPath(heartLogo)} alt='UCare Heart Logo' />
 				</h2>
 			</FadeIn>
 			<FadeIn className='row' fade='up'>

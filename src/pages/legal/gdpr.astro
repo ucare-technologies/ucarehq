@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContentPage } from '../../lib/contentful/queries';
+import { LegalPageView } from '../../views/legal-page';
+
+const page = await getContentPage('/legal/gdpr');
+const title = (page?.page_title as string | null) || 'General Data Protection Regulations (GDPR)';
+---
+
+<BaseLayout title={title}>
+	<LegalPageView client:load page={page} bannerSliceName='gdpr_banner' />
+</BaseLayout>

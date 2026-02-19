@@ -8,7 +8,6 @@ import { WaveLogo } from './wave-logo';
 import { WaveSection } from './wave-section';
 import { WaveHeart } from './waveheart-white';
 
-// TODO: <GatsbyImage
 export const Features: React.FC<{
 	cards: {
 		name: string;

@@ -1,19 +1,17 @@
 import * as React from 'react';
 
-// import { CalendlyStyle } from '../calendly-style';
-// import { Contact } from './contact';
-import { Editions, FeatureCardType } from './editions';
+import { Editions } from './editions';
+import type { FeatureCardType } from './editions';
 import { Estimate } from './estimate';
-import { Terms, TermsSelect } from './terms-select';
+import { TermsSelect } from './terms-select';
+import type { Terms } from './terms-select';
 
 export const EditionSelect: React.FC<{
 	activeProfiles: number;
 	titleHtml: string;
-	// subTitleHtml: string;
 	subDescriptionHtml: string;
 	yearlyDiscountPercentage: number;
 	cards: FeatureCardType[];
-	// calendlyUrl: string;
 }> = props => {
 	const [terms, setTerms] = React.useState('yearly' as Terms);
 	const [value, setValue] = React.useState(undefined as undefined | number);
@@ -32,14 +30,7 @@ export const EditionSelect: React.FC<{
 				terms={terms}
 				cards={props.cards}
 				yearlyDiscountPercentage={props.yearlyDiscountPercentage}
-				// calendlyUrl={props.calendlyUrl}
 			/>
-			{/* <Contact
-				title={props.subTitleHtml}
-				description={props.subDescriptionHtml}
-				calendlyUrl={props.calendlyUrl}
-			/>
-			<CalendlyStyle /> */}
 		</>
 	);
 };

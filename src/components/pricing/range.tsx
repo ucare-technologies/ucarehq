@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import { Range, getTrackBackground } from 'react-range';
-import { IThumbProps, ITrackProps } from 'react-range/lib/types';
+import type { IThumbProps, ITrackProps } from 'react-range/lib/types';
 
 import * as styles from './range.module.scss';
 

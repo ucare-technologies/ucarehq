@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogPageData } from '../../lib/contentful/queries';
+import { AllPosts } from '../../components/blogs/posts';
+
+const data = await getBlogPageData(1);
+const title = (data.blogsPageData.all_blog_section as string | null) || 'Blog';
+---
+
+<BaseLayout title={title}>
+	<AllPosts client:load blogsPageData={data.blogsPageData} currentPage={data.currentPage} limit={data.limit} />
+</BaseLayout>

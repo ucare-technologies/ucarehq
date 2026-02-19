@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getContentPage } from '../lib/contentful/queries';
+import { HomePageView } from '../views/home-page';
+
+const page = await getContentPage('/');
+const title = (page?.page_title as string | null) || 'Church management software simplified';
+---
+
+<BaseLayout title={title}>
+	<HomePageView client:load page={page} />
+</BaseLayout>

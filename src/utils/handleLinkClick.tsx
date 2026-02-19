@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { navigate } from 'gatsby';
-
 export function handleLinkClick(e: React.MouseEvent<HTMLElement>) {
 	const { target } = e;
 	if (isAnchor(target)) {
@@ -12,7 +10,7 @@ export function handleLinkClick(e: React.MouseEvent<HTMLElement>) {
 		} else if (!e.ctrlKey) {
 			e.preventDefault();
 			e.stopPropagation();
-			navigate(target.pathname);
+			window.location.assign(target.pathname);
 		}
 	}
 }

@@ -8,7 +8,8 @@ import AgreeField from './agree-field';
 import { checkTenant, createTenant } from './api';
 import CountryField from './country-field';
 import Field from './field';
-import { SignUpFieldErrors, SignUpFields, SignUpServerErrors, defaultSignUpFields } from './fields';
+import { defaultSignUpFields } from './fields';
+import type { SignUpFieldErrors, SignUpFields, SignUpServerErrors } from './fields';
 import TenantField from './tenant-field';
 import { email, required, tenant } from './validation';
 

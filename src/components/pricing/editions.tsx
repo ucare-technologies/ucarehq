@@ -1,13 +1,10 @@
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import { Badge } from '../badge';
-// import { BookCall } from './book-call';
-// import { discussEdition } from './discuss-edition';
+import { Link } from '../link';
 import * as styles from './editions.module.scss';
 import { PriceEstimate } from './price-estimate';
-import { Terms } from './terms-select';
+import type { Terms } from './terms-select';
 
 export type FeatureCardType = {
 	className: string;
@@ -29,7 +26,6 @@ export const Editions: React.FC<{
 	yearlyDiscountPercentage: number;
 	terms: Terms;
 	cards: FeatureCardType[];
-	// calendlyUrl: string;
 }> = ({ value, yearlyDiscountPercentage, terms, cards }) => {
 	const people = value || 500;
 	const edition = getEdition(people);
@@ -76,20 +72,13 @@ export const Editions: React.FC<{
 							))}
 						</ul>
 						<footer>
-							{/*discussEdition(item.className, people) ? (
-								<BookCall
-									calendlyUrl={calendlyUrl}
-									className={`btn ${recommend ? `btn-primary` : `btn-outline-secondary`} ${styles.button}`}
-								/>
-							) : (*/}
-								<Link
-									to={`/sign-up/?size=${people}&edition=${item.className}`}
-									className={`btn ${recommend ? `btn-primary` : `btn-outline-secondary`} ${styles.button}`}
-									role='button'
-								>
-									{item.buttonText}
-								</Link>
-							{/*})*/}
+							<Link
+								to={`/sign-up/?size=${people}&edition=${item.className}`}
+								className={`btn ${recommend ? `btn-primary` : `btn-outline-secondary`} ${styles.button}`}
+								role='button'
+							>
+								{item.buttonText}
+							</Link>
 						</footer>
 					</section>
 				);

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getFeatureDetailsPage, getFeatureSlugs } from '../../lib/contentful/queries';
+import { FeatureDetailPageView } from '../../views/feature-detail-page';
+
+export async function getStaticPaths() {
+	const slugs = await getFeatureSlugs();
+	return slugs.map(slug => ({
+		params: { slug },
+	}));
+}
+
+const slug = Astro.params.slug || '';
+const page = await getFeatureDetailsPage(slug);
+const title = (page?.seo_title as string | null) || 'Feature';
+---
+
+<BaseLayout title={title}>
+	<FeatureDetailPageView client:load page={page} />
+</BaseLayout>

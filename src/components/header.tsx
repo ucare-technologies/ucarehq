@@ -1,13 +1,18 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-import HamburgerMenu from 'react-hamburger-menu';
+import HamburgerMenuImport from 'react-hamburger-menu';
 
 import ucareHeart from '../../content/assets/ucare-heart.svg';
 import ucareLogo from '../../content/assets/ucare-logo.svg';
+import { assetPath } from '../utils/assetPath';
 import { UpdatesLink, FeaturesLink, PricingLink, SignInLink, SupportLink, TrialLink } from './header-links';
+import { Link } from './link';
 import * as styles from './header.module.scss';
+
+const HamburgerMenu = (HamburgerMenuImport as unknown as { default?: React.ComponentType<any> }).default
+	? (HamburgerMenuImport as unknown as { default: React.ComponentType<any> }).default
+	: (HamburgerMenuImport as unknown as React.ComponentType<any>);
 
 const Header: React.FC<{
 	isTop: boolean;
@@ -24,12 +29,12 @@ const Header: React.FC<{
 		<nav className={`navbar ${styles.navbar} navbar-expand-lg fixed-top text-center ${bgClassName}`} ref={forwardRef}>
 			<div className={`${styles.brand} ${topOrMenuOpen ? '' : styles.hideBrand}`}>
 				<div className={menuOpen ? styles.openMenu : ''}>
-					<Link className={topOrMenuOpen ? styles.openLogo : styles.hideLogo} to='/'>
-						<img src={ucareLogo} alt='UCare Logo' />
-					</Link>
-					<Link className={topOrMenuOpen ? styles.openHeart : styles.hideHeart} to='/'>
-						<img src={ucareHeart} alt='UCare Logo' />
-					</Link>
+						<Link className={topOrMenuOpen ? styles.openLogo : styles.hideLogo} to='/'>
+							<img src={assetPath(ucareLogo)} alt='UCare Logo' />
+						</Link>
+						<Link className={topOrMenuOpen ? styles.openHeart : styles.hideHeart} to='/'>
+							<img src={assetPath(ucareHeart)} alt='UCare Logo' />
+						</Link>
 				</div>
 			</div>
 			<ul className={`navbar-nav mx-auto d-none d-lg-flex d-xl-flex`}>
@@ -52,11 +57,11 @@ const Header: React.FC<{
 			<TrialLink className={`btn ${styles.trialBtn} ${isTop || menuOpen ? styles.trialHide : ''}`} />
 			<button
 				className={`text-center text-white ${menuButtonClassName}`}
-				onClick={onClick}
-				type='button'
-				role='menu'
-				area-label='Open Menu'
-			>
+					onClick={onClick}
+					type='button'
+					role='menu'
+					aria-label='Open Menu'
+				>
 				<div>
 					<HamburgerMenu
 						isOpen={menuOpen}
