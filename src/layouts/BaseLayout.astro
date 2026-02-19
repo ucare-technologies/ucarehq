@@ -1,6 +1,7 @@
 ---
 import '@fontsource/lato/latin-300.css';
 import '../pages/index.scss';
+import { ClientRouter } from 'astro:transitions';
 
 import { SITE_METADATA } from '../lib/contentful/queries';
 
@@ -19,6 +20,7 @@ const fullTitle = `${title} | ${SITE_METADATA.title}`;
 	<head>
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+		<ClientRouter />
 		<title>{fullTitle}</title>
 		<meta name='description' content={metaDescription} />
 		<meta property='og:title' content={title} />
