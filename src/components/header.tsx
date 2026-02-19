@@ -62,14 +62,7 @@ const Header: React.FC<{
 				aria-label='Open Menu'
 			>
 				<div>
-					<HamburgerMenu
-						isOpen={menuOpen}
-						menuClicked={onClick}
-						width={24}
-						height={12}
-						strokeWidth={2}
-						color={isTop ? '#fff' : '#000'}
-					/>
+					<HamburgerMenu isOpen={menuOpen} width={24} height={12} strokeWidth={2} color={isTop ? '#fff' : '#000'} />
 				</div>
 			</button>
 			<div className={`${styles.sidebar} ${menuOpen ? styles.sidebarActive : styles.sidebarInactive}`}>
