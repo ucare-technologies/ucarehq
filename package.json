@@ -46,7 +46,7 @@
 		"@parcel/watcher-linux-x64-glibc": "^2.5.0"
 	},
 	"engines": {
-		"node": ">=18.0.0"
+		"node": ">=22.0.0"
 	},
 	"scripts": {
 		"dev": "astro dev",
