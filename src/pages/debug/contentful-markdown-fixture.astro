@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+	asArray,
+	getAllBlogsPage,
+	getBlogDetailsPage,
+	getContentPage,
+	markdownToHtml,
+} from '../../lib/contentful/queries';
+
+type Fixture = {
+	label: string;
+	path: string;
+	raw: unknown;
+	renderedHtml: string;
+};
+
+function typeLabel(value: unknown) {
+	if (value === null) {
+		return 'null';
+	}
+	if (Array.isArray(value)) {
+		return 'array';
+	}
+	return typeof value;
+}
+
+function toJson(value: unknown) {
+	try {
+		return JSON.stringify(value, null, 2);
+	} catch {
+		return '[unable to serialize value]';
+	}
+}
+
+function findSection(page: Record<string, any> | null, sliceName: string) {
+	return asArray(page?.sections).find(section => section?.slice_name === sliceName) || null;
+}
+
+const homePage = await getContentPage('/');
+const termsPage = await getContentPage('/legal/terms');
+const gdprPage = await getContentPage('/legal/gdpr');
+const allBlogsPage = await getAllBlogsPage();
+const firstBlog = asArray(allBlogsPage?.single_blogs)[0];
+const firstBlogSlug = typeof firstBlog?.blog_slug === 'string' ? firstBlog.blog_slug : '';
+const blogDetailsPage = firstBlogSlug ? await getBlogDetailsPage(firstBlogSlug) : null;
+
+const homeBanner = findSection(homePage, 'home_page_banner');
+const homeDataIntelligence = findSection(homePage, 'ChMS_Meets_Data_Intelligence');
+const termsFooter = findSection(termsPage, 'footer_details_page_description');
+const gdprFooter = findSection(gdprPage, 'footer_details_page_description');
+const blogBanner = findSection(blogDetailsPage, 'blog_banner');
+const blogDescription = findSection(blogDetailsPage, 'blog_description');
+
+const sampleMarkdown = [
+	'## Remark Sample',
+	'',
+	'This is **bold**, this is *italic*, and this is a [link](https://example.com).',
+	'',
+	'- Item one',
+	'- Item two',
+].join('\n');
+
+const fixtures: Fixture[] = [
+	{
+		label: 'Home Banner Title',
+		path: "page('/').sections[home_page_banner].rich_title",
+		raw: homeBanner?.rich_title ?? null,
+		renderedHtml: markdownToHtml(homeBanner?.rich_title),
+	},
+	{
+		label: 'Home Data Intelligence Description',
+		path: "page('/').sections[ChMS_Meets_Data_Intelligence].description",
+		raw: homeDataIntelligence?.description ?? null,
+		renderedHtml: markdownToHtml(homeDataIntelligence?.description),
+	},
+	{
+		label: 'Legal Terms Footer Description',
+		path: "page('/legal/terms').sections[footer_details_page_description].description",
+		raw: termsFooter?.description ?? null,
+		renderedHtml: markdownToHtml(termsFooter?.description),
+	},
+	{
+		label: 'GDPR Footer Description',
+		path: "page('/legal/gdpr').sections[footer_details_page_description].description",
+		raw: gdprFooter?.description ?? null,
+		renderedHtml: markdownToHtml(gdprFooter?.description),
+	},
+	{
+		label: 'Blog Banner Title',
+		path: `blogDetails('${firstBlogSlug || 'unknown'}').sections[blog_banner].rich_title`,
+		raw: blogBanner?.rich_title ?? null,
+		renderedHtml: markdownToHtml(blogBanner?.rich_title),
+	},
+	{
+		label: 'Blog Description Body',
+		path: `blogDetails('${firstBlogSlug || 'unknown'}').sections[blog_description].description`,
+		raw: blogDescription?.description ?? null,
+		renderedHtml: markdownToHtml(blogDescription?.description),
+	},
+	{
+		label: 'Local Markdown Control Sample',
+		path: 'sampleMarkdown',
+		raw: sampleMarkdown,
+		renderedHtml: markdownToHtml(sampleMarkdown),
+	},
+];
+---
+
+<BaseLayout title='Contentful Markdown Fixture'>
+	<main class='markdown-fixture'>
+		<h1>Contentful Markdown Fixture</h1>
+		<p>
+			This route validates the value path from <code>fetchEntries</code> to <code>markdownToHtml</code> by showing raw field
+			values alongside rendered output.
+		</p>
+
+		{
+			fixtures.map((fixture, index) => (
+				<section class='fixture-card' aria-labelledby={`fixture-${index}`}>
+					<h2 id={`fixture-${index}`}>{fixture.label}</h2>
+					<p class='fixture-path'>
+						Source: <code>{fixture.path}</code>
+					</p>
+					<p class='fixture-type'>
+						Raw type: <code>{typeLabel(fixture.raw)}</code>
+					</p>
+
+					<div class='fixture-grid'>
+						<div>
+							<h3>Raw Value</h3>
+							<pre>{toJson(fixture.raw).replace(/\\n/g, '\n')}</pre>
+						</div>
+						<div>
+							<h3>markdownToHtml</h3>
+							<div class='rendered output' set:html={fixture.renderedHtml || '<em>[empty output]</em>'} />
+						</div>
+					</div>
+				</section>
+			))
+		}
+	</main>
+</BaseLayout>
+
+<style>
+	.markdown-fixture {
+		max-width: 1100px;
+		margin: 40px auto;
+		padding: 0 24px 48px;
+	}
+
+	.fixture-card {
+		border: 1px solid #dde3ec;
+		border-radius: 12px;
+		padding: 20px;
+		margin-top: 20px;
+		background: #fff;
+	}
+
+	.fixture-path,
+	.fixture-type {
+		margin: 0 0 8px;
+	}
+
+	.fixture-grid {
+		display: grid;
+		gap: 16px;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	}
+
+	.fixture-grid h3 {
+		margin: 0 0 8px;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	pre {
+		margin: 0;
+		padding: 12px;
+		overflow: auto;
+		background: #0f172a;
+		color: #f8fafc;
+		border-radius: 8px;
+		font-size: 12px;
+		line-height: 1.4;
+	}
+
+	.output {
+		min-height: 48px;
+		padding: 12px;
+		border-radius: 8px;
+		background: #f8fafc;
+		border: 1px solid #d1dae8;
+	}
+</style>

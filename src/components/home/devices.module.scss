@@ -17,15 +17,14 @@
 }
 .buttons {
 	padding-top: 50px;
+	@media (min-width: 768px) {
+		display: flex;
+	}
 	img {
 		max-width: none;
 		width: 160px;
 		margin: 11px auto;
 		box-sizing: border-box;
-	}
-	& > div,
-	a {
-		display: inline-block;
 	}
 }
 .photo {

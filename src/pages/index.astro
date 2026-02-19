@@ -1,12 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getContentPage } from '../lib/contentful/queries';
-import { HomePageView } from '../views/home-page';
+import { CallToAction } from '../components/home/call-to-action';
+import DevicesSection from '../components/home/devices-section.astro';
+import FeaturesSection from '../components/home/features-section.astro';
+import HeroSection from '../components/home/hero-section.astro';
+import MinistrySection from '../components/home/ministry-section.astro';
+import DataIntelligenceSection from '../components/home/data-intelligence-section.astro';
+import { Layout } from '../components/layout';
+import { asArray, assetUrl, getContentPage, markdownToHtml, markdownToInlineHtml } from '../lib/contentful/queries';
 
 const page = await getContentPage('/');
 const title = (page?.page_title as string | null) || 'Church management software simplified';
 ---
 
 <BaseLayout title={title}>
-	<HomePageView client:load page={page} />
+	<Layout client:load>
+		{
+			asArray(page?.sections).map((item) => {
+				if (item.slice_name === 'home_page_banner') {
+					return (
+						<HeroSection
+							titleHtml={markdownToInlineHtml(item.rich_title)}
+							backgroundImageUrl={assetUrl(item.background_image)}
+						/>
+					);
+				}
+				if (item.slice_name === 'try_free') {
+					return (
+						<CallToAction
+							client:load
+							title={(item.title as string | null) || null}
+							subTitle={(item.sub_title as string | null) || null}
+							buttonText={(item.button_text as string | null) || null}
+							linkTo={(item.button_link as string | null) || null}
+						/>
+					);
+				}
+				if (item.slice_name === 'features') {
+					return (
+						<FeaturesSection
+							title={(item.title as string | null) || ''}
+							buttonText={(item.button_text as string | null) || ''}
+							cards={asArray(item.cards).map(card => ({
+								title: (card.title as string | null) || '',
+								slug: (card.feature_slug as string | null) || '',
+								image: {
+									className: (card.image_className as string | null) || '',
+									url: assetUrl(card.card_image),
+								},
+							}))}
+						/>
+					);
+				}
+				if (item.slice_name === 'ministry_covered') {
+					return (
+						<MinistrySection
+							title={(item.title as string | null) || ''}
+							description={(item.description as string | null) || ''}
+							cards={asArray(item.cards).map(card => ({
+								title: (card.title as string | null) || '',
+								description: (card.description as string | null) || '',
+								image: {
+									url: assetUrl(card.card_image),
+								},
+							}))}
+						/>
+					);
+				}
+				if (item.slice_name === 'ChMS_Meets_Data_Intelligence') {
+					return (
+						<DataIntelligenceSection
+							titleHtml={markdownToInlineHtml(item.title)}
+							descriptionHtml={markdownToHtml(item.description)}
+							firstImageUrl={assetUrl(item.first_image)}
+						/>
+					);
+				}
+				if (item.slice_name === 'Available_on_All_Your_Devices') {
+					return (
+						<DevicesSection
+							titleHtml={markdownToInlineHtml(item.title)}
+							descriptionHtml={markdownToHtml(item.description)}
+							firstImageUrl={assetUrl(item.first_image)}
+							secondImageUrl={assetUrl(item.second_image)}
+							thirdImageUrl={assetUrl(item.third_image)}
+						/>
+					);
+				}
+				return null;
+			})
+		}
+	</Layout>
 </BaseLayout>

@@ -1,6 +1,14 @@
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
+import remarkHtml from 'remark-html';
+
 import { fetchEntries } from './client';
+import type { ContentfulRawEntry } from './client';
 
 export type ContentEntry = Record<string, any>;
+
+const markdownProcessor = remark().use(remarkGfm).use(remarkHtml);
 
 export const SITE_METADATA = {
 	title: 'UCare',
@@ -104,40 +112,202 @@ export function assetUrl(value: any) {
 
 export function markdownToHtml(value: unknown, options?: { wrapParagraphs?: boolean }): string {
 	const wrapParagraphs = options?.wrapParagraphs ?? true;
-	if (typeof value !== 'string') {
+	const normalizedValue = resolveContentfulFieldValue(value);
+	if (isRichTextJsonWrapper(normalizedValue)) {
+		const html = documentToHtmlString(normalizedValue.json);
+		return wrapParagraphs ? html : trimSingleParagraph(html);
+	}
+	if (isRichTextDocument(normalizedValue)) {
+		const html = documentToHtmlString(normalizedValue);
+		return wrapParagraphs ? html : trimSingleParagraph(html);
+	}
+	if (typeof normalizedValue !== 'string') {
 		return '';
 	}
-	const source = value.trim();
+	const source = normalizedValue.trim();
 	if (!source) {
 		return '';
 	}
-	if (source.includes('<') && source.includes('>')) {
-		return source;
+	const html = renderMarkdown(source);
+	if (html) {
+		return wrapParagraphs ? html : trimSingleParagraph(html);
 	}
-
-	const blocks = source.split(/\n{2,}/).map(block => block.trim()).filter(Boolean);
-	const htmlBlocks = blocks.map(block => {
-		const listLines = block.split('\n').filter(line => /^[-*]\s+/.test(line.trim()));
-		if (listLines.length > 0 && listLines.length === block.split('\n').length) {
-			const items = listLines.map(line => `<li>${inlineMarkdown(line.replace(/^[-*]\s+/, '').trim())}</li>`).join('');
-			return `<ul>${items}</ul>`;
-		}
-		const html = inlineMarkdown(block).replace(/\n/g, '<br />');
-		return wrapParagraphs ? `<p>${html}</p>` : html;
-	});
-	return htmlBlocks.join('\n');
+	if (looksLikeHtml(source)) {
+		return wrapParagraphs ? source : trimSingleParagraph(source);
+	}
+	return wrapParagraphs ? escapeTextToParagraph(source) : escapeTextWithBreaks(source);
 }
 
 export function markdownToInlineHtml(value: unknown): string {
 	return markdownToHtml(value, { wrapParagraphs: false });
 }
 
-function inlineMarkdown(value: string) {
-	return value
-		.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-		.replace(/\*(.+?)\*/g, '<em>$1</em>')
-		.replace(/`(.+?)`/g, '<code>$1</code>')
-		.replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2">$1</a>');
+function isRichTextDocument(value: unknown): value is { nodeType: 'document'; content: unknown[] } {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'nodeType' in value &&
+		(value as { nodeType?: unknown }).nodeType === 'document' &&
+		Array.isArray((value as { content?: unknown }).content)
+	);
+}
+
+function isRichTextJsonWrapper(value: unknown): value is { json: { nodeType: 'document'; content: unknown[] } } {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'json' in value &&
+		isRichTextDocument((value as { json?: unknown }).json)
+	);
+}
+
+function trimSingleParagraph(html: string) {
+	const match = html.trim().match(/^<p>([\s\S]*)<\/p>$/);
+	return match ? match[1] : html;
+}
+
+function resolveContentfulFieldValue(value: unknown): unknown {
+	if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+		return value;
+	}
+
+	const localeValue = pickLocaleValue(value);
+	if (localeValue.found) {
+		return localeValue.value;
+	}
+
+	return value;
+}
+
+function pickLocaleValue(value: object): { found: true; value: unknown } | { found: false } {
+	const entries = Object.entries(value as Record<string, unknown>);
+	if (entries.length === 0) {
+		return { found: false };
+	}
+	if (!entries.every(([key]) => isLocaleKey(key))) {
+		return { found: false };
+	}
+
+	const preferredLocales = [
+		import.meta.env.CONTENTFUL_LOCALE,
+		import.meta.env.CONTENTFUL_DEFAULT_LOCALE,
+		'en-US',
+	].filter((locale): locale is string => typeof locale === 'string' && locale.length > 0);
+	const localeMap = value as Record<string, unknown>;
+
+	for (const locale of preferredLocales) {
+		if (locale in localeMap && localeMap[locale] != null) {
+			return { found: true, value: localeMap[locale] };
+		}
+	}
+
+	for (const [, localeValue] of entries) {
+		if (localeValue != null) {
+			return { found: true, value: localeValue };
+		}
+	}
+
+	return { found: true, value: entries[0][1] };
+}
+
+function isLocaleKey(value: string) {
+	return /^[a-z]{2,3}(?:-[A-Z][a-z]{3})?(?:-[A-Z]{2})?$/.test(value);
+}
+
+function looksLikeHtml(value: string) {
+	return /<\/?[a-z][\w-]*(?:\s[^>]*)?>/i.test(value);
+}
+
+function renderMarkdown(source: string) {
+	try {
+		return String(markdownProcessor.processSync(source)).trim();
+	} catch {
+		return '';
+	}
+}
+
+function escapeTextWithBreaks(source: string) {
+	return source
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;')
+		.replace(/\n/g, '<br />');
+}
+
+function escapeTextToParagraph(source: string) {
+	return `<p>${escapeTextWithBreaks(source)}</p>`;
+}
+
+function normalizeAssetUrl(url: string) {
+	return url.startsWith('//') ? `https:${url}` : url;
+}
+
+function hasFields(value: unknown): value is {
+	sys: { type?: string };
+	fields: Record<string, unknown>;
+} {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'fields' in value &&
+		typeof (value as { fields?: unknown }).fields === 'object' &&
+		(value as { fields?: unknown }).fields !== null
+	);
+}
+
+function flattenContentfulValue(value: unknown, seen = new WeakMap<object, unknown>()): unknown {
+	if (Array.isArray(value)) {
+		if (seen.has(value)) {
+			return seen.get(value);
+		}
+		const out: unknown[] = [];
+		seen.set(value, out);
+		for (const item of value) {
+			out.push(flattenContentfulValue(item, seen));
+		}
+		return out;
+	}
+
+	if (value && typeof value === 'object') {
+		const normalized = resolveContentfulFieldValue(value);
+		if (normalized !== value) {
+			return flattenContentfulValue(normalized, seen);
+		}
+
+		if (seen.has(value)) {
+			return seen.get(value);
+		}
+
+		const sysType = (value as { sys?: { type?: string } }).sys?.type;
+		if (sysType === 'Link') {
+			return null;
+		}
+
+		if (hasFields(value)) {
+			const out: Record<string, unknown> = {
+				sys: (value as { sys?: unknown }).sys,
+			};
+			seen.set(value, out);
+			for (const [key, nested] of Object.entries(value.fields)) {
+				out[key] = flattenContentfulValue(nested, seen);
+			}
+			if (sysType === 'Asset' && typeof (out.file as { url?: unknown } | undefined)?.url === 'string') {
+				(out.file as { url: string }).url = normalizeAssetUrl((out.file as { url: string }).url);
+			}
+			return out;
+		}
+
+		const out: Record<string, unknown> = {};
+		seen.set(value, out);
+		for (const [key, nested] of Object.entries(value)) {
+			out[key] = flattenContentfulValue(nested, seen);
+		}
+		return out;
+	}
+
+	return value;
 }
 
 async function fetchEntriesWithFallback<T extends ContentEntry>(
@@ -153,9 +323,9 @@ async function fetchEntriesWithFallback<T extends ContentEntry>(
 	let lastError: unknown;
 	for (const contentType of contentTypes) {
 		try {
-			const entries = await fetchEntries<T>(contentType, options);
+			const entries = await fetchEntries<ContentfulRawEntry>(contentType, options);
 			if (entries.length > 0) {
-				return entries;
+				return entries.map(entry => flattenContentfulValue(entry) as T);
 			}
 		} catch (error) {
 			lastError = error;
