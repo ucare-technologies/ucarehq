@@ -8,7 +8,7 @@ import type { ContentfulRawEntry } from './client';
 
 export type ContentEntry = Record<string, any>;
 
-const markdownProcessor = remark().use(remarkGfm).use(remarkHtml);
+const markdownProcessor = remark().use(remarkGfm).use(remarkHtml, { sanitize: false });
 
 export const SITE_METADATA = {
 	title: 'UCare',
