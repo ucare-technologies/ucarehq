@@ -558,7 +558,7 @@ pre tt:before,
 pre tt:after {
 	content: '';
 }
-@media (max-width: 479.98px) {
+@media (max-width: 575.98px) {
 	html {
 		font-size: 100%;
 	}
@@ -586,10 +586,12 @@ pre tt:after {
 				border-left: 0;
 			}
 			a {
-				color: rgba(255, 255, 255, 0.75);
+				--bs-link-color-rgb: 255, 255, 255;
+				--bs-link-hover-color-rgb: 255, 255, 255;
+				--bs-link-opacity: 0.75;
 				&:hover {
-					color: #fff;
-					text-decoration: none;
+					--bs-link-opacity: 1;
+					text-decoration: underline;
 				}
 			}
 		}

@@ -34,7 +34,7 @@ type CardData = {
 };
 const LatestBlogCard: React.FC<CardData> = ({ imagePath, title, tag, slug, date, html }) => (
 	<div className={`col-lg-4 pt-3 px-0 align-top ${styles.blogOut}`} key={slug}>
-		<div className={`text-left ${styles.blogs}`}>
+		<div className={`text-start ${styles.blogs}`}>
 			<Link to={`/blog/${slug}`} className={styles.blog}>
 				<div className={styles.thumb}>
 					{!!imagePath && <img src={imagePath} alt={title || ''} loading='lazy' className='m-0' />}
@@ -44,7 +44,7 @@ const LatestBlogCard: React.FC<CardData> = ({ imagePath, title, tag, slug, date,
 
 				<div className={styles.content}>
 					<h3>{title}</h3>
-					{!!date && <span className={`text-left ${styles.featureDate}`}>{formatDate(date)}</span>}
+					{!!date && <span className={`text-start ${styles.featureDate}`}>{formatDate(date)}</span>}
 
 					<div className={styles.blogExcerpt}>
 						<div dangerouslySetInnerHTML={{ __html: html }} onClick={handleLinkClick} />
@@ -53,7 +53,7 @@ const LatestBlogCard: React.FC<CardData> = ({ imagePath, title, tag, slug, date,
 					<div className={styles.readMore}>
 						<span>
 							Read More
-							<ChevronRight className='ml-2' />
+							<ChevronRight className='ms-2' />
 						</span>
 					</div>
 				</div>

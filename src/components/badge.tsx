@@ -3,5 +3,5 @@ import * as React from 'react';
 
 type BadgeType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 export const Badge: React.FC<React.PropsWithChildren<{ type?: BadgeType }>> = ({ children, type }) => (
-	<span className={`badge badge-${type}`}>{children}</span>
+	<span className={`badge ${type ? `text-bg-${type}` : ''}`.trim()}>{children}</span>
 );

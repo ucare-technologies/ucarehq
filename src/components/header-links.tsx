@@ -30,7 +30,7 @@ export const SignInLink: React.FC<LinkProps> = ({ className }) => (
 export const TrialLink: React.FC<LinkProps> = ({ className }) => (
 	<Link to='/pricing' className={className}>
 		Free trial
-		<ChevronRight className='ml-2' />
+		<ChevronRight className='ms-2' />
 	</Link>
 );
 export const PricingLink: React.FC<LinkProps> = ({ className }) => (

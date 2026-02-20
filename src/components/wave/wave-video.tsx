@@ -11,7 +11,7 @@ export const WaveVideo: React.FC<{ autoPlay: boolean }> = ({ autoPlay }) => (
 		<div className={`container-fluid p-0 ${styles.container}`}>
 			<div className='container px-0 text-center'>
 				<FadeIn fade='up'>
-					<div className={`embed-responsive e16by9 ${styles.embed}`}>
+					<div className={`ratio ratio-16x9 ${styles.embed}`}>
 						<iframe
 							src={`https://www.youtube.com/embed/PCogeHdoBQI?feature=oembed&autoplay=${
 								autoPlay === false ? 0 : 1

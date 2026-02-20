@@ -17,10 +17,10 @@ export const CallToAction: React.FC<{
 		<h2>
 			{subTitle?.replace(/\n/g, '<br>')}
 			{!!linkTo && (
-				<Link to={linkTo} className='ml-2'>
+				<Link to={linkTo} className='ms-2'>
 					<button className='align-text-bottom' type='button'>
 						{buttonText}
-						<ChevronRight className='ml-2' />
+						<ChevronRight className='ms-2' />
 					</button>
 				</Link>
 			)}

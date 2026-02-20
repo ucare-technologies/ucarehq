@@ -44,6 +44,7 @@ form {
 		}
 	}
 	.form-group {
+		margin-bottom: 1rem;
 		h6 {
 			font-size: 14px;
 			font-weight: 400;
@@ -60,36 +61,36 @@ form {
 	footer {
 		padding: 1em 0;
 	}
-	.input-group-prepend,
-	.input-group-append {
-		.input-group-text {
-			border: 2px solid var(--theme-etch);
-			transition:
-				border-color 0.15s ease-in-out,
-				box-shadow 0.15s ease-in-out;
-			font-size: 13px;
-			color: #555;
-		}
+	.input-group > .input-group-text {
+		border: 2px solid var(--theme-etch);
+		transition:
+			border-color 0.15s ease-in-out,
+			box-shadow 0.15s ease-in-out;
+		font-size: 13px;
+		color: #555;
 	}
-	.input-group-prepend {
-		.input-group-text {
-			border-right-width: 0 !important;
-			border-top-left-radius: 0.5rem;
-			border-bottom-left-radius: 0.5rem;
-		}
+	.input-group > .tenant-prefix {
+		border-right-width: 0 !important;
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
 	}
-	.input-group-append {
-		.input-group-text {
-			border-left-width: 0 !important;
-			border-top-right-radius: 0.5rem;
-			border-bottom-right-radius: 0.5rem;
-		}
+	.input-group > .tenant-suffix {
+		border-left-width: 0 !important;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
 	}
 	.account-address {
 		.form-control,
 		.spinner-border-block {
 			border-left: 0 !important;
 			border-right: 0 !important;
+		}
+		.input-group.focused {
+			box-shadow: 0 0 0 0.25rem rgba(140, 226, 41, 0.25);
+			border-radius: 0.5rem;
+			.form-control:focus {
+				box-shadow: none;
+			}
 		}
 		label:hover,
 		.input-group.focused {

@@ -46,7 +46,7 @@ export const PageHeader: React.FC<{
 
 				{!!blog_date && (
 					<div>
-						<CalendarDays className='mr-2' />
+						<CalendarDays className='me-2' />
 						{formatDate(blog_date)}
 					</div>
 				)}

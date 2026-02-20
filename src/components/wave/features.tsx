@@ -26,7 +26,7 @@ export const Features: React.FC<{
 								<FadeIn fade='up'>
 									<WaveLogo />
 								</FadeIn>
-								<FadeIn fade='up' className={`col-lg-8 mx-auto pt-5 text-left ${styles.textBlock}`}>
+								<FadeIn fade='up' className={`col-lg-8 mx-auto pt-5 text-start ${styles.textBlock}`}>
 									<div dangerouslySetInnerHTML={{ __html: item.descriptionHtml }} />
 								</FadeIn>
 							</div>
@@ -46,9 +46,9 @@ export const Features: React.FC<{
 											<div dangerouslySetInnerHTML={{ __html: item.descriptionHtml }} />
 										</FadeIn>
 									</div>
-									<div className='col-xl-6 pl-xl-5 align-self-center'>
+									<div className='col-xl-6 ps-xl-5 align-self-center'>
 										<FadeIn fade='right'>
-											<img src={item.cardImageUrl} alt={item.title} className={`rounded-lg ${styles.shadow}`} />
+											<img src={item.cardImageUrl} alt={item.title} className={`rounded-3 ${styles.shadow}`} />
 										</FadeIn>
 									</div>
 								</div>
@@ -93,9 +93,9 @@ export const Features: React.FC<{
 											/>
 										</FadeIn>
 									</div>
-									<div className='col-xl-6 pl-xl-5 align-self-center'>
+									<div className='col-xl-6 ps-xl-5 align-self-center'>
 										<FadeIn fade='right'>
-											<img src={item.cardImageUrl} alt={item.title} className={`rounded-lg ${styles.shadow}`} />
+											<img src={item.cardImageUrl} alt={item.title} className={`rounded-3 ${styles.shadow}`} />
 										</FadeIn>
 									</div>
 								</div>
@@ -136,9 +136,9 @@ export const Features: React.FC<{
 											<div dangerouslySetInnerHTML={{ __html: item.descriptionHtml }} />
 										</FadeIn>
 									</div>
-									<div className='col-xl-6 pl-xl-5 align-self-center'>
+									<div className='col-xl-6 ps-xl-5 align-self-center'>
 										<FadeIn fade='right'>
-											<img src={item.cardImageUrl} alt={item.title} className={`rounded-lg ${styles.shadow}`} />
+											<img src={item.cardImageUrl} alt={item.title} className={`rounded-3 ${styles.shadow}`} />
 										</FadeIn>
 									</div>
 								</div>

@@ -1,3 +1,12 @@
+$theme-colors: (
+	'primary': #72be1a,
+	'secondary': #6c757d,
+	'success': #72be1a,
+	'danger': #e10332,
+	'white': #fff,
+	'light': #e5e5e5,
+);
+@import 'bootstrap/scss/bootstrap';
 :root {
 	--theme-red: #e10332;
 	--redH: 347;
@@ -16,25 +25,39 @@
 	--theme-light_grey: #ccc;
 	--theme-etch: #e5e5e5;
 	--theme-white: #fff;
+
+	--bs-link-color: #72be1a;
+	--bs-link-color-rgb: 114, 190, 26;
+	--bs-link-hover-color: #3c640e;
+	--bs-link-hover-color-rgb: 60, 100, 14;
 }
-
-$theme-colors: (
-	'primary': #72be1a,
-	'success': #72be1a,
-	'danger': #e10332,
-	'white': #fff,
-	'light': #e5e5e5,
-);
-@import 'bootstrap/scss/bootstrap';
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-	background: var(--theme-green_hover) !important;
-	border-color: var(--theme-green_hover) !important;
-	color: var(--theme-green_text) !important;
+.btn-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-hover-color: var(--theme-green_text);
 }
-
+a {
+	text-decoration: none;
+}
+a:not(.btn):hover,
+a:not(.btn):focus,
+a:not(.btn):active {
+	text-decoration: underline;
+}
+.form-check-input:focus {
+	border-color: var(--theme-green);
+	box-shadow: 0 0 0 0.25rem rgba(140, 226, 41, 0.25);
+}
+.form-check-input:checked {
+	background-color: var(--theme-green);
+	border-color: var(--theme-green);
+}
+.form-control:focus {
+	box-shadow: 0 0 0 0.25rem rgba(140, 226, 41, 0.25);
+}
+.text-bg-primary,
+.text-bg-success {
+	color: var(--theme-white) !important;
+}
 div {
 	&.attendance-background,
 	&.analytics-background {
@@ -89,45 +112,6 @@ div {
 	& > div {
 		position: relative;
 		width: 100%;
-	}
-}
-
-.embed-responsive {
-	position: relative;
-	display: block;
-	width: 100%;
-	padding: 0;
-	overflow: hidden;
-	&:before {
-		display: block;
-		content: '';
-	}
-
-	.embed-responsive-item,
-	embed,
-	iframe,
-	object,
-	video {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-
-	&.e21by9:before {
-		padding-top: 42.85714%;
-	}
-	&.e16by9:before {
-		padding-top: 56.25%;
-	}
-	&.e4by3:before {
-		padding-top: 75%;
-	}
-	&.e1by1:before {
-		padding-top: 100%;
 	}
 }
 

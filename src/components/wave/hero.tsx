@@ -34,7 +34,7 @@ export const Hero: React.FC<{
 					duration={500}
 					onClick={onPlayClick}
 				>
-					Watch Video <Play className='ml-2' />
+					Watch Video <Play className='ms-2' />
 				</Scroll.Link>
 			</footer>
 		</FadeIn>

@@ -28,7 +28,7 @@ export const Upgrade: React.FC<{
 					<div>
 						{!!linkTo && (
 							<Link className={`btn btn-outline-white btn-lg ${styles.more}`} role='button' to={linkTo}>
-								{buttonText} <Play className='ml-2' />
+								{buttonText} <Play className='ms-2' />
 							</Link>
 						)}
 					</div>

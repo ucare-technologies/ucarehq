@@ -5,11 +5,13 @@
 	"version": "6.0.0",
 	"author": "UCare",
 	"dependencies": {
+		"@astrojs/check": "^0.9.6",
+		"@astrojs/netlify": "^6.6.4",
 		"@astrojs/react": "^4.4.2",
 		"@contentful/rich-text-html-renderer": "^17.1.6",
 		"@fontsource/lato": "^5.1.0",
 		"astro": "^5.17.2",
-		"bootstrap": "^4.6.2",
+		"bootstrap": "^5.3.8",
 		"contentful": "^11.10.4",
 		"country-list": "^2.3.0",
 		"hex-to-rgba": "^2.0.1",
@@ -40,7 +42,7 @@
 		"netlify-cli": "^17.37.2",
 		"prettier": "^3.3.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"typescript": "^5.6.3"
+		"typescript": "^5.9.3"
 	},
 	"optionalDependencies": {
 		"@parcel/watcher-linux-x64-glibc": "^2.5.0"
@@ -51,6 +53,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
+		"check": "astro check",
 		"preview": "astro preview",
 		"prettier": "prettier --write src/**/*.{js,jsx,json,ts,tsx,scss,astro}"
 	}

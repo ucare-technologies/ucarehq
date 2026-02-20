@@ -13,16 +13,16 @@ const AgreeField: React.FC<{
 		[onChange]
 	);
 	return (
-		<div className='custom-control custom-checkbox'>
+		<div className='form-check'>
 			<input
 				id='terms-agree'
 				type='checkbox'
-				className='custom-control-input'
+				className='form-check-input'
 				onChange={handleChange}
 				checked={checked}
 				disabled={disabled}
 			/>
-			<label className='custom-control-label' htmlFor='terms-agree'>
+			<label className='form-check-label' htmlFor='terms-agree'>
 				I agree to the&nbsp;
 				<Link to='/legal/terms'>terms</Link> and&nbsp;
 				<Link to='/legal/privacy'>privacy policy</Link>.

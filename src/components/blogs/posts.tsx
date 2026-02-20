@@ -67,8 +67,8 @@ export const AllPosts: React.FC<BlogPageContextType> = ({ blogsPageData, current
 							<div>
 								{!isLast && (
 									<Link to={nextPage} rel='next'>
-										<button type='button' className={`btn btn-default ${styles.arrowBtn}`}>
-											<ChevronLeft className={`mr-2 ${styles.arrowIcon}`} />
+										<button type='button' className={`btn ${styles.arrowBtn}`}>
+											<ChevronLeft className={`me-2 ${styles.arrowIcon}`} />
 											Older
 										</button>
 									</Link>
@@ -76,9 +76,9 @@ export const AllPosts: React.FC<BlogPageContextType> = ({ blogsPageData, current
 								&nbsp;&nbsp;&nbsp;
 								{!isFirst && (
 									<Link to={prevPage} rel='prev'>
-										<button type='button' className={`btn btn-default ${styles.arrowBtn}`}>
+										<button type='button' className={`btn ${styles.arrowBtn}`}>
 											Newer
-											<ChevronRight className={`ml-2 ${styles.arrowIcon}`} />
+											<ChevronRight className={`ms-2 ${styles.arrowIcon}`} />
 										</button>
 									</Link>
 								)}

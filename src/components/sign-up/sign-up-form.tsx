@@ -113,7 +113,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 				<div className='col-lg-6 m-auto user-input-form'>
 					<AnimateHeight height={stage === 'create' ? 'auto' : 0} animateOpacity easing='ease-in-out'>
 						<form onSubmit={handleSubmit} noValidate>
-							<div className='form-row'>
+							<div className='row g-2'>
 								<div className='form-group col-md-6'>
 									<Field
 										value={fields.firstName}
@@ -193,7 +193,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 							<p>Please wait, we’re just getting your account ready</p>
 							<div className='spinner-border-block pt-4'>
 								<div className='spinner-border text-success' role='status'>
-									<span className='sr-only'>Creating...</span>
+									<span className='visually-hidden'>Creating...</span>
 								</div>
 							</div>
 						</div>
