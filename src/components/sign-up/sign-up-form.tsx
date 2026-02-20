@@ -79,7 +79,7 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 		}
 	}, [isValid, validate]);
 	const handleSubmit = React.useCallback(
-		(e: React.FormEvent<HTMLFormElement>) => {
+		(e: React.SubmitEvent<HTMLFormElement>) => {
 			e.preventDefault();
 			setValidate(true);
 			window.setTimeout(() => {

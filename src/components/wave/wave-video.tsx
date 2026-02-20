@@ -13,11 +13,8 @@ export const WaveVideo: React.FC<{ autoPlay: boolean }> = ({ autoPlay }) => (
 				<FadeIn fade='up'>
 					<div className={`ratio ratio-16x9 ${styles.embed}`}>
 						<iframe
-							src={`https://www.youtube.com/embed/PCogeHdoBQI?feature=oembed&autoplay=${
-								autoPlay === false ? 0 : 1
-							}&start&end&wmode=opaque&loop=0&controls=1&mute=0&showinfo=1&rel=0&modestbranding=0`}
+							src={`https://www.youtube.com/embed/PCogeHdoBQI?feature=oembed&autoplay=${autoPlay === false ? 0 : 1}&start&end&wmode=opaque&loop=0&controls=1&mute=0&showinfo=1&rel=0&modestbranding=0`}
 							title='UCare Wave'
-							frameBorder='0'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 							allowFullScreen
 						></iframe>

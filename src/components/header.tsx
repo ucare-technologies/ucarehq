@@ -17,7 +17,7 @@ const Header: React.FC<{
 	isTop: boolean;
 	menuOpen: boolean;
 	onClick: () => void;
-	forwardRef: React.MutableRefObject<HTMLElement | null>;
+	forwardRef: React.RefObject<HTMLElement | null>;
 }> = ({ isTop, menuOpen, onClick, forwardRef }) => {
 	const navClassName = `${styles.navItem} ${!isTop ? styles.itemDown : ''}`;
 	const menuClassName = menuOpen ? styles.hamburgerActive : styles.hamburgerInactive;
