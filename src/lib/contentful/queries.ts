@@ -9,6 +9,7 @@ import type { ContentfulRawEntry } from './client';
 export type ContentEntry = Record<string, any>;
 
 const markdownProcessor = remark().use(remarkGfm).use(remarkHtml, { sanitize: false });
+type RichTextDocument = Parameters<typeof documentToHtmlString>[0];
 
 export const SITE_METADATA = {
 	title: 'UCare',
@@ -101,8 +102,8 @@ export async function getBlogPageData(pageNumber: number, limit = 5) {
 	};
 }
 
-export function asArray<T>(value: T[] | null | undefined) {
-	return Array.isArray(value) ? value.filter(Boolean) : [];
+export function asArray<T = ContentEntry>(value: unknown): T[] {
+	return Array.isArray(value) ? (value.filter(Boolean) as T[]) : [];
 }
 
 export function assetUrl(value: any) {
@@ -142,17 +143,20 @@ export function markdownToInlineHtml(value: unknown): string {
 	return markdownToHtml(value, { wrapParagraphs: false });
 }
 
-function isRichTextDocument(value: unknown): value is { nodeType: 'document'; content: unknown[] } {
+function isRichTextDocument(value: unknown): value is RichTextDocument {
 	return (
 		typeof value === 'object' &&
 		value !== null &&
 		'nodeType' in value &&
 		(value as { nodeType?: unknown }).nodeType === 'document' &&
+		'data' in value &&
+		typeof (value as { data?: unknown }).data === 'object' &&
+		(value as { data?: unknown }).data !== null &&
 		Array.isArray((value as { content?: unknown }).content)
 	);
 }
 
-function isRichTextJsonWrapper(value: unknown): value is { json: { nodeType: 'document'; content: unknown[] } } {
+function isRichTextJsonWrapper(value: unknown): value is { json: RichTextDocument } {
 	return (
 		typeof value === 'object' &&
 		value !== null &&

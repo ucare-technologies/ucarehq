@@ -19,15 +19,19 @@ const { firstImageUrl, titleHtml, descriptionHtml } = Astro.props;
 		<DataIntelligenceContent client:load titleHtml={titleHtml} descriptionHtml={descriptionHtml} />
 		<div class={`col-lg-6 col-md-6 ${styles.photo}`}>
 			<FadeIn client:load fade='right'>
-				<Picture
-					src={firstImageUrl}
-					alt='Data Intelligence'
-					sizes='(min-width: 768px) 50vw, 100vw'
-					widths={[640, 960, 1280, 1600, 2048]}
-					formats={['avif', 'webp']}
-					loading='lazy'
-					inferSize
-				/>
+				{
+					firstImageUrl && (
+						<Picture
+							src={firstImageUrl}
+							alt='Data Intelligence'
+							sizes='(min-width: 768px) 50vw, 100vw'
+							widths={[640, 960, 1280, 1600, 2048]}
+							formats={['avif', 'webp']}
+							loading='lazy'
+							inferSize
+						/>
+					)
+				}
 			</FadeIn>
 		</div>
 	</div>
