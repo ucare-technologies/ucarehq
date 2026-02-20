@@ -16,7 +16,7 @@
 	}
 	&,
 	&:hover {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 	h3 {
 		color: var(--theme-grey);

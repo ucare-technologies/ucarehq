@@ -28,10 +28,8 @@
 	}
 	a {
 		color: var(--theme-red);
-		text-decoration: none;
 		&:hover {
 			color: var(--theme-red_hover);
-			text-decoration: underline;
 		}
 	}
 }

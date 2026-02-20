@@ -51,7 +51,7 @@ form {
 			opacity: 0.9;
 		}
 		a {
-			text-decoration: none;
+			text-decoration: none !important;
 			color: var(--theme-red);
 			&:hover {
 				color: var(--theme-red_hover);
