@@ -13,6 +13,7 @@ type Fixture = {
 	path: string;
 	raw: unknown;
 	renderedHtml: string;
+	json: string;
 };
 
 function typeLabel(value: unknown) {
@@ -33,7 +34,7 @@ function toJson(value: unknown) {
 	}
 }
 
-function findSection(page: Record<string, any> | null, sliceName: string) {
+function findSection<T extends Record<string, any>>(page: T | null, sliceName: string) {
 	return asArray(page?.sections).find(section => section?.slice_name === sliceName) || null;
 }
 
@@ -67,42 +68,49 @@ const fixtures: Fixture[] = [
 		path: "page('/').sections[home_page_banner].rich_title",
 		raw: homeBanner?.rich_title ?? null,
 		renderedHtml: markdownToHtml(homeBanner?.rich_title),
+		json: JSON.stringify(homeBanner, null, 2),
 	},
 	{
 		label: 'Home Data Intelligence Description',
 		path: "page('/').sections[ChMS_Meets_Data_Intelligence].description",
 		raw: homeDataIntelligence?.description ?? null,
 		renderedHtml: markdownToHtml(homeDataIntelligence?.description),
+		json: JSON.stringify(homeDataIntelligence, null, 2),
 	},
 	{
 		label: 'Legal Terms Footer Description',
 		path: "page('/legal/terms').sections[footer_details_page_description].description",
 		raw: termsFooter?.description ?? null,
 		renderedHtml: markdownToHtml(termsFooter?.description),
+		json: JSON.stringify(termsFooter, null, 2),
 	},
 	{
 		label: 'GDPR Footer Description',
 		path: "page('/legal/gdpr').sections[footer_details_page_description].description",
 		raw: gdprFooter?.description ?? null,
 		renderedHtml: markdownToHtml(gdprFooter?.description),
+		json: JSON.stringify(gdprFooter, null, 2),
 	},
 	{
 		label: 'Blog Banner Title',
 		path: `blogDetails('${firstBlogSlug || 'unknown'}').sections[blog_banner].rich_title`,
 		raw: blogBanner?.rich_title ?? null,
 		renderedHtml: markdownToHtml(blogBanner?.rich_title),
+		json: JSON.stringify(blogBanner, null, 2),
 	},
 	{
 		label: 'Blog Description Body',
 		path: `blogDetails('${firstBlogSlug || 'unknown'}').sections[blog_description].description`,
 		raw: blogDescription?.description ?? null,
 		renderedHtml: markdownToHtml(blogDescription?.description),
+		json: JSON.stringify(blogDescription, null, 2),
 	},
 	{
 		label: 'Local Markdown Control Sample',
 		path: 'sampleMarkdown',
 		raw: sampleMarkdown,
 		renderedHtml: markdownToHtml(sampleMarkdown),
+		json: JSON.stringify(sampleMarkdown, null, 2),
 	},
 ];
 ---
@@ -114,11 +122,20 @@ const fixtures: Fixture[] = [
 			This route validates the value path from <code>fetchEntries</code> to <code>markdownToHtml</code> by showing raw field
 			values alongside rendered output.
 		</p>
+		<details>
+			<summary>View JSON</summary>
+			<pre>{JSON.stringify(firstBlog, null, 2)}</pre>
+		</details>
 
 		{
 			fixtures.map((fixture, index) => (
 				<section class='fixture-card' aria-labelledby={`fixture-${index}`}>
 					<h2 id={`fixture-${index}`}>{fixture.label}</h2>
+					<details>
+						<summary>View JSON</summary>
+						<pre>{fixture.json}</pre>
+					</details>
+					<br />
 					<p class='fixture-path'>
 						Source: <code>{fixture.path}</code>
 					</p>

@@ -1,5 +1,5 @@
-import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
 	site: 'https://ucarehq.com',
@@ -8,4 +8,8 @@ export default defineConfig({
 		domains: ['images.ctfassets.net'],
 	},
 	integrations: [react()],
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'viewport', // Matches Gatsby's default behavior
+	},
 });
