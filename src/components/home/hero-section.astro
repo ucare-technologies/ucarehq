@@ -1,0 +1,29 @@
+---
+import { Picture } from 'astro:assets';
+
+import { HeroContent } from './hero-content';
+import * as styles from './hero.module.scss';
+
+interface Props {
+	backgroundImageUrl?: string;
+	titleHtml: string;
+}
+
+const { backgroundImageUrl, titleHtml } = Astro.props;
+---
+
+{
+	backgroundImageUrl && (
+		<Picture
+			src={backgroundImageUrl}
+			alt='People using UCare'
+			class={styles.hero}
+			sizes='100vw'
+			widths={[640, 960, 1280, 1600]}
+			formats={['avif', 'webp']}
+			loading='eager'
+			inferSize
+		/>
+	)
+}
+<HeroContent titleHtml={titleHtml} />

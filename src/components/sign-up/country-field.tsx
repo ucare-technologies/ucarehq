@@ -17,7 +17,13 @@ const CountryField: React.FC<{
 		<label>
 			Your country*
 			{!noHelp && <small> — so we know where to store your data &amp; format phone numbers</small>}
-			<select className='form-control' onChange={handleChange} name='country' value={value} disabled={disabled}>
+			<select
+				className='form-control form-select'
+				onChange={handleChange}
+				name='country'
+				value={value}
+				disabled={disabled}
+			>
 				{countryNames.map(name => (
 					<option key={name}>{name}</option>
 				))}

@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import { FadeIn } from '../fade-in';
 import { ChevronRight } from '../icons/chevron-right';
+import { Link } from '../link';
 import * as styles from './call-to-action.module.scss';
 
 export const CallToAction: React.FC<{
@@ -18,10 +17,10 @@ export const CallToAction: React.FC<{
 		<h2>
 			{subTitle?.replace(/\n/g, '<br>')}
 			{!!linkTo && (
-				<Link to={linkTo} className='ml-2'>
+				<Link to={linkTo} className='ms-2'>
 					<button className='align-text-bottom' type='button'>
 						{buttonText}
-						<ChevronRight className='ml-2' />
+						<ChevronRight className='ms-2' />
 					</button>
 				</Link>
 			)}

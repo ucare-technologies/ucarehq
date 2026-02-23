@@ -17,7 +17,6 @@ export const PageHeader: React.FC<{
 }> = ({ featureColor, backgroundImageUrl, titleHtml, subTitleHtml, imageUrl, blog_date }) => {
 	const background = getBackground(featureColor);
 	const backgroundColor = featureColor || 'var(--theme-grey)';
-	// TODO: <GatsbyImage
 	return (
 		<div
 			className={`container-fluid p-0 ${styles.wrapper}`}
@@ -47,7 +46,7 @@ export const PageHeader: React.FC<{
 
 				{!!blog_date && (
 					<div>
-						<CalendarDays className='mr-2' />
+						<CalendarDays className='me-2' />
 						{formatDate(blog_date)}
 					</div>
 				)}
@@ -59,7 +58,7 @@ function getBackground(featureColor: string | undefined) {
 	const rgbaColor = !featureColor
 		? 'rgba(var(--theme-greyRGB), 0.5)'
 		: featureColor.startsWith('#')
-		? hexToRgba(featureColor, 0.5)
-		: featureColor;
+			? hexToRgba(featureColor, 0.5)
+			: featureColor;
 	return `linear-gradient(${rgbaColor}, ${rgbaColor})`;
 }

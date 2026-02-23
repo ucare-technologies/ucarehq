@@ -17,27 +17,22 @@
 }
 .buttons {
 	padding-top: 50px;
+	@media (min-width: 768px) {
+		display: flex;
+	}
 	img {
 		max-width: none;
 		width: 160px;
 		margin: 11px auto;
 		box-sizing: border-box;
 	}
-	& > div,
-	a {
-		display: inline-block;
-	}
 }
 .photo {
 	img {
 		height: auto;
 		max-width: 100%;
-		@media (min-width: 768px) {
-			max-width: 200% !important;
-			width: unset;
-		}
 	}
-	@media (max-width: 479.98px) {
+	@media (max-width: 575.98px) {
 		padding: 0;
 	}
 }

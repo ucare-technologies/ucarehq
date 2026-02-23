@@ -1,0 +1,43 @@
+---
+import { FadeIn } from '../fade-in';
+import * as styles from './ministry.module.scss';
+
+interface Props {
+	title: string;
+	description: string;
+	cards: {
+		title: string;
+		description: string;
+		image: {
+			url: string;
+		};
+	}[];
+}
+
+const { title, description, cards } = Astro.props;
+---
+
+<section class={`container-fluid ${styles.ministry}`}>
+	<div class='container p-0 text-center'>
+		<FadeIn client:load className='row text-center' fade='up'>
+			<div class='col-md-12'>
+				<h2>{title}</h2>
+				<p>{description}</p>
+			</div>
+		</FadeIn>
+
+		<FadeIn client:load className='row text-center' fade='up'>
+			{
+				cards.map(item => (
+					<div class={`col-md-4 ${styles.column}`}>
+						<div class={styles.circle}>
+							<img src={item.image.url} alt={item.title} />
+						</div>
+						<h5>{item.title}</h5>
+						<h6>{item.description}</h6>
+					</div>
+				))
+			}
+		</FadeIn>
+	</div>
+</section>

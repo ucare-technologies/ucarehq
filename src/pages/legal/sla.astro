@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getContentPage } from '../../lib/contentful/queries';
+import { LegalPageView } from '../../views/legal-page';
+
+const page = await getContentPage('/legal/sla');
+const title = (page?.page_title as string | null) || 'Service Level Agreement (SLA)';
+---
+
+<BaseLayout title={title}>
+	<LegalPageView client:load page={page} bannerSliceName='sla_banner' />
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import heartLogo from '../../../content/assets/ucare-heart2.svg';
+import { FadeIn } from '../fade-in';
+import { Feature } from '../features/feature';
+import { ChevronRight } from '../icons/chevron-right';
+import { Link } from '../link';
+import * as styles from './features.module.scss';
+
+interface Props {
+	title: string;
+	buttonText: string;
+	cards: {
+		slug: string;
+		title: string;
+		image: {
+			className: string;
+			url: string;
+		};
+	}[];
+}
+
+const { title, buttonText, cards } = Astro.props;
+---
+
+<div class={`container-fluid ${styles.features}`}>
+	<div class='container p-0 text-center'>
+		<FadeIn client:load fade='up'>
+			<h2 class={`text-center ${styles.title}`}>
+				{title}
+				<img src={heartLogo.src} alt='UCare Heart Logo' />
+			</h2>
+		</FadeIn>
+		<FadeIn client:load className='row' fade='up'>
+			{
+				cards.map(item =>
+					!item.slug ? null : (
+						<Feature to={item.slug} className={item.image.className} label={item.title}>
+							<img src={item.image.url} alt={item.title} width={50} height={50} />
+						</Feature>
+					)
+				)
+			}
+		</FadeIn>
+		<FadeIn client:load className={styles.exploreMore} fade='up'>
+			<Link to='/features' className={styles.exploreMoreButton}>
+				{buttonText}
+				<ChevronRight className='ms-2' />
+			</Link>
+		</FadeIn>
+	</div>
+</div>

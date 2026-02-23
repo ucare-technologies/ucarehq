@@ -1,0 +1,42 @@
+---
+import '@fontsource/lato/latin-300.css';
+import '../pages/index.scss';
+import { ClientRouter } from 'astro:transitions';
+
+import { SITE_METADATA } from '../lib/contentful/queries';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+const metaDescription = description || SITE_METADATA.description;
+const fullTitle = `${title} | ${SITE_METADATA.title}`;
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+		<ClientRouter />
+		<title>{fullTitle}</title>
+		<meta name='description' content={metaDescription} />
+		<meta property='og:title' content={title} />
+		<meta property='og:description' content={metaDescription} />
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content={Astro.url.href} />
+		<meta name='twitter:card' content='summary' />
+		<meta name='twitter:creator' content={SITE_METADATA.author} />
+		<meta name='twitter:title' content={title} />
+		<meta name='twitter:description' content={metaDescription} />
+		<meta name='theme-color' content='#fff' />
+		<link rel='icon' href='/content/assets/favicon/favicon.ico' />
+		<link rel='apple-touch-icon' href='/content/assets/favicon/apple-touch-icon.png' />
+		<link rel='manifest' href='/content/assets/favicon/site.webmanifest' />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

@@ -14,29 +14,29 @@ export const TermsSelect: React.FC<{
 	);
 	return (
 		<div className='text-center my-4'>
-			<div className='custom-control custom-radio custom-control-inline'>
+			<div className='form-check form-check-inline'>
 				<input
 					type='radio'
 					id='monthlyOption'
-					className='custom-control-input'
+					className='form-check-input'
 					checked={value === 'monthly'}
 					value='monthly'
 					onChange={handleChange}
 				/>
-				<label className='custom-control-label' htmlFor='monthlyOption'>
+				<label className='form-check-label' htmlFor='monthlyOption'>
 					Billed Monthly
 				</label>
 			</div>
-			<div className='custom-control custom-radio custom-control-inline'>
+			<div className='form-check form-check-inline'>
 				<input
 					type='radio'
 					id='yearlyOption'
-					className='custom-control-input'
+					className='form-check-input'
 					checked={value === 'yearly'}
 					value='yearly'
 					onChange={handleChange}
 				/>
-				<label className='custom-control-label' htmlFor='yearlyOption'>
+				<label className='form-check-label' htmlFor='yearlyOption'>
 					Billed Annually{' '}
 					<Badge type={value === 'yearly' ? 'success' : 'light'}>{`SAVE ${yearlyDiscountPercentage}%`}</Badge>
 				</label>

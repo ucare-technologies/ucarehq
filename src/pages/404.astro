@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getContentPage } from '../lib/contentful/queries';
+import { NotFoundPageView } from '../views/not-found-page';
+
+const page = await getContentPage('/not-found');
+const title = (page?.page_title as string | null) || '404';
+---
+
+<BaseLayout title={title}>
+	<NotFoundPageView client:load page={page} />
+</BaseLayout>

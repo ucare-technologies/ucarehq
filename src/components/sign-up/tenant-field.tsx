@@ -24,11 +24,9 @@ const TenantField: React.FC<{
 			<small> — this is where you will sign-in</small>
 			<div>
 				<div className={`input-group ${focused ? 'focused' : ''} ${error ? 'error' : ''}`}>
-					<div className='input-group-prepend'>
-						<span className='input-group-text'>
-							<Lock />
-						</span>
-					</div>
+					<span className='input-group-text tenant-prefix'>
+						<Lock />
+					</span>
 					<input
 						className='form-control'
 						id='tenant'
@@ -47,13 +45,11 @@ const TenantField: React.FC<{
 					{validating && (
 						<div className='spinner-border-block'>
 							<div className='spinner-border spinner-border-sm' role='status'>
-								<span className='sr-only'>Loading...</span>
+								<span className='visually-hidden'>Loading...</span>
 							</div>
 						</div>
 					)}
-					<div className='input-group-append'>
-						<span className='input-group-text'>.ucareapp.com</span>
-					</div>
+					<span className='input-group-text tenant-suffix'>.ucareapp.com</span>
 				</div>
 				<FieldError>{error}</FieldError>
 			</div>

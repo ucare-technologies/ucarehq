@@ -8,7 +8,7 @@
 	"bracketSpacing": true,
 	"jsxSingleQuote": true,
 	"arrowParens": "avoid",
-	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+	"plugins": ["prettier-plugin-astro", "@trivago/prettier-plugin-sort-imports"],
 	"importOrder": [
 		"(^react$|^react/(.*)$)",
 		"<THIRD_PARTY_MODULES>",
@@ -18,5 +18,13 @@
 		".(css|scss)"
 	],
 	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true
+	"importOrderSortSpecifiers": true,
+	"overrides": [
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		}
+	]
 }

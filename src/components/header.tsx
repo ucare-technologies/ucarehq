@@ -1,19 +1,23 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-import HamburgerMenu from 'react-hamburger-menu';
+import HamburgerMenuImport from 'react-hamburger-menu';
 
 import ucareHeart from '../../content/assets/ucare-heart.svg';
 import ucareLogo from '../../content/assets/ucare-logo.svg';
-import { UpdatesLink, FeaturesLink, PricingLink, SignInLink, SupportLink, TrialLink } from './header-links';
+import { FeaturesLink, PricingLink, SignInLink, SupportLink, TrialLink, UpdatesLink } from './header-links';
 import * as styles from './header.module.scss';
+import { Link } from './link';
+
+const HamburgerMenu = (HamburgerMenuImport as unknown as { default?: React.ComponentType<any> }).default
+	? (HamburgerMenuImport as unknown as { default: React.ComponentType<any> }).default
+	: (HamburgerMenuImport as unknown as React.ComponentType<any>);
 
 const Header: React.FC<{
 	isTop: boolean;
 	menuOpen: boolean;
 	onClick: () => void;
-	forwardRef: React.MutableRefObject<HTMLElement | null>;
+	forwardRef: React.RefObject<HTMLElement | null>;
 }> = ({ isTop, menuOpen, onClick, forwardRef }) => {
 	const navClassName = `${styles.navItem} ${!isTop ? styles.itemDown : ''}`;
 	const menuClassName = menuOpen ? styles.hamburgerActive : styles.hamburgerInactive;
@@ -25,10 +29,10 @@ const Header: React.FC<{
 			<div className={`${styles.brand} ${topOrMenuOpen ? '' : styles.hideBrand}`}>
 				<div className={menuOpen ? styles.openMenu : ''}>
 					<Link className={topOrMenuOpen ? styles.openLogo : styles.hideLogo} to='/'>
-						<img src={ucareLogo} alt='UCare Logo' />
+						<img src={ucareLogo.src} alt='UCare Logo' />
 					</Link>
 					<Link className={topOrMenuOpen ? styles.openHeart : styles.hideHeart} to='/'>
-						<img src={ucareHeart} alt='UCare Logo' />
+						<img src={ucareHeart.src} alt='UCare Heart Logo' />
 					</Link>
 				</div>
 			</div>
@@ -55,12 +59,12 @@ const Header: React.FC<{
 				onClick={onClick}
 				type='button'
 				role='menu'
-				area-label='Open Menu'
+				aria-label='Open Menu'
 			>
 				<div>
 					<HamburgerMenu
 						isOpen={menuOpen}
-						menuClicked={onClick}
+						menuClicked={noop}
 						width={24}
 						height={12}
 						strokeWidth={2}
@@ -80,3 +84,4 @@ const Header: React.FC<{
 	);
 };
 export default Header;
+function noop() {}

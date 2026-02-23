@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import { Range, getTrackBackground } from 'react-range';
-import { IThumbProps, ITrackProps } from 'react-range/lib/types';
+import type { IThumbProps, ITrackProps } from 'react-range/lib/types';
 
 import * as styles from './range.module.scss';
 
@@ -38,23 +38,25 @@ export const PricingRange: React.FC<{
 		),
 		[value]
 	);
-	const renderThumb = React.useCallback(
-		({ props, isDragged }: { props: IThumbProps; isDragged: boolean }) => (
+	const renderThumb = React.useCallback(({ props, isDragged }: { props: IThumbProps; isDragged: boolean }) => {
+		const { key, ...restProps } = props;
+		return (
 			<div
-				{...props}
+				{...restProps}
+				key={key}
 				className={`${styles.thumb} ${isDragged ? styles.dragged : ''}`}
 				style={props.style}
 				title='Active Profile Slider'
 			>
 				<div className={styles.thumbInner} />
 			</div>
-		),
-		[]
-	);
+		);
+	}, []);
+	const valueArray = React.useMemo(() => [value], [value]);
 	return (
 		<div className={`pb-5 ${styles.bar}`}>
 			<Range
-				values={[value]}
+				values={valueArray}
 				step={10}
 				min={min}
 				max={max}

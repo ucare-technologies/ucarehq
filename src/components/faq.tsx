@@ -18,12 +18,12 @@ export const FAQ: React.FC<{
 		<div className={`container-fluid text-center p-0 ${styles.faqContainer}`}>
 			<div className={`container ${styles.container}`}>
 				<div className={`row mx-auto ${styles.faq}`}>
-					<div className='text-center'>
+					<div className='text-center p-0'>
 						<header className={`px-3 ${styles.faqTitle}`}>
 							<h2>{props.title}</h2>
 							{!!props.description && <p>{props.description}</p>}
 						</header>
-						<div className='row text-left mx-auto'>
+						<div className='row text-start mx-auto'>
 							{(props.cards ?? [])?.map((item, index) =>
 								!item ? null : (
 									<div className='col-lg-4 py-2 px-3 d-inline' key={index}>

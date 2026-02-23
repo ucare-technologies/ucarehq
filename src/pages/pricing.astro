@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getContentPage } from '../lib/contentful/queries';
+import { PricingPageView } from '../views/pricing-page';
+
+const page = await getContentPage('/pricing');
+const title = (page?.page_title as string | null) || 'Pricing Editions';
+---
+
+<BaseLayout title={title}>
+	<PricingPageView client:load page={page} />
+</BaseLayout>

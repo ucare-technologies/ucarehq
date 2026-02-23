@@ -1,26 +1,25 @@
-import { SignUpFields, SignUpServerErrors } from './fields';
+import type { SignUpFields, SignUpServerErrors } from './fields';
 
 declare function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>;
 interface ErrorResponse {
 	Errors: Record<string, string[]>;
 }
-function thenErrorResponse(promise: Promise<Response>) {
-	return promise.then(res => {
-		if (res.status === 400) {
-			// eslint-disable-next-line promise/no-nesting
-			return res.json().then((errors: ErrorResponse) => {
-				if (!errors || !errors.Errors) {
-					return { tenant: 'An error has occurred, please try again later' };
-				}
-				const serverErrors = {} as SignUpServerErrors;
-				Object.keys(errors.Errors).forEach(key => {
-					serverErrors[key as keyof SignUpServerErrors] = errors.Errors[key].join(', ');
-				});
-				return serverErrors;
+async function thenErrorResponse(promise: Promise<Response>) {
+	const res = await promise;
+	if (res.status === 400) {
+		// eslint-disable-next-line promise/no-nesting
+		return res.json().then((errors: ErrorResponse) => {
+			if (!errors || !errors.Errors) {
+				return { tenant: 'An error has occurred, please try again later' };
+			}
+			const serverErrors = {} as SignUpServerErrors;
+			Object.keys(errors.Errors).forEach(key => {
+				serverErrors[key as keyof SignUpServerErrors] = errors.Errors[key].join(', ');
 			});
-		}
-		return {} as SignUpServerErrors;
-	});
+			return serverErrors;
+		});
+	}
+	return {} as SignUpServerErrors;
 }
 const signUpUrl = 'https://crm.ucareapp.com/signup';
 export function checkTenant(tenant: string) {

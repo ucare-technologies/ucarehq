@@ -1,9 +1,8 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 
-import { Link } from 'gatsby';
-
 import { ChevronRight } from './icons/chevron-right';
+import { Link } from './link';
 
 interface LinkProps {
 	className?: string;
@@ -31,7 +30,7 @@ export const SignInLink: React.FC<LinkProps> = ({ className }) => (
 export const TrialLink: React.FC<LinkProps> = ({ className }) => (
 	<Link to='/pricing' className={className}>
 		Free trial
-		<ChevronRight className='ml-2' />
+		<ChevronRight className='ms-2' />
 	</Link>
 );
 export const PricingLink: React.FC<LinkProps> = ({ className }) => (

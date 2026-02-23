@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogDetailsPage, getBlogSlugs } from '../../lib/contentful/queries';
+import { BlogPostPageView } from '../../views/blog-post-page';
+
+export async function getStaticPaths() {
+	const slugs = await getBlogSlugs();
+	return slugs.map(slug => ({
+		params: { slug },
+	}));
+}
+
+const slug = Astro.params.slug || '';
+const page = await getBlogDetailsPage(slug);
+const title = (page?.seo_title as string | null) || 'Post';
+---
+
+<BaseLayout title={title}>
+	<BlogPostPageView client:load page={page} />
+</BaseLayout>

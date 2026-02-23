@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getContentPage } from '../lib/contentful/queries';
+import { FeaturesPageView } from '../views/features-page';
+
+const page = await getContentPage('/features');
+const title = (page?.page_title as string | null) || 'UCare’s Powerful Features';
+---
+
+<BaseLayout title={title}>
+	<FeaturesPageView client:load page={page} />
+</BaseLayout>

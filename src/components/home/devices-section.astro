@@ -1,0 +1,62 @@
+---
+import { Picture } from 'astro:assets';
+
+import { FadeIn } from '../fade-in';
+import { DevicesContent } from './devices-content';
+import * as styles from './devices.module.scss';
+
+interface Props {
+	firstImageUrl?: string;
+	secondImageUrl?: string;
+	thirdImageUrl?: string;
+	titleHtml: string;
+	descriptionHtml: string;
+}
+
+const { firstImageUrl, secondImageUrl, thirdImageUrl, titleHtml, descriptionHtml } = Astro.props;
+---
+
+<section class={`container-fluid ${styles.devices}`}>
+	<div class='row'>
+		<DevicesContent client:load titleHtml={titleHtml} descriptionHtml={descriptionHtml} />
+		<div class={`col-lg-6 col-md-6 ${styles.photo}`}>
+			<FadeIn client:load fade='right'>
+				{
+					firstImageUrl && (
+						<Picture
+							src={firstImageUrl}
+							alt='Devices'
+							sizes='(min-width: 768px) 50vw, 100vw'
+							widths={[640, 960, 1280, 1600, 2048]}
+							formats={['avif', 'webp']}
+							loading='lazy'
+							inferSize
+						/>
+					)
+				}
+			</FadeIn>
+		</div>
+	</div>
+	{
+		secondImageUrl && thirdImageUrl && (
+			<FadeIn client:load fade='up'>
+				<div class={`container ${styles.buttons}`}>
+					<div class='col-md-6 text-center'>
+						<a href='https://itunes.apple.com/us/app/ucare./id905961512?mt=8' target='_blank' rel='noopener noreferrer'>
+							<img src={secondImageUrl} alt='Download on the AppStore' loading='lazy' class='button-center' />
+						</a>
+					</div>
+					<div class='col-md-6 text-center'>
+						<a
+							href='https://play.google.com/store/apps/details?id=com.ucareapp.app'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<img src={thirdImageUrl} alt='Get it on Google Play' loading='lazy' class='button-center' />
+						</a>
+					</div>
+				</div>
+			</FadeIn>
+		)
+	}
+</section>

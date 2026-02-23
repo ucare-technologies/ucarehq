@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getContentPage } from '../lib/contentful/queries';
+import { SignUpPageView } from '../views/sign-up-page';
+
+const page = await getContentPage('/sign-up');
+const title = (page?.page_title as string | null) || 'Free 21-day trial';
+---
+
+<BaseLayout title={title}>
+	<SignUpPageView client:load page={page} />
+</BaseLayout>

@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Link } from 'gatsby';
-
 import { formatDate } from '../../utils/convertDateToText';
 import { handleLinkClick } from '../../utils/handleLinkClick';
 import { CalendarDays } from '../icons/calendar-days';
 import { ChevronRight } from '../icons/chevron-right';
+import { Link } from '../link';
 import * as styles from './blog-item.module.scss';
 
 export const BlogItem: React.FC<{
@@ -33,7 +32,7 @@ export const BlogItem: React.FC<{
 								<h2 dangerouslySetInnerHTML={{ __html: title }} />
 							</Link>
 							<span>
-								<CalendarDays className='mr-2' />
+								<CalendarDays className='me-2' />
 								{formatDate(date)}
 							</span>
 							<div>
@@ -43,7 +42,7 @@ export const BlogItem: React.FC<{
 						<div>
 							<Link to={linkTo} className={styles.arrowBtn}>
 								Read More
-								<ChevronRight className='ml-2' />
+								<ChevronRight className='ms-2' />
 							</Link>
 						</div>
 					</div>

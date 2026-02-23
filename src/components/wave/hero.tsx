@@ -13,7 +13,7 @@ export const Hero: React.FC<{
 	onPlayClick: () => void;
 }> = ({ backgroundImageUrl, titleHtml, onPlayClick }) => (
 	<section
-		style={{ backgroundImage: `url(${backgroundImageUrl})` }} // TODO: <GatsbyImage
+		style={{ backgroundImage: `url(${backgroundImageUrl})` }}
 		className={`justify-content-center ${styles.waveHero}`}
 	>
 		<FadeIn className={`text-center ${styles.title}`} fade='up'>
@@ -34,7 +34,7 @@ export const Hero: React.FC<{
 					duration={500}
 					onClick={onPlayClick}
 				>
-					Watch Video <Play className='ml-2' />
+					Watch Video <Play className='ms-2' />
 				</Scroll.Link>
 			</footer>
 		</FadeIn>
