@@ -132,4 +132,7 @@ form {
 	.spinner-border.text-success {
 		color: var(--theme-green) !important;
 	}
+	.captcha-widget {
+		min-height: 65px;
+	}
 }

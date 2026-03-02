@@ -6,22 +6,27 @@ interface ErrorResponse {
 }
 async function thenErrorResponse(promise: Promise<Response>) {
 	const res = await promise;
-	if (res.status === 400) {
-		// eslint-disable-next-line promise/no-nesting
-		return res.json().then((errors: ErrorResponse) => {
-			if (!errors || !errors.Errors) {
-				return { tenant: 'An error has occurred, please try again later' };
-			}
-			const serverErrors = {} as SignUpServerErrors;
-			Object.keys(errors.Errors).forEach(key => {
-				serverErrors[key as keyof SignUpServerErrors] = errors.Errors[key].join(', ');
-			});
-			return serverErrors;
-		});
+	if (res.ok) {
+		return {} as SignUpServerErrors;
 	}
-	return {} as SignUpServerErrors;
+	if ((res.headers.get('content-type') || '').includes('application/json')) {
+		return res
+			.json()
+			.then((errors: ErrorResponse) => {
+				if (!errors || !errors.Errors) {
+					return { tenant: 'An error has occurred, please try again later' };
+				}
+				const serverErrors = {} as SignUpServerErrors;
+				Object.keys(errors.Errors).forEach(key => {
+					serverErrors[key as keyof SignUpServerErrors] = errors.Errors[key].join(', ');
+				});
+				return serverErrors;
+			})
+			.catch(() => ({ tenant: 'An error has occurred, please try again later' }));
+	}
+	return { tenant: 'An error has occurred, please try again later' };
 }
-const signUpUrl = 'https://crm.ucareapp.com/signup';
+const signUpUrl = '/api/sign-up';
 export function checkTenant(tenant: string) {
 	return thenErrorResponse(
 		fetch(signUpUrl, {
@@ -34,7 +39,7 @@ export function checkTenant(tenant: string) {
 		})
 	);
 }
-export function createTenant(fields: SignUpFields) {
+export function createTenant(fields: SignUpFields & { captchaToken: string }) {
 	return thenErrorResponse(
 		fetch(signUpUrl, {
 			method: 'POST',

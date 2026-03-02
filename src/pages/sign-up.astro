@@ -5,8 +5,9 @@ import { SignUpPageView } from '../views/sign-up-page';
 
 const page = await getContentPage('/sign-up');
 const title = (page?.page_title as string | null) || 'Free 21-day trial';
+const turnstileSiteKey = import.meta.env.TURNSTILE_PUBLIC_SITE_KEY || '';
 ---
 
 <BaseLayout title={title}>
-	<SignUpPageView client:load page={page} />
+	<SignUpPageView client:load page={page} turnstileSiteKey={turnstileSiteKey} />
 </BaseLayout>

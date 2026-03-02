@@ -9,3 +9,20 @@ declare module '*.module.scss' {
 }
 
 declare module '*.svg';
+
+interface TurnstileRenderOptions {
+	sitekey: string;
+	callback?: (token: string) => void;
+	'expired-callback'?: () => void;
+	'error-callback'?: () => void;
+}
+
+interface TurnstileApi {
+	render(container: string | HTMLElement, options: TurnstileRenderOptions): string;
+	reset(widgetId?: string): void;
+	remove(widgetId: string): void;
+}
+
+interface Window {
+	turnstile?: TurnstileApi;
+}

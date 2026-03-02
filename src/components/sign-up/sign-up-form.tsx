@@ -6,6 +6,7 @@ import AnimateHeight from 'react-animate-height';
 
 import AgreeField from './agree-field';
 import { checkTenant, createTenant } from './api';
+import CaptchaField from './captcha-field';
 import CountryField from './country-field';
 import Field from './field';
 import { defaultSignUpFields } from './fields';
@@ -20,15 +21,28 @@ import { email, required, tenant } from './validation';
 // declare global {
 // 	const dataLayer: GoogleDataLayer;
 // }
-type signUpStage = 'create' | 'submit' | 'ready';
-export default function SignUpForm({ size, edition }: { size: number; edition: string }) {
-	const [stage, setStage] = React.useState('create' as signUpStage);
+type SignUpStage = 'create' | 'submit' | 'ready';
+
+export default function SignUpForm({
+	size,
+	edition,
+	turnstileSiteKey,
+}: {
+	size: number;
+	edition: string;
+	turnstileSiteKey: string;
+}) {
+	const [stage, setStage] = React.useState('create' as SignUpStage);
 	const [fields, setFields] = React.useState(defaultSignUpFields);
 	const [agreed, setAgreed] = React.useState(false);
 	const [errors, setErrors] = React.useState({} as SignUpFieldErrors);
 	const [serverErrors, setServerErrors] = React.useState({} as SignUpServerErrors);
+	const [captchaToken, setCaptchaToken] = React.useState('');
+	const [captchaError, setCaptchaError] = React.useState<string | undefined>(undefined);
+	const [captchaResetCounter, setCaptchaResetCounter] = React.useState(0);
 	const [validate, setValidate] = React.useState(false);
 	const [validatingTenant, setValidatingTenant] = React.useState(false);
+
 	const handleChange = React.useCallback((name: string, value: string) => {
 		setFields(current => ({
 			...current,
@@ -61,6 +75,13 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 		},
 		[t, validateTenant]
 	);
+
+	const handleCaptchaChange = React.useCallback((token: string) => {
+		setCaptchaToken(token);
+		setCaptchaError(undefined);
+		setServerErrors(current => ({ ...current, captchaToken: undefined }));
+	}, []);
+
 	const isValid = React.useCallback(() => {
 		const newErrors = {
 			firstName: required(fields.firstName),
@@ -83,15 +104,28 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 			e.preventDefault();
 			setValidate(true);
 			window.setTimeout(() => {
-				if (!validatingTenant && isValid() && !serverErrors.tenant) {
+				if (!validatingTenant && isValid() && !serverErrors.tenant && !serverErrors.tenantAvailable) {
+					if (!turnstileSiteKey) {
+						setCaptchaError('Security check is unavailable right now. Please try again later.');
+						return;
+					}
+					if (!captchaToken) {
+						setCaptchaError('Please complete the security check.');
+						return;
+					}
+
 					setStage('submit');
-					fields.edition = edition;
-					fields.size = String(size);
-					createTenant(fields)
+					createTenant({
+						...fields,
+						edition,
+						size: String(size),
+						captchaToken,
+					})
 						.then(serverErrors1 => {
 							setServerErrors(serverErrors1);
 							if (Object.keys(serverErrors1).length > 0) {
 								setStage('create');
+								setCaptchaResetCounter(current => current + 1);
 							} else {
 								setStage('ready');
 								// dataLayer.push({ userId: fields.tenant, event: 'signup_form' }); // TODO: remove from GoogleTags
@@ -101,12 +135,14 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 						.catch(error => {
 							setStage('create');
 							setServerErrors({ tenant: (error || '').toString() });
+							setCaptchaResetCounter(current => current + 1);
 						});
 				}
 			}, 0);
 		},
-		[validatingTenant, isValid, fields, serverErrors, size, edition]
+		[validatingTenant, isValid, serverErrors, turnstileSiteKey, captchaToken, fields, edition, size]
 	);
+
 	return (
 		<div className='container pb-5'>
 			<div className='row'>
@@ -171,17 +207,29 @@ export default function SignUpForm({ size, edition }: { size: number; edition: s
 							<div className='form-group account-address'>
 								<TenantField
 									value={fields.tenant}
-									error={errors.tenant || serverErrors.tenantAvailable}
+									error={errors.tenant || serverErrors.tenantAvailable || serverErrors.tenant}
 									onChange={handleTenantChange}
 									validating={validatingTenant}
 									disabled={stage !== 'create'}
 								/>
 							</div>
 							<div className='form-group'>
+								<CaptchaField
+									siteKey={turnstileSiteKey}
+									error={captchaError || serverErrors.captchaToken}
+									resetCounter={captchaResetCounter}
+									onChange={handleCaptchaChange}
+								/>
+							</div>
+							<div className='form-group'>
 								<AgreeField checked={agreed} onChange={setAgreed} disabled={stage !== 'create'} />
 							</div>
 							<footer>
-								<button type='submit' className='btn btn-primary trial' disabled={!agreed || stage !== 'create'}>
+								<button
+									type='submit'
+									className='btn btn-primary trial'
+									disabled={!agreed || !captchaToken || stage !== 'create'}
+								>
 									Start your free 21-day trial
 								</button>
 							</footer>
