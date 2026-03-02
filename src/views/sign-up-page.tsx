@@ -16,7 +16,10 @@ function getQueryStringValues(search: string) {
 	return { size, edition };
 }
 
-export const SignUpPageView: React.FC<{ page: ContentEntry | null }> = ({ page }) => {
+export const SignUpPageView: React.FC<{ page: ContentEntry | null; turnstileSiteKey: string }> = ({
+	page,
+	turnstileSiteKey,
+}) => {
 	const [queryValues, setQueryValues] = React.useState({ size: 500, edition: 'Growth' });
 	React.useEffect(() => {
 		setQueryValues(getQueryStringValues(window.location.search));
@@ -37,7 +40,7 @@ export const SignUpPageView: React.FC<{ page: ContentEntry | null }> = ({ page }
 						/>
 					))}
 
-				<SignUpForm size={queryValues.size} edition={queryValues.edition} />
+				<SignUpForm size={queryValues.size} edition={queryValues.edition} turnstileSiteKey={turnstileSiteKey} />
 
 				{sections
 					.filter(section => section.slice_name === 'asked_questions')

@@ -13,6 +13,7 @@ export type SignUpFields = typeof defaultSignUpFields;
 export type SignUpFieldErrors = Partial<SignUpFields>;
 export interface SignUpServerErrors extends SignUpFieldErrors {
 	tenantAvailable?: string;
+	captchaToken?: string;
 }
 export const defaultContactFields = {
 	firstName: '',
