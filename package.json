@@ -39,7 +39,7 @@
 		"@types/react-scroll": "^1.8.10",
 		"contentful-import": "^9.4.131",
 		"dotenv": "^17.3.1",
-		"netlify-cli": "^24.0.1",
+		"netlify-cli": "^24.11.3",
 		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1",
 		"typescript": "^5.9.3"
