@@ -6,7 +6,7 @@
 	"author": "UCare",
 	"dependencies": {
 		"@astrojs/check": "^0.9.6",
-		"@astrojs/netlify": "^6.6.4",
+		"@astrojs/netlify": "^8.2.13",
 		"@astrojs/react": "^4.4.2",
 		"@contentful/rich-text-html-renderer": "^17.1.6",
 		"@fontsource/lato": "^5.2.7",
@@ -39,7 +39,7 @@
 		"@types/react-scroll": "^1.8.10",
 		"contentful-import": "^9.4.131",
 		"dotenv": "^17.3.1",
-		"netlify-cli": "^24.0.1",
+		"netlify-cli": "^27.17.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1",
 		"typescript": "^5.9.3"
